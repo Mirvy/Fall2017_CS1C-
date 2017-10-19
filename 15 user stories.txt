@@ -1,0 +1,70 @@
+
+Interface
+Need to address how to handle user permissions
+Priority:
+Estimation:
+
+Functionality
+Need to provide shapes by id, with all properties listed
+Priority:
+Estimation:
+
+Interface
+Users need to be able to submit feedback; feedback must be persistent from session to session
+Priority:
+Estimation:
+ 
+Interface
+Users need to be able to access a help interface which instructs user on operation of program
+Priority:
+Estimation
+ 
+Interface
+Database for admins and guests
+Priority
+Estimation:
+ 
+Interface
+Need to implement a user login for administrator guest by default
+Priority
+Estimation
+ 
+Functionality
+All changes must save from session to session
+Priority
+Estimate
+ 
+Functionality 
+As an administrator, I need to be able to move objects
+Priority
+Estimate
+
+Functionality
+Need to provide list of shapes by id, with all properties listed.
+Priority
+Estimate
+
+Functionality
+As an administrator, I need to be able to add/remove objects
+Priority
+Estimate
+
+Functionality
+As an administrator I need to be able to change shape attributes
+Priority:
+Estimate:
+
+Functionality
+Need to provide list of shapes with perimeter sorted by perimeter
+Priority:
+Estimate:
+
+Functionality
+Need to provide list of shapes with area, sorted by area
+Priority:
+Estimate:
+
+Functionality
+Need a parser to read in object database
+Priority:
+Estimate:
