@@ -50,6 +50,20 @@ public:
      size_v = src.size_v;
      return *this;  // return a self-reference
    }
+   vector(vector&& source) //move constructor
+   {
+     size_v = source.size_v;
+     elem = source.elem;
+     source.elem = NULL;
+   }
+   vector& operator=(vector&& rhs) //move assignment
+   {
+     delete [] elem;
+     size_v = rhs.size_v;
+     elem = rhs.elem;
+     rhs.elem = NULL;
+     return *this;
+   }
    ~vector() { delete[] elem; }	 // destructor
    T& operator[](int n) { return elem[n]; }	// access: return reference
    const T& operator[](int n) const { return elem[n]; }
