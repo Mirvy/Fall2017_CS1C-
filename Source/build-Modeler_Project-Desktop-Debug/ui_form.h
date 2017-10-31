@@ -54,7 +54,7 @@ public:
 
         retranslateUi(Form);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Form);

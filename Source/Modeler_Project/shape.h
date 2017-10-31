@@ -10,7 +10,7 @@ class Shape
 {
 public:
     enum shape {Line, Polyline, Polygon, Rectangle, Square, Ellipse, Circle, Text};
-    Shape();
+    Shape(QPainterDevice *device=nullptr,nid=-1,Shape::shape s=Line):painter(device),id(nid),objShape(s){}
     int setId(int nid)
     {
        id = nid;
@@ -43,14 +43,23 @@ public:
     {
         return brush;
     }
+    QPainter& getPainter()
+    {
+
+    }
     virtual void draw() = 0;
     virtual void move() = 0;
     virtual double calcPerimeter() = 0;
     virtual double calcArea() = 0;
     virtual ~Shape();
 protected:
-    QPainter* painter;
+    QPainter& getPointer()
+    {
+        return painter;
+    }
+
 private:
+    QPainter painter;
     int id;
     shape objShape;
     QPen pen;
@@ -64,10 +73,9 @@ public:
     Line(QPoint s,QPoint e):Shape(),start(s),end(e){}
     void draw(QPaintDevice* device)
     {
-        painter = new QPainter(device);
-        painter->setpen(this->getPen());
-        painter->drawLine(start,end);
-        delete painter;
+        QPainter pnt = getPainter();
+        pnt.setPen(this->getPen());
+        pnt.drawLine(start,end);
     }
     void move(QPoint nstart,QPoint nend)
     {
@@ -90,10 +98,9 @@ public:
     }
     void draw(QPaintDevice *device)
     {
-         painter = new QPainter(device);
-         painter->setPen(this->getPen());
-         painter->drawPolyline(p.begin(),p.size());
-         delete painter;
+         QPainter pnt = getPainter();
+         pnt.setPen(this->getPen());
+         pnt.drawPolyline(p.begin(),p.size());
     }
     void move(vector<QPoint> &source)
     {
@@ -115,11 +122,10 @@ public:
     }
     void draw(QPaintDevice *device)
     {
-        painter = new QPainter(device);
-        painter->setPen(this->getPen());
-        painter->setBrush(this->getBrush());
-        painter->drawPolygon(p.begin(),p.size());
-        delete painter;
+        QPainter pnt = getPainter();
+        pnt.setPen(this->getPen());
+        pnt.setBrush(this->getBrush());
+        pnt.drawPolygon(p.begin(),p.size());
     }
     void move(vector<QPoint> &source)
     {
@@ -130,12 +136,15 @@ public:
         double perimeter = 0;
         for(vector::iterator i=p.begin();i<p.end();++i)
         {
-            perimeter += sqrt();
+            perimeter += sqrt((pow((i->x()-((i+1)->x())),2)+pow((i->y()-(i+1)->y()),2)));
         }
+        return perimeter;
     }
     double calcArea()
     {
-
+        vector::iterator i=p.begin();
+        double area = ((this->calcPerimeter())*((sqrt((pow((i->x()-((i+1)->x())),2)+pow((i->y()-(i+1)->y()),2))))/(2*tan(180/p->size()))))/2;
+        return area;
     }
 private:
     vector<QPoint> p;
