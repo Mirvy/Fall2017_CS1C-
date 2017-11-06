@@ -1,0 +1,51 @@
+10/15/17 Sunday: 1st Scrum Meeting -- 1.5 hrs (7 person-hours)
+Met for an 1-1.5 hrs to discuss user stories and initial project planning. Came up with 15 user stories. Registered everyone on github, exchanged emails, created a shared google drive folder for documentation. Came up with project-related questions to ask in class. Discussed team member roles.
+TODO: 
+agree on the regular meeting schedule
+ask project questions during lab
+pick a team name lol
+
+
+10/17/17 Tuesday: 2nd Scrum Meeting -- 1 hr (4 person-hours)
+Created a log of assignments and a timeline. Agreed on priority. Scheduled the next meeting for Wednesday at 3pm at the library. 
+
+10/18/17 Wednesday: 3rd Scrum Meeting -- 3.5 hrs (10 person-hours)
+Accomplished:
+Created user stories in the requested format (15 pages) to submit on 10/19 at 10. 
+
+
+10/24 Tuesday: 4th Scrum Meeting/Work Session 1.5 hrs (5 person-hours)
+Accomplished:
+Discussed the tasks we will focus on and updated the 1 sprint log 
+Template finished. 
+User login finished partially. 
+Shapes finished
+
+TODO:
+Agreed to meet at 3:30 on Wednesday (10/25). 
+Waffle IO (Connor)
+
+10/25 Wednesday: 5th Scrum Meeting/Work Session 4.5 (15 person-hours)
+Accomplished:
+Basic introduction to QT and QPainter
+Coded the interface 
+Discussed the qt framework
+
+
+10/26 Wednesday: 6th Scrum Meeting/Work Session 1.5 (5 person-hours)
+Accomplished:
+Discussed the relationship between widgets and the code. Saw examples of 
+
+
+10/29 Sunday: 7th Scrum Meeting/Work Session 3 hrs (6 person-hours)
+Accomplished:
+Discussed implementation of classes derived from shape and draw and move methods
+Finished logging the project into the Waffle IO dashboard from the Product Backlog
+
+11/5 Sunday: 8th Scrum Meeting/Work Session 5 hrs (10 person-hours)
+Accomplished:
+Finished Ellipse, Circle and Square classes.
+Created a wiki file w/project-related links for formulas/training videos
+Started a 1st branch of the project (no longer upload directly to the master branch)
+Working on a parser
+Added a duplicate of this scrum log to github
