@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -m64 -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -m64 -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -m64 -pipe -g -std=c++1y -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I../Modeler_Project -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -49,10 +49,12 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Modeler_Project/main.cpp \
-		../Modeler_Project/form.cpp moc_form.cpp
+		../Modeler_Project/mainwindow.cpp \
+		../Modeler_Project/shapeParser.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
-		form.o \
-		moc_form.o
+		mainwindow.o \
+		shapeParser.o \
+		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -98,6 +100,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -111,8 +115,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Modeler_Project/Modeler_Project.pro ../Modeler_Project/shape.h \
 		../Modeler_Project/vector.h \
-		../Modeler_Project/form.h ../Modeler_Project/main.cpp \
-		../Modeler_Project/form.cpp
+		../Modeler_Project/mainwindow.h ../Modeler_Project/main.cpp \
+		../Modeler_Project/mainwindow.cpp \
+		../Modeler_Project/shapeParser.cpp
 QMAKE_TARGET  = Modeler_Project
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Modeler_Project
@@ -140,7 +145,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_form.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Modeler_Project/Modeler_Project.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -188,6 +193,8 @@ Makefile: ../Modeler_Project/Modeler_Project.pro /usr/lib/x86_64-linux-gnu/qt5/m
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -249,6 +256,8 @@ Makefile: ../Modeler_Project/Modeler_Project.pro /usr/lib/x86_64-linux-gnu/qt5/m
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
@@ -278,9 +287,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/form.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/form.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/form.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/mainwindow.cpp ../Modeler_Project/shapeParser.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -303,19 +312,19 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_form.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_form.cpp
-moc_form.cpp: ../Modeler_Project/form.h
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/form.h -o moc_form.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp
+moc_mainwindow.cpp: ../Modeler_Project/mainwindow.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_form.h
+compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_form.h
-ui_form.h: ../Modeler_Project/form.ui
-	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../Modeler_Project/form.ui -o ui_form.h
+	-$(DEL_FILE) ui_mainwindow.h
+ui_mainwindow.h: ../Modeler_Project/mainwindow.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../Modeler_Project/mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -327,14 +336,19 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
-main.o: ../Modeler_Project/main.cpp ../Modeler_Project/form.h
+main.o: ../Modeler_Project/main.cpp ../Modeler_Project/mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Modeler_Project/main.cpp
 
-form.o: ../Modeler_Project/form.cpp ../Modeler_Project/form.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o form.o ../Modeler_Project/form.cpp
+mainwindow.o: ../Modeler_Project/mainwindow.cpp ../Modeler_Project/mainwindow.h \
+		ui_mainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Modeler_Project/mainwindow.cpp
 
-moc_form.o: moc_form.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_form.o moc_form.cpp
+shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shapeParser.o ../Modeler_Project/shapeParser.cpp
+
+moc_mainwindow.o: moc_mainwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
 
 ####### Install
 

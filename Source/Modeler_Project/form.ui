@@ -1,64 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>690</width>
-    <height>512</height>
+    <width>602</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTabWidget" name="tabWidget">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>30</y>
-     <width>691</width>
-     <height>511</height>
+     <x>10</x>
+     <y>0</y>
+     <width>91</width>
+     <height>17</height>
     </rect>
    </property>
-   <property name="currentIndex">
-    <number>0</number>
+   <property name="text">
+    <string>2D Modeler</string>
    </property>
-   <widget class="QWidget" name="tab">
-    <attribute name="title">
-     <string>Tab 1</string>
-    </attribute>
-    <widget class="QLabel" name="testLabel">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>101</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <property name="text">
-      <string>TestingLabel:</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab_2">
-    <attribute name="title">
-     <string>Tab 2</string>
-    </attribute>
-   </widget>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>Page</string>
-    </attribute>
-   </widget>
   </widget>
  </widget>
  <resources/>

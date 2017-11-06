@@ -6,20 +6,23 @@
 
 QT       += core gui
 
+CONFIG += c++14
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Modeler_Project
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-    form.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp \
+    shapeParser.cpp
 
 HEADERS  += shape.h \
     vector.h \
-    form.h
+    mainwindow.h
 
 DISTFILES +=
 
 FORMS += \
-    form.ui
+    mainwindow.ui

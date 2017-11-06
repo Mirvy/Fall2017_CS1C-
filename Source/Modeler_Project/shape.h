@@ -10,13 +10,13 @@ class Shape
 {
 public:
     enum shape {Line, Polyline, Polygon, Rectangle, Square, Ellipse, Circle, Text};
-    Shape(QPainterDevice *device=nullptr,nid=-1,Shape::shape s=Line, QPen npen, QBrush nbrush):
+    Shape(QPaintDevice* device=nullptr,int nid=-1,shape s=Line, QPen npen, QBrush nbrush):
         painter(device),id(nid),objShape(s),pen(npen),brush(nbrush){}
-    int setId(int nid)
+    void setId(int nid)
     {
        id = nid;
     }
-    void setShape(Shape nshape)
+    void setShape(shape nshape)
     {
        objShape = nshape;
     }
