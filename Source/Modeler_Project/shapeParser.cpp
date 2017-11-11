@@ -123,15 +123,13 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
     QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[5].substr(0,source[5].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
     QPen npen(Qt::NoBrush,width,getPenStyle(source[6]),getPenCapStyle(source[7]),getPenJoinStyle(source[8])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
-    Shape::Line* nline = new Shape::Line(device,tempId,npen,Qt::NoBrush,start,end);  //Instantiates the new line object.
+    Line* nline = new Line(device,tempId,npen,Qt::NoBrush,start,end);  //Instantiates the new line object.
     return nline; //returns the pointer to the primary parser, where it will be put into the shape* vector.
 }
 
 Shape::Shape* polyLineParse(const myStd::vector<string> &source,QPaintDevice* device)
 {
-    Shape::Shape* nPolyLine;
-    nPolyLine = new Polyline;
-    return nPolyLine;
+
 }
 
 Shape::Shape* polygonParse(const myStd::vector<string> &source,QPaintDevice* device)
@@ -170,6 +168,7 @@ Qt::GlobalColor getColor(const string& source)
     for(int i =0; i <source.length(); ++i)
     {
         tempString[i] = toupper(source[i]);
+
     }
     if(tempString == "WHITE")
     {
@@ -330,4 +329,6 @@ Qt::PenJoinStyle getPenJoinStyle(const string& source)
     {
         return Qt::BevelJoin;
     }
+
 }
+

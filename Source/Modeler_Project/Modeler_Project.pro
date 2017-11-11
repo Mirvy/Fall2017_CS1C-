@@ -15,14 +15,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    mainwindow.cpp \
-    shapeParser.cpp
+    shapeParser.cpp \
+    MainWindow.cpp
 
 HEADERS  += shape.h \
     vector.h \
-    mainwindow.h
+    MainWindow.h
 
 DISTFILES +=
 
 FORMS += \
-    mainwindow.ui
+    MainWindow.ui

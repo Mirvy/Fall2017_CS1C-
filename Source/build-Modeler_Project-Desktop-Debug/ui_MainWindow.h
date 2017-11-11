@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'MainWindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.5.1
 **
@@ -26,7 +26,8 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(595, 411);
+        MainWindow->resize(617, 461);
+        MainWindow->setMinimumSize(QSize(100, 100));
 
         retranslateUi(MainWindow);
 

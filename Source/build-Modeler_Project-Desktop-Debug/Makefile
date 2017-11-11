@@ -49,12 +49,12 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Modeler_Project/main.cpp \
-		../Modeler_Project/mainwindow.cpp \
-		../Modeler_Project/shapeParser.cpp moc_mainwindow.cpp
+		../Modeler_Project/shapeParser.cpp \
+		../Modeler_Project/MainWindow.cpp moc_MainWindow.cpp
 OBJECTS       = main.o \
-		mainwindow.o \
 		shapeParser.o \
-		moc_mainwindow.o
+		MainWindow.o \
+		moc_MainWindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -115,9 +115,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Modeler_Project/Modeler_Project.pro ../Modeler_Project/shape.h \
 		../Modeler_Project/vector.h \
-		../Modeler_Project/mainwindow.h ../Modeler_Project/main.cpp \
-		../Modeler_Project/mainwindow.cpp \
-		../Modeler_Project/shapeParser.cpp
+		../Modeler_Project/MainWindow.h ../Modeler_Project/main.cpp \
+		../Modeler_Project/shapeParser.cpp \
+		../Modeler_Project/MainWindow.cpp
 QMAKE_TARGET  = Modeler_Project
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Modeler_Project
@@ -145,7 +145,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h $(OBJECTS)  
+$(TARGET): ui_MainWindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Modeler_Project/Modeler_Project.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -287,9 +287,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/mainwindow.cpp ../Modeler_Project/shapeParser.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/MainWindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/MainWindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -312,19 +312,21 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_MainWindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
-moc_mainwindow.cpp: ../Modeler_Project/mainwindow.h
-	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/mainwindow.h -o moc_mainwindow.cpp
+	-$(DEL_FILE) moc_MainWindow.cpp
+moc_MainWindow.cpp: ../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h \
+		../Modeler_Project/MainWindow.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/MainWindow.h -o moc_MainWindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_MainWindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
-ui_mainwindow.h: ../Modeler_Project/mainwindow.ui
-	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../Modeler_Project/mainwindow.ui -o ui_mainwindow.h
+	-$(DEL_FILE) ui_MainWindow.h
+ui_MainWindow.h: ../Modeler_Project/MainWindow.ui
+	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../Modeler_Project/MainWindow.ui -o ui_MainWindow.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -336,19 +338,23 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
-main.o: ../Modeler_Project/main.cpp ../Modeler_Project/mainwindow.h
+main.o: ../Modeler_Project/main.cpp ../Modeler_Project/MainWindow.h \
+		../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Modeler_Project/main.cpp
-
-mainwindow.o: ../Modeler_Project/mainwindow.cpp ../Modeler_Project/mainwindow.h \
-		ui_mainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Modeler_Project/mainwindow.cpp
 
 shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
 		../Modeler_Project/vector.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shapeParser.o ../Modeler_Project/shapeParser.cpp
 
-moc_mainwindow.o: moc_mainwindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+MainWindow.o: ../Modeler_Project/MainWindow.cpp ../Modeler_Project/MainWindow.h \
+		../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h \
+		ui_MainWindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../Modeler_Project/MainWindow.cpp
+
+moc_MainWindow.o: moc_MainWindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp
 
 ####### Install
 

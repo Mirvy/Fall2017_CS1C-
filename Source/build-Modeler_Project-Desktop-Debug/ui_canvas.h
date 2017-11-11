@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file 'canvas.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
+#ifndef UI_CANVAS_H
+#define UI_CANVAS_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -18,32 +18,33 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
+class Ui_Canvas
 {
 public:
 
-    void setupUi(QWidget *MainWindow)
+    void setupUi(QWidget *Canvas)
     {
-        if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(595, 411);
+        if (Canvas->objectName().isEmpty())
+            Canvas->setObjectName(QStringLiteral("Canvas"));
+        Canvas->resize(1000, 1000);
+        Canvas->setMinimumSize(QSize(1000, 1000));
 
-        retranslateUi(MainWindow);
+        retranslateUi(Canvas);
 
-        QMetaObject::connectSlotsByName(MainWindow);
+        QMetaObject::connectSlotsByName(Canvas);
     } // setupUi
 
-    void retranslateUi(QWidget *MainWindow)
+    void retranslateUi(QWidget *Canvas)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Form", 0));
+        Canvas->setWindowTitle(QApplication::translate("Canvas", "Form", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class Canvas: public Ui_Canvas {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
+#endif // UI_CANVAS_H
