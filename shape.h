@@ -1,8 +1,13 @@
 #ifndef SHAPE_H
 #define SHAPE_H
+#include <QWidget>
+#include "QPen"
+#include "QBrush"
 #include <qpainter.h>
-#include <vector.h>
+#include "vector.h"
 #include <math.h>
+
+using namespace myStd;
 
 namespace Shape //defined inside a namespace so it doesn't clash with other objects
 {
@@ -10,13 +15,13 @@ class Shape
 {
 public:
     enum shape {Line, Polyline, Polygon, Rectangle, Square, Ellipse, Circle, Text}; //enum that determines shapes
-    Shape(QPainterDevice *device=nullptr, int nid=-1,Shape::shape s=Line, QPen npen, QBrush nbrush): //enum shape s, int nid=-1 is the ID number. We're passing it in as -1 to know when we've made a mistake
+    Shape(QPaintDevice *device=nullptr,int nid=-1,shape s=Shape::shape::Line, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush): //enum shape s, int nid=-1 is the ID number. We're passing it in as -1 to know when we've made a mistake
         painter(device),id(nid),objShape(s),pen(npen),brush(nbrush){} //passing in QPen and QBrush
-    int setId(int nid)
+    void setId(int nid)
     {
        id = nid;
     }
-    void setShape(Shape nshape)
+    void setShape(shape nshape)
     {
        objShape = nshape;
     }
@@ -36,25 +41,21 @@ public:
     {
         return objShape;
     }
-    QPen getPen()const
+    QPen& getPen()
     {
         return pen;
     }
-    QBrush getBrush()const
+    QBrush& getBrush()
     {
         return brush;
     }
-    QPainter& getPainter()
-    {
-
-    }
-    virtual void draw() = 0;
-    virtual void move() = 0;
-    virtual double calcPerimeter() = 0;
-    virtual double calcArea() = 0;
-    virtual ~Shape();
+    virtual void draw(QPaintDevice* device) = 0;
+    //virtual void move()=0;
+    virtual double calcPerimeter()=0;
+    virtual double calcArea()=0;
+    virtual ~Shape(){}
 protected:
-    QPainter& getPointer()
+    QPainter& getPainter()
     {
         return painter;
     }
@@ -69,13 +70,15 @@ private:
 class Line : public Shape
 {
 public:
-    Line(QPainterDevice* device=nullptr,int nid=-1, QPen npen, QBrush nbrush,QPoint s=(QPoint(0,0)), QPoint e=(QPoint(0,0))) //passing it first and last point in the coord
+    Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0)) //passing it first and last point in the coord
         :Shape(device,nid,Shape::shape::Line,npen,nbrush),start(s),end(e){}
     void draw(QPaintDevice* device)
     {
-        QPainter pnt = getPainter();
+        QPainter& pnt = getPainter();
+        pnt.begin(device);
         pnt.setPen(this->getPen());
         pnt.drawLine(start,end);
+        pnt.end();
     }
     void move(QPoint nstart,QPoint nend)
     {
@@ -91,14 +94,16 @@ private:
 class Polyline : public Shape
 {
 public:
-    Polyline(QPaintDevice* device=nullptr,int nid=-1,QPen npen,QBrush nbrush,const vector<QPoint> &source):
+    Polyline(QPaintDevice* device=nullptr,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,const vector<QPoint> &source=vector<QPoint>()):
         Shape(device,nid,Shape::shape::Polyline,npen,nbrush){p = source;}
 
-    void draw(QPaintDevice *device)
+    void draw(QPaintDevice* device)
     {
-         QPainter pnt = getPainter();
+         QPainter& pnt = getPainter();
+         pnt.begin(device);
          pnt.setPen(this->getPen());
          pnt.drawPolyline(p.begin(),p.size());
+         pnt.end();
     }
     void move(vector<QPoint> &source)
     {
@@ -113,15 +118,17 @@ private:
 class Polygon : public Shape
 {
 public:
-    Polygon(QPainterDevice* device,int nid=-1,QPen npen,QBrush nbrush,const vector<QPoint> &source):
+    Polygon(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,const vector<QPoint> &source=vector<QPoint>()):
         Shape(device,nid,Shape::shape::Polygon,npen,nbrush){p = source;}
 
-    void draw(QPaintDevice *device)
+    void draw(QPaintDevice* device)
     {
-        QPainter pnt = getPainter();
+        QPainter& pnt = getPainter();
+        pnt.begin(device);
         pnt.setPen(this->getPen());
         pnt.setBrush(this->getBrush());
         pnt.drawPolygon(p.begin(),p.size());
+        pnt.end();
     }
     void move(vector<QPoint> &source)
     {
@@ -129,8 +136,9 @@ public:
     }
     double calcPerimeter()
     {
+
         double perimeter = 0;
-        for(vector::iterator i=p.begin();i<p.end();++i)
+        for(vector<QPoint>::iterator i=p.begin();i<p.end();++i)
         {
             perimeter += sqrt((pow((i->x()-((i+1)->x())),2)+pow((i->y()-(i+1)->y()),2)));
         }
@@ -138,8 +146,12 @@ public:
     }
     double calcArea()
     {
-        vector::iterator i=p.begin();
-        double area = ((this->calcPerimeter())*((sqrt((pow((i->x()-((i+1)->x())),2)+pow((i->y()-(i+1)->y()),2))))/(2*tan(180/p->size()))))/2;
+        vector<QPoint>::iterator i=p.begin();
+        double area = ((calcPerimeter())*
+                       ((sqrt((pow((i->x()-((i+1)->x())),2)+
+                               pow((i->y()-(i+1)->y()),2))))/
+                        (2*tan(180/p.size()))))/
+                         2;
         return area;
     }
 private:
@@ -149,14 +161,16 @@ private:
 class Rectangle : public Shape
 {
 public:
-    Rectangle(QPaintDevice* device,int nid=-1,Shape::shape s=Rectangle,QPen npen,QBrush nbrush,QPoint nUL,int nw,int nh):
+    Rectangle(QPaintDevice* device,int nid=-1,shape s=shape::Rectangle,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int nw=0,int nh=0):
         Shape(device,nid,s,npen,nbrush),upperLeft(nUL),width(nw),height(nh){}
-    void draw()
+    void draw(QPaintDevice* device)
     {
-        QPainter pnt = getPainter();
+        QPainter& pnt = getPainter();
+        pnt.begin(device);
         pnt.setPen(this->getPen());
-        pnt.setBrush(this->getbrush());
+        pnt.setBrush(this->getBrush());
         pnt.drawRect((getUpperLeft()).x(),(getUpperLeft()).y(),getWidth(),getHeight());
+        pnt.end();
     }
     void move(QPoint nUL,int nw,int nh)
     {
@@ -184,7 +198,7 @@ public:
     {
         height = nh;
     }
-    QPoint& getUpperLeft()const
+    QPoint getUpperLeft()const
     {
         return upperLeft;
     }
@@ -204,7 +218,7 @@ private:
 class Square : public Rectangle
 {
 public:
-    Square(QPaintDevice* device,int nid=-1,QPen npen,QBrush nbrush,QPoint nUL,int height, int width):
+    Square(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int height=0, int width=0):
         Rectangle(device,nid,Shape::shape::Square,npen,nbrush,nUL,height,width){}
 
     void move(QPoint np,int ns)
@@ -229,27 +243,10 @@ public:
 private: // N/A - will inherit everything it needs from Square
 };
 
-class Text : public Rectangle
-{
-public:
-    //Rectangle(QPaintDevice* device,int nid=-1,Shape::shape s=Rectangle,QPen npen,QBrush nbrush,QPoint nUL,int nw,int nh):
-    //    Shape(device,nid,s,npen,nbrush),upperLeft(nUL),width(nw),height(nh){}
-    Text(QPaintDevice* device,int nid=-1,QPen npen,QBrush nbrush,QPoint nUL,int nside, const QString & text): //added const QString & text
-        Rectangle(device,nid,Shape::shape::Square,npen,nbrush,nUL,nside,nside)
-    {
-    }
-
-    //
-    void QPainter::drawText(int x, int y, int width, int height, int flags, const QString & text, QRect * boundingRect = 0)
-    {
-
-    }
-};
-
 class Ellipse : public Shape
 {
 public:
-    Ellipse(QPaintDevice* device,int nid=-1,Shape::shape s=Ellipse,QPen npen,QBrush nbrush,QPoint norigin,int nrx,int nry):
+    Ellipse(QPaintDevice* device,int nid=-1,Shape::shape s=shape::Ellipse,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint norigin=QPoint(0,0),int nrx=0,int nry=0):
         Shape(device,nid,s,npen,nbrush),origin(norigin),rx(nrx),ry(nry){}
     //accessors
     int getRx()const
@@ -280,12 +277,14 @@ public:
     }
 
     //methods
-    void draw()
+    void draw(QPaintDevice* device)
     {
-        QPainter pnt = getPainter();
+        QPainter& pnt = getPainter();
+        pnt.begin(device);
         pnt.setPen(this->getPen());
         pnt.setBrush(this->getBrush());
-        pnt.drawEllipse((getOrigin().x(),(getOrigin()).y(),rx,ry);
+        pnt.drawEllipse(getOrigin(),rx,ry);
+        pnt.end();
     }
     void move(QPoint norigin,int nrx,int nry)
     {
@@ -319,9 +318,9 @@ private:
 class Circle : public Ellipse
 {
 public:
-    Circle(QPaintDevice* device,int nid=-1,QPen npen,QBrush nbrush,QPoint norigin,int nr):
+    Circle(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint norigin=QPoint(0,0),int nr=0):
         Ellipse(device,nid,Shape::shape::Circle,npen,nbrush,norigin,nr,nr){}
-    void draw()
+/*  void draw()
     {
         this->Ellipse::draw();
     }
@@ -329,7 +328,7 @@ public:
     {
         this->Ellipse::move(norigin,nr,nr);
     }
-/*  double calcPerimeter() //Circumference
+    double calcPerimeter() //Circumference
     {
 
     }
@@ -340,24 +339,37 @@ public:
 private:
 };
 
-class Text : public Shape
+class Text : public Rectangle
 {
 public:
-
+    //Rectangle(QPaintDevice* device,int nid=-1,Shape::shape s=Rectangle,QPen npen,QBrush nbrush,QPoint nUL,int nw,int nh):
+    //    Shape(device,nid,s,npen,nbrush),upperLeft(nUL),width(nw),height(nh){}
+    Text(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int nside=0, const QString & text=""): //added const QString & text
+        Rectangle(device,nid,Shape::shape::Text,npen,nbrush,nUL,nside,nside),objText(text){}
+    void draw(QPaintDevice* device)
+    {
+        QPainter& pnt = getPainter();
+        pnt.begin(device);
+        pnt.setPen(this->getPen());
+        pnt.setBrush(this->getBrush());
+        pnt.drawText((getUpperLeft()).x(),getUpperLeft().y(),objText);
+        pnt.end();
+    }
 private:
-
+    QString objText;
 };
 
-bool operator >(const Shape &obj2) //overloaded "greater than" operator
+
+/*bool operator >(const Shape::Shape &obj1,const Shape::Shape &obj2) //overloaded "greater than" operator
 //http://en.cppreference.com/w/cpp/language/operator_comparison
 {
-    return id > obj2.id ? true : false;
+    return obj1->getId() > obj2->getId() ? true : false;
 }
 
-bool operator <(const Shape &obj2) //overloaded "less than" operator
+bool operator <(Shape::Shape*& obj1, Shape::Shape*& obj2) //overloaded "less than" operator
 {
-    return id < obj2.id ? true : false;
+    return obj1->getId() < obj2->getId() ? true : false;
 }
-
+*/
 }//end namespace Shape
 #endif // RENDERAREA_H
