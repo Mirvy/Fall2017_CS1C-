@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1324</width>
     <height>600</height>
    </rect>
   </property>
@@ -916,6 +916,9 @@
         </property>
        </widget>
        <widget class="QWidget" name="lineModMenu" native="true">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>9</x>
@@ -1338,7 +1341,6 @@
           <string>UPDATE!</string>
          </property>
         </widget>
-        <zorder>ellipseModMenu</zorder>
         <zorder>lineModMenu_dimensionLabel</zorder>
         <zorder>lineModMenu_penSettingLabel</zorder>
         <zorder>lineModMenu_dimensions_formatLine</zorder>
@@ -1357,16 +1359,7 @@
         <zorder>verticalLayoutWidget</zorder>
         <zorder>verticalLayoutWidget_2</zorder>
         <zorder>lineModMenu_updateButton</zorder>
-       </widget>
-       <widget class="QWidget" name="polylineModMenu" native="true">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>39</y>
-          <width>281</width>
-          <height>451</height>
-         </rect>
-        </property>
+        <zorder>polylineModMenu</zorder>
        </widget>
        <widget class="QWidget" name="polygonModMenu" native="true">
         <property name="geometry">
@@ -1397,7 +1390,6 @@
           <height>451</height>
          </rect>
         </property>
-        <zorder>lineModMenu</zorder>
        </widget>
        <widget class="QWidget" name="textModMenu" native="true">
         <property name="geometry">
@@ -1409,16 +1401,414 @@
          </rect>
         </property>
        </widget>
+       <widget class="QWidget" name="polylineModMenu" native="true">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>281</width>
+          <height>441</height>
+         </rect>
+        </property>
+        <widget class="Line" name="polyLineModMenu_dimensions_formatLine">
+         <property name="geometry">
+          <rect>
+           <x>-20</x>
+           <y>15</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="polyLineModMenu_dimensionLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="polyLineModMenu_updateButton">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>0</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="Line" name="polyLineModMenu_penSettings_formatLineTop">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>160</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="polyLineModMenu_dimensions_startPointX">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>40</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="polyLineModMenu_dimensions_endPointYLabel">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>40</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="polyLineModMenu_dimensions_startPointXLabel">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>40</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="polyLineModMenu_dimensions_startPointY">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>40</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>121</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="polyLineModMenu_dimensions_addPointButton">
+            <property name="text">
+             <string>Add Point</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="polyLineModMenu_dimensions_movePointButton">
+            <property name="text">
+             <string>Move Point</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="polyLineModMenu_dimensions_deletePointButton">
+            <property name="text">
+             <string>Delete Point</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_6">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>200</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QComboBox" name="polyLineModMenu_penSettings_lineColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="polyLineModMenu_penSettings_lineWidthSpinBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polyLineModMenu_penSettings_penStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polyLineModMenu_penSettings_capStyleCombo">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polyLineModMenu_penSettings_joinStyleCombo">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_7">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>200</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="polyLineModMenu_penSettings_lineColorLabel">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polyLineModMenu_penSettings_lineWidthLabel">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polyLineModMenu_penSettings_penStyleLabel">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polyLineModMenu_penSettings_capStyleLabel">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polyLineModMenu_penSettings_joinStyleLabel">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="Line" name="lineModMenu_penSettings_formatLineBot_3">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>180</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="lineModMenu_penSettingLabel_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>170</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QListWidget" name="polyLineModMenu_dimensions_pointList">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>80</y>
+           <width>111</width>
+           <height>81</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
        <zorder>shapeIdModLabel</zorder>
        <zorder>shapeIdModSpinBox</zorder>
        <zorder>shapeTypeModLabel</zorder>
        <zorder>shapeModType</zorder>
        <zorder>ellipseModMenu</zorder>
        <zorder>polygonModMenu</zorder>
-       <zorder>polylineModMenu</zorder>
        <zorder>rectangleModMenu</zorder>
        <zorder>textModMenu</zorder>
        <zorder>lineModMenu</zorder>
+       <zorder>polylineModMenu</zorder>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -2292,7 +2682,6 @@
        <property name="midLineWidth">
         <number>2</number>
        </property>
-       <zorder>tabMenu</zorder>
       </widget>
      </widget>
     </item>
@@ -2303,7 +2692,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1324</width>
      <height>25</height>
     </rect>
    </property>

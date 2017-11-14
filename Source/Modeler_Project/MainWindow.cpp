@@ -60,6 +60,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->rectangleModMenu->hide();
         ui->ellipseModMenu->hide();
         ui->textModMenu->hide();
+        ui->polyLineModMenu_dimensions_pointList->AboveItem
         break;
     case 2:
         ui->shapeModType->setText("Polygon");

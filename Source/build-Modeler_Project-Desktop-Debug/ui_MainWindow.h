@@ -19,6 +19,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -75,11 +76,41 @@ public:
     QComboBox *lineModMenu_penSettings_capStyleCombo;
     QComboBox *lineModMenu_penSettings_joinStyleCombo;
     QPushButton *lineModMenu_updateButton;
-    QWidget *polylineModMenu;
     QWidget *polygonModMenu;
     QWidget *rectangleModMenu;
     QWidget *ellipseModMenu;
     QWidget *textModMenu;
+    QWidget *polylineModMenu;
+    QFrame *polyLineModMenu_dimensions_formatLine;
+    QLabel *polyLineModMenu_dimensionLabel;
+    QPushButton *polyLineModMenu_updateButton;
+    QFrame *polyLineModMenu_penSettings_formatLineTop;
+    QListView *polyLineModMenu_dimensions_pointList;
+    QLineEdit *polyLineModMenu_dimensions_startPointX;
+    QLabel *polyLineModMenu_dimensions_endPointYLabel;
+    QLabel *polyLineModMenu_dimensions_startPointXLabel;
+    QLineEdit *polyLineModMenu_dimensions_startPointY;
+    QWidget *verticalLayoutWidget_5;
+    QVBoxLayout *verticalLayout;
+    QPushButton *polyLineModMenu_dimensions_addPointButton;
+    QPushButton *polyLineModMenu_dimensions_movePointButton;
+    QPushButton *polyLineModMenu_dimensions_deletePointButton;
+    QWidget *verticalLayoutWidget_6;
+    QVBoxLayout *verticalLayout_6;
+    QComboBox *polyLineModMenu_penSettings_lineColorCombo;
+    QSpinBox *polyLineModMenu_penSettings_lineWidthSpinBox;
+    QComboBox *polyLineModMenu_penSettings_penStyleCombo;
+    QComboBox *polyLineModMenu_penSettings_capStyleCombo;
+    QComboBox *polyLineModMenu_penSettings_joinStyleCombo;
+    QWidget *verticalLayoutWidget_7;
+    QVBoxLayout *verticalLayout_7;
+    QLabel *polyLineModMenu_penSettings_lineColorLabel;
+    QLabel *polyLineModMenu_penSettings_lineWidthLabel;
+    QLabel *polyLineModMenu_penSettings_penStyleLabel;
+    QLabel *polyLineModMenu_penSettings_capStyleLabel;
+    QLabel *polyLineModMenu_penSettings_joinStyleLabel;
+    QFrame *lineModMenu_penSettings_formatLineBot_3;
+    QLabel *lineModMenu_penSettingLabel_3;
     QWidget *tab_2;
     canvas *renderCanvas;
     QFrame *frame;
@@ -93,7 +124,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1324, 600);
         MainWindow->setAutoFillBackground(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
@@ -233,6 +264,7 @@ public:
         shapeModType->setGeometry(QRect(216, 10, 81, 21));
         lineModMenu = new QWidget(modTab);
         lineModMenu->setObjectName(QStringLiteral("lineModMenu"));
+        lineModMenu->setEnabled(true);
         lineModMenu->setGeometry(QRect(9, 40, 281, 451));
         lineModMenu_dimensionLabel = new QLabel(lineModMenu);
         lineModMenu_dimensionLabel->setObjectName(QStringLiteral("lineModMenu_dimensionLabel"));
@@ -368,9 +400,6 @@ public:
         verticalLayoutWidget->raise();
         verticalLayoutWidget_2->raise();
         lineModMenu_updateButton->raise();
-        polylineModMenu = new QWidget(modTab);
-        polylineModMenu->setObjectName(QStringLiteral("polylineModMenu"));
-        polylineModMenu->setGeometry(QRect(9, 39, 281, 451));
         polygonModMenu = new QWidget(modTab);
         polygonModMenu->setObjectName(QStringLiteral("polygonModMenu"));
         polygonModMenu->setGeometry(QRect(9, 39, 281, 451));
@@ -380,10 +409,135 @@ public:
         ellipseModMenu = new QWidget(modTab);
         ellipseModMenu->setObjectName(QStringLiteral("ellipseModMenu"));
         ellipseModMenu->setGeometry(QRect(9, 40, 281, 451));
-        lineModMenu->raise();
         textModMenu = new QWidget(modTab);
         textModMenu->setObjectName(QStringLiteral("textModMenu"));
         textModMenu->setGeometry(QRect(9, 39, 281, 451));
+        polylineModMenu = new QWidget(modTab);
+        polylineModMenu->setObjectName(QStringLiteral("polylineModMenu"));
+        polylineModMenu->setEnabled(true);
+        polylineModMenu->setGeometry(QRect(10, 40, 281, 441));
+        polyLineModMenu_dimensions_formatLine = new QFrame(polylineModMenu);
+        polyLineModMenu_dimensions_formatLine->setObjectName(QStringLiteral("polyLineModMenu_dimensions_formatLine"));
+        polyLineModMenu_dimensions_formatLine->setGeometry(QRect(-20, 15, 301, 31));
+        polyLineModMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        polyLineModMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        polyLineModMenu_dimensionLabel = new QLabel(polylineModMenu);
+        polyLineModMenu_dimensionLabel->setObjectName(QStringLiteral("polyLineModMenu_dimensionLabel"));
+        polyLineModMenu_dimensionLabel->setGeometry(QRect(10, 10, 91, 17));
+        polyLineModMenu_updateButton = new QPushButton(polylineModMenu);
+        polyLineModMenu_updateButton->setObjectName(QStringLiteral("polyLineModMenu_updateButton"));
+        polyLineModMenu_updateButton->setGeometry(QRect(150, 0, 99, 27));
+        polyLineModMenu_penSettings_formatLineTop = new QFrame(polylineModMenu);
+        polyLineModMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("polyLineModMenu_penSettings_formatLineTop"));
+        polyLineModMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 160, 301, 20));
+        polyLineModMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        polyLineModMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        polyLineModMenu_dimensions_pointList = new QListView(polylineModMenu);
+        polyLineModMenu_dimensions_pointList->setObjectName(QStringLiteral("polyLineModMenu_dimensions_pointList"));
+        polyLineModMenu_dimensions_pointList->setGeometry(QRect(140, 80, 121, 61));
+        polyLineModMenu_dimensions_startPointX = new QLineEdit(polylineModMenu);
+        polyLineModMenu_dimensions_startPointX->setObjectName(QStringLiteral("polyLineModMenu_dimensions_startPointX"));
+        polyLineModMenu_dimensions_startPointX->setGeometry(QRect(160, 40, 31, 27));
+        polyLineModMenu_dimensions_endPointYLabel = new QLabel(polylineModMenu);
+        polyLineModMenu_dimensions_endPointYLabel->setObjectName(QStringLiteral("polyLineModMenu_dimensions_endPointYLabel"));
+        polyLineModMenu_dimensions_endPointYLabel->setGeometry(QRect(200, 40, 16, 16));
+        polyLineModMenu_dimensions_startPointXLabel = new QLabel(polylineModMenu);
+        polyLineModMenu_dimensions_startPointXLabel->setObjectName(QStringLiteral("polyLineModMenu_dimensions_startPointXLabel"));
+        polyLineModMenu_dimensions_startPointXLabel->setGeometry(QRect(150, 40, 16, 16));
+        polyLineModMenu_dimensions_startPointY = new QLineEdit(polylineModMenu);
+        polyLineModMenu_dimensions_startPointY->setObjectName(QStringLiteral("polyLineModMenu_dimensions_startPointY"));
+        polyLineModMenu_dimensions_startPointY->setGeometry(QRect(210, 40, 31, 27));
+        verticalLayoutWidget_5 = new QWidget(polylineModMenu);
+        verticalLayoutWidget_5->setObjectName(QStringLiteral("verticalLayoutWidget_5"));
+        verticalLayoutWidget_5->setGeometry(QRect(10, 40, 121, 121));
+        verticalLayout = new QVBoxLayout(verticalLayoutWidget_5);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        polyLineModMenu_dimensions_addPointButton = new QPushButton(verticalLayoutWidget_5);
+        polyLineModMenu_dimensions_addPointButton->setObjectName(QStringLiteral("polyLineModMenu_dimensions_addPointButton"));
+
+        verticalLayout->addWidget(polyLineModMenu_dimensions_addPointButton);
+
+        polyLineModMenu_dimensions_movePointButton = new QPushButton(verticalLayoutWidget_5);
+        polyLineModMenu_dimensions_movePointButton->setObjectName(QStringLiteral("polyLineModMenu_dimensions_movePointButton"));
+
+        verticalLayout->addWidget(polyLineModMenu_dimensions_movePointButton);
+
+        polyLineModMenu_dimensions_deletePointButton = new QPushButton(verticalLayoutWidget_5);
+        polyLineModMenu_dimensions_deletePointButton->setObjectName(QStringLiteral("polyLineModMenu_dimensions_deletePointButton"));
+
+        verticalLayout->addWidget(polyLineModMenu_dimensions_deletePointButton);
+
+        verticalLayoutWidget_6 = new QWidget(polylineModMenu);
+        verticalLayoutWidget_6->setObjectName(QStringLiteral("verticalLayoutWidget_6"));
+        verticalLayoutWidget_6->setGeometry(QRect(110, 200, 160, 241));
+        verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget_6);
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        polyLineModMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_6);
+        polyLineModMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("polyLineModMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_6->addWidget(polyLineModMenu_penSettings_lineColorCombo);
+
+        polyLineModMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_6);
+        polyLineModMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("polyLineModMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_6->addWidget(polyLineModMenu_penSettings_lineWidthSpinBox);
+
+        polyLineModMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_6);
+        polyLineModMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("polyLineModMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_6->addWidget(polyLineModMenu_penSettings_penStyleCombo);
+
+        polyLineModMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_6);
+        polyLineModMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("polyLineModMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_6->addWidget(polyLineModMenu_penSettings_capStyleCombo);
+
+        polyLineModMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_6);
+        polyLineModMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("polyLineModMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_6->addWidget(polyLineModMenu_penSettings_joinStyleCombo);
+
+        verticalLayoutWidget_7 = new QWidget(polylineModMenu);
+        verticalLayoutWidget_7->setObjectName(QStringLiteral("verticalLayoutWidget_7"));
+        verticalLayoutWidget_7->setGeometry(QRect(20, 200, 101, 241));
+        verticalLayout_7 = new QVBoxLayout(verticalLayoutWidget_7);
+        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
+        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
+        polyLineModMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_7);
+        polyLineModMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("polyLineModMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_7->addWidget(polyLineModMenu_penSettings_lineColorLabel);
+
+        polyLineModMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_7);
+        polyLineModMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("polyLineModMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_7->addWidget(polyLineModMenu_penSettings_lineWidthLabel);
+
+        polyLineModMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_7);
+        polyLineModMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("polyLineModMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_7->addWidget(polyLineModMenu_penSettings_penStyleLabel);
+
+        polyLineModMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_7);
+        polyLineModMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("polyLineModMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_7->addWidget(polyLineModMenu_penSettings_capStyleLabel);
+
+        polyLineModMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_7);
+        polyLineModMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("polyLineModMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_7->addWidget(polyLineModMenu_penSettings_joinStyleLabel);
+
+        lineModMenu_penSettings_formatLineBot_3 = new QFrame(polylineModMenu);
+        lineModMenu_penSettings_formatLineBot_3->setObjectName(QStringLiteral("lineModMenu_penSettings_formatLineBot_3"));
+        lineModMenu_penSettings_formatLineBot_3->setGeometry(QRect(-10, 180, 301, 20));
+        lineModMenu_penSettings_formatLineBot_3->setFrameShape(QFrame::HLine);
+        lineModMenu_penSettings_formatLineBot_3->setFrameShadow(QFrame::Sunken);
+        lineModMenu_penSettingLabel_3 = new QLabel(polylineModMenu);
+        lineModMenu_penSettingLabel_3->setObjectName(QStringLiteral("lineModMenu_penSettingLabel_3"));
+        lineModMenu_penSettingLabel_3->setGeometry(QRect(10, 170, 101, 17));
         tabMenu->addTab(modTab, QString());
         shapeIdModLabel->raise();
         shapeIdModSpinBox->raise();
@@ -391,10 +545,10 @@ public:
         shapeModType->raise();
         ellipseModMenu->raise();
         polygonModMenu->raise();
-        polylineModMenu->raise();
         rectangleModMenu->raise();
         textModMenu->raise();
         lineModMenu->raise();
+        polylineModMenu->raise();
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
         tabMenu->addTab(tab_2, QString());
@@ -517,14 +671,13 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         frame->setLineWidth(2);
         frame->setMidLineWidth(2);
-        tabMenu->raise();
 
         horizontalLayout->addWidget(renderCanvas, 0, Qt::AlignHCenter|Qt::AlignVCenter);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 1324, 25));
         menubar->setDefaultUp(true);
         menubar->setNativeMenuBar(true);
         menuFile = new QMenu(menubar);
@@ -610,6 +763,59 @@ public:
          << QApplication::translate("MainWindow", "Round Join", 0)
         );
         lineModMenu_updateButton->setText(QApplication::translate("MainWindow", "UPDATE!", 0));
+        polyLineModMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        polyLineModMenu_updateButton->setText(QApplication::translate("MainWindow", "UPDATE!", 0));
+        polyLineModMenu_dimensions_endPointYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        polyLineModMenu_dimensions_startPointXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        polyLineModMenu_dimensions_addPointButton->setText(QApplication::translate("MainWindow", "Add Point", 0));
+        polyLineModMenu_dimensions_movePointButton->setText(QApplication::translate("MainWindow", "Move Point", 0));
+        polyLineModMenu_dimensions_deletePointButton->setText(QApplication::translate("MainWindow", "Delete Point", 0));
+        polyLineModMenu_penSettings_lineColorCombo->clear();
+        polyLineModMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        polyLineModMenu_penSettings_penStyleCombo->clear();
+        polyLineModMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        polyLineModMenu_penSettings_capStyleCombo->clear();
+        polyLineModMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        polyLineModMenu_penSettings_joinStyleCombo->clear();
+        polyLineModMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        polyLineModMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        polyLineModMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        polyLineModMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        polyLineModMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        polyLineModMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        lineModMenu_penSettingLabel_3->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
         tabMenu->setTabText(tabMenu->indexOf(modTab), QApplication::translate("MainWindow", "Modify", 0));
         tabMenu->setTabText(tabMenu->indexOf(tab_2), QApplication::translate("MainWindow", "Add/Remove", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
