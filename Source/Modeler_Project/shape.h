@@ -48,8 +48,13 @@ public:
     {
         return brush;
     }
+
+    virtual QPoint getStart(){}
+    virtual QPoint getEnd(){}
+    virtual vector<QPoint> getPoints(){}
+
     virtual void draw(QPaintDevice* device) = 0;
-    //virtual void move()=0;
+    virtual void move(Shape* source){}
     virtual double calcPerimeter()=0;
     virtual double calcArea()=0;
     virtual ~Shape(){}
@@ -79,11 +84,23 @@ public:
         pnt.drawLine(start,end);
         pnt.end();
     }
-    void move(QPoint nstart,QPoint nend)
+    void move(Shape *source)
     {
-        start = nstart;
-        end = nend;
+        if(this != source)
+        {
+            this->start = source->getStart();
+            this->end = source->getEnd();
+        }
     }
+    QPoint getStart()
+    {
+        return start;
+    }
+    QPoint getEnd()
+    {
+        return end;
+    }
+
     double calcPerimeter(){return 0;}
     double calcArea(){return 0;}
 private:
@@ -104,9 +121,14 @@ public:
          pnt.drawPolyline(p.begin(),p.size());
          pnt.end();
     }
-    void move(vector<QPoint> &source)
+    vector<QPoint> getPoints()
     {
-        p = source;
+        return p;
+    }
+
+    void move(Shape* source)
+    {
+        this->p = source->getPoints();
     }
     double calcPerimeter(){return 0;}
     double calcArea(){return 0;}
@@ -217,8 +239,8 @@ private:
 class Square : public Rectangle
 {
 public:
-    Square(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int height=0, int width=0):
-        Rectangle(device,nid,Shape::shape::Square,npen,nbrush,nUL,height,width){}
+    Square(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int side=0):
+        Rectangle(device,nid,Shape::shape::Square,npen,nbrush,nUL,side,side){}
 
     void move(QPoint np,int ns)
     {
@@ -322,12 +344,12 @@ public:
 /*  void draw()
     {
         this->Ellipse::draw();
-    }
+    }*/
     void move(QPoint norigin,int nr)
     {
         this->Ellipse::move(norigin,nr,nr);
     }
-    double calcPerimeter() //Circumference
+/*  double calcPerimeter() //Circumference
     {
 
     }
@@ -354,6 +376,12 @@ public:
         pnt.drawText((getUpperLeft()).x(),getUpperLeft().y(),objText);
         pnt.end();
     }
+    void move(QPoint nUL, int nw, int nh, QString nString)
+    {
+        this->Rectangle::move(nUL,nw,nh);
+        objText = nString;
+    }
+
 private:
     QString objText;
 };

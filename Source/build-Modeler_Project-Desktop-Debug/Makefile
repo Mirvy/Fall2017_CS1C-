@@ -50,11 +50,23 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../Modeler_Project/main.cpp \
 		../Modeler_Project/shapeParser.cpp \
-		../Modeler_Project/MainWindow.cpp moc_MainWindow.cpp
+		../Modeler_Project/MainWindow.cpp \
+		../Modeler_Project/canvas.cpp \
+		../Modeler_Project/tabinterface.cpp \
+		../Modeler_Project/modtab.cpp moc_MainWindow.cpp \
+		moc_canvas.cpp \
+		moc_tabinterface.cpp \
+		moc_modtab.cpp
 OBJECTS       = main.o \
 		shapeParser.o \
 		MainWindow.o \
-		moc_MainWindow.o
+		canvas.o \
+		tabinterface.o \
+		modtab.o \
+		moc_MainWindow.o \
+		moc_canvas.o \
+		moc_tabinterface.o \
+		moc_modtab.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -115,9 +127,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Modeler_Project/Modeler_Project.pro ../Modeler_Project/shape.h \
 		../Modeler_Project/vector.h \
-		../Modeler_Project/MainWindow.h ../Modeler_Project/main.cpp \
+		../Modeler_Project/MainWindow.h \
+		../Modeler_Project/canvas.h \
+		../Modeler_Project/tabinterface.h \
+		../Modeler_Project/modtab.h ../Modeler_Project/main.cpp \
 		../Modeler_Project/shapeParser.cpp \
-		../Modeler_Project/MainWindow.cpp
+		../Modeler_Project/MainWindow.cpp \
+		../Modeler_Project/canvas.cpp \
+		../Modeler_Project/tabinterface.cpp \
+		../Modeler_Project/modtab.cpp
 QMAKE_TARGET  = Modeler_Project
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Modeler_Project
@@ -287,8 +305,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/MainWindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/MainWindow.h ../Modeler_Project/canvas.h ../Modeler_Project/tabinterface.h ../Modeler_Project/modtab.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp ../Modeler_Project/canvas.cpp ../Modeler_Project/tabinterface.cpp ../Modeler_Project/modtab.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Modeler_Project/MainWindow.ui $(DISTDIR)/
 
 
@@ -312,20 +330,36 @@ check: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_MainWindow.cpp
+compiler_moc_header_make_all: moc_MainWindow.cpp moc_canvas.cpp moc_tabinterface.cpp moc_modtab.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_MainWindow.cpp
-moc_MainWindow.cpp: ../Modeler_Project/shape.h \
-		../Modeler_Project/vector.h \
+	-$(DEL_FILE) moc_MainWindow.cpp moc_canvas.cpp moc_tabinterface.cpp moc_modtab.cpp
+moc_MainWindow.cpp: ../Modeler_Project/vector.h \
+		../Modeler_Project/shape.h \
 		../Modeler_Project/MainWindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/MainWindow.h -o moc_MainWindow.cpp
+
+moc_canvas.cpp: ../Modeler_Project/vector.h \
+		../Modeler_Project/shape.h \
+		../Modeler_Project/canvas.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/canvas.h -o moc_canvas.cpp
+
+moc_tabinterface.cpp: ../Modeler_Project/tabinterface.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/tabinterface.h -o moc_tabinterface.cpp
+
+moc_modtab.cpp: ../Modeler_Project/modtab.h
+	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/mike/cs1c/Project/Fall2017_CS1C-/Source/Modeler_Project -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../Modeler_Project/modtab.h -o moc_modtab.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
 compiler_uic_make_all: ui_MainWindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_MainWindow.h
-ui_MainWindow.h: ../Modeler_Project/MainWindow.ui
+ui_MainWindow.h: ../Modeler_Project/MainWindow.ui \
+		../Modeler_Project/canvas.h \
+		../Modeler_Project/tabinterface.h \
+		../Modeler_Project/modtab.h \
+		../Modeler_Project/vector.h \
+		../Modeler_Project/shape.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/uic ../Modeler_Project/MainWindow.ui -o ui_MainWindow.h
 
 compiler_yacc_decl_make_all:
@@ -339,8 +373,9 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 ####### Compile
 
 main.o: ../Modeler_Project/main.cpp ../Modeler_Project/MainWindow.h \
+		../Modeler_Project/vector.h \
 		../Modeler_Project/shape.h \
-		../Modeler_Project/vector.h
+		../Modeler_Project/canvas.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Modeler_Project/main.cpp
 
 shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
@@ -348,13 +383,36 @@ shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shapeParser.o ../Modeler_Project/shapeParser.cpp
 
 MainWindow.o: ../Modeler_Project/MainWindow.cpp ../Modeler_Project/MainWindow.h \
-		../Modeler_Project/shape.h \
 		../Modeler_Project/vector.h \
-		ui_MainWindow.h
+		../Modeler_Project/shape.h \
+		ui_MainWindow.h \
+		../Modeler_Project/canvas.h \
+		../Modeler_Project/modtab.h \
+		../Modeler_Project/tabinterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../Modeler_Project/MainWindow.cpp
+
+canvas.o: ../Modeler_Project/canvas.cpp ../Modeler_Project/canvas.h \
+		../Modeler_Project/vector.h \
+		../Modeler_Project/shape.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o canvas.o ../Modeler_Project/canvas.cpp
+
+tabinterface.o: ../Modeler_Project/tabinterface.cpp ../Modeler_Project/tabinterface.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tabinterface.o ../Modeler_Project/tabinterface.cpp
+
+modtab.o: ../Modeler_Project/modtab.cpp ../Modeler_Project/modtab.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o modtab.o ../Modeler_Project/modtab.cpp
 
 moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp
+
+moc_canvas.o: moc_canvas.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_canvas.o moc_canvas.cpp
+
+moc_tabinterface.o: moc_tabinterface.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_tabinterface.o moc_tabinterface.cpp
+
+moc_modtab.o: moc_modtab.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_modtab.o moc_modtab.cpp
 
 ####### Install
 

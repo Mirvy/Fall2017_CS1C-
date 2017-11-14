@@ -16,11 +16,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     shapeParser.cpp \
-    MainWindow.cpp
+    MainWindow.cpp \
+    canvas.cpp \
+    tabinterface.cpp \
+    modtab.cpp
 
 HEADERS  += shape.h \
     vector.h \
-    MainWindow.h
+    MainWindow.h \
+    canvas.h \
+    tabinterface.h \
+    modtab.h
 
 DISTFILES +=
 

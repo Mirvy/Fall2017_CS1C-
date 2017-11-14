@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'canvas.h'
+** Meta object code from reading C++ file 'tabinterface.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../Modeler_Project/canvas.h"
+#include "../Modeler_Project/tabinterface.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'canvas.h' doesn't include <QObject>."
+#error "The header file 'tabinterface.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_canvas_t {
+struct qt_meta_stringdata_tabInterface_t {
     QByteArrayData data[1];
-    char stringdata0[7];
+    char stringdata0[13];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_canvas_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_tabInterface_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_canvas_t qt_meta_stringdata_canvas = {
+static const qt_meta_stringdata_tabInterface_t qt_meta_stringdata_tabInterface = {
     {
-QT_MOC_LITERAL(0, 0, 6) // "canvas"
+QT_MOC_LITERAL(0, 0, 12) // "tabInterface"
 
     },
-    "canvas"
+    "tabInterface"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_canvas[] = {
+static const uint qt_meta_data_tabInterface[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_canvas[] = {
        0        // eod
 };
 
-void canvas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void tabInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,28 +60,28 @@ void canvas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     Q_UNUSED(_a);
 }
 
-const QMetaObject canvas::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_canvas.data,
-      qt_meta_data_canvas,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject tabInterface::staticMetaObject = {
+    { &QTabWidget::staticMetaObject, qt_meta_stringdata_tabInterface.data,
+      qt_meta_data_tabInterface,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *canvas::metaObject() const
+const QMetaObject *tabInterface::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *canvas::qt_metacast(const char *_clname)
+void *tabInterface::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_canvas.stringdata0))
-        return static_cast<void*>(const_cast< canvas*>(this));
-    return QWidget::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_tabInterface.stringdata0))
+        return static_cast<void*>(const_cast< tabInterface*>(this));
+    return QTabWidget::qt_metacast(_clname);
 }
 
-int canvas::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int tabInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QTabWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

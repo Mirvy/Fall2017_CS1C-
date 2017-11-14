@@ -1,27 +1,35 @@
-#ifndef MAINDWNDOW_H
+#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include <QWidget>
-#include "shape.h"
+
+#include <QMainWindow>
 #include "vector.h"
-using namespace myStd;
+#include "shape.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QWidget
+class MainWindow : public QMainWindow
 {
-    Q_OBJECT
 
+    Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = 0);
-    void paintEvent(QPaintEvent *);
-    void setShape(myStd::vector<Shape::Shape*> sourceShape);
+    void setShape(myStd::vector<Shape::Shape*>);
+    void paintEvent(QPaintEvent *e);
+    void refreshIds();
     ~MainWindow();
 
+private slots:
+    void on_shapeIdModSpinBox_valueChanged(int arg1);
+
+    void on_lineModMenu_updateButton_clicked();
+
 private:
+
     Ui::MainWindow *ui;
-    myStd::vector<Shape::Shape*> testShape;
+
+
 };
 
-#endif // MainWindow_H
+#endif // MAINWINDOW_H
