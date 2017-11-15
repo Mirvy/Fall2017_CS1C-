@@ -365,8 +365,8 @@ class Text : public Rectangle
 public:
     //Rectangle(QPaintDevice* device,int nid=-1,Shape::shape s=Rectangle,QPen npen,QBrush nbrush,QPoint nUL,int nw,int nh):
     //    Shape(device,nid,s,npen,nbrush),upperLeft(nUL),width(nw),height(nh){}
-    Text(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int nside=0, const QString & text=""): //added const QString & text
-        Rectangle(device,nid,Shape::shape::Text,npen,nbrush,nUL,nside,nside),objText(text){}
+    Text(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int nwidth=0,int nheight=0, QString text=""): //added const QString & text
+        Rectangle(device,nid,Shape::shape::Text,npen,nbrush,nUL,nwidth,nheight),objText(text){}
     void draw(QPaintDevice* device)
     {
         QPainter& pnt = getPainter();

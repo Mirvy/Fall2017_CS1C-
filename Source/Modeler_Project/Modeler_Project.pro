@@ -28,7 +28,8 @@ HEADERS  += shape.h \
     tabinterface.h \
     modtab.h
 
-DISTFILES +=
+DISTFILES += \
+    shapes.txt
 
 FORMS += \
     MainWindow.ui

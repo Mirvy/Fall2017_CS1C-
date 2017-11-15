@@ -19,7 +19,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -85,7 +85,6 @@ public:
     QLabel *polyLineModMenu_dimensionLabel;
     QPushButton *polyLineModMenu_updateButton;
     QFrame *polyLineModMenu_penSettings_formatLineTop;
-    QListView *polyLineModMenu_dimensions_pointList;
     QLineEdit *polyLineModMenu_dimensions_startPointX;
     QLabel *polyLineModMenu_dimensions_endPointYLabel;
     QLabel *polyLineModMenu_dimensions_startPointXLabel;
@@ -111,6 +110,7 @@ public:
     QLabel *polyLineModMenu_penSettings_joinStyleLabel;
     QFrame *lineModMenu_penSettings_formatLineBot_3;
     QLabel *lineModMenu_penSettingLabel_3;
+    QListWidget *polyLineModMenu_dimensions_pointList;
     QWidget *tab_2;
     canvas *renderCanvas;
     QFrame *frame;
@@ -432,9 +432,6 @@ public:
         polyLineModMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 160, 301, 20));
         polyLineModMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
         polyLineModMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
-        polyLineModMenu_dimensions_pointList = new QListView(polylineModMenu);
-        polyLineModMenu_dimensions_pointList->setObjectName(QStringLiteral("polyLineModMenu_dimensions_pointList"));
-        polyLineModMenu_dimensions_pointList->setGeometry(QRect(140, 80, 121, 61));
         polyLineModMenu_dimensions_startPointX = new QLineEdit(polylineModMenu);
         polyLineModMenu_dimensions_startPointX->setObjectName(QStringLiteral("polyLineModMenu_dimensions_startPointX"));
         polyLineModMenu_dimensions_startPointX->setGeometry(QRect(160, 40, 31, 27));
@@ -538,6 +535,9 @@ public:
         lineModMenu_penSettingLabel_3 = new QLabel(polylineModMenu);
         lineModMenu_penSettingLabel_3->setObjectName(QStringLiteral("lineModMenu_penSettingLabel_3"));
         lineModMenu_penSettingLabel_3->setGeometry(QRect(10, 170, 101, 17));
+        polyLineModMenu_dimensions_pointList = new QListWidget(polylineModMenu);
+        polyLineModMenu_dimensions_pointList->setObjectName(QStringLiteral("polyLineModMenu_dimensions_pointList"));
+        polyLineModMenu_dimensions_pointList->setGeometry(QRect(150, 80, 111, 81));
         tabMenu->addTab(modTab, QString());
         shapeIdModLabel->raise();
         shapeIdModSpinBox->raise();

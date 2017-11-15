@@ -3,15 +3,20 @@
 #include <QApplication>
 #include "vector.h"
 #include "shape.h"
+
 using namespace myStd;
 using namespace Shape;
+
+//myStd::vector<Shape::Shape*> shapeParser(QPaintDevice*);
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     vector<Shape::Shape*> shapes;
+
     Shape::Shape *testShape1, *testShape2, *testShape3;
     MainWindow w;
+    //shapes = shapeParser(&w);
     QBrush brush(Qt::yellow,Qt::SolidPattern);
     QPen pen(QBrush(Qt::blue,Qt::SolidPattern),qreal(3),Qt::DashLine,Qt::SquareCap,Qt::BevelJoin);
     vector<QPoint> points1;

@@ -67,7 +67,8 @@ OBJECTS       = main.o \
 		moc_canvas.o \
 		moc_tabinterface.o \
 		moc_modtab.o
-DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
+DIST          = ../Modeler_Project/shapes.txt \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/sanitize.conf \
@@ -385,10 +386,7 @@ shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
 MainWindow.o: ../Modeler_Project/MainWindow.cpp ../Modeler_Project/MainWindow.h \
 		../Modeler_Project/vector.h \
 		../Modeler_Project/shape.h \
-		ui_MainWindow.h \
-		../Modeler_Project/canvas.h \
-		../Modeler_Project/modtab.h \
-		../Modeler_Project/tabinterface.h
+		ui_MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../Modeler_Project/MainWindow.cpp
 
 canvas.o: ../Modeler_Project/canvas.cpp ../Modeler_Project/canvas.h \
