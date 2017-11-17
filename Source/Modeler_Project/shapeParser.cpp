@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <QFile>
 #include <string>
 #include "shape.h"
 #include "vector.h"
@@ -31,14 +32,13 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
     myStd::vector<Shape::Shape*> shapes;  //Create the primary vector to hold the shape object pointers.
     myStd::vector<std::string> tempShape;  // Create a temp string vector to hold each of the object blocks from the input file.
     string temp, sub;
-    string testString = "ShapeId: 1\nShapeType: Line\nShapeDimensions: 20, 90, 100, 20\nPenColor: blue\nPenWidth: 2\nPenStyle: DashDotLine\nPenCapStyle: FlatCap\nPenJoinStyle: MiterJoin";
-    istream test;
-    test >> testString;
+    //string testString = "ShapeId: 1\nShapeType: Line\nShapeDimensions: 20, 90, 100, 20\nPenColor: blue\nPenWidth: 2\nPenStyle: DashDotLine\nPenCapStyle: FlatCap\nPenJoinStyle: MiterJoin";
     //ifstream shapeFile;
-    //shapeFile.open("shapes.txt");
-    while(!test.eof())  //PRIMARY LOOP - Ends once the file reaches its .eof() flag.
+    QFile shapeFile("shapes.txt");
+    shapeFile.open(QIODevice::ReadOnly | QIODevice::Text);
+    while(!shapeFile.atEnd())  //PRIMARY LOOP - Ends once the file reaches its .eof() flag.
     {
-        getline(test,temp);  //temp is filled with the each line from the text file.
+        temp = string(shapeFile.readLine());  //temp is filled with the each line from the text file.
         cerr << temp << endl;
         while(temp != " " || temp != "\n") //Continues till it hits an empty line, relfecting the end of a shapes information.
         {
@@ -51,7 +51,7 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             cerr << temp.length();
             sub = temp.substr(i,temp.size()-1);  //Creates a new substring truncating the title, and keeping the meaningful information.
             tempShape.push_back(sub); //adds the new substring to the temporary string vector.
-            getline(shapeFile,temp);  //grabs the next line and repeats the loop.....
+            temp = string(shapeFile.readLine());  //grabs the next line and repeats the loop.....
         }
         myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
         ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.

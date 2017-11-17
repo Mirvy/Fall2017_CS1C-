@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include "vector.h"
 #include "shape.h"
-
+using namespace myStd;
+using namespace Shape;
 
 namespace Ui {
 class MainWindow;
@@ -25,9 +26,34 @@ private slots:
 
     void on_lineModMenu_updateButton_clicked();
 
+    void on_polyLineModMenu_dimensions_addPointButton_clicked();
+
+    void on_polyLineModMenu_dimensions_movePointButton_clicked();
+
+    void on_polyLineModMenu_dimensions_deletePointButton_clicked();
+
+    void on_polyLineModMenu_updateButton_clicked();
+
+    void on_polygonModMenu_dimensions_addPointButton_clicked();
+
+    void on_polygonModMenu_dimensions_movePointButton_clicked();
+
+    void on_polygonModMenu_dimensions_deletePointButton_clicked();
+
+    void on_polygonModMenu_updateButton_clicked();
+
+    void on_rectangleModMenu_updateButton_clicked();
+
+    void on_squareModMenu_updateButton_clicked();
+
+    void on_ellipseModMenu_updateButton_clicked();
+
+    void on_circleModMenu_updateButton_clicked();
+
 private:
 
     Ui::MainWindow *ui;
+    vector<QPoint> tempShape;
 
 
 };

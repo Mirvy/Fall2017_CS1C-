@@ -1341,65 +1341,6 @@
           <string>UPDATE!</string>
          </property>
         </widget>
-        <zorder>lineModMenu_dimensionLabel</zorder>
-        <zorder>lineModMenu_penSettingLabel</zorder>
-        <zorder>lineModMenu_dimensions_formatLine</zorder>
-        <zorder>lineModMenu_dimensions_startPointLabel</zorder>
-        <zorder>lineModMenu_dimensions_endPointLabel</zorder>
-        <zorder>lineModMenu_dimensions_startPointX</zorder>
-        <zorder>lineModMenu_dimensions_startPointXLabel</zorder>
-        <zorder>lineModMenu_dimensions_endPointYLabel</zorder>
-        <zorder>lineModMenu_dimensions_startPointY</zorder>
-        <zorder>lineModMenu_penSettings_formatLineTop</zorder>
-        <zorder>lineModMenu_penSettings_formatLineBot</zorder>
-        <zorder>lineModMenu_dimensions_endPointYLabel_2</zorder>
-        <zorder>lineModMenu_dimensions_endPointXLabel</zorder>
-        <zorder>lineModMenu_dimensions_endPointY</zorder>
-        <zorder>lineModMenu_dimensions_endPointX</zorder>
-        <zorder>verticalLayoutWidget</zorder>
-        <zorder>verticalLayoutWidget_2</zorder>
-        <zorder>lineModMenu_updateButton</zorder>
-        <zorder>polylineModMenu</zorder>
-       </widget>
-       <widget class="QWidget" name="polygonModMenu" native="true">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>39</y>
-          <width>281</width>
-          <height>451</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QWidget" name="rectangleModMenu" native="true">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>39</y>
-          <width>281</width>
-          <height>451</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QWidget" name="ellipseModMenu" native="true">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>40</y>
-          <width>281</width>
-          <height>451</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QWidget" name="textModMenu" native="true">
-        <property name="geometry">
-         <rect>
-          <x>9</x>
-          <y>39</y>
-          <width>281</width>
-          <height>451</height>
-         </rect>
-        </property>
        </widget>
        <widget class="QWidget" name="polylineModMenu" native="true">
         <property name="enabled">
@@ -1797,27 +1738,3000 @@
            <height>81</height>
           </rect>
          </property>
+         <property name="currentRow">
+          <number>-1</number>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
         </widget>
        </widget>
-       <zorder>shapeIdModLabel</zorder>
-       <zorder>shapeIdModSpinBox</zorder>
-       <zorder>shapeTypeModLabel</zorder>
-       <zorder>shapeModType</zorder>
-       <zorder>ellipseModMenu</zorder>
-       <zorder>polygonModMenu</zorder>
-       <zorder>rectangleModMenu</zorder>
-       <zorder>textModMenu</zorder>
-       <zorder>lineModMenu</zorder>
-       <zorder>polylineModMenu</zorder>
+       <widget class="QWidget" name="polygonModMenu" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>281</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="polygonModMenu_dimensions_endPointYLabel">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="Line" name="polygonModMenu_dimensions_formatLine">
+         <property name="geometry">
+          <rect>
+           <x>-20</x>
+           <y>25</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="polygonModMenu_dimensions_startPointY">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QListWidget" name="polygonModMenu_dimensions_pointList">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>90</y>
+           <width>111</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <property name="currentRow">
+          <number>-1</number>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_8">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>210</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QComboBox" name="polygonModMenu_penSettings_lineColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="polygonModMenu_penSettings_lineWidthSpinBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polygonModMenu_penSettings_penStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polygonModMenu_penSettings_capStyleCombo">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polygonModMenu_penSettings_joinStyleCombo">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polygonModMenu_penSettings_brushColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Gray</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="polygonModMenu_penSettings_brushStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>No Brush</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Horizontal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Vertical</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cross</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Back Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Forward Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Diag. Cross</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="Line" name="polygonModMenu_penSettings_formatLineTop">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>170</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="polygonModMenu_penSettings_formatLineBot">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>190</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="polygonModMenu_penSettingLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>180</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="polygonModMenu_dimensionLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>50</y>
+           <width>121</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QPushButton" name="polygonModMenu_dimensions_addPointButton">
+            <property name="text">
+             <string>Add Point</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="polygonModMenu_dimensions_movePointButton">
+            <property name="text">
+             <string>Move Point</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="polygonModMenu_dimensions_deletePointButton">
+            <property name="text">
+             <string>Delete Point</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_10">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>210</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_lineColorLabel">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_lineWidthLabel">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_penStyleLabel">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_capStyleLabel">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_joinStyleLabel">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_brushColorLabel">
+            <property name="text">
+             <string>Fill Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="polygonModMenu_penSettings_brushStyleLabel">
+            <property name="text">
+             <string>FIll Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLineEdit" name="polygonModMenu_dimensions_startPointX">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="polygonModMenu_updateButton">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>10</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="polygonModMenu_dimensions_startPointXLabel">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="rectangleModMenu" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>281</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QPushButton" name="rectangleModMenu_updateButton">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="Line" name="rectangleModMenu_penSettings_formatLineTop">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>150</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_widthLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>90</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Width   :</string>
+         </property>
+        </widget>
+        <widget class="Line" name="rectangleModMenu_dimensions_formatLine">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>25</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_uuperLeftYLabel">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_width">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>90</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="Line" name="rectangleModMenu_penSettings_formatLineBot">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>174</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_upperLeftLabel">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>50</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Upper Left :</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_upperLeftX">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_upperLeftY">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_penSettingLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>164</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensionLabel">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_upperLefttXLabel">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_height">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>130</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_11">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>190</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_lineColorLabel">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_lineWidthLabel">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_penStyleLabel">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_capStyleLabel">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_joinStyleLabel">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_brushColorLabel">
+            <property name="text">
+             <string>Fill Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_brushStyleLabel">
+            <property name="text">
+             <string>FIll Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_12">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>190</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_lineColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="rectangleModMenu_penSettings_lineWidthSpinBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_penStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_capStyleCombo">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_joinStyleCombo">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_brushColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Gray</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_brushStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>No Brush</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Horizontal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Vertical</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cross</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Back Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Forward Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Diag. Cross</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_heighttLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>130</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Height  :</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="squareModMenu" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>281</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QPushButton" name="squareModMenu_updateButton">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="Line" name="squareModMenu_penSettings_formatLineTop">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>120</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="squareModMenu_dimensions_widthLabel">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>90</y>
+           <width>101</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Side Length :</string>
+         </property>
+        </widget>
+        <widget class="Line" name="squareModMenu_dimensions_formatLine">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>25</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="squareModMenu_dimensions_uuperLeftYLabel">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="squareModMenu_dimensions_sideLength">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>90</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="Line" name="squareModMenu_penSettings_formatLineBot">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>144</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QLabel" name="squareModMenu_dimensions_upperLeftLabel">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>50</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Upper Left :</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="squareModMenu_dimensions_upperLeftX">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="squareModMenu_dimensions_upperLeftY">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="squareModMenu_penSettingLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>134</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="squareModMenu_dimensionLabel">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="squareModMenu_dimensions_upperLefttXLabel">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_13">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>160</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_16">
+          <item>
+           <widget class="QLabel" name="squareModMenu_penSettings_lineColorLabel">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="squareModMenu_penSettings_lineWidthLabel">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="squareModMenu_penSettings_penStyleLabel">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="squareModMenu_penSettings_capStyleLabel">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="squaresquareModMenu_penSettings_joinStyleLabel">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="squareModMenu_penSettings_brushColorLabel">
+            <property name="text">
+             <string>Fill Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="squareModMenu_penSettings_brushStyleLabel">
+            <property name="text">
+             <string>FIll Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_14">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>160</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_17">
+          <item>
+           <widget class="QComboBox" name="squareModMenu_penSettings_lineColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="squareModMenu_penSettings_lineWidthSpinBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="squareModMenu_penSettings_penStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="squareModMenu_penSettings_capStyleCombo">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="squareModMenu_penSettings_joinStyleCombo">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="squareModMenu_penSettings_brushColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Gray</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="squareModMenu_penSettings_brushStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>No Brush</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Horizontal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Vertical</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cross</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Back Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Forward Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Diag. Cross</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="ellipseModMenu" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>281</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="ellipseModMenu_dimensions_heighttLabel">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>130</y>
+           <width>91</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>RY Size    :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ellipseModMenu_dimensions_upperLefttXLabel">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ellipseModMenu_dimensions_widthLabel">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>90</y>
+           <width>111</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>RX Size    :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ellipseModMenu_penSettingLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>164</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="ellipseModMenu_dimensions_RY">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>130</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ellipseModMenu_dimensions_uuperLeftYLabel">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="ellipseModMenu_dimensions_RX">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>90</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="ellipseModMenu_dimensionLabel">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="Line" name="ellipseModMenu_penSettings_formatLineBot">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>174</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="ellipseModMenu_penSettings_formatLineTop">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>150</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="ellipseModMenu_dimensions_formatLine">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>25</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_15">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>190</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_20">
+          <item>
+           <widget class="QComboBox" name="ellipseModMenu_penSettings_lineColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="ellipseModMenu_penSettings_lineWidthSpinBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ellipseModMenu_penSettings_penStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ellipseModMenu_penSettings_capStyleCombo">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ellipseModMenu_penSettings_joinStyleCombo">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ellipseModMenu_penSettings_brushColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Gray</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="ellipseModMenu_penSettings_brushStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>No Brush</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Horizontal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Vertical</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cross</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Back Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Forward Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Diag. Cross</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="ellipseModMenu_dimensions_originLabel">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>50</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>       Origin :</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ellipseModMenu_updateButton">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="ellipseModMenu_dimensions_originY">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="ellipseModMenu_dimensions_originX">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_16">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>190</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_21">
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_lineColorLabel">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_lineWidthLabel">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_penStyleLabel">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_capStyleLabel">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_joinStyleLabel">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_brushColorLabel">
+            <property name="text">
+             <string>Fill Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ellipseModMenu_penSettings_brushStyleLabel">
+            <property name="text">
+             <string>FIll Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="circleModMenu" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>281</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="cicleModMenu_dimensions_originXLabel">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="circleModMenu_dimensions_radiusLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>90</y>
+           <width>101</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Radius  :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="circleModMenu_penSettingLabel">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>140</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="circleModMenu_dimensions_originYLabel">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>50</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="circleModMenu_dimensions_Radius">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>90</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="circleModMenu_dimensionLabel">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="Line" name="circleModMenu_penSettings_formatLineBot">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>150</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="circleModMenu_penSettings_formatLineTop">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>126</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="circleModMenu_dimensions_formatLine">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>25</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_17">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>166</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_22">
+          <item>
+           <widget class="QComboBox" name="circleModMenu_penSettings_lineColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="circleModMenu_penSettings_lineWidthSpinBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="circleModMenu_penSettings_penStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="circleModMenu_penSettings_capStyleCombo">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="circleModMenu_penSettings_joinStyleCombo">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="circleModMenu_penSettings_brushColorCombo">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Gray</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="circleModMenu_penSettings_brushStyleCombo">
+            <item>
+             <property name="text">
+              <string>Solid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>No Brush</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Horizontal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Vertical</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cross</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Back Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Forward Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Diag. Cross</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="circleModMenu_dimensions_upperLeftLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>50</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Origin  :</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="circleModMenu_updateButton">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="circleModMenu_dimensions_originY">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="circleModMenu_dimensions_originX">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>50</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_18">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>166</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_23">
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_lineColorLabel">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_lineWidthLabel">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_penStyleLabel">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_capStyleLabel">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_joinStyleLabel">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_brushColorLabel">
+            <property name="text">
+             <string>Fill Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="circleModMenu_penSettings_brushStyleLabel">
+            <property name="text">
+             <string>FIll Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
         <string>Add/Remove</string>
        </attribute>
       </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Shape Tables</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>301</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>Report by ID</string>
+         </attribute>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>291</width>
+            <height>471</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>by Perimeter</string>
+         </attribute>
+         <widget class="QTableWidget" name="tableWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>291</width>
+            <height>471</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_5">
+         <attribute name="title">
+          <string>by Area</string>
+         </attribute>
+         <widget class="QTableWidget" name="tableWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>291</width>
+            <height>471</height>
+           </rect>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
      </widget>
     </item>
-    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+    <item>
      <widget class="canvas" name="renderCanvas" native="true">
       <property name="minimumSize">
        <size>
@@ -2682,6 +5596,599 @@
        <property name="midLineWidth">
         <number>2</number>
        </property>
+       <widget class="QWidget" name="textModMenu" native="true">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>281</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_heighttLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>135</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Height  :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_upperLefttXLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>55</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_widthLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>95</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Width   :</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_penSettingLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>169</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Pen Settings:</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_height_2">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>135</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_uuperLeftYLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>55</y>
+           <width>16</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_width_2">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>95</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensionLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>25</y>
+           <width>91</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Dimensions:</string>
+         </property>
+        </widget>
+        <widget class="Line" name="rectangleModMenu_penSettings_formatLineBot_2">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>179</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="rectangleModMenu_penSettings_formatLineTop_2">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>155</y>
+           <width>301</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="rectangleModMenu_dimensions_formatLine_2">
+         <property name="geometry">
+          <rect>
+           <x>-10</x>
+           <y>30</y>
+           <width>301</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_19">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>195</y>
+           <width>160</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_24">
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_lineColorCombo_2">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Grey</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Grey</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="rectangleModMenu_penSettings_lineWidthSpinBox_2"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_penStyleCombo_2">
+            <item>
+             <property name="text">
+              <string>Solid Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot Line</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dash-Dot-Dot Line</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_capStyleCombo_2">
+            <item>
+             <property name="text">
+              <string>Square Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Flat Cap</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Cap</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_joinStyleCombo_2">
+            <item>
+             <property name="text">
+              <string>Bevel Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Miter Join</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Round Join</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_brushColorCombo_2">
+            <item>
+             <property name="text">
+              <string>White</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Black</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Cyan</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Red</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Magenta</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dark Gray</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Light Gray</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="rectangleModMenu_penSettings_brushStyleCombo_2">
+            <item>
+             <property name="text">
+              <string>Solid</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>No Brush</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 6</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Dense 7</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Horizontal</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Vertical</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Cross</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Back Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Forward Diag.</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Diag. Cross</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="rectangleModMenu_dimensions_upperLeftLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>30</x>
+           <y>55</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Upper Left :</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="rectangleModMenu_updateButton_2">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>15</y>
+           <width>99</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>UPDATE!</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_upperLeftY_2">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>55</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="rectangleModMenu_dimensions_upperLeftX_2">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>55</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_20">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>195</y>
+           <width>101</width>
+           <height>241</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_25">
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_lineColorLabel_2">
+            <property name="text">
+             <string> Line Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_lineWidthLabel_2">
+            <property name="text">
+             <string> Line Width :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_penStyleLabel_2">
+            <property name="text">
+             <string>Pen Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_capStyleLabel_2">
+            <property name="text">
+             <string> Cap Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_joinStyleLabel_2">
+            <property name="text">
+             <string>Join Style :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_brushColorLabel_2">
+            <property name="text">
+             <string>Fill Color :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="rectangleModMenu_penSettings_brushStyleLabel_2">
+            <property name="text">
+             <string>FIll Style :</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -2706,22 +6213,46 @@
     <property name="title">
      <string>File</string>
     </property>
+    <addaction name="actionSave_and_Exit"/>
    </widget>
    <widget class="QMenu" name="menuAdmin">
     <property name="title">
      <string>Admin</string>
     </property>
+    <addaction name="actionAdmin_Login"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="actionGet_Help"/>
+    <addaction name="actionProvide_Feedback"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuAdmin"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionGet_Help">
+   <property name="text">
+    <string>Get Help!</string>
+   </property>
+  </action>
+  <action name="actionProvide_Feedback">
+   <property name="text">
+    <string>Provide Feedback</string>
+   </property>
+  </action>
+  <action name="actionAdmin_Login">
+   <property name="text">
+    <string>Admin Login</string>
+   </property>
+  </action>
+  <action name="actionSave_and_Exit">
+   <property name="text">
+    <string>Save and Exit</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

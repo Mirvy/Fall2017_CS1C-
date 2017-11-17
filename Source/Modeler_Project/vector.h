@@ -135,14 +135,10 @@ public:
    }
 
    iterator erase(iterator p)	// remove element pointed to by p
-   //Changed to void return type; previously was attempting to deallocate
-   //the last index of the vector "delete (end()-1)=0", and was changed
-   //to *(end()-1) = 0, to reiniitalise the element to 0;
    {
      if (p == end()) return p;
      for (iterator pos=p+1; pos!=end(); ++pos)
      *(pos-1) = *pos;	// copy element one position to the left
-     *(end()-1) = 0;
      --size_v;
      return p;
    }

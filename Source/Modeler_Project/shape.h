@@ -3,6 +3,7 @@
 #include <QWidget>
 #include "QPen"
 #include "QBrush"
+#include "QFont"
 #include <qpainter.h>
 #include "vector.h"
 #include <math.h>
@@ -51,7 +52,16 @@ public:
 
     virtual QPoint getStart(){}
     virtual QPoint getEnd(){}
-    virtual vector<QPoint> getPoints(){}
+    virtual vector<QPoint> &getPoints(){}
+    virtual QPoint getUpperLeft(){}
+    virtual int getWidth(){}
+    virtual int getHeight(){}
+    virtual QPoint getOrigin(){}
+    virtual int getRx(){}
+    virtual int getRy(){}
+    virtual QString getText(){}
+    virtual void setFont(){}
+    virtual void setText(){}
 
     virtual void draw(QPaintDevice* device) = 0;
     virtual void move(Shape* source){}
@@ -121,7 +131,7 @@ public:
          pnt.drawPolyline(p.begin(),p.size());
          pnt.end();
     }
-    vector<QPoint> getPoints()
+    vector<QPoint> &getPoints()
     {
         return p;
     }
@@ -151,9 +161,15 @@ public:
         pnt.drawPolygon(p.begin(),p.size());
         pnt.end();
     }
-    void move(vector<QPoint> &source)
+
+    vector<QPoint> &getPoints()
     {
-        p = source;
+        return p;
+    }
+
+    void move(Shape* source)
+    {
+        this->p = source->getPoints();
     }
     double calcPerimeter()
     {
@@ -193,11 +209,11 @@ public:
         pnt.drawRect((getUpperLeft()).x(),(getUpperLeft()).y(),getWidth(),getHeight());
         pnt.end();
     }
-    void move(QPoint nUL,int nw,int nh)
+    void move(Shape* source)
     {
-        setUpperLeft(nUL);
-        setWidth(nw);
-        setHeight(nh);
+        this->setUpperLeft(source->getUpperLeft());
+        this->setWidth(source->getWidth());
+        this->setHeight(source->getHeight());
     }
     double calcPerimeter()
     {
@@ -219,15 +235,15 @@ public:
     {
         height = nh;
     }
-    QPoint getUpperLeft()const
+    QPoint getUpperLeft()
     {
         return upperLeft;
     }
-    int getWidth()const
+    int getWidth()
     {
         return width;
     }
-    int getHeight()const
+    int getHeight()
     {
         return height;
     }
@@ -242,9 +258,9 @@ public:
     Square(QPaintDevice* device,int nid=-1,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint nUL=QPoint(0,0),int side=0):
         Rectangle(device,nid,Shape::shape::Square,npen,nbrush,nUL,side,side){}
 
-    void move(QPoint np,int ns)
+    void move(Shape* source)
     {
-        this->Rectangle::move(np,ns,ns);
+        this->Rectangle::move(source);
     }
 /*
     void draw()
@@ -270,15 +286,15 @@ public:
     Ellipse(QPaintDevice* device,int nid=-1,Shape::shape s=shape::Ellipse,QPen npen=Qt::NoPen,QBrush nbrush=Qt::NoBrush,QPoint norigin=QPoint(0,0),int nrx=0,int nry=0):
         Shape(device,nid,s,npen,nbrush),origin(norigin),rx(nrx),ry(nry){}
     //accessors
-    int getRx()const
+    int getRx()
     {
         return rx;
     }
-    int getRy()const
+    int getRy()
     {
         return ry;
     }
-    QPoint getOrigin()const
+    QPoint getOrigin()
     {
         return origin;
     }
@@ -307,11 +323,11 @@ public:
         pnt.drawEllipse(getOrigin(),rx,ry);
         pnt.end();
     }
-    void move(QPoint norigin,int nrx,int nry)
+    void move(Shape* source)
     {
-        setOrigin(norigin);
-        setRx(nrx);
-        setRy(nry);
+        setOrigin(source->getOrigin());
+        setRx(source->getRx());
+        setRy(source->getRy());
     }
     double calcPerimeter()
     {
@@ -345,9 +361,9 @@ public:
     {
         this->Ellipse::draw();
     }*/
-    void move(QPoint norigin,int nr)
+    void move(Shape* source)
     {
-        this->Ellipse::move(norigin,nr,nr);
+        this->Ellipse::move(source);
     }
 /*  double calcPerimeter() //Circumference
     {
@@ -376,10 +392,25 @@ public:
         pnt.drawText((getUpperLeft()).x(),getUpperLeft().y(),objText);
         pnt.end();
     }
-    void move(QPoint nUL, int nw, int nh, QString nString)
+    void move(Shape* source)
     {
-        this->Rectangle::move(nUL,nw,nh);
-        objText = nString;
+        this->Rectangle::move(source);
+    }
+
+    QString getText()
+    {
+        return objText;
+    }
+
+    void setFont(QFont source)
+    {
+        QPainter &pnt = this->getPainter();
+        pnt.setFont(source);
+    }
+
+    void setText(QString source)
+    {
+        objText = source;
     }
 
 private:
