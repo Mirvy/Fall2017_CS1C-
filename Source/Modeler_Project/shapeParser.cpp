@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <QFile>
 #include <string>
 #include "shape.h"
 #include "vector.h"
@@ -23,67 +22,99 @@ Qt::PenStyle    getPenStyle(const string &);
 Qt::PenCapStyle getPenCapStyle(const string &);
 Qt::PenJoinStyle getPenJoinStyle(const string &);
 
-const int SHAPE_ID = 0;
-const int SHAPE_TYPE = 1;
-const int SHAPE_DIMS = 2;
+/*
+    ShapeId: 1
+    ShapeType: Line
+    ShapeDimensions: 20, 90, 100, 20
+    PenColor: blue
+    PenWidth: 2
+    PenStyle: DashDotLine
+    PenCapStyle: FlatCap
+    PenJoinStyle: MiterJoin
+
+    BrushColor: white
+    BrushStyle: NoBrush
+
+    TextFontStyle: FlatCap
+    TextFontWeight: Normal
+*/
+
+const int SHAPE_ID       = 0;
+const int SHAPE_TYPE     = 1;
+const int SHAPE_DIMS     = 2;
+const int PEN_COLOR      = 3;
+const int PEN_WIDTH      = 4;
+const int PEN_STYLE      = 5;
+const int PEN_CAP_STYLE  = 6;
+const int PEN_JOIN_STYLE = 7;
+
+const int BRUSH_COLOR    = 8;
+const int BRUSH_STYLE    = 9;
+
+const int FONT_STYLE     = 8;
+const int FONT_WEIGHT    = 9;
 
 myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
 {
     myStd::vector<Shape::Shape*> shapes;  //Create the primary vector to hold the shape object pointers.
     myStd::vector<std::string> tempShape;  // Create a temp string vector to hold each of the object blocks from the input file.
+
     string temp, sub;
-    //string testString = "ShapeId: 1\nShapeType: Line\nShapeDimensions: 20, 90, 100, 20\nPenColor: blue\nPenWidth: 2\nPenStyle: DashDotLine\nPenCapStyle: FlatCap\nPenJoinStyle: MiterJoin";
-    //ifstream shapeFile;
-    QFile shapeFile("shapes.txt");
-    shapeFile.open(QIODevice::ReadOnly | QIODevice::Text);
-    while(!shapeFile.atEnd())  //PRIMARY LOOP - Ends once the file reaches its .eof() flag.
+    ifstream shapeFile;
+    shapeFile.open("shapes.txt");
+
+    while(!shapeFile.eof())  //PRIMARY LOOP - Ends once the file reaches its .eof() flag.
     {
-        temp = string(shapeFile.readLine());  //temp is filled with the each line from the text file.
-        cerr << temp << endl;
-        while(temp != " " || temp != "\n") //Continues till it hits an empty line, relfecting the end of a shapes information.
+        //add another while that would iterate through all data points until empty line, than call the right shape, pass the vector into it, create the object, pass the object into the vector of objects, and empty the 1st string vector and go until eof()
+
+        getline(shapeFile,temp);  //temp is filled with the each line from the text file.
+        if(temp.length() != 0)
         {
-            unsigned int i = 0;
-            while(temp[i] != ' ' && i < temp.length())  //Parses through the string until it hits white space; end of title for each entry.
+            int i = 0;
+
+            while(temp[i] != '\n' && i < temp.size()) //Continues till it hits an empty line, relfecting the end of a shapes information.
             {
+                if(temp[i] == ':')
+                {
+                    size_t pos = temp.find(" ");      // position of in str
+                    sub = temp.substr (pos); //grabs the rest of the line
+                    tempShape.push_back(sub); //adds it to vector tempShape
+                }
                 ++i;
             }
-            cerr << i;
-            cerr << temp.length();
-            sub = temp.substr(i,temp.size()-1);  //Creates a new substring truncating the title, and keeping the meaningful information.
-            tempShape.push_back(sub); //adds the new substring to the temporary string vector.
-            temp = string(shapeFile.readLine());  //grabs the next line and repeats the loop.....
         }
+
         myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
         ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.
-        if(*(ptemp+1) == "Line") //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
+        if(*(ptemp+1) == " Line") //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
         {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
             shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
         }
-        else if(*(ptemp+1) == "Polyline")
+        else if(*(ptemp+1) == " Polyline") //has to have a space in front of the type like this: " type"
         {
             shapes.push_back(polyLineParse(tempShape,device));
         }
-        else if(*(ptemp+1) == "Polygon")
+        else if(*(ptemp+1) == " Polygon")
         {
             shapes.push_back(polygonParse(tempShape,device));
         }
-        else if(*(ptemp+1) == "Rectangle")
+        else if(*(ptemp+1) == " Rectangle")
         {
             shapes.push_back(rectangleParse(tempShape,device));
         }
-        else if(*(ptemp+1) == "Square")
+        else if(*(ptemp+1) == " Square")
         {
             shapes.push_back(squareParse(tempShape,device));
         }
-        else if(*(ptemp+1) == "Ellipse")
+        else if(*(ptemp+1) == " Ellipse")
         {
             shapes.push_back(ellipseParse(tempShape,device));
         }
-        else if(*(ptemp+1) == "Circle")
+        else if(*(ptemp+1) == " Circle")
         {
             shapes.push_back(circleParse(tempShape,device));
         }
-        else if(*(ptemp+1) == "Text")
+        else if(*(ptemp+1) == " Text")
         {
             shapes.push_back(textParse(tempShape,device));
         }
@@ -92,7 +123,9 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             cout << "\n\n**ERROR---\"PARSER\"---ERROR**\n\n";
         }
     }
-    //shapeFile.close();
+    //add emptying the vector
+    //tempShape.clear();
+    shapeFile.close();
 return shapes;
 }
 
@@ -115,6 +148,7 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
 
     int tempId = stoi(source[SHAPE_ID].substr(0,source[SHAPE_ID].length())); //Creates a temp int to hold the shape id#.
     string tempString = source[SHAPE_DIMS];                             //Uses stoi() function to convert its contents
+
     int i = 0, x=0, y=0;                                       //   into an integer.
     while(tempString[i] != ',')  //Parses through the third string (Shape Dimensions: 20, 90, 100, 20) to build the x coordinate of the starting point.
     {
@@ -147,8 +181,8 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
     y = stoi(tempString.substr(0,i));
 
     QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     Line* nline = new Line(device,tempId,npen,Qt::NoBrush,start,end);  //Instantiates the new line object.
 
@@ -202,8 +236,8 @@ Shape::Shape* polyLineParse(const myStd::vector<string> &source,QPaintDevice* de
     }
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
     //Line*    nline = new Line    (device,tempId,npen,Qt::NoBrush,start,end);    //Instantiates the new line object.
@@ -266,8 +300,8 @@ Shape::Shape* polygonParse(const myStd::vector<string> &source,QPaintDevice* dev
     }
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
 
     //    Shape(device,nid,Shape::shape::Polygon,npen,nbrush){p = source;}
@@ -336,8 +370,8 @@ Shape::Shape* rectangleParse(const myStd::vector<string> &source,QPaintDevice* d
     nh = stoi(tempString.substr(0,i));
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     Shape::Shape::shape s = Shape::Shape::shape::Rectangle;
     //Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
@@ -399,8 +433,8 @@ Shape::Shape* squareParse(const myStd::vector<string> &source,QPaintDevice* devi
     tempString = tempString.substr(i+1,tempString.length());
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Shape::Shape::shape s = Shape::Shape::shape::Square;
     Square* nSquare = new Square(device,tempId, npen, Qt::NoBrush, nUL, side);  //Instantiates the new line object.
@@ -463,8 +497,8 @@ Shape::Shape* ellipseParse(const myStd::vector<string> &source,QPaintDevice* dev
     nry = stoi(tempString.substr(0,i));
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     Shape::Shape::shape s = Shape::Shape::shape::Ellipse;
     //Line    (QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen,        QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
@@ -530,8 +564,8 @@ Shape::Shape* circleParse(const myStd::vector<string> &source,QPaintDevice* devi
     nr = stoi(tempString.substr(0,i));
     tempString = tempString.substr(i+1,tempString.length());
 
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Shape::Shape::shape s = Shape::Shape::shape::Circle; //may not need this for circle constructor - YD
 
@@ -597,8 +631,8 @@ Shape::Shape* textParse(const myStd::vector<string> &source,QPaintDevice* device
     nh = stoi(tempString.substr(0,i));
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[4].substr(0,source[4].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[5]),getPenCapStyle(source[6]),getPenJoinStyle(source[7])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Shape::Shape::shape s = Shape::Shape::shape::Text;
     //Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
