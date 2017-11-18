@@ -50,6 +50,10 @@ private slots:
 
     void on_circleModMenu_updateButton_clicked();
 
+    void on_textModMenu_updateButton_clicked();
+
+    void on_lineModMenu_deleteButton_clicked();
+
 private:
 
     Ui::MainWindow *ui;

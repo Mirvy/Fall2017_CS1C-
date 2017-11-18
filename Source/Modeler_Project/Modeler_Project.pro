@@ -29,7 +29,7 @@ HEADERS  += shape.h \
     modtab.h
 
 DISTFILES += \
-    shapes.txt
+    ../build-Modeler_Project-Desktop-Debug/shapes.txt
 
 FORMS += \
     MainWindow.ui

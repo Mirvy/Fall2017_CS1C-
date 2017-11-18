@@ -60,8 +60,8 @@ public:
     virtual int getRx(){}
     virtual int getRy(){}
     virtual QString getText(){}
-    virtual void setFont(){}
-    virtual void setText(){}
+    virtual void setFont(QFont){}
+    virtual void setText(QString){}
 
     virtual void draw(QPaintDevice* device) = 0;
     virtual void move(Shape* source){}
@@ -404,7 +404,7 @@ public:
 
     void setFont(QFont source)
     {
-        QPainter &pnt = this->getPainter();
+        QPainter &pnt = getPainter();
         pnt.setFont(source);
     }
 

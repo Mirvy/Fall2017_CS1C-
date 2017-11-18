@@ -13,6 +13,7 @@ public:
     void setShape(myStd::vector<Shape::Shape*> source);
     int getShapeCount();
     Shape::Shape* getShape(int);
+    myStd::vector<Shape::Shape*>& getShapes();
     void paintEvent(QPaintEvent *e);
 private:
 

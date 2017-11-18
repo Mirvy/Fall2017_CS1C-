@@ -2,6 +2,7 @@
 #include "ui_MainWindow.h"
 #include <QColor>
 #include <QString>
+#include <QFont>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -966,4 +967,98 @@ void MainWindow::on_circleModMenu_updateButton_clicked()
     }
 
     ui->renderCanvas->update();
+}
+
+void MainWindow::on_textModMenu_updateButton_clicked()
+{
+    const QString SANS_SERIF = "SansSerif";
+    const QString HELVETICA = "Helvetica";
+    const QString SERIF = "Serif";
+    const QString TIMES = "Times";
+    const QString TYPEWRITER = "TypeWriter";
+    const QString COURIER = "Courier";
+    const QString OLD_ENGLISH = "OldEnglish";
+    const QString DECORATIVE = "Decorative";
+    const QString MONOSPACE = "Monospace";
+    const QString FANTASY = "Fantasy";
+    const QString CURSIVE = "Cursive";
+    const QString SYSTEM = "System";
+
+    Shape::Shape* tempText;
+    QPoint tempUpperLeft;
+    QFont tempFont;
+    QPen *tempPen;
+    QBrush *tempPenBrush;
+    QString tempString;
+
+    tempFont.setPointSize(ui->textModMenu_textSettings_textPointSizeBox->value());
+    switch(ui->textModMenu_textSettings_textColorCombo->currentIndex())
+    {
+    case 0:tempPenBrush = new QBrush(Qt::GlobalColor::white);break;
+    case 1:tempPenBrush = new QBrush(Qt::GlobalColor::black);break;
+    case 2:tempPenBrush = new QBrush(Qt::GlobalColor::cyan);break;
+    case 3:tempPenBrush = new QBrush(Qt::GlobalColor::darkCyan);break;
+    case 4:tempPenBrush = new QBrush(Qt::GlobalColor::red);break;
+    case 5:tempPenBrush = new QBrush(Qt::GlobalColor::darkRed);break;
+    case 6:tempPenBrush = new QBrush(Qt::GlobalColor::magenta);break;
+    case 7:tempPenBrush = new QBrush(Qt::GlobalColor::darkMagenta);break;
+    case 8:tempPenBrush = new QBrush(Qt::GlobalColor::green);break;
+    case 9:tempPenBrush = new QBrush(Qt::GlobalColor::darkGreen);break;
+    case 10:tempPenBrush = new QBrush(Qt::GlobalColor::yellow);break;
+    case 11:tempPenBrush = new QBrush(Qt::GlobalColor::darkYellow);break;
+    case 12:tempPenBrush = new QBrush(Qt::GlobalColor::blue);break;
+    case 13:tempPenBrush = new QBrush(Qt::GlobalColor::darkBlue);break;
+    case 14:tempPenBrush = new QBrush(Qt::GlobalColor::gray);break;
+    case 15:tempPenBrush = new QBrush(Qt::GlobalColor::darkGray);break;
+    case 16:tempPenBrush = new QBrush(Qt::GlobalColor::lightGray);break;
+    }
+    switch(ui->textModMenu_textSettings_fontCombo->currentIndex())
+    {
+    case 0:tempFont.setFamily(SANS_SERIF);break;
+    case 1:tempFont.setFamily(HELVETICA);break;
+    case 2:tempFont.setFamily(SERIF);break;
+    case 3:tempFont.setFamily(TIMES);break;
+    case 4:tempFont.setFamily(TYPEWRITER);break;
+    case 5:tempFont.setFamily(COURIER);break;
+    case 6:tempFont.setFamily(OLD_ENGLISH);break;
+    case 7:tempFont.setFamily(DECORATIVE);break;
+    case 8:tempFont.setFamily(MONOSPACE);break;
+    case 9:tempFont.setFamily(FANTASY);break;
+    case 10:tempFont.setFamily(CURSIVE);break;
+    case 11:tempFont.setFamily(SYSTEM);break;
+    }
+    switch(ui->textModMenu_textSettings_fontStyleCombo->currentIndex())
+    {
+    case 0:tempFont.setStyle(QFont::StyleNormal);break;
+    case 1:tempFont.setStyle(QFont::StyleItalic);break;
+    case 2:tempFont.setStyle(QFont::StyleOblique);break;
+    }
+    switch(ui->textModMenu_textSettings_fontWeightCombo->currentIndex())
+    {
+    case 0:tempFont.setWeight(QFont::Light);break;
+    case 1:tempFont.setWeight(QFont::Normal);break;
+    case 2:tempFont.setWeight(QFont::DemiBold);break;
+    case 3:tempFont.setWeight(QFont::Bold);break;
+    case 4:tempFont.setWeight(QFont::Black);break;
+    }
+    tempPen = new QPen(*tempPenBrush,0,Qt::SolidLine,Qt::SquareCap,Qt::MiterJoin);
+    ui->renderCanvas->getShape(ui->shapeIdModSpinBox->value())->setPen(*tempPen);
+    bool ok = false;
+    tempUpperLeft = QPoint(ui->textModMenu_dimensions_upperLeftX->text().toInt(&ok,10),ui->textModMenu_dimensions_upperLeftY->text().toInt(&ok,10));
+    tempString = ui->textModMenu_textSettings_textEdit->toPlainText();
+    if(ok)
+    {
+        tempText = new Shape::Text(ui->renderCanvas,1,Qt::NoPen,Qt::NoBrush,tempUpperLeft,10,10,"");
+        ui->renderCanvas->getShape(ui->shapeIdModSpinBox->value())->move(tempText);
+        ui->renderCanvas->getShape(ui->shapeIdModSpinBox->value())->setFont(tempFont);
+        ui->renderCanvas->getShape(ui->shapeIdModSpinBox->value())->setText(tempString);
+    }
+
+    ui->renderCanvas->update();
+}
+
+void MainWindow::on_lineModMenu_deleteButton_clicked()
+{
+    myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
+    ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
 }
