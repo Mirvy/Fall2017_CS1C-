@@ -54,6 +54,52 @@ private slots:
 
     void on_lineModMenu_deleteButton_clicked();
 
+    void on_circleModMenu_deleteButton_clicked();
+
+    void on_ellipseModMenu_deleteButton_clicked();
+
+    void on_polygonModMenu_deleteButton_clicked();
+
+    void on_polyLineModMenu_deleteButton_clicked();
+
+    void on_rectangleModMenu_deleteButton_clicked();
+
+    void on_squareModMenu_deleteButton_clicked();
+
+    void on_textModMenu_deleteButton_clicked();
+
+    void on_shapeTypeAddCombo_currentIndexChanged(int index);
+
+    void on_lineAddMenu_createButton_clicked();
+
+    void on_polyLineAddMenu_createButton_clicked();
+
+    void on_polyLineAddMenu_dimensions_addPointButton_clicked();
+
+    void on_polyLineAddMenu_dimensions_movePointButton_clicked();
+
+    void on_polyLineAddMenu_dimensions_deletePointButton_clicked();
+
+    void on_polygonAddMenu_createButton_clicked();
+
+    void on_polygonAddMenu_dimensions_addPointButton_clicked();
+
+    void on_polygonAddMenu_dimensions_movePointButton_clicked();
+
+    void on_polygonAddMenu_dimensions_deletePointButton_clicked();
+
+    void on_rectangleAddMenu_createButton_clicked();
+
+    void on_squareModMenu_updateButton_2_clicked();
+
+    void on_ellipseAddMenu_createButton_clicked();
+
+    void on_circleAddMenu_createButton_clicked();
+
+    void on_textAddMenu_createButton_clicked();
+
+    void on_tabMenu_tabBarClicked(int index);
+
 private:
 
     Ui::MainWindow *ui;

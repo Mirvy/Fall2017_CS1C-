@@ -17,7 +17,10 @@ int canvas::getShapeCount()
 
 Shape::Shape* canvas::getShape(int index)
 {
+    if(shapes.size() != 0)
+    {
     return *(shapes.begin()+(index-1));
+    }
 }
 
 myStd::vector<Shape::Shape*>& canvas::getShapes()

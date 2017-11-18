@@ -318,10 +318,271 @@ public:
     QLabel *textModMenu_textSettings_textEditLabel;
     QPlainTextEdit *textModMenu_textSettings_textEdit;
     QPushButton *textModMenu_deleteButton;
-    QWidget *addRemoveTab;
-    QComboBox *comboBox;
-    QLabel *label;
-    QWidget *tab;
+    QWidget *ModMenu_deleteScreen;
+    QLabel *ModMenu_deleteScreenLabel;
+    QWidget *ModMenu_emptyScreen;
+    QLabel *ModMenu_emptyScreenLabel;
+    QWidget *addShapeTab;
+    QComboBox *shapeTypeAddCombo;
+    QLabel *shapeTypeAddLabel;
+    QWidget *lineAddMenu;
+    QLabel *lineAddMenu_dimensionLabel;
+    QLabel *lineAddMenu_penSettingLabel;
+    QFrame *lineAddMenu_dimensions_formatLine;
+    QLabel *lineAddMenu_dimensions_startPointLabel;
+    QLabel *lineAddMenu_dimensions_endPointLabel;
+    QLineEdit *lineAddMenu_dimensions_startPointX;
+    QLabel *lineAddMenu_dimensions_startPointXLabel;
+    QLabel *lineAddMenu_dimensions_endPointYLabel;
+    QLineEdit *lineAddMenu_dimensions_startPointY;
+    QFrame *lineAddMenu_penSettings_formatLineTop;
+    QFrame *lineAddMenu_penSettings_formatLineBot;
+    QLabel *lineAddMenu_dimensions_endPointYLabel_2;
+    QLabel *lineAddMenu_dimensions_endPointXLabel;
+    QLineEdit *lineAddMenu_dimensions_endPointY;
+    QLineEdit *lineAddMenu_dimensions_endPointX;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_5;
+    QLabel *lineAddMenu_penSettings_lineColorLabel;
+    QLabel *lineAddMenu_penSettings_lineWidthLabel;
+    QLabel *lineAddMenu_penSettings_penStyleLabel;
+    QLabel *lineAddMenu_penSettings_capStyleLabel;
+    QLabel *lineAddMenu_penSettings_joinStyleLabel;
+    QWidget *verticalLayoutWidget_4;
+    QVBoxLayout *verticalLayout_10;
+    QComboBox *lineAddMenu_penSettings_lineColorCombo;
+    QSpinBox *lineAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *lineAddMenu_penSettings_penStyleCombo;
+    QComboBox *lineAddMenu_penSettings_capStyleCombo;
+    QComboBox *lineAddMenu_penSettings_joinStyleCombo;
+    QPushButton *lineAddMenu_createButton;
+    QWidget *polylineAddMenu;
+    QFrame *polyLineAddMenu_dimensions_formatLine;
+    QLabel *polyLineAddMenu_dimensionLabel;
+    QPushButton *polyLineAddMenu_createButton;
+    QFrame *polyLineAddMenu_penSettings_formatLineTop;
+    QLineEdit *polyLineAddMenu_dimensions_startPointX;
+    QLabel *polyLineAddMenu_dimensions_endPointYLabel;
+    QLabel *polyLineAddMenu_dimensions_startPointXLabel;
+    QLineEdit *polyLineAddMenu_dimensions_startPointY;
+    QWidget *verticalLayoutWidget_21;
+    QVBoxLayout *verticalLayout_11;
+    QPushButton *polyLineAddMenu_dimensions_addPointButton;
+    QPushButton *polyLineAddMenu_dimensions_movePointButton;
+    QPushButton *polyLineAddMenu_dimensions_deletePointButton;
+    QWidget *verticalLayoutWidget_22;
+    QVBoxLayout *verticalLayout_14;
+    QComboBox *polyLineAddMenu_penSettings_lineColorCombo;
+    QSpinBox *polyLineAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *polyLineAddMenu_penSettings_penStyleCombo;
+    QComboBox *polyLineAddMenu_penSettings_capStyleCombo;
+    QComboBox *polyLineAddMenu_penSettings_joinStyleCombo;
+    QWidget *verticalLayoutWidget_23;
+    QVBoxLayout *verticalLayout_15;
+    QLabel *polyLineAddMenu_penSettings_lineColorLabel;
+    QLabel *polyLineAddMenu_penSettings_lineWidthLabel;
+    QLabel *polyLineAddMenu_penSettings_penStyleLabel;
+    QLabel *polyLineAddMenu_penSettings_capStyleLabel;
+    QLabel *polyLineAddMenu_penSettings_joinStyleLabel;
+    QFrame *lineAddMenu_penSettings_formatLineBot_2;
+    QLabel *lineAddMenu_penSettingLabel_2;
+    QListWidget *polyLineAddMenu_dimensions_pointList;
+    QWidget *polygonAddMenu;
+    QLabel *polygonAddMenu_dimensions_endPointYLabel;
+    QFrame *polygonAddMenu_dimensions_formatLine;
+    QLineEdit *polygonAddMenu_dimensions_startPointY;
+    QListWidget *polygonAddMenu_dimensions_pointList;
+    QWidget *verticalLayoutWidget_24;
+    QVBoxLayout *verticalLayout_18;
+    QComboBox *polygonAddMenu_penSettings_lineColorCombo;
+    QSpinBox *polygonAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *polygonAddMenu_penSettings_penStyleCombo;
+    QComboBox *polygonAddMenu_penSettings_capStyleCombo;
+    QComboBox *polygonAddMenu_penSettings_joinStyleCombo;
+    QComboBox *polygonAddMenu_penSettings_brushColorCombo;
+    QComboBox *polygonAddMenu_penSettings_brushStyleCombo;
+    QFrame *polygonAddMenu_penSettings_formatLineTop;
+    QFrame *polygonAddMenu_penSettings_formatLineBot;
+    QLabel *polygonAddMenu_penSettingLabel;
+    QLabel *polygonAddMenu_dimensionLabel;
+    QWidget *verticalLayoutWidget_25;
+    QVBoxLayout *verticalLayout_19;
+    QPushButton *polygonAddMenu_dimensions_addPointButton;
+    QPushButton *polygonAddMenu_dimensions_movePointButton;
+    QPushButton *polygonAddMenu_dimensions_deletePointButton;
+    QWidget *verticalLayoutWidget_26;
+    QVBoxLayout *verticalLayout_26;
+    QLabel *polygonAddMenu_penSettings_lineColorLabel;
+    QLabel *polygonAddMenu_penSettings_lineWidthLabel;
+    QLabel *polygonAddMenu_penSettings_penStyleLabel;
+    QLabel *polygonAddMenu_penSettings_capStyleLabel;
+    QLabel *polygonAddMenu_penSettings_joinStyleLabel;
+    QLabel *polygonAddMenu_penSettings_brushColorLabel;
+    QLabel *polygonAddMenu_penSettings_brushStyleLabel;
+    QLineEdit *polygonAddMenu_dimensions_startPointX;
+    QPushButton *polygonAddMenu_createButton;
+    QLabel *polygonAddMenu_dimensions_startPointXLabel;
+    QWidget *rectangleAddMenu;
+    QPushButton *rectangleAddMenu_createButton;
+    QFrame *rectangleAddMenu_penSettings_formatLineTop;
+    QLabel *rectangleAddMenu_dimensions_widthLabel;
+    QFrame *rectangleAddMenu_dimensions_formatLine;
+    QLabel *rectangleAddMenu_dimensions_uuperLeftYLabel;
+    QLineEdit *rectangleAddMenu_dimensions_width;
+    QFrame *rectangleAddMenu_penSettings_formatLineBot;
+    QLabel *rectangleAddMenu_dimensions_upperLeftLabel;
+    QLineEdit *rectangleAddMenu_dimensions_upperLeftX;
+    QLineEdit *rectangleAddMenu_dimensions_upperLeftY;
+    QLabel *rectangleAddMenu_penSettingLabel;
+    QLabel *rectangleAddMenu_dimensionLabel;
+    QLabel *rectangleAddMenu_dimensions_upperLefttXLabel;
+    QLineEdit *rectangleAddMenu_dimensions_height;
+    QWidget *verticalLayoutWidget_27;
+    QVBoxLayout *verticalLayout_27;
+    QLabel *rectangleAddMenu_penSettings_lineColorLabel;
+    QLabel *rectangleAddMenu_penSettings_lineWidthLabel;
+    QLabel *rectangleAddMenu_penSettings_penStyleLabel;
+    QLabel *rectangleAddMenu_penSettings_capStyleLabel;
+    QLabel *rectangleAddMenu_penSettings_joinStyleLabel;
+    QLabel *rectangleAddMenu_penSettings_brushColorLabel;
+    QLabel *rectangleAddMenu_penSettings_brushStyleLabel;
+    QWidget *verticalLayoutWidget_28;
+    QVBoxLayout *verticalLayout_28;
+    QComboBox *rectangleAddMenu_penSettings_lineColorCombo;
+    QSpinBox *rectangleAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *rectangleAddMenu_penSettings_penStyleCombo;
+    QComboBox *rectangleAddMenu_penSettings_capStyleCombo;
+    QComboBox *rectangleAddMenu_penSettings_joinStyleCombo;
+    QComboBox *rectangleAddMenu_penSettings_brushColorCombo;
+    QComboBox *rectangleAddMenu_penSettings_brushStyleCombo;
+    QLabel *rectangleAddMenu_dimensions_heighttLabel;
+    QWidget *squareAddMenu;
+    QPushButton *squareModMenu_updateButton_2;
+    QFrame *squareAddMenu_penSettings_formatLineTop;
+    QLabel *squareAddMenu_dimensions_widthLabel;
+    QFrame *squareAddMenu_dimensions_formatLine;
+    QLabel *squareAddMenu_dimensions_uuperLeftYLabel;
+    QLineEdit *squareAddMenu_dimensions_sideLength;
+    QFrame *squareAddMenu_penSettings_formatLineBot;
+    QLabel *squareAddMenu_dimensions_upperLeftLabel;
+    QLineEdit *squareAddMenu_dimensions_upperLeftX;
+    QLineEdit *squareAddMenu_dimensions_upperLeftY;
+    QLabel *squareAddMenu_penSettingLabel;
+    QLabel *squareAddMenu_dimensionLabel;
+    QLabel *squareAddMenu_dimensions_upperLefttXLabel;
+    QWidget *verticalLayoutWidget_29;
+    QVBoxLayout *verticalLayout_29;
+    QLabel *squareAddMenu_penSettings_lineColorLabel;
+    QLabel *squareAddMenu_penSettings_lineWidthLabel;
+    QLabel *squareAddMenu_penSettings_penStyleLabel;
+    QLabel *squareAddMenu_penSettings_capStyleLabel;
+    QLabel *squaresquareAddMenu_penSettings_joinStyleLabel;
+    QLabel *squareAddMenu_penSettings_brushColorLabel;
+    QLabel *squareAddMenu_penSettings_brushStyleLabel;
+    QWidget *verticalLayoutWidget_30;
+    QVBoxLayout *verticalLayout_30;
+    QComboBox *squareAddMenu_penSettings_lineColorCombo;
+    QSpinBox *squareAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *squareAddMenu_penSettings_penStyleCombo;
+    QComboBox *squareAddMenu_penSettings_capStyleCombo;
+    QComboBox *squareAddMenu_penSettings_joinStyleCombo;
+    QComboBox *squareAddMenu_penSettings_brushColorCombo;
+    QComboBox *squareAddMenu_penSettings_brushStyleCombo;
+    QWidget *circleAddMenu;
+    QLabel *cicleAddMenu_dimensions_originXLabel;
+    QLabel *circleAddMenu_dimensions_radiusLabel;
+    QLabel *circleAddMenu_penSettingLabel;
+    QLabel *circleAddMenu_dimensions_originYLabel;
+    QLineEdit *circleAddMenu_dimensions_Radius;
+    QLabel *circleAddMenu_dimensionLabel;
+    QFrame *circleAddMenu_penSettings_formatLineBot;
+    QFrame *circleAddMenu_penSettings_formatLineTop;
+    QFrame *circleAddMenu_dimensions_formatLine;
+    QWidget *verticalLayoutWidget_33;
+    QVBoxLayout *verticalLayout_33;
+    QComboBox *circleAddMenu_penSettings_lineColorCombo;
+    QSpinBox *circleAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *circleAddMenu_penSettings_penStyleCombo;
+    QComboBox *circleAddMenu_penSettings_capStyleCombo;
+    QComboBox *circleAddMenu_penSettings_joinStyleCombo;
+    QComboBox *circleAddMenu_penSettings_brushColorCombo;
+    QComboBox *circleAddMenu_penSettings_brushStyleCombo;
+    QLabel *circleAddMenu_dimensions_upperLeftLabel;
+    QPushButton *circleAddMenu_createButton;
+    QLineEdit *circleAddMenu_dimensions_originY;
+    QLineEdit *circleAddMenu_dimensions_originX;
+    QWidget *verticalLayoutWidget_34;
+    QVBoxLayout *verticalLayout_34;
+    QLabel *circleAddMenu_penSettings_lineColorLabel;
+    QLabel *circleAddMenu_penSettings_lineWidthLabel;
+    QLabel *circleAddMenu_penSettings_penStyleLabel;
+    QLabel *circleAddMenu_penSettings_capStyleLabel;
+    QLabel *circleAddMenu_penSettings_joinStyleLabel;
+    QLabel *circleAddMenu_penSettings_brushColorLabel;
+    QLabel *circleAddMenu_penSettings_brushStyleLabel;
+    QWidget *ellipseAddMenu;
+    QLabel *ellipseAddMenu_dimensions_heighttLabel;
+    QLabel *ellipseAddMenu_dimensions_upperLefttXLabel;
+    QLabel *ellipseAddMenu_dimensions_widthLabel;
+    QLabel *ellipseAddMenu_penSettingLabel;
+    QLineEdit *ellipseAddMenu_dimensions_RY;
+    QLabel *ellipseAddMenu_dimensions_uuperLeftYLabel;
+    QLineEdit *ellipseAddMenu_dimensions_RX;
+    QLabel *ellipseAddMenu_dimensionLabel;
+    QFrame *ellipseAddMenu_penSettings_formatLineBot;
+    QFrame *ellipseAddMenu_penSettings_formatLineTop;
+    QFrame *ellipseAddMenu_dimensions_formatLine;
+    QWidget *verticalLayoutWidget_31;
+    QVBoxLayout *verticalLayout_31;
+    QComboBox *ellipseAddMenu_penSettings_lineColorCombo;
+    QSpinBox *ellipseAddMenu_penSettings_lineWidthSpinBox;
+    QComboBox *ellipseAddMenu_penSettings_penStyleCombo;
+    QComboBox *ellipseAddMenu_penSettings_capStyleCombo;
+    QComboBox *ellipseAddMenu_penSettings_joinStyleCombo;
+    QComboBox *ellipseAddMenu_penSettings_brushColorCombo;
+    QComboBox *ellipseAddMenu_penSettings_brushStyleCombo;
+    QLabel *ellipseAddMenu_dimensions_originLabel;
+    QPushButton *ellipseAddMenu_createButton;
+    QLineEdit *ellipseAddMenu_dimensions_originY;
+    QLineEdit *ellipseAddMenu_dimensions_originX;
+    QWidget *verticalLayoutWidget_32;
+    QVBoxLayout *verticalLayout_32;
+    QLabel *ellipseAddMenu_penSettings_lineColorLabel;
+    QLabel *ellipseAddMenu_penSettings_lineWidthLabel;
+    QLabel *ellipseAddMenu_penSettings_penStyleLabel;
+    QLabel *ellipseAddMenu_penSettings_capStyleLabel;
+    QLabel *ellipseAddMenu_penSettings_joinStyleLabel;
+    QLabel *ellipseAddMenu_penSettings_brushColorLabel;
+    QLabel *ellipseAddMenu_penSettings_brushStyleLabel;
+    QWidget *textAddMenu;
+    QLabel *textAddMenu_dimensions_upperLefttXLabel;
+    QLabel *textAddMenu_penSettingLabel;
+    QLabel *textAddMenu_dimensions_uuperLeftYLabel;
+    QLabel *textAddMenu_dimensionLabel;
+    QFrame *textAddMenu_textSettings_formatLineBot;
+    QFrame *textAddMenu_textSettings_formatLineTop;
+    QFrame *textAddMenu_dimensions_formatLine;
+    QWidget *verticalLayoutWidget_35;
+    QVBoxLayout *verticalLayout_35;
+    QComboBox *textAddMenu_textSettings_textColorCombo;
+    QSpinBox *textAddMenu_textSettings_textPointSizeBox;
+    QComboBox *textAddMenu_textSettings_fontCombo;
+    QComboBox *textAddMenu_textSettings_fontStyleCombo;
+    QComboBox *textAddMenu_textSettings_fontWeightCombo;
+    QLabel *textAddMenu_dimensions_upperLeftLabel;
+    QPushButton *textAddMenu_createButton;
+    QLineEdit *textAddMenu_dimensions_upperLeftY;
+    QLineEdit *textAddMenu_dimensions_upperLeftX;
+    QWidget *verticalLayoutWidget_36;
+    QVBoxLayout *verticalLayout_36;
+    QLabel *textAddMenu_textSettings_textColorLabel;
+    QLabel *textAddMenu_textSettings_pointSizeLabel;
+    QLabel *textAddMenu_textSettings_fontLabel;
+    QLabel *textAddMenu_textSettings_fontStyleLabel;
+    QLabel *textAddMenu_textSettings_fontWeightLabel;
+    QLabel *textAddMenu_textSettings_textEditLabel;
+    QPlainTextEdit *textAddMenu_textSettings_textEdit;
+    QWidget *reportTab;
     QTabWidget *tabWidget;
     QWidget *tab_3;
     QTreeWidget *treeWidget;
@@ -1547,19 +1808,1081 @@ public:
         textModMenu_deleteButton = new QPushButton(textModMenu);
         textModMenu_deleteButton->setObjectName(QStringLiteral("textModMenu_deleteButton"));
         textModMenu_deleteButton->setGeometry(QRect(220, 10, 51, 27));
+        ModMenu_deleteScreen = new QWidget(modTab);
+        ModMenu_deleteScreen->setObjectName(QStringLiteral("ModMenu_deleteScreen"));
+        ModMenu_deleteScreen->setGeometry(QRect(10, 40, 281, 451));
+        ModMenu_deleteScreenLabel = new QLabel(ModMenu_deleteScreen);
+        ModMenu_deleteScreenLabel->setObjectName(QStringLiteral("ModMenu_deleteScreenLabel"));
+        ModMenu_deleteScreenLabel->setGeometry(QRect(50, 90, 191, 31));
+        ModMenu_emptyScreen = new QWidget(modTab);
+        ModMenu_emptyScreen->setObjectName(QStringLiteral("ModMenu_emptyScreen"));
+        ModMenu_emptyScreen->setGeometry(QRect(10, 40, 281, 451));
+        ModMenu_emptyScreenLabel = new QLabel(ModMenu_emptyScreen);
+        ModMenu_emptyScreenLabel->setObjectName(QStringLiteral("ModMenu_emptyScreenLabel"));
+        ModMenu_emptyScreenLabel->setGeometry(QRect(50, 90, 191, 31));
         tabMenu->addTab(modTab, QString());
-        addRemoveTab = new QWidget();
-        addRemoveTab->setObjectName(QStringLiteral("addRemoveTab"));
-        comboBox = new QComboBox(addRemoveTab);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(160, 10, 121, 27));
-        label = new QLabel(addRemoveTab);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(50, 10, 91, 17));
-        tabMenu->addTab(addRemoveTab, QString());
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        tabWidget = new QTabWidget(tab);
+        shapeIdModLabel->raise();
+        shapeIdModSpinBox->raise();
+        shapeTypeModLabel->raise();
+        shapeModType->raise();
+        lineModMenu->raise();
+        ModMenu_deleteScreen->raise();
+        circleModMenu->raise();
+        polygonModMenu->raise();
+        polylineModMenu->raise();
+        rectangleModMenu->raise();
+        squareModMenu->raise();
+        textModMenu->raise();
+        ModMenu_emptyScreen->raise();
+        ellipseModMenu->raise();
+        addShapeTab = new QWidget();
+        addShapeTab->setObjectName(QStringLiteral("addShapeTab"));
+        shapeTypeAddCombo = new QComboBox(addShapeTab);
+        shapeTypeAddCombo->setObjectName(QStringLiteral("shapeTypeAddCombo"));
+        shapeTypeAddCombo->setGeometry(QRect(160, 10, 121, 27));
+        shapeTypeAddLabel = new QLabel(addShapeTab);
+        shapeTypeAddLabel->setObjectName(QStringLiteral("shapeTypeAddLabel"));
+        shapeTypeAddLabel->setGeometry(QRect(50, 10, 91, 17));
+        lineAddMenu = new QWidget(addShapeTab);
+        lineAddMenu->setObjectName(QStringLiteral("lineAddMenu"));
+        lineAddMenu->setEnabled(true);
+        lineAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        lineAddMenu_dimensionLabel = new QLabel(lineAddMenu);
+        lineAddMenu_dimensionLabel->setObjectName(QStringLiteral("lineAddMenu_dimensionLabel"));
+        lineAddMenu_dimensionLabel->setGeometry(QRect(10, 10, 91, 17));
+        lineAddMenu_penSettingLabel = new QLabel(lineAddMenu);
+        lineAddMenu_penSettingLabel->setObjectName(QStringLiteral("lineAddMenu_penSettingLabel"));
+        lineAddMenu_penSettingLabel->setGeometry(QRect(10, 120, 101, 17));
+        lineAddMenu_dimensions_formatLine = new QFrame(lineAddMenu);
+        lineAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("lineAddMenu_dimensions_formatLine"));
+        lineAddMenu_dimensions_formatLine->setGeometry(QRect(-20, 15, 301, 31));
+        lineAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        lineAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        lineAddMenu_dimensions_startPointLabel = new QLabel(lineAddMenu);
+        lineAddMenu_dimensions_startPointLabel->setObjectName(QStringLiteral("lineAddMenu_dimensions_startPointLabel"));
+        lineAddMenu_dimensions_startPointLabel->setGeometry(QRect(20, 40, 81, 17));
+        lineAddMenu_dimensions_endPointLabel = new QLabel(lineAddMenu);
+        lineAddMenu_dimensions_endPointLabel->setObjectName(QStringLiteral("lineAddMenu_dimensions_endPointLabel"));
+        lineAddMenu_dimensions_endPointLabel->setGeometry(QRect(20, 80, 81, 17));
+        lineAddMenu_dimensions_startPointX = new QLineEdit(lineAddMenu);
+        lineAddMenu_dimensions_startPointX->setObjectName(QStringLiteral("lineAddMenu_dimensions_startPointX"));
+        lineAddMenu_dimensions_startPointX->setGeometry(QRect(160, 40, 31, 27));
+        lineAddMenu_dimensions_startPointXLabel = new QLabel(lineAddMenu);
+        lineAddMenu_dimensions_startPointXLabel->setObjectName(QStringLiteral("lineAddMenu_dimensions_startPointXLabel"));
+        lineAddMenu_dimensions_startPointXLabel->setGeometry(QRect(150, 40, 16, 16));
+        lineAddMenu_dimensions_endPointYLabel = new QLabel(lineAddMenu);
+        lineAddMenu_dimensions_endPointYLabel->setObjectName(QStringLiteral("lineAddMenu_dimensions_endPointYLabel"));
+        lineAddMenu_dimensions_endPointYLabel->setGeometry(QRect(200, 40, 16, 16));
+        lineAddMenu_dimensions_startPointY = new QLineEdit(lineAddMenu);
+        lineAddMenu_dimensions_startPointY->setObjectName(QStringLiteral("lineAddMenu_dimensions_startPointY"));
+        lineAddMenu_dimensions_startPointY->setGeometry(QRect(210, 40, 31, 27));
+        lineAddMenu_penSettings_formatLineTop = new QFrame(lineAddMenu);
+        lineAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("lineAddMenu_penSettings_formatLineTop"));
+        lineAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 106, 301, 20));
+        lineAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        lineAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        lineAddMenu_penSettings_formatLineBot = new QFrame(lineAddMenu);
+        lineAddMenu_penSettings_formatLineBot->setObjectName(QStringLiteral("lineAddMenu_penSettings_formatLineBot"));
+        lineAddMenu_penSettings_formatLineBot->setGeometry(QRect(-10, 130, 301, 20));
+        lineAddMenu_penSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        lineAddMenu_penSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        lineAddMenu_dimensions_endPointYLabel_2 = new QLabel(lineAddMenu);
+        lineAddMenu_dimensions_endPointYLabel_2->setObjectName(QStringLiteral("lineAddMenu_dimensions_endPointYLabel_2"));
+        lineAddMenu_dimensions_endPointYLabel_2->setGeometry(QRect(200, 80, 16, 16));
+        lineAddMenu_dimensions_endPointXLabel = new QLabel(lineAddMenu);
+        lineAddMenu_dimensions_endPointXLabel->setObjectName(QStringLiteral("lineAddMenu_dimensions_endPointXLabel"));
+        lineAddMenu_dimensions_endPointXLabel->setGeometry(QRect(150, 80, 16, 16));
+        lineAddMenu_dimensions_endPointY = new QLineEdit(lineAddMenu);
+        lineAddMenu_dimensions_endPointY->setObjectName(QStringLiteral("lineAddMenu_dimensions_endPointY"));
+        lineAddMenu_dimensions_endPointY->setGeometry(QRect(210, 80, 31, 27));
+        lineAddMenu_dimensions_endPointX = new QLineEdit(lineAddMenu);
+        lineAddMenu_dimensions_endPointX->setObjectName(QStringLiteral("lineAddMenu_dimensions_endPointX"));
+        lineAddMenu_dimensions_endPointX->setGeometry(QRect(160, 80, 31, 27));
+        verticalLayoutWidget_3 = new QWidget(lineAddMenu);
+        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(10, 150, 101, 241));
+        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        lineAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_3);
+        lineAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("lineAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_5->addWidget(lineAddMenu_penSettings_lineColorLabel);
+
+        lineAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_3);
+        lineAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("lineAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_5->addWidget(lineAddMenu_penSettings_lineWidthLabel);
+
+        lineAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_3);
+        lineAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("lineAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_5->addWidget(lineAddMenu_penSettings_penStyleLabel);
+
+        lineAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_3);
+        lineAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("lineAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_5->addWidget(lineAddMenu_penSettings_capStyleLabel);
+
+        lineAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_3);
+        lineAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("lineAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_5->addWidget(lineAddMenu_penSettings_joinStyleLabel);
+
+        verticalLayoutWidget_4 = new QWidget(lineAddMenu);
+        verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
+        verticalLayoutWidget_4->setGeometry(QRect(100, 150, 160, 241));
+        verticalLayout_10 = new QVBoxLayout(verticalLayoutWidget_4);
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
+        verticalLayout_10->setContentsMargins(0, 0, 0, 0);
+        lineAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_4);
+        lineAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("lineAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_10->addWidget(lineAddMenu_penSettings_lineColorCombo);
+
+        lineAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_4);
+        lineAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("lineAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_10->addWidget(lineAddMenu_penSettings_lineWidthSpinBox);
+
+        lineAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_4);
+        lineAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("lineAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_10->addWidget(lineAddMenu_penSettings_penStyleCombo);
+
+        lineAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_4);
+        lineAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("lineAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_10->addWidget(lineAddMenu_penSettings_capStyleCombo);
+
+        lineAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_4);
+        lineAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("lineAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_10->addWidget(lineAddMenu_penSettings_joinStyleCombo);
+
+        lineAddMenu_createButton = new QPushButton(lineAddMenu);
+        lineAddMenu_createButton->setObjectName(QStringLiteral("lineAddMenu_createButton"));
+        lineAddMenu_createButton->setGeometry(QRect(150, 0, 99, 27));
+        polylineAddMenu = new QWidget(addShapeTab);
+        polylineAddMenu->setObjectName(QStringLiteral("polylineAddMenu"));
+        polylineAddMenu->setEnabled(true);
+        polylineAddMenu->setGeometry(QRect(10, 50, 281, 441));
+        polyLineAddMenu_dimensions_formatLine = new QFrame(polylineAddMenu);
+        polyLineAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_formatLine"));
+        polyLineAddMenu_dimensions_formatLine->setGeometry(QRect(-20, 15, 301, 31));
+        polyLineAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        polyLineAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        polyLineAddMenu_dimensionLabel = new QLabel(polylineAddMenu);
+        polyLineAddMenu_dimensionLabel->setObjectName(QStringLiteral("polyLineAddMenu_dimensionLabel"));
+        polyLineAddMenu_dimensionLabel->setGeometry(QRect(10, 10, 91, 17));
+        polyLineAddMenu_createButton = new QPushButton(polylineAddMenu);
+        polyLineAddMenu_createButton->setObjectName(QStringLiteral("polyLineAddMenu_createButton"));
+        polyLineAddMenu_createButton->setGeometry(QRect(150, 0, 99, 27));
+        polyLineAddMenu_penSettings_formatLineTop = new QFrame(polylineAddMenu);
+        polyLineAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_formatLineTop"));
+        polyLineAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 160, 301, 20));
+        polyLineAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        polyLineAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        polyLineAddMenu_dimensions_startPointX = new QLineEdit(polylineAddMenu);
+        polyLineAddMenu_dimensions_startPointX->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_startPointX"));
+        polyLineAddMenu_dimensions_startPointX->setGeometry(QRect(160, 40, 31, 27));
+        polyLineAddMenu_dimensions_endPointYLabel = new QLabel(polylineAddMenu);
+        polyLineAddMenu_dimensions_endPointYLabel->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_endPointYLabel"));
+        polyLineAddMenu_dimensions_endPointYLabel->setGeometry(QRect(200, 40, 16, 16));
+        polyLineAddMenu_dimensions_startPointXLabel = new QLabel(polylineAddMenu);
+        polyLineAddMenu_dimensions_startPointXLabel->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_startPointXLabel"));
+        polyLineAddMenu_dimensions_startPointXLabel->setGeometry(QRect(150, 40, 16, 16));
+        polyLineAddMenu_dimensions_startPointY = new QLineEdit(polylineAddMenu);
+        polyLineAddMenu_dimensions_startPointY->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_startPointY"));
+        polyLineAddMenu_dimensions_startPointY->setGeometry(QRect(210, 40, 31, 27));
+        verticalLayoutWidget_21 = new QWidget(polylineAddMenu);
+        verticalLayoutWidget_21->setObjectName(QStringLiteral("verticalLayoutWidget_21"));
+        verticalLayoutWidget_21->setGeometry(QRect(10, 40, 121, 121));
+        verticalLayout_11 = new QVBoxLayout(verticalLayoutWidget_21);
+        verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
+        verticalLayout_11->setContentsMargins(0, 0, 0, 0);
+        polyLineAddMenu_dimensions_addPointButton = new QPushButton(verticalLayoutWidget_21);
+        polyLineAddMenu_dimensions_addPointButton->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_addPointButton"));
+
+        verticalLayout_11->addWidget(polyLineAddMenu_dimensions_addPointButton);
+
+        polyLineAddMenu_dimensions_movePointButton = new QPushButton(verticalLayoutWidget_21);
+        polyLineAddMenu_dimensions_movePointButton->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_movePointButton"));
+
+        verticalLayout_11->addWidget(polyLineAddMenu_dimensions_movePointButton);
+
+        polyLineAddMenu_dimensions_deletePointButton = new QPushButton(verticalLayoutWidget_21);
+        polyLineAddMenu_dimensions_deletePointButton->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_deletePointButton"));
+
+        verticalLayout_11->addWidget(polyLineAddMenu_dimensions_deletePointButton);
+
+        verticalLayoutWidget_22 = new QWidget(polylineAddMenu);
+        verticalLayoutWidget_22->setObjectName(QStringLiteral("verticalLayoutWidget_22"));
+        verticalLayoutWidget_22->setGeometry(QRect(110, 200, 160, 241));
+        verticalLayout_14 = new QVBoxLayout(verticalLayoutWidget_22);
+        verticalLayout_14->setObjectName(QStringLiteral("verticalLayout_14"));
+        verticalLayout_14->setContentsMargins(0, 0, 0, 0);
+        polyLineAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_22);
+        polyLineAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_14->addWidget(polyLineAddMenu_penSettings_lineColorCombo);
+
+        polyLineAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_22);
+        polyLineAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_14->addWidget(polyLineAddMenu_penSettings_lineWidthSpinBox);
+
+        polyLineAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_22);
+        polyLineAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_14->addWidget(polyLineAddMenu_penSettings_penStyleCombo);
+
+        polyLineAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_22);
+        polyLineAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_14->addWidget(polyLineAddMenu_penSettings_capStyleCombo);
+
+        polyLineAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_22);
+        polyLineAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_14->addWidget(polyLineAddMenu_penSettings_joinStyleCombo);
+
+        verticalLayoutWidget_23 = new QWidget(polylineAddMenu);
+        verticalLayoutWidget_23->setObjectName(QStringLiteral("verticalLayoutWidget_23"));
+        verticalLayoutWidget_23->setGeometry(QRect(20, 200, 101, 241));
+        verticalLayout_15 = new QVBoxLayout(verticalLayoutWidget_23);
+        verticalLayout_15->setObjectName(QStringLiteral("verticalLayout_15"));
+        verticalLayout_15->setContentsMargins(0, 0, 0, 0);
+        polyLineAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_23);
+        polyLineAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_15->addWidget(polyLineAddMenu_penSettings_lineColorLabel);
+
+        polyLineAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_23);
+        polyLineAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_15->addWidget(polyLineAddMenu_penSettings_lineWidthLabel);
+
+        polyLineAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_23);
+        polyLineAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_15->addWidget(polyLineAddMenu_penSettings_penStyleLabel);
+
+        polyLineAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_23);
+        polyLineAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_15->addWidget(polyLineAddMenu_penSettings_capStyleLabel);
+
+        polyLineAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_23);
+        polyLineAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("polyLineAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_15->addWidget(polyLineAddMenu_penSettings_joinStyleLabel);
+
+        lineAddMenu_penSettings_formatLineBot_2 = new QFrame(polylineAddMenu);
+        lineAddMenu_penSettings_formatLineBot_2->setObjectName(QStringLiteral("lineAddMenu_penSettings_formatLineBot_2"));
+        lineAddMenu_penSettings_formatLineBot_2->setGeometry(QRect(-10, 180, 301, 20));
+        lineAddMenu_penSettings_formatLineBot_2->setFrameShape(QFrame::HLine);
+        lineAddMenu_penSettings_formatLineBot_2->setFrameShadow(QFrame::Sunken);
+        lineAddMenu_penSettingLabel_2 = new QLabel(polylineAddMenu);
+        lineAddMenu_penSettingLabel_2->setObjectName(QStringLiteral("lineAddMenu_penSettingLabel_2"));
+        lineAddMenu_penSettingLabel_2->setGeometry(QRect(10, 170, 101, 17));
+        polyLineAddMenu_dimensions_pointList = new QListWidget(polylineAddMenu);
+        polyLineAddMenu_dimensions_pointList->setObjectName(QStringLiteral("polyLineAddMenu_dimensions_pointList"));
+        polyLineAddMenu_dimensions_pointList->setGeometry(QRect(150, 80, 111, 81));
+        polyLineAddMenu_dimensions_pointList->setSortingEnabled(true);
+        polygonAddMenu = new QWidget(addShapeTab);
+        polygonAddMenu->setObjectName(QStringLiteral("polygonAddMenu"));
+        polygonAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        polygonAddMenu_dimensions_endPointYLabel = new QLabel(polygonAddMenu);
+        polygonAddMenu_dimensions_endPointYLabel->setObjectName(QStringLiteral("polygonAddMenu_dimensions_endPointYLabel"));
+        polygonAddMenu_dimensions_endPointYLabel->setGeometry(QRect(200, 50, 16, 16));
+        polygonAddMenu_dimensions_formatLine = new QFrame(polygonAddMenu);
+        polygonAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("polygonAddMenu_dimensions_formatLine"));
+        polygonAddMenu_dimensions_formatLine->setGeometry(QRect(-20, 25, 301, 31));
+        polygonAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        polygonAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        polygonAddMenu_dimensions_startPointY = new QLineEdit(polygonAddMenu);
+        polygonAddMenu_dimensions_startPointY->setObjectName(QStringLiteral("polygonAddMenu_dimensions_startPointY"));
+        polygonAddMenu_dimensions_startPointY->setGeometry(QRect(210, 50, 31, 27));
+        polygonAddMenu_dimensions_pointList = new QListWidget(polygonAddMenu);
+        polygonAddMenu_dimensions_pointList->setObjectName(QStringLiteral("polygonAddMenu_dimensions_pointList"));
+        polygonAddMenu_dimensions_pointList->setGeometry(QRect(150, 90, 111, 81));
+        polygonAddMenu_dimensions_pointList->setSortingEnabled(true);
+        verticalLayoutWidget_24 = new QWidget(polygonAddMenu);
+        verticalLayoutWidget_24->setObjectName(QStringLiteral("verticalLayoutWidget_24"));
+        verticalLayoutWidget_24->setGeometry(QRect(110, 210, 160, 241));
+        verticalLayout_18 = new QVBoxLayout(verticalLayoutWidget_24);
+        verticalLayout_18->setObjectName(QStringLiteral("verticalLayout_18"));
+        verticalLayout_18->setContentsMargins(0, 0, 0, 0);
+        polygonAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("polygonAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_lineColorCombo);
+
+        polygonAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("polygonAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_lineWidthSpinBox);
+
+        polygonAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("polygonAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_penStyleCombo);
+
+        polygonAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("polygonAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_capStyleCombo);
+
+        polygonAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("polygonAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_joinStyleCombo);
+
+        polygonAddMenu_penSettings_brushColorCombo = new QComboBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_brushColorCombo->setObjectName(QStringLiteral("polygonAddMenu_penSettings_brushColorCombo"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_brushColorCombo);
+
+        polygonAddMenu_penSettings_brushStyleCombo = new QComboBox(verticalLayoutWidget_24);
+        polygonAddMenu_penSettings_brushStyleCombo->setObjectName(QStringLiteral("polygonAddMenu_penSettings_brushStyleCombo"));
+
+        verticalLayout_18->addWidget(polygonAddMenu_penSettings_brushStyleCombo);
+
+        polygonAddMenu_penSettings_formatLineTop = new QFrame(polygonAddMenu);
+        polygonAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("polygonAddMenu_penSettings_formatLineTop"));
+        polygonAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 170, 301, 20));
+        polygonAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        polygonAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        polygonAddMenu_penSettings_formatLineBot = new QFrame(polygonAddMenu);
+        polygonAddMenu_penSettings_formatLineBot->setObjectName(QStringLiteral("polygonAddMenu_penSettings_formatLineBot"));
+        polygonAddMenu_penSettings_formatLineBot->setGeometry(QRect(-10, 190, 301, 20));
+        polygonAddMenu_penSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        polygonAddMenu_penSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        polygonAddMenu_penSettingLabel = new QLabel(polygonAddMenu);
+        polygonAddMenu_penSettingLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettingLabel"));
+        polygonAddMenu_penSettingLabel->setGeometry(QRect(10, 180, 101, 17));
+        polygonAddMenu_dimensionLabel = new QLabel(polygonAddMenu);
+        polygonAddMenu_dimensionLabel->setObjectName(QStringLiteral("polygonAddMenu_dimensionLabel"));
+        polygonAddMenu_dimensionLabel->setGeometry(QRect(10, 20, 91, 17));
+        verticalLayoutWidget_25 = new QWidget(polygonAddMenu);
+        verticalLayoutWidget_25->setObjectName(QStringLiteral("verticalLayoutWidget_25"));
+        verticalLayoutWidget_25->setGeometry(QRect(10, 50, 121, 121));
+        verticalLayout_19 = new QVBoxLayout(verticalLayoutWidget_25);
+        verticalLayout_19->setObjectName(QStringLiteral("verticalLayout_19"));
+        verticalLayout_19->setContentsMargins(0, 0, 0, 0);
+        polygonAddMenu_dimensions_addPointButton = new QPushButton(verticalLayoutWidget_25);
+        polygonAddMenu_dimensions_addPointButton->setObjectName(QStringLiteral("polygonAddMenu_dimensions_addPointButton"));
+
+        verticalLayout_19->addWidget(polygonAddMenu_dimensions_addPointButton);
+
+        polygonAddMenu_dimensions_movePointButton = new QPushButton(verticalLayoutWidget_25);
+        polygonAddMenu_dimensions_movePointButton->setObjectName(QStringLiteral("polygonAddMenu_dimensions_movePointButton"));
+
+        verticalLayout_19->addWidget(polygonAddMenu_dimensions_movePointButton);
+
+        polygonAddMenu_dimensions_deletePointButton = new QPushButton(verticalLayoutWidget_25);
+        polygonAddMenu_dimensions_deletePointButton->setObjectName(QStringLiteral("polygonAddMenu_dimensions_deletePointButton"));
+
+        verticalLayout_19->addWidget(polygonAddMenu_dimensions_deletePointButton);
+
+        verticalLayoutWidget_26 = new QWidget(polygonAddMenu);
+        verticalLayoutWidget_26->setObjectName(QStringLiteral("verticalLayoutWidget_26"));
+        verticalLayoutWidget_26->setGeometry(QRect(20, 210, 101, 241));
+        verticalLayout_26 = new QVBoxLayout(verticalLayoutWidget_26);
+        verticalLayout_26->setObjectName(QStringLiteral("verticalLayout_26"));
+        verticalLayout_26->setContentsMargins(0, 0, 0, 0);
+        polygonAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_lineColorLabel);
+
+        polygonAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_lineWidthLabel);
+
+        polygonAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_penStyleLabel);
+
+        polygonAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_capStyleLabel);
+
+        polygonAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_joinStyleLabel);
+
+        polygonAddMenu_penSettings_brushColorLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_brushColorLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_brushColorLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_brushColorLabel);
+
+        polygonAddMenu_penSettings_brushStyleLabel = new QLabel(verticalLayoutWidget_26);
+        polygonAddMenu_penSettings_brushStyleLabel->setObjectName(QStringLiteral("polygonAddMenu_penSettings_brushStyleLabel"));
+
+        verticalLayout_26->addWidget(polygonAddMenu_penSettings_brushStyleLabel);
+
+        polygonAddMenu_dimensions_startPointX = new QLineEdit(polygonAddMenu);
+        polygonAddMenu_dimensions_startPointX->setObjectName(QStringLiteral("polygonAddMenu_dimensions_startPointX"));
+        polygonAddMenu_dimensions_startPointX->setGeometry(QRect(160, 50, 31, 27));
+        polygonAddMenu_createButton = new QPushButton(polygonAddMenu);
+        polygonAddMenu_createButton->setObjectName(QStringLiteral("polygonAddMenu_createButton"));
+        polygonAddMenu_createButton->setGeometry(QRect(150, 10, 99, 27));
+        polygonAddMenu_dimensions_startPointXLabel = new QLabel(polygonAddMenu);
+        polygonAddMenu_dimensions_startPointXLabel->setObjectName(QStringLiteral("polygonAddMenu_dimensions_startPointXLabel"));
+        polygonAddMenu_dimensions_startPointXLabel->setGeometry(QRect(150, 50, 16, 16));
+        rectangleAddMenu = new QWidget(addShapeTab);
+        rectangleAddMenu->setObjectName(QStringLiteral("rectangleAddMenu"));
+        rectangleAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        rectangleAddMenu_createButton = new QPushButton(rectangleAddMenu);
+        rectangleAddMenu_createButton->setObjectName(QStringLiteral("rectangleAddMenu_createButton"));
+        rectangleAddMenu_createButton->setGeometry(QRect(160, 10, 99, 27));
+        rectangleAddMenu_penSettings_formatLineTop = new QFrame(rectangleAddMenu);
+        rectangleAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_formatLineTop"));
+        rectangleAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 150, 301, 20));
+        rectangleAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        rectangleAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        rectangleAddMenu_dimensions_widthLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_dimensions_widthLabel->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_widthLabel"));
+        rectangleAddMenu_dimensions_widthLabel->setGeometry(QRect(50, 90, 81, 17));
+        rectangleAddMenu_dimensions_formatLine = new QFrame(rectangleAddMenu);
+        rectangleAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_formatLine"));
+        rectangleAddMenu_dimensions_formatLine->setGeometry(QRect(-10, 25, 301, 31));
+        rectangleAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        rectangleAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        rectangleAddMenu_dimensions_uuperLeftYLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_dimensions_uuperLeftYLabel->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_uuperLeftYLabel"));
+        rectangleAddMenu_dimensions_uuperLeftYLabel->setGeometry(QRect(210, 50, 16, 16));
+        rectangleAddMenu_dimensions_width = new QLineEdit(rectangleAddMenu);
+        rectangleAddMenu_dimensions_width->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_width"));
+        rectangleAddMenu_dimensions_width->setGeometry(QRect(170, 90, 31, 27));
+        rectangleAddMenu_penSettings_formatLineBot = new QFrame(rectangleAddMenu);
+        rectangleAddMenu_penSettings_formatLineBot->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_formatLineBot"));
+        rectangleAddMenu_penSettings_formatLineBot->setGeometry(QRect(-10, 174, 301, 20));
+        rectangleAddMenu_penSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        rectangleAddMenu_penSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        rectangleAddMenu_dimensions_upperLeftLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_dimensions_upperLeftLabel->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_upperLeftLabel"));
+        rectangleAddMenu_dimensions_upperLeftLabel->setGeometry(QRect(30, 50, 81, 17));
+        rectangleAddMenu_dimensions_upperLeftX = new QLineEdit(rectangleAddMenu);
+        rectangleAddMenu_dimensions_upperLeftX->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_upperLeftX"));
+        rectangleAddMenu_dimensions_upperLeftX->setGeometry(QRect(170, 50, 31, 27));
+        rectangleAddMenu_dimensions_upperLeftY = new QLineEdit(rectangleAddMenu);
+        rectangleAddMenu_dimensions_upperLeftY->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_upperLeftY"));
+        rectangleAddMenu_dimensions_upperLeftY->setGeometry(QRect(220, 50, 31, 27));
+        rectangleAddMenu_penSettingLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_penSettingLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettingLabel"));
+        rectangleAddMenu_penSettingLabel->setGeometry(QRect(10, 164, 101, 17));
+        rectangleAddMenu_dimensionLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_dimensionLabel->setObjectName(QStringLiteral("rectangleAddMenu_dimensionLabel"));
+        rectangleAddMenu_dimensionLabel->setGeometry(QRect(20, 20, 91, 17));
+        rectangleAddMenu_dimensions_upperLefttXLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_dimensions_upperLefttXLabel->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_upperLefttXLabel"));
+        rectangleAddMenu_dimensions_upperLefttXLabel->setGeometry(QRect(160, 50, 16, 16));
+        rectangleAddMenu_dimensions_height = new QLineEdit(rectangleAddMenu);
+        rectangleAddMenu_dimensions_height->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_height"));
+        rectangleAddMenu_dimensions_height->setGeometry(QRect(170, 130, 31, 27));
+        verticalLayoutWidget_27 = new QWidget(rectangleAddMenu);
+        verticalLayoutWidget_27->setObjectName(QStringLiteral("verticalLayoutWidget_27"));
+        verticalLayoutWidget_27->setGeometry(QRect(20, 190, 101, 241));
+        verticalLayout_27 = new QVBoxLayout(verticalLayoutWidget_27);
+        verticalLayout_27->setObjectName(QStringLiteral("verticalLayout_27"));
+        verticalLayout_27->setContentsMargins(0, 0, 0, 0);
+        rectangleAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_lineColorLabel);
+
+        rectangleAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_lineWidthLabel);
+
+        rectangleAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_penStyleLabel);
+
+        rectangleAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_capStyleLabel);
+
+        rectangleAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_joinStyleLabel);
+
+        rectangleAddMenu_penSettings_brushColorLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_brushColorLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_brushColorLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_brushColorLabel);
+
+        rectangleAddMenu_penSettings_brushStyleLabel = new QLabel(verticalLayoutWidget_27);
+        rectangleAddMenu_penSettings_brushStyleLabel->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_brushStyleLabel"));
+
+        verticalLayout_27->addWidget(rectangleAddMenu_penSettings_brushStyleLabel);
+
+        verticalLayoutWidget_28 = new QWidget(rectangleAddMenu);
+        verticalLayoutWidget_28->setObjectName(QStringLiteral("verticalLayoutWidget_28"));
+        verticalLayoutWidget_28->setGeometry(QRect(110, 190, 160, 241));
+        verticalLayout_28 = new QVBoxLayout(verticalLayoutWidget_28);
+        verticalLayout_28->setObjectName(QStringLiteral("verticalLayout_28"));
+        verticalLayout_28->setContentsMargins(0, 0, 0, 0);
+        rectangleAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_lineColorCombo);
+
+        rectangleAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_lineWidthSpinBox);
+
+        rectangleAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_penStyleCombo);
+
+        rectangleAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_capStyleCombo);
+
+        rectangleAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_joinStyleCombo);
+
+        rectangleAddMenu_penSettings_brushColorCombo = new QComboBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_brushColorCombo->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_brushColorCombo"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_brushColorCombo);
+
+        rectangleAddMenu_penSettings_brushStyleCombo = new QComboBox(verticalLayoutWidget_28);
+        rectangleAddMenu_penSettings_brushStyleCombo->setObjectName(QStringLiteral("rectangleAddMenu_penSettings_brushStyleCombo"));
+
+        verticalLayout_28->addWidget(rectangleAddMenu_penSettings_brushStyleCombo);
+
+        rectangleAddMenu_dimensions_heighttLabel = new QLabel(rectangleAddMenu);
+        rectangleAddMenu_dimensions_heighttLabel->setObjectName(QStringLiteral("rectangleAddMenu_dimensions_heighttLabel"));
+        rectangleAddMenu_dimensions_heighttLabel->setGeometry(QRect(50, 130, 81, 17));
+        squareAddMenu = new QWidget(addShapeTab);
+        squareAddMenu->setObjectName(QStringLiteral("squareAddMenu"));
+        squareAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        squareModMenu_updateButton_2 = new QPushButton(squareAddMenu);
+        squareModMenu_updateButton_2->setObjectName(QStringLiteral("squareModMenu_updateButton_2"));
+        squareModMenu_updateButton_2->setGeometry(QRect(160, 10, 99, 27));
+        squareAddMenu_penSettings_formatLineTop = new QFrame(squareAddMenu);
+        squareAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("squareAddMenu_penSettings_formatLineTop"));
+        squareAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 120, 301, 20));
+        squareAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        squareAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        squareAddMenu_dimensions_widthLabel = new QLabel(squareAddMenu);
+        squareAddMenu_dimensions_widthLabel->setObjectName(QStringLiteral("squareAddMenu_dimensions_widthLabel"));
+        squareAddMenu_dimensions_widthLabel->setGeometry(QRect(30, 90, 101, 20));
+        squareAddMenu_dimensions_formatLine = new QFrame(squareAddMenu);
+        squareAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("squareAddMenu_dimensions_formatLine"));
+        squareAddMenu_dimensions_formatLine->setGeometry(QRect(-10, 25, 301, 31));
+        squareAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        squareAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        squareAddMenu_dimensions_uuperLeftYLabel = new QLabel(squareAddMenu);
+        squareAddMenu_dimensions_uuperLeftYLabel->setObjectName(QStringLiteral("squareAddMenu_dimensions_uuperLeftYLabel"));
+        squareAddMenu_dimensions_uuperLeftYLabel->setGeometry(QRect(210, 50, 16, 16));
+        squareAddMenu_dimensions_sideLength = new QLineEdit(squareAddMenu);
+        squareAddMenu_dimensions_sideLength->setObjectName(QStringLiteral("squareAddMenu_dimensions_sideLength"));
+        squareAddMenu_dimensions_sideLength->setGeometry(QRect(170, 90, 31, 27));
+        squareAddMenu_penSettings_formatLineBot = new QFrame(squareAddMenu);
+        squareAddMenu_penSettings_formatLineBot->setObjectName(QStringLiteral("squareAddMenu_penSettings_formatLineBot"));
+        squareAddMenu_penSettings_formatLineBot->setGeometry(QRect(-10, 144, 301, 20));
+        squareAddMenu_penSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        squareAddMenu_penSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        squareAddMenu_dimensions_upperLeftLabel = new QLabel(squareAddMenu);
+        squareAddMenu_dimensions_upperLeftLabel->setObjectName(QStringLiteral("squareAddMenu_dimensions_upperLeftLabel"));
+        squareAddMenu_dimensions_upperLeftLabel->setGeometry(QRect(30, 50, 81, 17));
+        squareAddMenu_dimensions_upperLeftX = new QLineEdit(squareAddMenu);
+        squareAddMenu_dimensions_upperLeftX->setObjectName(QStringLiteral("squareAddMenu_dimensions_upperLeftX"));
+        squareAddMenu_dimensions_upperLeftX->setGeometry(QRect(170, 50, 31, 27));
+        squareAddMenu_dimensions_upperLeftY = new QLineEdit(squareAddMenu);
+        squareAddMenu_dimensions_upperLeftY->setObjectName(QStringLiteral("squareAddMenu_dimensions_upperLeftY"));
+        squareAddMenu_dimensions_upperLeftY->setGeometry(QRect(220, 50, 31, 27));
+        squareAddMenu_penSettingLabel = new QLabel(squareAddMenu);
+        squareAddMenu_penSettingLabel->setObjectName(QStringLiteral("squareAddMenu_penSettingLabel"));
+        squareAddMenu_penSettingLabel->setGeometry(QRect(10, 134, 101, 17));
+        squareAddMenu_dimensionLabel = new QLabel(squareAddMenu);
+        squareAddMenu_dimensionLabel->setObjectName(QStringLiteral("squareAddMenu_dimensionLabel"));
+        squareAddMenu_dimensionLabel->setGeometry(QRect(20, 20, 91, 17));
+        squareAddMenu_dimensions_upperLefttXLabel = new QLabel(squareAddMenu);
+        squareAddMenu_dimensions_upperLefttXLabel->setObjectName(QStringLiteral("squareAddMenu_dimensions_upperLefttXLabel"));
+        squareAddMenu_dimensions_upperLefttXLabel->setGeometry(QRect(160, 50, 16, 16));
+        verticalLayoutWidget_29 = new QWidget(squareAddMenu);
+        verticalLayoutWidget_29->setObjectName(QStringLiteral("verticalLayoutWidget_29"));
+        verticalLayoutWidget_29->setGeometry(QRect(20, 160, 101, 241));
+        verticalLayout_29 = new QVBoxLayout(verticalLayoutWidget_29);
+        verticalLayout_29->setObjectName(QStringLiteral("verticalLayout_29"));
+        verticalLayout_29->setContentsMargins(0, 0, 0, 0);
+        squareAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_29);
+        squareAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("squareAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_29->addWidget(squareAddMenu_penSettings_lineColorLabel);
+
+        squareAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_29);
+        squareAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("squareAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_29->addWidget(squareAddMenu_penSettings_lineWidthLabel);
+
+        squareAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_29);
+        squareAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("squareAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_29->addWidget(squareAddMenu_penSettings_penStyleLabel);
+
+        squareAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_29);
+        squareAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("squareAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_29->addWidget(squareAddMenu_penSettings_capStyleLabel);
+
+        squaresquareAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_29);
+        squaresquareAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("squaresquareAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_29->addWidget(squaresquareAddMenu_penSettings_joinStyleLabel);
+
+        squareAddMenu_penSettings_brushColorLabel = new QLabel(verticalLayoutWidget_29);
+        squareAddMenu_penSettings_brushColorLabel->setObjectName(QStringLiteral("squareAddMenu_penSettings_brushColorLabel"));
+
+        verticalLayout_29->addWidget(squareAddMenu_penSettings_brushColorLabel);
+
+        squareAddMenu_penSettings_brushStyleLabel = new QLabel(verticalLayoutWidget_29);
+        squareAddMenu_penSettings_brushStyleLabel->setObjectName(QStringLiteral("squareAddMenu_penSettings_brushStyleLabel"));
+
+        verticalLayout_29->addWidget(squareAddMenu_penSettings_brushStyleLabel);
+
+        verticalLayoutWidget_30 = new QWidget(squareAddMenu);
+        verticalLayoutWidget_30->setObjectName(QStringLiteral("verticalLayoutWidget_30"));
+        verticalLayoutWidget_30->setGeometry(QRect(110, 160, 160, 241));
+        verticalLayout_30 = new QVBoxLayout(verticalLayoutWidget_30);
+        verticalLayout_30->setObjectName(QStringLiteral("verticalLayout_30"));
+        verticalLayout_30->setContentsMargins(0, 0, 0, 0);
+        squareAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("squareAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_lineColorCombo);
+
+        squareAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("squareAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_lineWidthSpinBox);
+
+        squareAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("squareAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_penStyleCombo);
+
+        squareAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("squareAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_capStyleCombo);
+
+        squareAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("squareAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_joinStyleCombo);
+
+        squareAddMenu_penSettings_brushColorCombo = new QComboBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_brushColorCombo->setObjectName(QStringLiteral("squareAddMenu_penSettings_brushColorCombo"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_brushColorCombo);
+
+        squareAddMenu_penSettings_brushStyleCombo = new QComboBox(verticalLayoutWidget_30);
+        squareAddMenu_penSettings_brushStyleCombo->setObjectName(QStringLiteral("squareAddMenu_penSettings_brushStyleCombo"));
+
+        verticalLayout_30->addWidget(squareAddMenu_penSettings_brushStyleCombo);
+
+        circleAddMenu = new QWidget(addShapeTab);
+        circleAddMenu->setObjectName(QStringLiteral("circleAddMenu"));
+        circleAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        cicleAddMenu_dimensions_originXLabel = new QLabel(circleAddMenu);
+        cicleAddMenu_dimensions_originXLabel->setObjectName(QStringLiteral("cicleAddMenu_dimensions_originXLabel"));
+        cicleAddMenu_dimensions_originXLabel->setGeometry(QRect(160, 50, 16, 16));
+        circleAddMenu_dimensions_radiusLabel = new QLabel(circleAddMenu);
+        circleAddMenu_dimensions_radiusLabel->setObjectName(QStringLiteral("circleAddMenu_dimensions_radiusLabel"));
+        circleAddMenu_dimensions_radiusLabel->setGeometry(QRect(50, 90, 101, 20));
+        circleAddMenu_penSettingLabel = new QLabel(circleAddMenu);
+        circleAddMenu_penSettingLabel->setObjectName(QStringLiteral("circleAddMenu_penSettingLabel"));
+        circleAddMenu_penSettingLabel->setGeometry(QRect(10, 140, 101, 17));
+        circleAddMenu_dimensions_originYLabel = new QLabel(circleAddMenu);
+        circleAddMenu_dimensions_originYLabel->setObjectName(QStringLiteral("circleAddMenu_dimensions_originYLabel"));
+        circleAddMenu_dimensions_originYLabel->setGeometry(QRect(210, 50, 16, 16));
+        circleAddMenu_dimensions_Radius = new QLineEdit(circleAddMenu);
+        circleAddMenu_dimensions_Radius->setObjectName(QStringLiteral("circleAddMenu_dimensions_Radius"));
+        circleAddMenu_dimensions_Radius->setGeometry(QRect(170, 90, 31, 27));
+        circleAddMenu_dimensionLabel = new QLabel(circleAddMenu);
+        circleAddMenu_dimensionLabel->setObjectName(QStringLiteral("circleAddMenu_dimensionLabel"));
+        circleAddMenu_dimensionLabel->setGeometry(QRect(20, 20, 91, 17));
+        circleAddMenu_penSettings_formatLineBot = new QFrame(circleAddMenu);
+        circleAddMenu_penSettings_formatLineBot->setObjectName(QStringLiteral("circleAddMenu_penSettings_formatLineBot"));
+        circleAddMenu_penSettings_formatLineBot->setGeometry(QRect(-10, 150, 301, 20));
+        circleAddMenu_penSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        circleAddMenu_penSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        circleAddMenu_penSettings_formatLineTop = new QFrame(circleAddMenu);
+        circleAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("circleAddMenu_penSettings_formatLineTop"));
+        circleAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 126, 301, 20));
+        circleAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        circleAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        circleAddMenu_dimensions_formatLine = new QFrame(circleAddMenu);
+        circleAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("circleAddMenu_dimensions_formatLine"));
+        circleAddMenu_dimensions_formatLine->setGeometry(QRect(-10, 25, 301, 31));
+        circleAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        circleAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        verticalLayoutWidget_33 = new QWidget(circleAddMenu);
+        verticalLayoutWidget_33->setObjectName(QStringLiteral("verticalLayoutWidget_33"));
+        verticalLayoutWidget_33->setGeometry(QRect(110, 166, 160, 241));
+        verticalLayout_33 = new QVBoxLayout(verticalLayoutWidget_33);
+        verticalLayout_33->setObjectName(QStringLiteral("verticalLayout_33"));
+        verticalLayout_33->setContentsMargins(0, 0, 0, 0);
+        circleAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("circleAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_lineColorCombo);
+
+        circleAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("circleAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_lineWidthSpinBox);
+
+        circleAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("circleAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_penStyleCombo);
+
+        circleAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("circleAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_capStyleCombo);
+
+        circleAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("circleAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_joinStyleCombo);
+
+        circleAddMenu_penSettings_brushColorCombo = new QComboBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_brushColorCombo->setObjectName(QStringLiteral("circleAddMenu_penSettings_brushColorCombo"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_brushColorCombo);
+
+        circleAddMenu_penSettings_brushStyleCombo = new QComboBox(verticalLayoutWidget_33);
+        circleAddMenu_penSettings_brushStyleCombo->setObjectName(QStringLiteral("circleAddMenu_penSettings_brushStyleCombo"));
+
+        verticalLayout_33->addWidget(circleAddMenu_penSettings_brushStyleCombo);
+
+        circleAddMenu_dimensions_upperLeftLabel = new QLabel(circleAddMenu);
+        circleAddMenu_dimensions_upperLeftLabel->setObjectName(QStringLiteral("circleAddMenu_dimensions_upperLeftLabel"));
+        circleAddMenu_dimensions_upperLeftLabel->setGeometry(QRect(50, 50, 81, 17));
+        circleAddMenu_createButton = new QPushButton(circleAddMenu);
+        circleAddMenu_createButton->setObjectName(QStringLiteral("circleAddMenu_createButton"));
+        circleAddMenu_createButton->setGeometry(QRect(160, 10, 99, 27));
+        circleAddMenu_dimensions_originY = new QLineEdit(circleAddMenu);
+        circleAddMenu_dimensions_originY->setObjectName(QStringLiteral("circleAddMenu_dimensions_originY"));
+        circleAddMenu_dimensions_originY->setGeometry(QRect(220, 50, 31, 27));
+        circleAddMenu_dimensions_originX = new QLineEdit(circleAddMenu);
+        circleAddMenu_dimensions_originX->setObjectName(QStringLiteral("circleAddMenu_dimensions_originX"));
+        circleAddMenu_dimensions_originX->setGeometry(QRect(170, 50, 31, 27));
+        verticalLayoutWidget_34 = new QWidget(circleAddMenu);
+        verticalLayoutWidget_34->setObjectName(QStringLiteral("verticalLayoutWidget_34"));
+        verticalLayoutWidget_34->setGeometry(QRect(20, 166, 101, 241));
+        verticalLayout_34 = new QVBoxLayout(verticalLayoutWidget_34);
+        verticalLayout_34->setObjectName(QStringLiteral("verticalLayout_34"));
+        verticalLayout_34->setContentsMargins(0, 0, 0, 0);
+        circleAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_lineColorLabel);
+
+        circleAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_lineWidthLabel);
+
+        circleAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_penStyleLabel);
+
+        circleAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_capStyleLabel);
+
+        circleAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_joinStyleLabel);
+
+        circleAddMenu_penSettings_brushColorLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_brushColorLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_brushColorLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_brushColorLabel);
+
+        circleAddMenu_penSettings_brushStyleLabel = new QLabel(verticalLayoutWidget_34);
+        circleAddMenu_penSettings_brushStyleLabel->setObjectName(QStringLiteral("circleAddMenu_penSettings_brushStyleLabel"));
+
+        verticalLayout_34->addWidget(circleAddMenu_penSettings_brushStyleLabel);
+
+        ellipseAddMenu = new QWidget(addShapeTab);
+        ellipseAddMenu->setObjectName(QStringLiteral("ellipseAddMenu"));
+        ellipseAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        ellipseAddMenu_dimensions_heighttLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_dimensions_heighttLabel->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_heighttLabel"));
+        ellipseAddMenu_dimensions_heighttLabel->setGeometry(QRect(40, 130, 91, 20));
+        ellipseAddMenu_dimensions_upperLefttXLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_dimensions_upperLefttXLabel->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_upperLefttXLabel"));
+        ellipseAddMenu_dimensions_upperLefttXLabel->setGeometry(QRect(160, 50, 16, 16));
+        ellipseAddMenu_dimensions_widthLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_dimensions_widthLabel->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_widthLabel"));
+        ellipseAddMenu_dimensions_widthLabel->setGeometry(QRect(40, 90, 111, 20));
+        ellipseAddMenu_penSettingLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_penSettingLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettingLabel"));
+        ellipseAddMenu_penSettingLabel->setGeometry(QRect(10, 164, 101, 17));
+        ellipseAddMenu_dimensions_RY = new QLineEdit(ellipseAddMenu);
+        ellipseAddMenu_dimensions_RY->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_RY"));
+        ellipseAddMenu_dimensions_RY->setGeometry(QRect(170, 130, 31, 27));
+        ellipseAddMenu_dimensions_uuperLeftYLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_dimensions_uuperLeftYLabel->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_uuperLeftYLabel"));
+        ellipseAddMenu_dimensions_uuperLeftYLabel->setGeometry(QRect(210, 50, 16, 16));
+        ellipseAddMenu_dimensions_RX = new QLineEdit(ellipseAddMenu);
+        ellipseAddMenu_dimensions_RX->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_RX"));
+        ellipseAddMenu_dimensions_RX->setGeometry(QRect(170, 90, 31, 27));
+        ellipseAddMenu_dimensionLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_dimensionLabel->setObjectName(QStringLiteral("ellipseAddMenu_dimensionLabel"));
+        ellipseAddMenu_dimensionLabel->setGeometry(QRect(20, 20, 91, 17));
+        ellipseAddMenu_penSettings_formatLineBot = new QFrame(ellipseAddMenu);
+        ellipseAddMenu_penSettings_formatLineBot->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_formatLineBot"));
+        ellipseAddMenu_penSettings_formatLineBot->setGeometry(QRect(-10, 174, 301, 20));
+        ellipseAddMenu_penSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        ellipseAddMenu_penSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        ellipseAddMenu_penSettings_formatLineTop = new QFrame(ellipseAddMenu);
+        ellipseAddMenu_penSettings_formatLineTop->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_formatLineTop"));
+        ellipseAddMenu_penSettings_formatLineTop->setGeometry(QRect(-10, 150, 301, 20));
+        ellipseAddMenu_penSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        ellipseAddMenu_penSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        ellipseAddMenu_dimensions_formatLine = new QFrame(ellipseAddMenu);
+        ellipseAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_formatLine"));
+        ellipseAddMenu_dimensions_formatLine->setGeometry(QRect(-10, 25, 301, 31));
+        ellipseAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        ellipseAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        verticalLayoutWidget_31 = new QWidget(ellipseAddMenu);
+        verticalLayoutWidget_31->setObjectName(QStringLiteral("verticalLayoutWidget_31"));
+        verticalLayoutWidget_31->setGeometry(QRect(110, 190, 160, 241));
+        verticalLayout_31 = new QVBoxLayout(verticalLayoutWidget_31);
+        verticalLayout_31->setObjectName(QStringLiteral("verticalLayout_31"));
+        verticalLayout_31->setContentsMargins(0, 0, 0, 0);
+        ellipseAddMenu_penSettings_lineColorCombo = new QComboBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_lineColorCombo->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_lineColorCombo"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_lineColorCombo);
+
+        ellipseAddMenu_penSettings_lineWidthSpinBox = new QSpinBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_lineWidthSpinBox->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_lineWidthSpinBox"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_lineWidthSpinBox);
+
+        ellipseAddMenu_penSettings_penStyleCombo = new QComboBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_penStyleCombo->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_penStyleCombo"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_penStyleCombo);
+
+        ellipseAddMenu_penSettings_capStyleCombo = new QComboBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_capStyleCombo->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_capStyleCombo"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_capStyleCombo);
+
+        ellipseAddMenu_penSettings_joinStyleCombo = new QComboBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_joinStyleCombo->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_joinStyleCombo"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_joinStyleCombo);
+
+        ellipseAddMenu_penSettings_brushColorCombo = new QComboBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_brushColorCombo->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_brushColorCombo"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_brushColorCombo);
+
+        ellipseAddMenu_penSettings_brushStyleCombo = new QComboBox(verticalLayoutWidget_31);
+        ellipseAddMenu_penSettings_brushStyleCombo->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_brushStyleCombo"));
+
+        verticalLayout_31->addWidget(ellipseAddMenu_penSettings_brushStyleCombo);
+
+        ellipseAddMenu_dimensions_originLabel = new QLabel(ellipseAddMenu);
+        ellipseAddMenu_dimensions_originLabel->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_originLabel"));
+        ellipseAddMenu_dimensions_originLabel->setGeometry(QRect(30, 50, 81, 17));
+        ellipseAddMenu_createButton = new QPushButton(ellipseAddMenu);
+        ellipseAddMenu_createButton->setObjectName(QStringLiteral("ellipseAddMenu_createButton"));
+        ellipseAddMenu_createButton->setGeometry(QRect(160, 10, 99, 27));
+        ellipseAddMenu_dimensions_originY = new QLineEdit(ellipseAddMenu);
+        ellipseAddMenu_dimensions_originY->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_originY"));
+        ellipseAddMenu_dimensions_originY->setGeometry(QRect(220, 50, 31, 27));
+        ellipseAddMenu_dimensions_originX = new QLineEdit(ellipseAddMenu);
+        ellipseAddMenu_dimensions_originX->setObjectName(QStringLiteral("ellipseAddMenu_dimensions_originX"));
+        ellipseAddMenu_dimensions_originX->setGeometry(QRect(170, 50, 31, 27));
+        verticalLayoutWidget_32 = new QWidget(ellipseAddMenu);
+        verticalLayoutWidget_32->setObjectName(QStringLiteral("verticalLayoutWidget_32"));
+        verticalLayoutWidget_32->setGeometry(QRect(20, 190, 101, 241));
+        verticalLayout_32 = new QVBoxLayout(verticalLayoutWidget_32);
+        verticalLayout_32->setObjectName(QStringLiteral("verticalLayout_32"));
+        verticalLayout_32->setContentsMargins(0, 0, 0, 0);
+        ellipseAddMenu_penSettings_lineColorLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_lineColorLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_lineColorLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_lineColorLabel);
+
+        ellipseAddMenu_penSettings_lineWidthLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_lineWidthLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_lineWidthLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_lineWidthLabel);
+
+        ellipseAddMenu_penSettings_penStyleLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_penStyleLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_penStyleLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_penStyleLabel);
+
+        ellipseAddMenu_penSettings_capStyleLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_capStyleLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_capStyleLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_capStyleLabel);
+
+        ellipseAddMenu_penSettings_joinStyleLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_joinStyleLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_joinStyleLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_joinStyleLabel);
+
+        ellipseAddMenu_penSettings_brushColorLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_brushColorLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_brushColorLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_brushColorLabel);
+
+        ellipseAddMenu_penSettings_brushStyleLabel = new QLabel(verticalLayoutWidget_32);
+        ellipseAddMenu_penSettings_brushStyleLabel->setObjectName(QStringLiteral("ellipseAddMenu_penSettings_brushStyleLabel"));
+
+        verticalLayout_32->addWidget(ellipseAddMenu_penSettings_brushStyleLabel);
+
+        textAddMenu = new QWidget(addShapeTab);
+        textAddMenu->setObjectName(QStringLiteral("textAddMenu"));
+        textAddMenu->setGeometry(QRect(10, 50, 281, 451));
+        textAddMenu_dimensions_upperLefttXLabel = new QLabel(textAddMenu);
+        textAddMenu_dimensions_upperLefttXLabel->setObjectName(QStringLiteral("textAddMenu_dimensions_upperLefttXLabel"));
+        textAddMenu_dimensions_upperLefttXLabel->setGeometry(QRect(160, 55, 16, 16));
+        textAddMenu_penSettingLabel = new QLabel(textAddMenu);
+        textAddMenu_penSettingLabel->setObjectName(QStringLiteral("textAddMenu_penSettingLabel"));
+        textAddMenu_penSettingLabel->setGeometry(QRect(10, 90, 101, 17));
+        textAddMenu_dimensions_uuperLeftYLabel = new QLabel(textAddMenu);
+        textAddMenu_dimensions_uuperLeftYLabel->setObjectName(QStringLiteral("textAddMenu_dimensions_uuperLeftYLabel"));
+        textAddMenu_dimensions_uuperLeftYLabel->setGeometry(QRect(210, 55, 16, 16));
+        textAddMenu_dimensionLabel = new QLabel(textAddMenu);
+        textAddMenu_dimensionLabel->setObjectName(QStringLiteral("textAddMenu_dimensionLabel"));
+        textAddMenu_dimensionLabel->setGeometry(QRect(20, 25, 91, 17));
+        textAddMenu_textSettings_formatLineBot = new QFrame(textAddMenu);
+        textAddMenu_textSettings_formatLineBot->setObjectName(QStringLiteral("textAddMenu_textSettings_formatLineBot"));
+        textAddMenu_textSettings_formatLineBot->setGeometry(QRect(-10, 100, 301, 20));
+        textAddMenu_textSettings_formatLineBot->setFrameShape(QFrame::HLine);
+        textAddMenu_textSettings_formatLineBot->setFrameShadow(QFrame::Sunken);
+        textAddMenu_textSettings_formatLineTop = new QFrame(textAddMenu);
+        textAddMenu_textSettings_formatLineTop->setObjectName(QStringLiteral("textAddMenu_textSettings_formatLineTop"));
+        textAddMenu_textSettings_formatLineTop->setGeometry(QRect(-10, 76, 301, 20));
+        textAddMenu_textSettings_formatLineTop->setFrameShape(QFrame::HLine);
+        textAddMenu_textSettings_formatLineTop->setFrameShadow(QFrame::Sunken);
+        textAddMenu_dimensions_formatLine = new QFrame(textAddMenu);
+        textAddMenu_dimensions_formatLine->setObjectName(QStringLiteral("textAddMenu_dimensions_formatLine"));
+        textAddMenu_dimensions_formatLine->setGeometry(QRect(-10, 30, 301, 31));
+        textAddMenu_dimensions_formatLine->setFrameShape(QFrame::HLine);
+        textAddMenu_dimensions_formatLine->setFrameShadow(QFrame::Sunken);
+        verticalLayoutWidget_35 = new QWidget(textAddMenu);
+        verticalLayoutWidget_35->setObjectName(QStringLiteral("verticalLayoutWidget_35"));
+        verticalLayoutWidget_35->setGeometry(QRect(100, 200, 160, 241));
+        verticalLayout_35 = new QVBoxLayout(verticalLayoutWidget_35);
+        verticalLayout_35->setObjectName(QStringLiteral("verticalLayout_35"));
+        verticalLayout_35->setContentsMargins(0, 0, 0, 0);
+        textAddMenu_textSettings_textColorCombo = new QComboBox(verticalLayoutWidget_35);
+        textAddMenu_textSettings_textColorCombo->setObjectName(QStringLiteral("textAddMenu_textSettings_textColorCombo"));
+
+        verticalLayout_35->addWidget(textAddMenu_textSettings_textColorCombo);
+
+        textAddMenu_textSettings_textPointSizeBox = new QSpinBox(verticalLayoutWidget_35);
+        textAddMenu_textSettings_textPointSizeBox->setObjectName(QStringLiteral("textAddMenu_textSettings_textPointSizeBox"));
+
+        verticalLayout_35->addWidget(textAddMenu_textSettings_textPointSizeBox);
+
+        textAddMenu_textSettings_fontCombo = new QComboBox(verticalLayoutWidget_35);
+        textAddMenu_textSettings_fontCombo->setObjectName(QStringLiteral("textAddMenu_textSettings_fontCombo"));
+        textAddMenu_textSettings_fontCombo->setEnabled(true);
+
+        verticalLayout_35->addWidget(textAddMenu_textSettings_fontCombo);
+
+        textAddMenu_textSettings_fontStyleCombo = new QComboBox(verticalLayoutWidget_35);
+        textAddMenu_textSettings_fontStyleCombo->setObjectName(QStringLiteral("textAddMenu_textSettings_fontStyleCombo"));
+
+        verticalLayout_35->addWidget(textAddMenu_textSettings_fontStyleCombo);
+
+        textAddMenu_textSettings_fontWeightCombo = new QComboBox(verticalLayoutWidget_35);
+        textAddMenu_textSettings_fontWeightCombo->setObjectName(QStringLiteral("textAddMenu_textSettings_fontWeightCombo"));
+
+        verticalLayout_35->addWidget(textAddMenu_textSettings_fontWeightCombo);
+
+        textAddMenu_dimensions_upperLeftLabel = new QLabel(textAddMenu);
+        textAddMenu_dimensions_upperLeftLabel->setObjectName(QStringLiteral("textAddMenu_dimensions_upperLeftLabel"));
+        textAddMenu_dimensions_upperLeftLabel->setGeometry(QRect(30, 55, 81, 17));
+        textAddMenu_createButton = new QPushButton(textAddMenu);
+        textAddMenu_createButton->setObjectName(QStringLiteral("textAddMenu_createButton"));
+        textAddMenu_createButton->setGeometry(QRect(160, 10, 99, 27));
+        textAddMenu_dimensions_upperLeftY = new QLineEdit(textAddMenu);
+        textAddMenu_dimensions_upperLeftY->setObjectName(QStringLiteral("textAddMenu_dimensions_upperLeftY"));
+        textAddMenu_dimensions_upperLeftY->setGeometry(QRect(220, 55, 31, 27));
+        textAddMenu_dimensions_upperLeftX = new QLineEdit(textAddMenu);
+        textAddMenu_dimensions_upperLeftX->setObjectName(QStringLiteral("textAddMenu_dimensions_upperLeftX"));
+        textAddMenu_dimensions_upperLeftX->setGeometry(QRect(170, 55, 31, 27));
+        verticalLayoutWidget_36 = new QWidget(textAddMenu);
+        verticalLayoutWidget_36->setObjectName(QStringLiteral("verticalLayoutWidget_36"));
+        verticalLayoutWidget_36->setGeometry(QRect(10, 200, 101, 241));
+        verticalLayout_36 = new QVBoxLayout(verticalLayoutWidget_36);
+        verticalLayout_36->setObjectName(QStringLiteral("verticalLayout_36"));
+        verticalLayout_36->setContentsMargins(0, 0, 0, 0);
+        textAddMenu_textSettings_textColorLabel = new QLabel(verticalLayoutWidget_36);
+        textAddMenu_textSettings_textColorLabel->setObjectName(QStringLiteral("textAddMenu_textSettings_textColorLabel"));
+
+        verticalLayout_36->addWidget(textAddMenu_textSettings_textColorLabel);
+
+        textAddMenu_textSettings_pointSizeLabel = new QLabel(verticalLayoutWidget_36);
+        textAddMenu_textSettings_pointSizeLabel->setObjectName(QStringLiteral("textAddMenu_textSettings_pointSizeLabel"));
+
+        verticalLayout_36->addWidget(textAddMenu_textSettings_pointSizeLabel);
+
+        textAddMenu_textSettings_fontLabel = new QLabel(verticalLayoutWidget_36);
+        textAddMenu_textSettings_fontLabel->setObjectName(QStringLiteral("textAddMenu_textSettings_fontLabel"));
+
+        verticalLayout_36->addWidget(textAddMenu_textSettings_fontLabel);
+
+        textAddMenu_textSettings_fontStyleLabel = new QLabel(verticalLayoutWidget_36);
+        textAddMenu_textSettings_fontStyleLabel->setObjectName(QStringLiteral("textAddMenu_textSettings_fontStyleLabel"));
+
+        verticalLayout_36->addWidget(textAddMenu_textSettings_fontStyleLabel);
+
+        textAddMenu_textSettings_fontWeightLabel = new QLabel(verticalLayoutWidget_36);
+        textAddMenu_textSettings_fontWeightLabel->setObjectName(QStringLiteral("textAddMenu_textSettings_fontWeightLabel"));
+
+        verticalLayout_36->addWidget(textAddMenu_textSettings_fontWeightLabel);
+
+        textAddMenu_textSettings_textEditLabel = new QLabel(textAddMenu);
+        textAddMenu_textSettings_textEditLabel->setObjectName(QStringLiteral("textAddMenu_textSettings_textEditLabel"));
+        textAddMenu_textSettings_textEditLabel->setGeometry(QRect(10, 116, 91, 16));
+        textAddMenu_textSettings_textEdit = new QPlainTextEdit(textAddMenu);
+        textAddMenu_textSettings_textEdit->setObjectName(QStringLiteral("textAddMenu_textSettings_textEdit"));
+        textAddMenu_textSettings_textEdit->setGeometry(QRect(10, 140, 261, 51));
+        tabMenu->addTab(addShapeTab, QString());
+        reportTab = new QWidget();
+        reportTab->setObjectName(QStringLiteral("reportTab"));
+        tabWidget = new QTabWidget(reportTab);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setGeometry(QRect(0, 0, 301, 501));
         tab_3 = new QWidget();
@@ -1583,7 +2906,7 @@ public:
         tableWidget_2->setObjectName(QStringLiteral("tableWidget_2"));
         tableWidget_2->setGeometry(QRect(0, 0, 291, 471));
         tabWidget->addTab(tab_5, QString());
-        tabMenu->addTab(tab, QString());
+        tabMenu->addTab(reportTab, QString());
 
         horizontalLayout->addWidget(tabMenu);
 
@@ -1736,6 +3059,8 @@ public:
         tabMenu->setCurrentIndex(0);
         polygonModMenu_dimensions_pointList->setCurrentRow(-1);
         polyLineModMenu_dimensions_pointList->setCurrentRow(-1);
+        polyLineAddMenu_dimensions_pointList->setCurrentRow(-1);
+        polygonAddMenu_dimensions_pointList->setCurrentRow(-1);
         tabWidget->setCurrentIndex(0);
 
 
@@ -2391,13 +3716,657 @@ public:
         textModMenu_textSettings_fontWeightLabel->setText(QApplication::translate("MainWindow", "FontWeight :", 0));
         textModMenu_textSettings_textEditLabel->setText(QApplication::translate("MainWindow", "Visible Text :", 0));
         textModMenu_deleteButton->setText(QApplication::translate("MainWindow", "Delete", 0));
+        ModMenu_deleteScreenLabel->setText(QApplication::translate("MainWindow", "SHAPE HAS BEEN DELETED", 0));
+        ModMenu_emptyScreenLabel->setText(QApplication::translate("MainWindow", "    THERE ARE NO SHAPES", 0));
         tabMenu->setTabText(tabMenu->indexOf(modTab), QApplication::translate("MainWindow", "Modify", 0));
-        label->setText(QApplication::translate("MainWindow", "Shape Type :", 0));
-        tabMenu->setTabText(tabMenu->indexOf(addRemoveTab), QApplication::translate("MainWindow", "Add/Remove", 0));
+        shapeTypeAddCombo->clear();
+        shapeTypeAddCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Line", 0)
+         << QApplication::translate("MainWindow", "Polyline", 0)
+         << QApplication::translate("MainWindow", "Polygon", 0)
+         << QApplication::translate("MainWindow", "Rectangle", 0)
+         << QApplication::translate("MainWindow", "Square", 0)
+         << QApplication::translate("MainWindow", "Ellipse", 0)
+         << QApplication::translate("MainWindow", "Circle", 0)
+         << QApplication::translate("MainWindow", "Text", 0)
+        );
+        shapeTypeAddLabel->setText(QApplication::translate("MainWindow", "Shape Type :", 0));
+        lineAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        lineAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        lineAddMenu_dimensions_startPointLabel->setText(QApplication::translate("MainWindow", "Start Point:", 0));
+        lineAddMenu_dimensions_endPointLabel->setText(QApplication::translate("MainWindow", " End Point :", 0));
+        lineAddMenu_dimensions_startPointXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        lineAddMenu_dimensions_endPointYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        lineAddMenu_dimensions_endPointYLabel_2->setText(QApplication::translate("MainWindow", "Y", 0));
+        lineAddMenu_dimensions_endPointXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        lineAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        lineAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        lineAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        lineAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        lineAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        lineAddMenu_penSettings_lineColorCombo->clear();
+        lineAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        lineAddMenu_penSettings_penStyleCombo->clear();
+        lineAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        lineAddMenu_penSettings_capStyleCombo->clear();
+        lineAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        lineAddMenu_penSettings_joinStyleCombo->clear();
+        lineAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        lineAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        polyLineAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        polyLineAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        polyLineAddMenu_dimensions_endPointYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        polyLineAddMenu_dimensions_startPointXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        polyLineAddMenu_dimensions_addPointButton->setText(QApplication::translate("MainWindow", "Add Point", 0));
+        polyLineAddMenu_dimensions_movePointButton->setText(QApplication::translate("MainWindow", "Move Point", 0));
+        polyLineAddMenu_dimensions_deletePointButton->setText(QApplication::translate("MainWindow", "Delete Point", 0));
+        polyLineAddMenu_penSettings_lineColorCombo->clear();
+        polyLineAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        polyLineAddMenu_penSettings_penStyleCombo->clear();
+        polyLineAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        polyLineAddMenu_penSettings_capStyleCombo->clear();
+        polyLineAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        polyLineAddMenu_penSettings_joinStyleCombo->clear();
+        polyLineAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        polyLineAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        polyLineAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        polyLineAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        polyLineAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        polyLineAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        lineAddMenu_penSettingLabel_2->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        polygonAddMenu_dimensions_endPointYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        polygonAddMenu_penSettings_lineColorCombo->clear();
+        polygonAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        polygonAddMenu_penSettings_penStyleCombo->clear();
+        polygonAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        polygonAddMenu_penSettings_capStyleCombo->clear();
+        polygonAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        polygonAddMenu_penSettings_joinStyleCombo->clear();
+        polygonAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        polygonAddMenu_penSettings_brushColorCombo->clear();
+        polygonAddMenu_penSettings_brushColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Gray", 0)
+         << QApplication::translate("MainWindow", "Dark Gray", 0)
+         << QApplication::translate("MainWindow", "Light Gray", 0)
+        );
+        polygonAddMenu_penSettings_brushStyleCombo->clear();
+        polygonAddMenu_penSettings_brushStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid", 0)
+         << QApplication::translate("MainWindow", "No Brush", 0)
+         << QApplication::translate("MainWindow", "Dense 1", 0)
+         << QApplication::translate("MainWindow", "Dense 2", 0)
+         << QApplication::translate("MainWindow", "Dense 3", 0)
+         << QApplication::translate("MainWindow", "Dense 4", 0)
+         << QApplication::translate("MainWindow", "Dense 5", 0)
+         << QApplication::translate("MainWindow", "Dense 6", 0)
+         << QApplication::translate("MainWindow", "Dense 7", 0)
+         << QApplication::translate("MainWindow", "Horizontal", 0)
+         << QApplication::translate("MainWindow", "Vertical", 0)
+         << QApplication::translate("MainWindow", "Cross", 0)
+         << QApplication::translate("MainWindow", "Back Diag.", 0)
+         << QApplication::translate("MainWindow", "Forward Diag.", 0)
+         << QApplication::translate("MainWindow", "Diag. Cross", 0)
+        );
+        polygonAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        polygonAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        polygonAddMenu_dimensions_addPointButton->setText(QApplication::translate("MainWindow", "Add Point", 0));
+        polygonAddMenu_dimensions_movePointButton->setText(QApplication::translate("MainWindow", "Move Point", 0));
+        polygonAddMenu_dimensions_deletePointButton->setText(QApplication::translate("MainWindow", "Delete Point", 0));
+        polygonAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        polygonAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        polygonAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        polygonAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        polygonAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        polygonAddMenu_penSettings_brushColorLabel->setText(QApplication::translate("MainWindow", "Fill Color :", 0));
+        polygonAddMenu_penSettings_brushStyleLabel->setText(QApplication::translate("MainWindow", "FIll Style :", 0));
+        polygonAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        polygonAddMenu_dimensions_startPointXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        rectangleAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        rectangleAddMenu_dimensions_widthLabel->setText(QApplication::translate("MainWindow", "Width   :", 0));
+        rectangleAddMenu_dimensions_uuperLeftYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        rectangleAddMenu_dimensions_upperLeftLabel->setText(QApplication::translate("MainWindow", "Upper Left :", 0));
+        rectangleAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        rectangleAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        rectangleAddMenu_dimensions_upperLefttXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        rectangleAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        rectangleAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        rectangleAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        rectangleAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        rectangleAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        rectangleAddMenu_penSettings_brushColorLabel->setText(QApplication::translate("MainWindow", "Fill Color :", 0));
+        rectangleAddMenu_penSettings_brushStyleLabel->setText(QApplication::translate("MainWindow", "FIll Style :", 0));
+        rectangleAddMenu_penSettings_lineColorCombo->clear();
+        rectangleAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        rectangleAddMenu_penSettings_penStyleCombo->clear();
+        rectangleAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        rectangleAddMenu_penSettings_capStyleCombo->clear();
+        rectangleAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        rectangleAddMenu_penSettings_joinStyleCombo->clear();
+        rectangleAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        rectangleAddMenu_penSettings_brushColorCombo->clear();
+        rectangleAddMenu_penSettings_brushColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Gray", 0)
+         << QApplication::translate("MainWindow", "Dark Gray", 0)
+         << QApplication::translate("MainWindow", "Light Gray", 0)
+        );
+        rectangleAddMenu_penSettings_brushStyleCombo->clear();
+        rectangleAddMenu_penSettings_brushStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid", 0)
+         << QApplication::translate("MainWindow", "No Brush", 0)
+         << QApplication::translate("MainWindow", "Dense 1", 0)
+         << QApplication::translate("MainWindow", "Dense 2", 0)
+         << QApplication::translate("MainWindow", "Dense 3", 0)
+         << QApplication::translate("MainWindow", "Dense 4", 0)
+         << QApplication::translate("MainWindow", "Dense 5", 0)
+         << QApplication::translate("MainWindow", "Dense 6", 0)
+         << QApplication::translate("MainWindow", "Dense 7", 0)
+         << QApplication::translate("MainWindow", "Horizontal", 0)
+         << QApplication::translate("MainWindow", "Vertical", 0)
+         << QApplication::translate("MainWindow", "Cross", 0)
+         << QApplication::translate("MainWindow", "Back Diag.", 0)
+         << QApplication::translate("MainWindow", "Forward Diag.", 0)
+         << QApplication::translate("MainWindow", "Diag. Cross", 0)
+        );
+        rectangleAddMenu_dimensions_heighttLabel->setText(QApplication::translate("MainWindow", "Height  :", 0));
+        squareModMenu_updateButton_2->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        squareAddMenu_dimensions_widthLabel->setText(QApplication::translate("MainWindow", "Side Length :", 0));
+        squareAddMenu_dimensions_uuperLeftYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        squareAddMenu_dimensions_upperLeftLabel->setText(QApplication::translate("MainWindow", "Upper Left :", 0));
+        squareAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        squareAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        squareAddMenu_dimensions_upperLefttXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        squareAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        squareAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        squareAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        squareAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        squaresquareAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        squareAddMenu_penSettings_brushColorLabel->setText(QApplication::translate("MainWindow", "Fill Color :", 0));
+        squareAddMenu_penSettings_brushStyleLabel->setText(QApplication::translate("MainWindow", "FIll Style :", 0));
+        squareAddMenu_penSettings_lineColorCombo->clear();
+        squareAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        squareAddMenu_penSettings_penStyleCombo->clear();
+        squareAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        squareAddMenu_penSettings_capStyleCombo->clear();
+        squareAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        squareAddMenu_penSettings_joinStyleCombo->clear();
+        squareAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        squareAddMenu_penSettings_brushColorCombo->clear();
+        squareAddMenu_penSettings_brushColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Gray", 0)
+         << QApplication::translate("MainWindow", "Dark Gray", 0)
+         << QApplication::translate("MainWindow", "Light Gray", 0)
+        );
+        squareAddMenu_penSettings_brushStyleCombo->clear();
+        squareAddMenu_penSettings_brushStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid", 0)
+         << QApplication::translate("MainWindow", "No Brush", 0)
+         << QApplication::translate("MainWindow", "Dense 1", 0)
+         << QApplication::translate("MainWindow", "Dense 2", 0)
+         << QApplication::translate("MainWindow", "Dense 3", 0)
+         << QApplication::translate("MainWindow", "Dense 4", 0)
+         << QApplication::translate("MainWindow", "Dense 5", 0)
+         << QApplication::translate("MainWindow", "Dense 6", 0)
+         << QApplication::translate("MainWindow", "Dense 7", 0)
+         << QApplication::translate("MainWindow", "Horizontal", 0)
+         << QApplication::translate("MainWindow", "Vertical", 0)
+         << QApplication::translate("MainWindow", "Cross", 0)
+         << QApplication::translate("MainWindow", "Back Diag.", 0)
+         << QApplication::translate("MainWindow", "Forward Diag.", 0)
+         << QApplication::translate("MainWindow", "Diag. Cross", 0)
+        );
+        cicleAddMenu_dimensions_originXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        circleAddMenu_dimensions_radiusLabel->setText(QApplication::translate("MainWindow", "Radius  :", 0));
+        circleAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        circleAddMenu_dimensions_originYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        circleAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        circleAddMenu_penSettings_lineColorCombo->clear();
+        circleAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        circleAddMenu_penSettings_penStyleCombo->clear();
+        circleAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        circleAddMenu_penSettings_capStyleCombo->clear();
+        circleAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        circleAddMenu_penSettings_joinStyleCombo->clear();
+        circleAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        circleAddMenu_penSettings_brushColorCombo->clear();
+        circleAddMenu_penSettings_brushColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Gray", 0)
+         << QApplication::translate("MainWindow", "Dark Gray", 0)
+         << QApplication::translate("MainWindow", "Light Gray", 0)
+        );
+        circleAddMenu_penSettings_brushStyleCombo->clear();
+        circleAddMenu_penSettings_brushStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid", 0)
+         << QApplication::translate("MainWindow", "No Brush", 0)
+         << QApplication::translate("MainWindow", "Dense 1", 0)
+         << QApplication::translate("MainWindow", "Dense 2", 0)
+         << QApplication::translate("MainWindow", "Dense 3", 0)
+         << QApplication::translate("MainWindow", "Dense 4", 0)
+         << QApplication::translate("MainWindow", "Dense 5", 0)
+         << QApplication::translate("MainWindow", "Dense 6", 0)
+         << QApplication::translate("MainWindow", "Dense 7", 0)
+         << QApplication::translate("MainWindow", "Horizontal", 0)
+         << QApplication::translate("MainWindow", "Vertical", 0)
+         << QApplication::translate("MainWindow", "Cross", 0)
+         << QApplication::translate("MainWindow", "Back Diag.", 0)
+         << QApplication::translate("MainWindow", "Forward Diag.", 0)
+         << QApplication::translate("MainWindow", "Diag. Cross", 0)
+        );
+        circleAddMenu_dimensions_upperLeftLabel->setText(QApplication::translate("MainWindow", "Origin  :", 0));
+        circleAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        circleAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        circleAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        circleAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        circleAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        circleAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        circleAddMenu_penSettings_brushColorLabel->setText(QApplication::translate("MainWindow", "Fill Color :", 0));
+        circleAddMenu_penSettings_brushStyleLabel->setText(QApplication::translate("MainWindow", "FIll Style :", 0));
+        ellipseAddMenu_dimensions_heighttLabel->setText(QApplication::translate("MainWindow", "RY Size    :", 0));
+        ellipseAddMenu_dimensions_upperLefttXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        ellipseAddMenu_dimensions_widthLabel->setText(QApplication::translate("MainWindow", "RX Size    :", 0));
+        ellipseAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Pen Settings:", 0));
+        ellipseAddMenu_dimensions_uuperLeftYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        ellipseAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        ellipseAddMenu_penSettings_lineColorCombo->clear();
+        ellipseAddMenu_penSettings_lineColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        ellipseAddMenu_penSettings_penStyleCombo->clear();
+        ellipseAddMenu_penSettings_penStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid Line", 0)
+         << QApplication::translate("MainWindow", "Dash Line", 0)
+         << QApplication::translate("MainWindow", "Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot Line", 0)
+         << QApplication::translate("MainWindow", "Dash-Dot-Dot Line", 0)
+        );
+        ellipseAddMenu_penSettings_capStyleCombo->clear();
+        ellipseAddMenu_penSettings_capStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Square Cap", 0)
+         << QApplication::translate("MainWindow", "Flat Cap", 0)
+         << QApplication::translate("MainWindow", "Round Cap", 0)
+        );
+        ellipseAddMenu_penSettings_joinStyleCombo->clear();
+        ellipseAddMenu_penSettings_joinStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Bevel Join", 0)
+         << QApplication::translate("MainWindow", "Miter Join", 0)
+         << QApplication::translate("MainWindow", "Round Join", 0)
+        );
+        ellipseAddMenu_penSettings_brushColorCombo->clear();
+        ellipseAddMenu_penSettings_brushColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Gray", 0)
+         << QApplication::translate("MainWindow", "Dark Gray", 0)
+         << QApplication::translate("MainWindow", "Light Gray", 0)
+        );
+        ellipseAddMenu_penSettings_brushStyleCombo->clear();
+        ellipseAddMenu_penSettings_brushStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Solid", 0)
+         << QApplication::translate("MainWindow", "No Brush", 0)
+         << QApplication::translate("MainWindow", "Dense 1", 0)
+         << QApplication::translate("MainWindow", "Dense 2", 0)
+         << QApplication::translate("MainWindow", "Dense 3", 0)
+         << QApplication::translate("MainWindow", "Dense 4", 0)
+         << QApplication::translate("MainWindow", "Dense 5", 0)
+         << QApplication::translate("MainWindow", "Dense 6", 0)
+         << QApplication::translate("MainWindow", "Dense 7", 0)
+         << QApplication::translate("MainWindow", "Horizontal", 0)
+         << QApplication::translate("MainWindow", "Vertical", 0)
+         << QApplication::translate("MainWindow", "Cross", 0)
+         << QApplication::translate("MainWindow", "Back Diag.", 0)
+         << QApplication::translate("MainWindow", "Forward Diag.", 0)
+         << QApplication::translate("MainWindow", "Diag. Cross", 0)
+        );
+        ellipseAddMenu_dimensions_originLabel->setText(QApplication::translate("MainWindow", "       Origin :", 0));
+        ellipseAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        ellipseAddMenu_penSettings_lineColorLabel->setText(QApplication::translate("MainWindow", " Line Color :", 0));
+        ellipseAddMenu_penSettings_lineWidthLabel->setText(QApplication::translate("MainWindow", " Line Width :", 0));
+        ellipseAddMenu_penSettings_penStyleLabel->setText(QApplication::translate("MainWindow", "Pen Style :", 0));
+        ellipseAddMenu_penSettings_capStyleLabel->setText(QApplication::translate("MainWindow", " Cap Style :", 0));
+        ellipseAddMenu_penSettings_joinStyleLabel->setText(QApplication::translate("MainWindow", "Join Style :", 0));
+        ellipseAddMenu_penSettings_brushColorLabel->setText(QApplication::translate("MainWindow", "Fill Color :", 0));
+        ellipseAddMenu_penSettings_brushStyleLabel->setText(QApplication::translate("MainWindow", "FIll Style :", 0));
+        textAddMenu_dimensions_upperLefttXLabel->setText(QApplication::translate("MainWindow", "X", 0));
+        textAddMenu_penSettingLabel->setText(QApplication::translate("MainWindow", "Text Settings :", 0));
+        textAddMenu_dimensions_uuperLeftYLabel->setText(QApplication::translate("MainWindow", "Y", 0));
+        textAddMenu_dimensionLabel->setText(QApplication::translate("MainWindow", "Dimensions:", 0));
+        textAddMenu_textSettings_textColorCombo->clear();
+        textAddMenu_textSettings_textColorCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "White", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+         << QApplication::translate("MainWindow", "Cyan", 0)
+         << QApplication::translate("MainWindow", "Dark Cyan", 0)
+         << QApplication::translate("MainWindow", "Red", 0)
+         << QApplication::translate("MainWindow", "Dark Red", 0)
+         << QApplication::translate("MainWindow", "Magenta", 0)
+         << QApplication::translate("MainWindow", "Dark Magenta", 0)
+         << QApplication::translate("MainWindow", "Green", 0)
+         << QApplication::translate("MainWindow", "Dark Green", 0)
+         << QApplication::translate("MainWindow", "Yellow", 0)
+         << QApplication::translate("MainWindow", "Dark Yellow", 0)
+         << QApplication::translate("MainWindow", "Blue", 0)
+         << QApplication::translate("MainWindow", "Dark Blue", 0)
+         << QApplication::translate("MainWindow", "Grey", 0)
+         << QApplication::translate("MainWindow", "Dark Grey", 0)
+         << QApplication::translate("MainWindow", "Light Grey", 0)
+        );
+        textAddMenu_textSettings_fontCombo->clear();
+        textAddMenu_textSettings_fontCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "SansSerif", 0)
+         << QApplication::translate("MainWindow", "Halvetica", 0)
+         << QApplication::translate("MainWindow", "Serif", 0)
+         << QApplication::translate("MainWindow", "Times", 0)
+         << QApplication::translate("MainWindow", "TypeWriter", 0)
+         << QApplication::translate("MainWindow", "Courier", 0)
+         << QApplication::translate("MainWindow", "OldEnglish", 0)
+         << QApplication::translate("MainWindow", "Decorative", 0)
+         << QApplication::translate("MainWindow", "Monspace", 0)
+         << QApplication::translate("MainWindow", "Fantasy", 0)
+         << QApplication::translate("MainWindow", "Cursive", 0)
+         << QApplication::translate("MainWindow", "Systen", 0)
+        );
+        textAddMenu_textSettings_fontStyleCombo->clear();
+        textAddMenu_textSettings_fontStyleCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Normal", 0)
+         << QApplication::translate("MainWindow", "Italic", 0)
+         << QApplication::translate("MainWindow", "Oblique", 0)
+        );
+        textAddMenu_textSettings_fontWeightCombo->clear();
+        textAddMenu_textSettings_fontWeightCombo->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Light", 0)
+         << QApplication::translate("MainWindow", "Normal", 0)
+         << QApplication::translate("MainWindow", "DemiBold", 0)
+         << QApplication::translate("MainWindow", "Bold", 0)
+         << QApplication::translate("MainWindow", "Black", 0)
+        );
+        textAddMenu_dimensions_upperLeftLabel->setText(QApplication::translate("MainWindow", "Upper Left :", 0));
+        textAddMenu_createButton->setText(QApplication::translate("MainWindow", "CREATE!", 0));
+        textAddMenu_textSettings_textColorLabel->setText(QApplication::translate("MainWindow", "Text Color :", 0));
+        textAddMenu_textSettings_pointSizeLabel->setText(QApplication::translate("MainWindow", "Point Size :", 0));
+        textAddMenu_textSettings_fontLabel->setText(QApplication::translate("MainWindow", "        Font  :", 0));
+        textAddMenu_textSettings_fontStyleLabel->setText(QApplication::translate("MainWindow", "Font Style :", 0));
+        textAddMenu_textSettings_fontWeightLabel->setText(QApplication::translate("MainWindow", "FontWeight :", 0));
+        textAddMenu_textSettings_textEditLabel->setText(QApplication::translate("MainWindow", "Visible Text :", 0));
+        tabMenu->setTabText(tabMenu->indexOf(addShapeTab), QApplication::translate("MainWindow", "Add Shape", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Report by ID", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "by Perimeter", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "by Area", 0));
-        tabMenu->setTabText(tabMenu->indexOf(tab), QApplication::translate("MainWindow", "Shape Tables", 0));
+        tabMenu->setTabText(tabMenu->indexOf(reportTab), QApplication::translate("MainWindow", "Shape Tables", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuAdmin->setTitle(QApplication::translate("MainWindow", "Admin", 0));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0));
