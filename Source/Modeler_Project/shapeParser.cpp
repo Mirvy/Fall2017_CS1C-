@@ -1,7 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+<<<<<<< HEAD
 
+=======
+#include <vector>
+>>>>>>> fbe5bef60d2e3e000695f9e14bc314e0e6f14982
 #include "shape.h"
 #include "vector.h"
 
@@ -32,8 +36,15 @@ Qt::PenJoinStyle getPenJoinStyle(const string &);
     PenStyle: DashDotLine
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
+<<<<<<< HEAD
     BrushColor: white
     BrushStyle: NoBrush
+=======
+
+    BrushColor: white
+    BrushStyle: NoBrush
+
+>>>>>>> fbe5bef60d2e3e000695f9e14bc314e0e6f14982
     TextFontStyle: FlatCap
     TextFontWeight: Normal
 */
@@ -78,6 +89,7 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
                 {
                     size_t pos = temp.find(" ");      // position of in str
                     sub = temp.substr (pos); //grabs the rest of the line
+<<<<<<< HEAD
                     cout <<
                             sub << endl;
                     tempShape.push_back(sub); //adds it to vector tempShape
@@ -96,11 +108,29 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
         cout << tempShape[SHAPE_TYPE] << endl;
         string temp = " Line";
         if(tempShape[SHAPE_TYPE].find("Line")) //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
+=======
+                    tempShape.push_back(sub); //adds it to vector tempShape
+                }
+                ++i;
+            }
+        }
+
+        //error checking
+
+        myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
+        ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.
+
+        if(*(ptemp+1) == " Line") //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
+>>>>>>> fbe5bef60d2e3e000695f9e14bc314e0e6f14982
         {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
             cout << "IM A HAPPY RUNTIME ERROR" << endl;
             shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
         }
+<<<<<<< HEAD
         /*else if(temp == " Polyline") //has to have a space in front of the type like this: " type"
+=======
+        else if(*(ptemp+1) == " Polyline") //has to have a space in front of the type like this: " type"
+>>>>>>> fbe5bef60d2e3e000695f9e14bc314e0e6f14982
         {
             shapes.push_back(polyLineParse(tempShape,device));
         }
@@ -139,6 +169,7 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
         for(int i = 0; i < vecSize; ++i)
         {
             tempShape.erase(tempShape.begin());
+<<<<<<< HEAD
         }*/
        }
     }//end while(!eof())
@@ -165,6 +196,10 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
         cerr << *i << endl;
     }*/
 
+=======
+        }
+    }//end while(!eof())
+>>>>>>> fbe5bef60d2e3e000695f9e14bc314e0e6f14982
 
     shapeFile.close();
 return shapes;
