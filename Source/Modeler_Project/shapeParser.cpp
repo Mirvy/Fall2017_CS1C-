@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "shape.h"
 #include "vector.h"
 
@@ -58,8 +59,9 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
 {
     myStd::vector<Shape::Shape*> shapes;  //Create the primary vector to hold the shape object pointers.
     myStd::vector<std::string> tempShape;  // Create a temp string vector to hold each of the object blocks from the input file.
+    //std::vector<string> tempShape;
 
-    string temp, sub;
+    string   temp, sub;
     ifstream shapeFile;
     shapeFile.open("shapes.txt");
 
@@ -84,8 +86,11 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             }
         }
 
+        //error checking
+
         myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
         ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.
+
         if(*(ptemp+1) == " Line") //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
         {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
             shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
@@ -122,9 +127,16 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
         {
             cout << "\n\n**ERROR---\"PARSER\"---ERROR**\n\n";
         }
-    }
-    //add emptying the vector
-    //tempShape.clear();
+        //add emptying the vector
+        //tempShape.clear(); is not a part of the vector, so will use erase
+
+        int vecSize = tempShape.size();
+        for(int i = 0; i < vecSize; ++i)
+        {
+            tempShape.erase(tempShape.begin());
+        }
+    }//end while(!eof())
+
     shapeFile.close();
 return shapes;
 }
