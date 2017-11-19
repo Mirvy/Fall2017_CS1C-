@@ -9,19 +9,19 @@ using namespace std;
 using namespace Shape;
 using namespace myStd;
 
-Shape::Shape* lineParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* polyLineParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* polygonParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* rectangleParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* squareParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* ellipseParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* circleParse(const myStd::vector<string>&,QPaintDevice*);
-Shape::Shape* textParse(const myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* lineParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* polyLineParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* polygonParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* rectangleParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* squareParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* ellipseParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* circleParse(myStd::vector<string>&,QPaintDevice*);
+Shape::Shape* textParse(myStd::vector<string>&,QPaintDevice*);
 
-Qt::GlobalColor getColor(const string &);
-Qt::PenStyle    getPenStyle(const string &);
-Qt::PenCapStyle getPenCapStyle(const string &);
-Qt::PenJoinStyle getPenJoinStyle(const string &);
+Qt::GlobalColor getColor(string &);
+Qt::PenStyle    getPenStyle(string &);
+Qt::PenCapStyle getPenCapStyle(string &);
+Qt::PenJoinStyle getPenJoinStyle(string &);
 
 /*
     ShapeId: 1
@@ -38,20 +38,20 @@ Qt::PenJoinStyle getPenJoinStyle(const string &);
     TextFontWeight: Normal
 */
 
-const int SHAPE_ID       = 0;
-const int SHAPE_TYPE     = 1;
-const int SHAPE_DIMS     = 2;
-const int PEN_COLOR      = 3;
-const int PEN_WIDTH      = 4;
-const int PEN_STYLE      = 5;
-const int PEN_CAP_STYLE  = 6;
-const int PEN_JOIN_STYLE = 7;
+ int SHAPE_ID       = 0;
+ int SHAPE_TYPE     = 1;
+ int SHAPE_DIMS     = 2;
+ int PEN_COLOR      = 3;
+ int PEN_WIDTH      = 4;
+ int PEN_STYLE      = 5;
+ int PEN_CAP_STYLE  = 6;
+ int PEN_JOIN_STYLE = 7;
 
-const int BRUSH_COLOR    = 8;
-const int BRUSH_STYLE    = 9;
+ int BRUSH_COLOR    = 8;
+ int BRUSH_STYLE    = 9;
 
-const int FONT_STYLE     = 8;
-const int FONT_WEIGHT    = 9;
+ int FONT_STYLE     = 8;
+ int FONT_WEIGHT    = 9;
 
 myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
 {
@@ -95,42 +95,19 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
         {//error checking
             cout << "FUCK THIS SHIT!" << endl;
 
-            //converts regular vector into Qvector
-            /*myStd::vector <QString> qVector;
-            for(int i = 0; i < shapes.size(); ++i)
-            {
-                qVector.push_back(QString::fromStdString(shapes[i]));
-            }*/
-
-            //from this point on we're using a qVector
-
-            //if(qVector[SHAPE_TYPE].find("Line")) //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
-            //if(qVector[SHAPE_TYPE] == " Line") //using qVector instead of old vector shapes
-            //if((*tempShape.begin()+1) == " Line")
-            //cout << (*(tempShape.begin()+1));
-
-            cout << tempShape[SHAPE_TYPE] << endl; //contents of tempShape[SHAPE_TYPE];
-            cout << tempShape[SHAPE_TYPE].size() << endl; //size of is 6, not 5 " Line". Null terminator?
-
-            //tempShape[SHAPE_TYPE] = " Line"; //makes it work
             tempShape[SHAPE_TYPE].erase(tempShape[SHAPE_TYPE].end()-1, tempShape[SHAPE_TYPE].end());
-
-            cout << tempShape[SHAPE_TYPE] << endl; //contents of tempShape[SHAPE_TYPE];
-            cout << tempShape[SHAPE_TYPE].size() << endl; //size of is 6, not 5 " Line". Null terminator?
-
-
-            //std::algorithm::remove_if(tempShape[SHAPE_TYPE].begin(),tempShape[SHAPE_TYPE].end(), isspace);
 
             if(tempShape[SHAPE_TYPE] == " Line")
             {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
                 cout << "IM A HAPPY RUNTIME ERROR" << endl;
                 shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
             }
-            /*else if(temp == " Polyline") //has to have a space in front of the type like this: " type"
+            else if(tempShape[SHAPE_TYPE] == " Polyline") //has to have a space in front of the type like this: " type"
             {
+                cout << "POLY POLY!!!!" << endl;
                 shapes.push_back(polyLineParse(tempShape,device));
             }
-            else if(*(ptemp+1) == " Polygon")
+            /*else if(*(ptemp+1) == " Polygon")
             {
                 shapes.push_back(polygonParse(tempShape,device));
             }
@@ -197,7 +174,7 @@ return shapes;
 }
 
 //all will have the same parameters
-Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* lineParse(myStd::vector<string> &source,QPaintDevice* device)
 //Takes in a temporary vector of strings representing the data of the shape to be instantiated.
 //Each string is a line from the input file.
 {
@@ -250,82 +227,16 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
     QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
 
-    QBrush *tempPenBrush;
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
 
-    cout << source[PEN_COLOR] << endl;
-
-    //if(source[PEN_COLOR].find(" white"))
-    if(source[PEN_COLOR] == " white") //white
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::white);
-    }
-    else if(source[PEN_COLOR] == " black")
-    {
-        cout << "black" << endl;
-        tempPenBrush = new QBrush(Qt::GlobalColor::black);
-    }
-    else if(source[PEN_COLOR] == " cyan")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::cyan);
-    }
-    else if(source[PEN_COLOR] == " darkCyan")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkCyan);
-    }
-    else if(source[PEN_COLOR] == " red")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::red);
-    }
-    else if(source[PEN_COLOR] == " darkRed")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkRed);
-    }
-    else if(source[PEN_COLOR] == " magenta")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::magenta);
-    }
-    else if(source[PEN_COLOR] == " darkMagenta")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkMagenta);
-    }
-    else if(source[PEN_COLOR] == " green")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::green);
-    }
-    else if(source[PEN_COLOR] == " darkGreen")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkGreen);
-    }
-    else if(source[PEN_COLOR] == " yellow")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::yellow);
-    }
-    else if(source[PEN_COLOR] == " darkYellow")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkYellow);
-    }
-    else if(source[PEN_COLOR] == " blue")
-    {
-        cout << "YES IT IS BLUE" << endl;
-        tempPenBrush = new QBrush(Qt::GlobalColor::blue);
-    }
-    else if(source[PEN_COLOR] == " darkBlue")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkBlue);
-    }
-    else if(source[PEN_COLOR] == " gray")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::gray);
-    }
-    else if(source[PEN_COLOR] == " darkGray")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::darkGray);
-    }
-    else if(source[PEN_COLOR] == " lightGray")
-    {
-        tempPenBrush = new QBrush(Qt::GlobalColor::lightGray);
-    }
-
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
 
     QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
@@ -334,7 +245,7 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
     return nline; //returns the pointer to the primary parser, where it will be put into the shape* vector.
 }
 
-Shape::Shape* polyLineParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* polyLineParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 2
@@ -346,7 +257,6 @@ Shape::Shape* polyLineParse(const myStd::vector<string> &source,QPaintDevice* de
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
 */
-
     int tempId = stoi(source[SHAPE_ID].substr(0,source[SHAPE_ID].length())); //Creates a temp int to hold the shape id#.
     string tempString = source[SHAPE_DIMS];                             //Uses stoi() function to convert its contents strings to ints
     int i = 0, x=0, y=0;                                       //   into an integer.
@@ -389,13 +299,12 @@ Shape::Shape* polyLineParse(const myStd::vector<string> &source,QPaintDevice* de
     Polyline* nPline = new Polyline(device,tempId,npen,Qt::NoBrush,vecOfPoints);  //Instantiates the new line object.
 
     return nPline; //returns the pointer to the primary parser, where it will be put into the shape* vector.
-
 }
 
 
 
 
-Shape::Shape* polygonParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* polygonParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 3
@@ -452,14 +361,14 @@ Shape::Shape* polygonParse(const myStd::vector<string> &source,QPaintDevice* dev
 
     //Line*    nline = new Line    (device,tempId,npen,Qt::NoBrush,start,end);    //Instantiates the new line object.
 
-    //    Polygon                  (QPaintDevice* device,       int nid=-1,  QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,const vector<QPoint> &source=vector<QPoint>()):
+    //    Polygon                  (QPaintDevice* device,       int nid=-1,  QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, vector<QPoint> &source=vector<QPoint>()):
 
     Polygon* nPoly = new Polygon(device,tempId,npen,Qt::NoBrush,vecOfPoints);  //Instantiates the new line object.
 
     return nPoly; //returns the pointer to the primary parser, where it will be put into the shape* vector.
 }
 
-Shape::Shape* rectangleParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* rectangleParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 4
@@ -530,7 +439,7 @@ Shape::Shape* rectangleParse(const myStd::vector<string> &source,QPaintDevice* d
 
 }
 
-Shape::Shape* squareParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* squareParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 5
@@ -586,7 +495,7 @@ Shape::Shape* squareParse(const myStd::vector<string> &source,QPaintDevice* devi
     return nSquare; //returns the pointer to the primary parser, where it will be put into the shape* vector.
 }
 
-Shape::Shape* ellipseParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 6
@@ -661,7 +570,7 @@ Shape::Shape* ellipseParse(const myStd::vector<string> &source,QPaintDevice* dev
 
 }
 
-Shape::Shape* circleParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 7
@@ -706,9 +615,14 @@ Shape::Shape* circleParse(const myStd::vector<string> &source,QPaintDevice* devi
     tempString = tempString.substr(i+1,tempString.length());
 
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
-    //Shape::Shape::shape s = Shape::Shape::shape::Circle; //may not need this for circle constructor - YD
+    /*Qt::GlobalColor newPenStyle = getPenStyle(source[PEN_STYLE]);
+    Qt::GlobalColor newPenCapStyle = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::GlobalColor newPenJoinStyle = getPenStyle(source[PEN_STYLE]);*/
+    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+
+    //Shape::Shape::shape s = Shape::Shape::shape::Circle; //may not need this for circle ructor - YD,newPenJoinStyle
 
     Circle* nCircle = new Circle(device,tempId, npen, Qt::NoBrush, nUL, nr);  //Instantiates the new line object.
 
@@ -716,7 +630,7 @@ Shape::Shape* circleParse(const myStd::vector<string> &source,QPaintDevice* devi
 
 }
 
-Shape::Shape* textParse(const myStd::vector<string> &source,QPaintDevice* device)
+Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
 {
 /*
     ShapeId: 8
@@ -779,7 +693,7 @@ Shape::Shape* textParse(const myStd::vector<string> &source,QPaintDevice* device
     //Line*    nline = new Line    (device,tempId,npen,Qt::NoBrush,start,end);    //Instantiates the new line object.
 
      //Line  (QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
-    //Text   (QPaintDevice* device,        int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint nUL=QPoint(0,0),int nside=0, const QString & text="")
+    //Text   (QPaintDevice* device,        int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint nUL=QPoint(0,0),int nside=0,  QString & text="")
 
     //Line*      nline = new Line     (device,tempId,npen,Qt::NoBrush,start,end);
     tempString = source[3];
@@ -789,116 +703,111 @@ Shape::Shape* textParse(const myStd::vector<string> &source,QPaintDevice* device
 
 }
 
-Qt::GlobalColor getColor(const string& source)
+Qt::GlobalColor getColor(string& source) //myStd::vector<string> &source
 {
-    string tempString;
-    for(int i =0; i <source.length(); ++i)
-    {
-        tempString[i] = toupper(source[i]);
+    cout << "GET COLOR" << endl;
+    cout << source << endl;
+    cout << source.size() << endl;
 
-    }
-    if(tempString == "WHITE")
-    {
-        return Qt::white;
-    }
-    else if(tempString  == "BLACK")
-    {
-        return Qt::black;
-    }
-    else if(tempString  == "CYAN")
-    {
-        return Qt::cyan;
-    }
-    else if(tempString == "DARKCYAN")
-    {
-        return Qt::darkCyan;
-    }
-    else if(tempString  == "RED")
-    {
-        return Qt::red;
-    }
-    else if(tempString  == "DARKRED")
-    {
-        return Qt::darkRed;
-    }
-    else if(tempString  == "MAGENTA")
-    {
-        return Qt::magenta;
-    }
-    else if(tempString  == "DARKMAGENTA")
-    {
-        return Qt::darkMagenta;
-    }
-    else if(tempString  == "GREEN")
-    {
-        return Qt::green;
-    }
-    else if(tempString  == "DARKGREEN")
-    {
-        return Qt::darkGreen;
-    }
-    else if(tempString  == "YELLOW")
-    {
-        return Qt::yellow;
-    }
-    else if(tempString  == "DARKYELLOW")
-    {
-        return Qt::darkYellow;
-    }
-    else if(tempString  == "BLUE")
-    {
-        return Qt::blue;
-    }
-    else if(tempString  == "DARKBLUE")
-    {
-        return Qt::darkBlue;
-    }
-    else if(tempString  == "GRAY")
-    {
-        return Qt::gray;
-    }
-    else if(tempString  == "DARKGRAY")
-    {
-        return Qt::darkGray;
-    }
-    else if(tempString  == "LIGHTGRAY")
-    {
-        return Qt::lightGray;
-    }
-    else
-    {
-        return Qt::black;
-    }
+        if(source == " white") //white
+        {
+            return Qt::GlobalColor::white;
+        }
+        else if(source == " black")
+        {
+            return Qt::GlobalColor::black;
+        }
+        else if(source == " cyan")
+        {
+            return Qt::GlobalColor::cyan;
+        }
+        else if(source == " darkCyan")
+        {
+            return Qt::GlobalColor::darkCyan;
+        }
+        else if(source == " red")
+        {
+            return Qt::GlobalColor::red;
+        }
+        else if(source == " darkRed")
+        {
+            return Qt::GlobalColor::darkRed;
+        }
+        else if(source == " magenta")
+        {
+            return Qt::GlobalColor::magenta;
+        }
+        else if(source == " darkMagenta")
+        {
+            return Qt::GlobalColor::darkMagenta;
+        }
+        else if(source == " green")
+        {
+            return Qt::GlobalColor::green;
+        }
+        else if(source == " darkGreen")
+        {
+            return Qt::GlobalColor::darkGreen;
+        }
+        else if(source == " yellow")
+        {
+            return Qt::GlobalColor::yellow;
+        }
+        else if(source == " darkYellow")
+        {
+            return Qt::GlobalColor::darkYellow;
+        }
+        else if(source == " blue")
+        {
+            //cout << "YES IT IS BLUE" << endl;
+            return Qt::GlobalColor::blue;
+        }
+        else if(source == " darkBlue")
+        {
+            return Qt::GlobalColor::darkBlue;
+        }
+        else if(source == " gray")
+        {
+            return Qt::GlobalColor::gray;
+        }
+        else if(source == " darkGray")
+        {
+            return Qt::GlobalColor::darkGray;
+        }
+        else if(source == " lightGray")
+        {
+            return Qt::GlobalColor::lightGray;
+        }
 }
 
-Qt::PenStyle getPenStyle(const string& source)
+Qt::PenStyle getPenStyle(string& source)
 {
-    string tempString;
-    for(int i =0; i <source.length(); ++i)
-    {
-        tempString[i] = toupper(source[i]);
-    }
-    if(tempString == "SOLIDLINE")
+    cout << "GET PEN STYLE" << endl;
+    cout << source << endl;
+    cout << source.size() << endl;
+
+    if(source == " SolidLine")
     {
         return Qt::SolidLine;
     }
-    else if(tempString == "DASHLINE")
+    else if(source == " DashLine")
     {
         return Qt::DashLine;
     }
-    else if(tempString == "DOTLINE")
+    else if(source == " DotLine")
     {
         return Qt::DotLine;
     }
-    else if(tempString == "DASHDOTLINE")
+    else if(source == " DashDotLine")
     {
+        //cout << "DASH DOT LINE COMPARISON WORKS!" << endl;
         return Qt::DashDotLine;
     }
-    else if(tempString == "DASHDOTDOTLINE")
+    else if(source == " DashDotDotLine")
     {
         return Qt::DashDotDotLine;
     }
-    else if(tempString == "CUSTOMDASHLINE")
+    else if(source == " CustomDashLine")
     {
         return Qt::CustomDashLine;
     }
@@ -908,22 +817,21 @@ Qt::PenStyle getPenStyle(const string& source)
     }
 }
 
-Qt::PenCapStyle getPenCapStyle(const string& source)
+Qt::PenCapStyle getPenCapStyle( string& source)
 {
-    string tempString;
-    for(int i =0; i <source.length(); ++i)
-    {
-        tempString[i] = toupper(source[i]);
-    }
-    if(tempString == "SQUARECAP")
+    /*cout << "PEN CAP STYLE" << endl;
+    cout << source << endl;
+    cout << source.size() << endl;*/
+    if(source == " SquareCap")
     {
         return Qt::SquareCap;
     }
-    else if(tempString == "FLATCAP")
+    else if(source == " FlatCap")
     {
+        //cout << "FLATCAP COMPARISON WORKS" << endl;
         return Qt::FlatCap;
     }
-    else if(tempString == "ROUNDCAP")
+    else if(source == " RoundCap")
     {
         return Qt::RoundCap;
     }
@@ -933,22 +841,22 @@ Qt::PenCapStyle getPenCapStyle(const string& source)
     }
 }
 
-Qt::PenJoinStyle getPenJoinStyle(const string& source)
+Qt::PenJoinStyle getPenJoinStyle( string& source)
 {
-    string tempString;
-    for(int i =0; i <source.length(); ++i)
-    {
-        tempString[i] = toupper(source[i]);
-    }
-    if(tempString == "BEVELJOIN")
+    cout << "PEN JOIN STYLE" << endl;
+    cout << source << endl;
+    cout << source.size() << endl;
+
+    if(source == " BevelJoin")
     {
         return Qt::BevelJoin;
     }
-    else if(tempString == "MITERJOIN")
+    else if(source == " MiterJoin") //"MITERJOIN"
     {
+        cout << "PEN JOIN STYLE COMPARISON WORKS" << endl;
         return Qt::MiterJoin;
     }
-    else if(tempString == "ROUNDJOIN")
+    else if(source == " RoundJoin") //"ROUNDJOIN"
     {
         return Qt::RoundJoin;
     }
