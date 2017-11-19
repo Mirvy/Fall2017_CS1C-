@@ -62,14 +62,18 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
     string   temp, sub;
     ifstream shapeFile;
     shapeFile.open("shapes.txt");
-
+    int count = 0; //to take care of the 1st empty line
+    //int count2 = 0;
     while(!shapeFile.eof())  //PRIMARY LOOP - Ends once the file reaches its .eof() flag.
     {
         //add another while that would iterate through all data points until empty line, than call the right shape, pass the vector into it, create the object, pass the object into the vector of objects, and empty the 1st string vector and go until eof()
 
         getline(shapeFile,temp);  //temp is filled with the each line from the text file.
-        if(temp.length() != 0)
+        cout << "temp.length()" << temp.length() << endl;
+
+        if(temp.length() > 1 && count > 0)//> 1)// it always counts as 1 - QT (works fine in eclipse)
         {
+            count++;
             int i = 0;
 
             while(temp[i] != '\n' && i < temp.size()) //Continues till it hits an empty line, relfecting the end of a shapes information.
@@ -86,50 +90,60 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             }
 
         }
-        else if(tempShape.size() == 0)
+        else if(temp.length() == 1 && count == 0)//takes care of the 1st empty line
         {
-            cout << "IM NOT FAILING PAPA" << endl;
-            //handles beginning of file empty line
+            count++;
+            cout << "1st empty line" << endl;
         }
         else
         {//error checking
-            cout << "FUCK THIS SHIT!" << endl;
+            //count2++;
+            cout << "ELSE!" << endl;
 
             tempShape[SHAPE_TYPE].erase(tempShape[SHAPE_TYPE].end()-1, tempShape[SHAPE_TYPE].end());
 
+            cout << tempShape[SHAPE_TYPE] << endl;
+
             if(tempShape[SHAPE_TYPE] == " Line")
             {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
-                cout << "IM A HAPPY RUNTIME ERROR" << endl;
+                //cout << "IM A HAPPY RUNTIME ERROR" << endl;
+                //cout << "LINE!!!!" << endl;
                 shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
             }
             else if(tempShape[SHAPE_TYPE] == " Polyline") //has to have a space in front of the type like this: " type"
             {
-                cout << "POLY POLY!!!!" << endl;
-                shapes.push_back(polyLineParse(tempShape,device));
+                //cout << "POLY POLY LINE!!!!" << endl;
+                //shapes.push_back(polyLineParse(tempShape,device));
             }
-            /*else if(*(ptemp+1) == " Polygon")
+            else if(tempShape[SHAPE_TYPE] == " Polygon")
             {
-                shapes.push_back(polygonParse(tempShape,device));
+                //cout << "POLYGON!!!!" << endl;
+                //shapes.push_back(polygonParse(tempShape,device));
             }
-            else if(*(ptemp+1) == " Rectangle")
+            else if(tempShape[SHAPE_TYPE] == " Rectangle")
             {
+                //cout << "RECTANGLE!!!!" << endl;
                 shapes.push_back(rectangleParse(tempShape,device));
             }
-            else if(*(ptemp+1) == " Square")
+            else if(tempShape[SHAPE_TYPE] == " Square")
             {
+                //cout << "SQUARE!!!!" << endl;
                 shapes.push_back(squareParse(tempShape,device));
             }
-            else if(*(ptemp+1) == " Ellipse")
+            else if(tempShape[SHAPE_TYPE] == " Ellipse")
             {
+                //cout << "ELLIPSE!!!!" << endl;
                 shapes.push_back(ellipseParse(tempShape,device));
             }
-            else if(*(ptemp+1) == " Circle")
+            else if(tempShape[SHAPE_TYPE] == " Circle")
             {
+                //cout << "CIRCLE!!!!" << endl;
                 shapes.push_back(circleParse(tempShape,device));
             }
-            else if(*(ptemp+1) == " Text")
+            else if(tempShape[SHAPE_TYPE] == " Text")
             {
-                shapes.push_back(textParse(tempShape,device));
+                //cout << "TEXT!!!!" << endl;
+                //shapes.push_back(textParse(tempShape,device));
             }
             else
             {
@@ -137,7 +151,14 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             }
             //add emptying the vector
             //tempShape.clear(); is not a part of the vector, so will use erase
-    */
+
+            cout << "tempShape.size() " << tempShape.size() << endl;
+            for(int i =0; i < tempShape.size();++i)
+            {
+                cout << tempShape[i] << endl;
+            }
+
+            //deletes
             int vecSize = tempShape.size();
             for(int i = 0; i < vecSize; ++i)
             {
@@ -145,30 +166,9 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             }//empties the vector to create a new shape
         }//end the IF-THEN-ELSE-IF
     }//end while(!eof())
-    /*myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
-    ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.
 
-    cout << *(ptemp) << endl;
-     cerr << *(ptemp+1) << endl;
-      cout << *(ptemp+2) << endl;
-       cout << *(ptemp+3) << endl;
-        cout << *(ptemp+4) << endl;
-         cout << *(ptemp+5) << endl;
-          cout << *(ptemp+6) << endl;
-           cout << *(ptemp+7) << endl;
-           cout << *(ptemp+75) << endl;*/
-    for(int i =0; i < tempShape.size();++i)
-    {
-        cout << tempShape[i] << endl;
-    }
-
-
-    /*for(myStd::vector<string>::iterator i = tempShape.begin(); i < tempShape.end();++i)
-    {
-        cerr << *i << endl;
-    }*/
-
-
+    /*cout << "Count: " << count << endl;
+    cout << "Count ELSE: " << count2 << endl;*/
     shapeFile.close();
 return shapes;
 }
@@ -227,6 +227,7 @@ Shape::Shape* lineParse(myStd::vector<string> &source,QPaintDevice* device)
     QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
 
+    //after width
     source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
     source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
     source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
@@ -257,6 +258,8 @@ Shape::Shape* polyLineParse( myStd::vector<string> &source,QPaintDevice* device)
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
 */
+    cout << "IM INSIDE THE POLYLINE PARSE" <<endl;
+
     int tempId = stoi(source[SHAPE_ID].substr(0,source[SHAPE_ID].length())); //Creates a temp int to hold the shape id#.
     string tempString = source[SHAPE_DIMS];                             //Uses stoi() function to convert its contents strings to ints
     int i = 0, x=0, y=0;                                       //   into an integer.
@@ -264,8 +267,13 @@ Shape::Shape* polyLineParse( myStd::vector<string> &source,QPaintDevice* device)
     myStd::vector<QPoint> vecOfPoints; //creates a vector to store Qpoints to than pass back at the end of the method
     //https://stackoverflow.com/questions/15129633/c-function-is-ambiguous-when-passing-pointers-to-vectors //might fix the issue
 
-    while(tempString != "\n")//parses the tempString var one by one until it hits the end of line character
+    cout << "IM RIGHT BEFORE THE WHILE LOOP" << endl;
+    cout << "tempString: " << tempString << endl;
+    cout << "tempString.size(): " << tempString.size() << endl;//real size should be 35
+    //while(tempString != "\n")//parses the tempString var one by one until it hits the end of line character
+    while(tempString.size() != 1)//parses the tempString var one by one until it hits the end of line character
     {
+        cout << "IM INSIDE THE 1ST WHILE LOOP" << endl;
         while(tempString[i] != ',')  //Parses through the third string to build the x coordinate of the starting point.
         {
             ++i;
@@ -288,11 +296,27 @@ Shape::Shape* polyLineParse( myStd::vector<string> &source,QPaintDevice* device)
         i = 0;
         x = 0;  //resets the variables for the end point; repeats the same steps for the start point.
         y = 0;
+        cout << "tempString.size(): " << tempString.size() << endl;//real size should be 35
     }
-
+    cout << "OUTSIDE THE WHILE LOOPS" << endl;
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+
+    //QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
     //Line*    nline = new Line    (device,tempId,npen,Qt::NoBrush,start,end);    //Instantiates the new line object.
@@ -423,7 +447,23 @@ Shape::Shape* rectangleParse( myStd::vector<string> &source,QPaintDevice* device
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+    //after width
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+
+    //QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     Shape::Shape::shape s = Shape::Shape::shape::Rectangle;
     //Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
@@ -486,7 +526,23 @@ Shape::Shape* squareParse( myStd::vector<string> &source,QPaintDevice* device)
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+    //after width
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+
+    //QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Shape::Shape::shape s = Shape::Shape::shape::Square;
     Square* nSquare = new Square(device,tempId, npen, Qt::NoBrush, nUL, side);  //Instantiates the new line object.
@@ -549,7 +605,22 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+    //after width
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+    //QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     Shape::Shape::shape s = Shape::Shape::shape::Ellipse;
     //Line    (QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen,        QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
@@ -615,11 +686,24 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
     tempString = tempString.substr(i+1,tempString.length());
 
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+    //after width
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     /*Qt::GlobalColor newPenStyle = getPenStyle(source[PEN_STYLE]);
     Qt::GlobalColor newPenCapStyle = getPenCapStyle(source[PEN_CAP_STYLE]);
     Qt::GlobalColor newPenJoinStyle = getPenStyle(source[PEN_STYLE]);*/
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    //QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
     //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
 
     //Shape::Shape::shape s = Shape::Shape::shape::Circle; //may not need this for circle ructor - YD,newPenJoinStyle
@@ -686,7 +770,22 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    //after width
+    source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
+    source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
+    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+
+    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
+    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
+    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
+    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
+    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+
+    //QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     //Shape::Shape::shape s = Shape::Shape::shape::Text;
     //Line(QPaintDevice* device=nullptr,int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush,QPoint s=QPoint(0,0), QPoint e=QPoint(0,0))
@@ -705,9 +804,9 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
 
 Qt::GlobalColor getColor(string& source) //myStd::vector<string> &source
 {
-    cout << "GET COLOR" << endl;
+   /* cout << "GET COLOR" << endl;
     cout << source << endl;
-    cout << source.size() << endl;
+    cout << source.size() << endl;*/
 
         if(source == " white") //white
         {
@@ -782,9 +881,9 @@ Qt::GlobalColor getColor(string& source) //myStd::vector<string> &source
 
 Qt::PenStyle getPenStyle(string& source)
 {
-    cout << "GET PEN STYLE" << endl;
+    /*cout << "GET PEN STYLE" << endl;
     cout << source << endl;
-    cout << source.size() << endl;
+    cout << source.size() << endl;*/
 
     if(source == " SolidLine")
     {
@@ -843,9 +942,9 @@ Qt::PenCapStyle getPenCapStyle( string& source)
 
 Qt::PenJoinStyle getPenJoinStyle( string& source)
 {
-    cout << "PEN JOIN STYLE" << endl;
+    /*cout << "PEN JOIN STYLE" << endl;
     cout << source << endl;
-    cout << source.size() << endl;
+    cout << source.size() << endl;*/
 
     if(source == " BevelJoin")
     {
@@ -853,7 +952,7 @@ Qt::PenJoinStyle getPenJoinStyle( string& source)
     }
     else if(source == " MiterJoin") //"MITERJOIN"
     {
-        cout << "PEN JOIN STYLE COMPARISON WORKS" << endl;
+        //cout << "PEN JOIN STYLE COMPARISON WORKS" << endl;
         return Qt::MiterJoin;
     }
     else if(source == " RoundJoin") //"ROUNDJOIN"
