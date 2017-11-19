@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
+#include <algorithm>
 #include "shape.h"
 #include "vector.h"
 
@@ -32,10 +32,8 @@ Qt::PenJoinStyle getPenJoinStyle(const string &);
     PenStyle: DashDotLine
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
-
     BrushColor: white
     BrushStyle: NoBrush
-
     TextFontStyle: FlatCap
     TextFontWeight: Normal
 */
@@ -80,62 +78,119 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
                 {
                     size_t pos = temp.find(" ");      // position of in str
                     sub = temp.substr (pos); //grabs the rest of the line
+                    //cout << sub << endl;
                     tempShape.push_back(sub); //adds it to vector tempShape
+
                 }
                 ++i;
             }
-        }
 
-        //error checking
-
-        myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
-        ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.
-
-        if(*(ptemp+1) == " Line") //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
-        {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
-            shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
         }
-        else if(*(ptemp+1) == " Polyline") //has to have a space in front of the type like this: " type"
+        else if(tempShape.size() == 0)
         {
-            shapes.push_back(polyLineParse(tempShape,device));
-        }
-        else if(*(ptemp+1) == " Polygon")
-        {
-            shapes.push_back(polygonParse(tempShape,device));
-        }
-        else if(*(ptemp+1) == " Rectangle")
-        {
-            shapes.push_back(rectangleParse(tempShape,device));
-        }
-        else if(*(ptemp+1) == " Square")
-        {
-            shapes.push_back(squareParse(tempShape,device));
-        }
-        else if(*(ptemp+1) == " Ellipse")
-        {
-            shapes.push_back(ellipseParse(tempShape,device));
-        }
-        else if(*(ptemp+1) == " Circle")
-        {
-            shapes.push_back(circleParse(tempShape,device));
-        }
-        else if(*(ptemp+1) == " Text")
-        {
-            shapes.push_back(textParse(tempShape,device));
+            cout << "IM NOT FAILING PAPA" << endl;
+            //handles beginning of file empty line
         }
         else
-        {
-            cout << "\n\n**ERROR---\"PARSER\"---ERROR**\n\n";
-        }
-        //add emptying the vector
-        //tempShape.clear(); is not a part of the vector, so will use erase
+        {//error checking
+            cout << "FUCK THIS SHIT!" << endl;
 
-        int vecSize = tempShape.size();
-        for(int i = 0; i < vecSize; ++i)
-        {
-            tempShape.erase(tempShape.begin());
-        }
+            //converts regular vector into Qvector
+            /*myStd::vector <QString> qVector;
+            for(int i = 0; i < shapes.size(); ++i)
+            {
+                qVector.push_back(QString::fromStdString(shapes[i]));
+            }*/
+
+            //from this point on we're using a qVector
+
+            //if(qVector[SHAPE_TYPE].find("Line")) //Checks the second string in the vector to determine the type of the shape, and subsequently passes the
+            //if(qVector[SHAPE_TYPE] == " Line") //using qVector instead of old vector shapes
+            //if((*tempShape.begin()+1) == " Line")
+            //cout << (*(tempShape.begin()+1));
+
+            cout << tempShape[SHAPE_TYPE] << endl; //contents of tempShape[SHAPE_TYPE];
+            cout << tempShape[SHAPE_TYPE].size() << endl; //size of is 6, not 5 " Line". Null terminator?
+
+            //tempShape[SHAPE_TYPE] = " Line"; //makes it work
+            tempShape[SHAPE_TYPE].erase(tempShape[SHAPE_TYPE].end()-1, tempShape[SHAPE_TYPE].end());
+
+            cout << tempShape[SHAPE_TYPE] << endl; //contents of tempShape[SHAPE_TYPE];
+            cout << tempShape[SHAPE_TYPE].size() << endl; //size of is 6, not 5 " Line". Null terminator?
+
+
+            //std::algorithm::remove_if(tempShape[SHAPE_TYPE].begin(),tempShape[SHAPE_TYPE].end(), isspace);
+
+            if(tempShape[SHAPE_TYPE] == " Line")
+            {                        //   vector to the relevant parser function, which will create the shape object and return a pointer,
+                cout << "IM A HAPPY RUNTIME ERROR" << endl;
+                shapes.push_back(lineParse(tempShape,device));  //adding it to the shape vector.
+            }
+            /*else if(temp == " Polyline") //has to have a space in front of the type like this: " type"
+            {
+                shapes.push_back(polyLineParse(tempShape,device));
+            }
+            else if(*(ptemp+1) == " Polygon")
+            {
+                shapes.push_back(polygonParse(tempShape,device));
+            }
+            else if(*(ptemp+1) == " Rectangle")
+            {
+                shapes.push_back(rectangleParse(tempShape,device));
+            }
+            else if(*(ptemp+1) == " Square")
+            {
+                shapes.push_back(squareParse(tempShape,device));
+            }
+            else if(*(ptemp+1) == " Ellipse")
+            {
+                shapes.push_back(ellipseParse(tempShape,device));
+            }
+            else if(*(ptemp+1) == " Circle")
+            {
+                shapes.push_back(circleParse(tempShape,device));
+            }
+            else if(*(ptemp+1) == " Text")
+            {
+                shapes.push_back(textParse(tempShape,device));
+            }
+            else
+            {
+                cout << "\n\n**ERROR---\"PARSER\"---ERROR**\n\n";
+            }
+            //add emptying the vector
+            //tempShape.clear(); is not a part of the vector, so will use erase
+    */
+            int vecSize = tempShape.size();
+            for(int i = 0; i < vecSize; ++i)
+            {
+                tempShape.erase(tempShape.begin());
+            }//empties the vector to create a new shape
+        }//end the IF-THEN-ELSE-IF
     }//end while(!eof())
+    /*myStd::vector<string>::iterator ptemp;  //Creates an iterator of vector<string>
+    ptemp = (tempShape.begin());  //Gets the iterator to the first element, ie the first string contaning shapeId.
+
+    cout << *(ptemp) << endl;
+     cerr << *(ptemp+1) << endl;
+      cout << *(ptemp+2) << endl;
+       cout << *(ptemp+3) << endl;
+        cout << *(ptemp+4) << endl;
+         cout << *(ptemp+5) << endl;
+          cout << *(ptemp+6) << endl;
+           cout << *(ptemp+7) << endl;
+           cout << *(ptemp+75) << endl;*/
+    for(int i =0; i < tempShape.size();++i)
+    {
+        cout << tempShape[i] << endl;
+    }
+
+
+    /*for(myStd::vector<string>::iterator i = tempShape.begin(); i < tempShape.end();++i)
+    {
+        cerr << *i << endl;
+    }*/
+
 
     shapeFile.close();
 return shapes;
@@ -157,7 +212,7 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
         PenJoinStyle: MiterJoin
     */
     //the 2nd line is taken care of in the switch statement earlier
-
+    cout << "HEY IM HERE INSIDE LINE PARSE" << endl;
     int tempId = stoi(source[SHAPE_ID].substr(0,source[SHAPE_ID].length())); //Creates a temp int to hold the shape id#.
     string tempString = source[SHAPE_DIMS];                             //Uses stoi() function to convert its contents
 
@@ -194,7 +249,85 @@ Shape::Shape* lineParse(const myStd::vector<string> &source,QPaintDevice* device
 
     QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    QPen npen(Qt::NoBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+
+    QBrush *tempPenBrush;
+
+    cout << source[PEN_COLOR] << endl;
+
+    //if(source[PEN_COLOR].find(" white"))
+    if(source[PEN_COLOR] == " white") //white
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::white);
+    }
+    else if(source[PEN_COLOR] == " black")
+    {
+        cout << "black" << endl;
+        tempPenBrush = new QBrush(Qt::GlobalColor::black);
+    }
+    else if(source[PEN_COLOR] == " cyan")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::cyan);
+    }
+    else if(source[PEN_COLOR] == " darkCyan")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkCyan);
+    }
+    else if(source[PEN_COLOR] == " red")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::red);
+    }
+    else if(source[PEN_COLOR] == " darkRed")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkRed);
+    }
+    else if(source[PEN_COLOR] == " magenta")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::magenta);
+    }
+    else if(source[PEN_COLOR] == " darkMagenta")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkMagenta);
+    }
+    else if(source[PEN_COLOR] == " green")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::green);
+    }
+    else if(source[PEN_COLOR] == " darkGreen")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkGreen);
+    }
+    else if(source[PEN_COLOR] == " yellow")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::yellow);
+    }
+    else if(source[PEN_COLOR] == " darkYellow")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkYellow);
+    }
+    else if(source[PEN_COLOR] == " blue")
+    {
+        cout << "YES IT IS BLUE" << endl;
+        tempPenBrush = new QBrush(Qt::GlobalColor::blue);
+    }
+    else if(source[PEN_COLOR] == " darkBlue")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkBlue);
+    }
+    else if(source[PEN_COLOR] == " gray")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::gray);
+    }
+    else if(source[PEN_COLOR] == " darkGray")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::darkGray);
+    }
+    else if(source[PEN_COLOR] == " lightGray")
+    {
+        tempPenBrush = new QBrush(Qt::GlobalColor::lightGray);
+    }
+
+
+    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
     Line* nline = new Line(device,tempId,npen,Qt::NoBrush,start,end);  //Instantiates the new line object.
 
@@ -273,7 +406,6 @@ Shape::Shape* polygonParse(const myStd::vector<string> &source,QPaintDevice* dev
     PenStyle: DashDotDotLine
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
-
     BrushColor: yellow
     BrushStyle: SolidPattern
 */
@@ -338,7 +470,6 @@ Shape::Shape* rectangleParse(const myStd::vector<string> &source,QPaintDevice* d
     PenStyle: DashLine
     PenCapStyle: RoundCap
     PenJoinStyle: RoundJoin
-
     BrushColor: red
     BrushStyle: VerPattern
 */
@@ -466,7 +597,6 @@ Shape::Shape* ellipseParse(const myStd::vector<string> &source,QPaintDevice* dev
     PenStyle: SolidLine
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
-
     BrushColor: white
     BrushStyle: NoBrush
 */
@@ -542,7 +672,6 @@ Shape::Shape* circleParse(const myStd::vector<string> &source,QPaintDevice* devi
     PenStyle: SolidLine
     PenCapStyle: FlatCap
     PenJoinStyle: MiterJoin
-
     BrushColor: magenta
     BrushStyle: SolidPattern
 */
@@ -598,7 +727,6 @@ Shape::Shape* textParse(const myStd::vector<string> &source,QPaintDevice* device
     TextAlignment: AlignCenter
     TextPointSize: 10
     TextFontFamily: Comic Sans MS
-
     TextFontStyle: FlatCap
     TextFontWeight: Normal
 */
@@ -830,4 +958,3 @@ Qt::PenJoinStyle getPenJoinStyle(const string& source)
     }
 
 }
-
