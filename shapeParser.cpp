@@ -529,19 +529,12 @@ Shape::Shape* squareParse( myStd::vector<string> &source,QPaintDevice* device)
     source[BRUSH_COLOR].erase(source[BRUSH_COLOR].end()-1, source[BRUSH_COLOR].end());
     source[BRUSH_STYLE].erase(source[BRUSH_STYLE].end()-1, source[BRUSH_STYLE].end());
 
-    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
-    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
-    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
-    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
-
-    //copy
     QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
 
     QBrush *tempBrush = new QBrush(getBrushColor(source[BRUSH_COLOR])); //sets Brush Color
     tempBrush->setStyle(getBrushStyle(source[BRUSH_STYLE])); //sets Brush Style
 
     QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
-    //copy
 
     Square* nSquare = new Square(device,tempId, npen, *tempBrush, nUL, side);  //Instantiates the new line object.
     //Square* nSquare = new Square(device,tempId, npen, Qt::NoBrush, nUL, side);  //Instantiates the new line object.
@@ -613,12 +606,6 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
     source[BRUSH_COLOR].erase(source[BRUSH_COLOR].end()-1, source[BRUSH_COLOR].end());
     source[BRUSH_STYLE].erase(source[BRUSH_STYLE].end()-1, source[BRUSH_STYLE].end());
 
-    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
-    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
-    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
-    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
-
-
     Qt::BrushStyle newBrush = getBrushStyle(source[BRUSH_STYLE]);
     Qt::GlobalColor newBrushColor = getBrushColor(source[BRUSH_COLOR]);
 
@@ -629,15 +616,10 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
     tempBrush->setStyle(getBrushStyle(source[BRUSH_STYLE])); //sets Brush Style
 
     QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
-    //copy
 
     Ellipse* nEllipse = new Ellipse(device,tempId, s, npen, *tempBrush, nUL, nrx, nry);  //Instantiates the new line object.
 
     return nEllipse; //returns the pointer to the primary parser, where it will be put into the shape* vector.
-
-
-
-
 }
 
 Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
@@ -685,7 +667,7 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
     tempString = tempString.substr(i+1,tempString.length());
 
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
-    //after width
+
     source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
     source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
     source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
@@ -693,10 +675,6 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
     source[BRUSH_COLOR].erase(source[BRUSH_COLOR].end()-1, source[BRUSH_COLOR].end());
     source[BRUSH_STYLE].erase(source[BRUSH_STYLE].end()-1, source[BRUSH_STYLE].end());
 
-    /*Qt::PenStyle     newPenStyle     = getPenStyle(source[PEN_STYLE]);
-    Qt::PenCapStyle  newPenCapStyle  = getPenCapStyle(source[PEN_CAP_STYLE]);
-    Qt::PenJoinStyle newPenJoinStyle = getPenJoinStyle(source[PEN_JOIN_STYLE]);*/
-    //QPen npen(Qt::NoBrush,width,newPenStyle,newPenCapStyle,newPenJoinStyle);
     Qt::BrushStyle newBrush = getBrushStyle(source[BRUSH_STYLE]);
     Qt::GlobalColor newBrushColor = getBrushColor(source[BRUSH_COLOR]);
 
@@ -729,8 +707,6 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
     TextFontStyle: FlatCap
     TextFontWeight: Normal
 */
-
-
 
     int tempId = stoi(source[SHAPE_ID].substr(0,source[SHAPE_ID].length())); //Creates a temp int to hold the shape id#.
     string tempString = source[SHAPE_DIMS];                             //Uses stoi() function to convert its contents
@@ -879,10 +855,6 @@ Qt::GlobalColor getColor(string& source) //myStd::vector<string> &source
 
 Qt::PenStyle getPenStyle(string& source)
 {
-    /*cout << "GET PEN STYLE" << endl;
-    cout << source << endl;
-    cout << source.size() << endl;*/
-
     if(source == " SolidLine")
     {
         return Qt::SolidLine;
@@ -916,9 +888,6 @@ Qt::PenStyle getPenStyle(string& source)
 
 Qt::PenCapStyle getPenCapStyle( string& source)
 {
-    /*cout << "PEN CAP STYLE" << endl;
-    cout << source << endl;
-    cout << source.size() << endl;*/
     if(source == " SquareCap")
     {
         return Qt::SquareCap;
@@ -940,10 +909,6 @@ Qt::PenCapStyle getPenCapStyle( string& source)
 
 Qt::PenJoinStyle getPenJoinStyle( string& source)
 {
-    /*cout << "PEN JOIN STYLE" << endl;
-    cout << source << endl;
-    cout << source.size() << endl;*/
-
     if(source == " BevelJoin")
     {
         return Qt::BevelJoin;
@@ -967,17 +932,6 @@ Qt::PenJoinStyle getPenJoinStyle( string& source)
 
 Qt::BrushStyle getBrushStyle(string &source)
 {
-    /*cout << "GET BRUSH STYLE" << endl;
-    cout << source << endl;
-    cout << source.size() << endl;*/
-
-    /*
-SolidPattern
-VerPattern
-HorPattern
-NoBrush
-*/
-
     if(source == " SolidPattern")
     {
         return Qt::SolidPattern;
@@ -1000,10 +954,6 @@ NoBrush
 
 Qt::GlobalColor getBrushColor(string &source)
 {
-    cout << "GET BRUSH COLOR" << endl;
-    cout << source << endl;
-    cout << source.size() << endl;
-
     if(source == " white") //white
     {
         return Qt::GlobalColor::white;
@@ -1054,7 +1004,6 @@ Qt::GlobalColor getBrushColor(string &source)
     }
     else if(source == " blue")
     {
-        //cout << "YES IT IS BLUE" << endl;
         return Qt::GlobalColor::blue;
     }
     else if(source == " darkBlue")
