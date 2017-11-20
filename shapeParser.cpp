@@ -404,7 +404,7 @@ Shape::Shape* polygonParse( myStd::vector<string> &source,QPaintDevice* device)
 
     QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
 
-    Polygon* nPoly = new Polygon(device,tempId,npen,*tempPenBrush,vecOfPoints);
+    Polygon* nPoly = new Polygon(device,tempId,npen,*tempBrush,vecOfPoints);
 
     return nPoly; //returns the pointer to the primary parser, where it will be put into the shape* vector.
 }
@@ -1066,18 +1066,68 @@ Qt::PenJoinStyle getPenJoinStyle( string& source)
 
 Qt::BrushStyle getBrushStyle(string &source)
 {
-    if(source == " SolidPattern")
+    if(source == " NoBrush")
+    {
+        return Qt::NoBrush;
+    }
+    else if(source == " SolidPattern")
     {
         return Qt::SolidPattern;
+    }
+    else if(source == " Dense1Pattern")
+    {
+        return Qt::Dense1Pattern;
+    }
+    else if(source == " Dense2Pattern")
+    {
+        return Qt::Dense2Pattern;
+    }
+    else if(source == " Dense3Pattern")
+    {
+        return Qt::Dense3Pattern;
+    }
+    else if(source == " Dense4Pattern")
+    {
+        return Qt::Dense4Pattern;
+    }
+    else if(source == " Dense5Pattern")
+    {
+        return Qt::Dense5Pattern;
+    }
+    else if(source == " Dense6Pattern")
+    {
+        return Qt::Dense6Pattern;
+    }
+    else if(source == " Dense7Pattern")
+    {
+        return Qt::Dense7Pattern;
+    }
+    else if(source == " HorPattern")
+    {
+        return Qt::HorPattern;
     }
     else if(source == " VerPattern")
     {
         //cout << "PEN JOIN STYLE COMPARISON WORKS" << endl;
         return Qt::VerPattern;
     }
-    else if(source == " HorPattern")
+    else if(source == " CrossPattern")
     {
-        return Qt::HorPattern;
+        //cout << "PEN JOIN STYLE COMPARISON WORKS" << endl;
+        return Qt::CrossPattern;
+    }
+    else if(source == " BDiagPattern")
+    {
+        return Qt::BDiagPattern;
+    }
+    else if(source == " FDiagPattern")
+    {
+        //cout << "PEN JOIN STYLE COMPARISON WORKS" << endl;
+        return Qt::FDiagPattern;
+    }
+    else if(source == " DiagCrossPattern")
+    {
+        return Qt::DiagCrossPattern;
     }
     else
     {
@@ -1088,6 +1138,10 @@ Qt::BrushStyle getBrushStyle(string &source)
 
 Qt::GlobalColor getBrushColor(string &source)
 {
+    cout << "getBrushColor" << endl;
+    cout << "source:" << source << endl;
+    cout << "source.size():" << source.size() << endl;
+
     if(source == " white") //white
     {
         return Qt::GlobalColor::white;
