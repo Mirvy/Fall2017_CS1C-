@@ -154,7 +154,7 @@ myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
             else if(tempShape[SHAPE_TYPE] == " Text")
             {
                 //cout << "TEXT!!!!" << endl;
-                //shapes.push_back(textParse(tempShape,device));
+                shapes.push_back(textParse(tempShape,device));
             }
             else
             {
@@ -210,30 +210,39 @@ Shape::Shape* lineParse(myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+
+    cout << "start x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
-    tempString = tempString.substr(i=1,tempString.length());
+
+    cout << "start y:" << y << endl;
+
+    tempString = tempString.substr(i+1,tempString.length());
     QPoint start = QPoint(x,y); //Creates the start point as type Qpoint.
     i = 0;
     x = 0;  //resets the variables for the end point; repeats the same steps for the start point.
     y = 0;
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     x = stoi(tempString.substr(0,i));
+    cout << "end x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length());
     i = 0;
-    while(tempString[i] != '\n')
+    while(tempString[i] != '\n' && i < tempString.size()-1)
     {
         ++i;
     }
     y = stoi(tempString.substr(0,i));
+    cout << "end y:" << y << endl;
 
     QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
@@ -701,7 +710,7 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
 
-    cout << "Square x:" << x << endl;
+    cout << "Circle x:" << x << endl;
 
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
@@ -711,7 +720,7 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
 
-    cout << "Square y:" << y << endl;
+    cout << "Circle y:" << y << endl;
 
     tempString = tempString.substr(i+1,tempString.length());
 
@@ -726,7 +735,7 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
     }
     nr = stoi(tempString.substr(0,i));
 
-    cout << "Square nr:" << nr << endl;
+    cout << "Circle nr:" << nr << endl;
 
     //tempString = tempString.substr(i+1,tempString.length());
 
@@ -780,14 +789,20 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+
+    cout << "Text x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
-    tempString = tempString.substr(i=1,tempString.length());
+
+    cout << "Text y:" << y << endl;
+
+    tempString = tempString.substr(i+1,tempString.length());
     QPoint nUL = QPoint(x,y); //Creates the start point as type Qpoint.
 
     i = 0;      //resets i
@@ -795,24 +810,27 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
     int nw = 0;  //declares height and width vars
     int nh = 0;
 
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     nw = stoi(tempString.substr(0,i));
+
+    cout << "Text nw:" << nw << endl;
+
     tempString = tempString.substr(i+1,tempString.length());
 
     i = 0; //resets i
-    while(tempString[i] != '\n')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     nh = stoi(tempString.substr(0,i));
-    cout << "nw" << nw << endl;
-    cout << "nh" << nh << endl;
+
+    cout << "Text nh:" << nh << endl;
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
-    qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+
     //after width
 
     /*
@@ -853,8 +871,8 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
     */
     source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
     source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
-    source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
-    source[PEN_JOIN_STYLE].erase(source[PEN_JOIN_STYLE].end()-1, source[PEN_JOIN_STYLE].end());
+    //source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
+    source[TEXT_COLOR].erase(source[TEXT_COLOR].end()-1, source[TEXT_COLOR].end());
     source[BRUSH_COLOR].erase(source[BRUSH_COLOR].end()-1, source[BRUSH_COLOR].end());
     source[BRUSH_STYLE].erase(source[BRUSH_STYLE].end()-1, source[BRUSH_STYLE].end());
 
@@ -862,23 +880,29 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
 
     cout << source[TEXT_STRING] << endl;
 
-    tempString = source[3];
+    qreal width = stoi(source[TEXT_FONT_SIZE].substr(0,source[TEXT_FONT_SIZE].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
+
+    string textStr = source[TEXT_STRING];
 
     //QFont (family size, int font size, int weight, false);
 
 
-    Qt::BrushStyle newBrush = getBrushStyle(source[BRUSH_STYLE]);
-    Qt::GlobalColor newBrushColor = getBrushColor(source[BRUSH_COLOR]);
+    /*Qt::BrushStyle newBrush = getBrushStyle(source[BRUSH_STYLE]);
+    Qt::GlobalColor newBrushColor = getBrushColor(source[BRUSH_COLOR]);*/
 
-    QBrush *tempPenBrush = new QBrush(getColor(source[PEN_COLOR]));
+    QBrush *tempPenBrush = new QBrush(getColor(source[TEXT_COLOR]));
 
-    QBrush *tempBrush = new QBrush(getBrushColor(source[BRUSH_COLOR])); //sets Brush Color
-    tempBrush->setStyle(getBrushStyle(source[BRUSH_STYLE])); //sets Brush Style
+    //cout << "*tempPenBrush " << *tempPenBrush << endl;
 
-    QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
+    /*QBrush *tempBrush = new QBrush(getBrushColor(source[BRUSH_COLOR])); //sets Brush Color
+    tempBrush->setStyle(getBrushStyle(source[BRUSH_STYLE])); //sets Brush Style*/
+
+    // QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE]));
+    QPen npen(*tempPenBrush,width,Qt::SolidLine,Qt::SquareCap,Qt::MiterJoin); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
     //copy
 
-    Text* nText = new Text(device,tempId, npen, *tempBrush, nUL, nw, nh, QString::fromStdString(source[TEXT_STRING])); //insert the string
+    Text* nText = new Text(device,tempId, npen, Qt::NoBrush, nUL, nw, nh, QString::fromStdString(textStr)); //insert the string
+    //doesnt have a brush, so use Qt::NoBrush
 
     //Text* nText = new Text(device,tempId, npen, Qt::NoBrush, nUL, nw, nh, QString(""));  //Instantiates the new line object.
 
