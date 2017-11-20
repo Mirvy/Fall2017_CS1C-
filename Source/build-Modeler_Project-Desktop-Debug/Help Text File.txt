@@ -1,0 +1,26 @@
+﻿1. Modify
+a. General Instructions:
+i. The “Shape ID” window allows the user to chose the shape type. The choice will be reflected on the right side of the “Shape Type: “ line. 
+ii. By clicking “UPDATE” the admin can update the dimensions of the object
+b. Line
+i. Enter the X and Y coordinate of the start point and the end point to draw a line from the 1st to the 2nd point.
+ii. Pen Settings:
+1. Adjust line color, line width, pen style, cap style and join style.
+c. Polyline
+i. Add Point: the admin can add a point to the polyline with custom coordinates
+ii. Move Point: updated the coordinates of a selected point.
+iii. Delete point - deletes the selected point from the polyline
+iv. Pen Settings:
+1. Adjust line color, line width, pen style, cap style and join style.
+d. Polygon
+i. Add Point: the admin can add a point to the polygon thus altering its shape by entering another point with custom coordinates, or removing an existing point
+ii. Move Point: updated the coordinates of a selected point.
+iii. Delete point - deletes the selected point from the polygon 
+iv. Pen Settings:
+1. Adjust line color, line width, pen style, cap style, join style, brush color and brush style.
+e. 
+i. 
+
+
+2. Move Shapes
+3. Add/Remove Shapes

@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
+#include <iostream>
 #include <QColor>
 #include <QString>
 #include <QFont>
@@ -9,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->helpBrowser->hide();
 }
 
 void MainWindow::setShape(myStd::vector<Shape::Shape*> source)
@@ -71,6 +73,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         break;
     case 1:
     {
@@ -86,6 +89,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         myStd::vector<QPoint>::iterator i = ui->renderCanvas->getShape(arg1)->getPoints().begin();
         QString tempString;
         int counter = 1;
@@ -120,6 +124,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         myStd::vector<QPoint>::iterator i = ui->renderCanvas->getShape(arg1)->getPoints().begin();
         QString tempString;
         int counter = 1;
@@ -153,6 +158,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         break;
     case 4:
         ui->shapeModType->setText("Square");
@@ -167,6 +173,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         break;
     case 5:
         ui->shapeModType->setText("Ellipse");
@@ -181,6 +188,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         break;
     case 6:
         ui->shapeModType->setText("Circle");
@@ -195,6 +203,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->show();
         ui->textModMenu->hide();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         break;
     case 7:
         ui->shapeModType->setText("Text");
@@ -209,6 +218,7 @@ void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
         ui->circleModMenu->hide();
         ui->textModMenu->show();
         ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();
         break;
     }
     }
@@ -1084,6 +1094,10 @@ void MainWindow::on_lineModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->lineModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1095,6 +1109,10 @@ void MainWindow::on_circleModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->circleModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1106,6 +1124,10 @@ void MainWindow::on_ellipseModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->ellipseModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1117,6 +1139,10 @@ void MainWindow::on_polygonModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->polygonModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1128,6 +1154,10 @@ void MainWindow::on_polyLineModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->polylineModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1139,6 +1169,10 @@ void MainWindow::on_rectangleModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->rectangleModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1150,6 +1184,10 @@ void MainWindow::on_squareModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->squareModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1161,6 +1199,10 @@ void MainWindow::on_textModMenu_deleteButton_clicked()
 {
     myStd::vector<Shape::Shape*>::iterator i = ui->renderCanvas->getShapes().begin();
     ui->renderCanvas->getShapes().erase(i+(ui->shapeIdModSpinBox->value()-1));
+    for(int i = (ui->shapeIdModSpinBox->value()-1); i < ui->renderCanvas->getShapeCount();++i)
+    {
+        ui->renderCanvas->getShapes()[i]->setId(i+1);
+    }
     ui->renderCanvas->update();
     ui->textModMenu->hide();
     ui->ModMenu_deleteScreen->show();
@@ -1323,6 +1365,7 @@ void MainWindow::on_lineAddMenu_createButton_clicked()
         tempLine = new Shape::Line(ui->renderCanvas,tempCount,*tempPen,Qt::NoBrush,tempStart,tempEnd);
         ui->renderCanvas->getShapes().push_back(tempLine);
     }
+    refreshIds();
     ui->renderCanvas->update();
 }
 
@@ -1451,6 +1494,7 @@ void MainWindow::on_polyLineAddMenu_createButton_clicked()
     tempPen = new QPen(*tempPenBrush,tempPenWidth,tempPenStyle,tempPenCapStyle,tempPenJoinStyle);
     tempPolyLine = new Shape::Polyline(ui->renderCanvas,tempCount,*tempPen,Qt::NoBrush,tempShape);
     ui->renderCanvas->getShapes().push_back(tempPolyLine);
+    refreshIds();
     ui->renderCanvas->update();
 }
 
@@ -1616,11 +1660,10 @@ void MainWindow::on_polygonAddMenu_createButton_clicked()
     int tempCount = ui->renderCanvas->getShapeCount()+1;
     tempPen = new QPen(*tempPenBrush,tempPenWidth,tempPenStyle,tempPenCapStyle,tempPenJoinStyle);
     tempPolygon = new Shape::Polygon(ui->renderCanvas,tempCount,*tempPen,*tempBrush,tempShape);
+    refreshIds();
     ui->renderCanvas->getShapes().push_back(tempPolygon);
     ui->renderCanvas->update();
 }
-
-
 
 void MainWindow::on_rectangleAddMenu_createButton_clicked()
 {
@@ -1723,6 +1766,7 @@ void MainWindow::on_rectangleAddMenu_createButton_clicked()
         ui->renderCanvas->getShapes().push_back(tempRectangle);
     }
     ui->renderCanvas->update();
+    refreshIds();
 }
 
 void MainWindow::on_squareModMenu_updateButton_2_clicked()
@@ -1824,6 +1868,7 @@ void MainWindow::on_squareModMenu_updateButton_2_clicked()
         tempSquare = new Shape::Square(ui->renderCanvas,tempCount,*tempPen,*tempBrush,tempUpperLeft,sideLength);
         ui->renderCanvas->getShapes().push_back(tempSquare);
     }
+    refreshIds();
     ui->renderCanvas->update();
 }
 
@@ -1927,7 +1972,7 @@ void MainWindow::on_ellipseAddMenu_createButton_clicked()
         tempEllipse = new Shape::Ellipse(ui->renderCanvas,tempCount,Shape::Shape::shape::Ellipse,*tempPen,*tempBrush,tempOrigin,rx,ry);
         ui->renderCanvas->getShapes().push_back(tempEllipse);
     }
-
+    refreshIds();
     ui->renderCanvas->update();
 }
 
@@ -2030,7 +2075,7 @@ void MainWindow::on_circleAddMenu_createButton_clicked()
         tempCircle = new Shape::Circle(ui->renderCanvas,tempCount,*tempPen,*tempBrush,tempOrigin,tempRadius);
         ui->renderCanvas->getShapes().push_back(tempCircle);
     }
-
+    refreshIds();
     ui->renderCanvas->update();
 }
 
@@ -2117,7 +2162,7 @@ void MainWindow::on_textAddMenu_createButton_clicked()
         ui->renderCanvas->getShapes().push_back(tempText);
         ui->renderCanvas->getShape(tempCount)->setFont(tempFont);
     }
-
+    refreshIds();
     ui->renderCanvas->update();
 }
 
@@ -2131,4 +2176,35 @@ void MainWindow::on_tabMenu_tabBarClicked(int index)
     ui->ellipseAddMenu->hide();
     ui->circleAddMenu->hide();
     ui->textAddMenu->hide();
+}
+
+void MainWindow::on_areaReportRefreshButton_clicked()
+{
+    ui->areaReport->clearContents();
+    areaTableGen(ui->areaReport,ui->renderCanvas->getShapes());
+    ui->areaReport->horizontalHeader()->setStretchLastSection(true);
+}
+
+void MainWindow::on_perimeterReportRefreshButton_clicked()
+{
+    ui->perimeterReport->clearContents();
+    perimeterTableGen(ui->perimeterReport,ui->renderCanvas->getShapes());
+    ui->perimeterReport->horizontalHeader()->setStretchLastSection(true);
+}
+
+void MainWindow::on_shapeReportRefreshButton_clicked()
+{
+    ui->shapeReport->clear();
+    shapeTreeGen(ui->shapeReport,ui->renderCanvas->getShapes());
+}
+
+void MainWindow::on_actionGet_Help_triggered()
+{
+    ui->helpBrowser->show();
+}
+
+void MainWindow::on_actionSave_and_Exit_triggered()
+{
+    saveFile(ui->renderCanvas->getShapes());
+    QApplication::quit();
 }

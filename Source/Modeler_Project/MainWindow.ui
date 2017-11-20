@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>2D Modeler</string>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -856,6 +856,9 @@
         </disabled>
        </palette>
       </property>
+      <property name="toolTip">
+       <string/>
+      </property>
       <property name="autoFillBackground">
        <bool>true</bool>
       </property>
@@ -865,6 +868,9 @@
       <widget class="modtab" name="modTab">
        <attribute name="title">
         <string>Modify</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Modify Existing Shapes</string>
        </attribute>
        <widget class="QLabel" name="shapeIdModLabel">
         <property name="geometry">
@@ -888,6 +894,9 @@
           <height>21</height>
          </rect>
         </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select Shape ID# to Display&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
        </widget>
        <widget class="QLabel" name="shapeTypeModLabel">
         <property name="geometry">
@@ -910,6 +919,9 @@
           <width>81</width>
           <height>21</height>
          </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Currently Selected Shape's Type&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="text">
          <string>&lt;TYPE&gt;</string>
@@ -5260,6 +5272,9 @@
        <attribute name="title">
         <string>Add Shape</string>
        </attribute>
+       <attribute name="toolTip">
+        <string>Add New Shapes</string>
+       </attribute>
        <widget class="QComboBox" name="shapeTypeAddCombo">
         <property name="geometry">
          <rect>
@@ -9504,6 +9519,9 @@
        <attribute name="title">
         <string>Shape Tables</string>
        </attribute>
+       <attribute name="toolTip">
+        <string>Review Shape Reports</string>
+       </attribute>
        <widget class="QTabWidget" name="tabWidget">
         <property name="geometry">
          <rect>
@@ -9520,14 +9538,17 @@
          <attribute name="title">
           <string>Report by ID</string>
          </attribute>
-         <widget class="QTreeWidget" name="treeWidget">
+         <widget class="QTreeWidget" name="shapeReport">
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>30</y>
             <width>291</width>
-            <height>471</height>
+            <height>441</height>
            </rect>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAsNeeded</enum>
           </property>
           <column>
            <property name="text">
@@ -9535,19 +9556,48 @@
            </property>
           </column>
          </widget>
+         <widget class="QPushButton" name="shapeReportRefreshButton">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>0</y>
+            <width>99</width>
+            <height>27</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>REFRESH</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="tab_4">
          <attribute name="title">
           <string>by Perimeter</string>
          </attribute>
-         <widget class="QTableWidget" name="tableWidget">
+         <widget class="QTableWidget" name="perimeterReport">
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>30</y>
             <width>291</width>
-            <height>471</height>
+            <height>441</height>
            </rect>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="perimeterReportRefreshButton">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>0</y>
+            <width>99</width>
+            <height>27</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>REFRESH</string>
           </property>
          </widget>
         </widget>
@@ -9555,14 +9605,30 @@
          <attribute name="title">
           <string>by Area</string>
          </attribute>
-         <widget class="QTableWidget" name="tableWidget_2">
+         <widget class="QTableWidget" name="areaReport">
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>30</y>
             <width>291</width>
-            <height>471</height>
+            <height>441</height>
            </rect>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="areaReportRefreshButton">
+          <property name="geometry">
+           <rect>
+            <x>180</x>
+            <y>0</y>
+            <width>99</width>
+            <height>27</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>REFRESH</string>
           </property>
          </widget>
         </widget>
@@ -10435,6 +10501,30 @@
        <property name="midLineWidth">
         <number>2</number>
        </property>
+       <widget class="QTextBrowser" name="helpBrowser">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>15</x>
+          <y>11</y>
+          <width>971</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="autoFormatting">
+         <set>QTextEdit::AutoAll</set>
+        </property>
+        <property name="lineWrapColumnOrWidth">
+         <number>0</number>
+        </property>
+        <property name="source">
+         <url>
+          <string>file:///home/mike/cs1c/Project/Fall2017_CS1C-/Source/build-Modeler_Project-Desktop-Debug/Help Text File.txt</string>
+         </url>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>

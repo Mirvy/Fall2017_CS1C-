@@ -60,7 +60,7 @@ public:
     virtual int getRx(){}
     virtual int getRy(){}
     virtual QString getText(){}
-    virtual void setFont(QFont){}
+    virtual void setFont(QFont&){}
     virtual void setText(QString){}
 
     virtual void draw(QPaintDevice* device) = 0;
@@ -92,6 +92,8 @@ public:
         pnt.begin(device);
         pnt.setPen(this->getPen());
         pnt.drawLine(start,end);
+        pnt.setPen(QPen());
+        pnt.drawText(start.x()-5,start.y()-5,QString::number(this->getId()));
         pnt.end();
     }
     void move(Shape *source)
@@ -129,6 +131,8 @@ public:
          pnt.begin(device);
          pnt.setPen(this->getPen());
          pnt.drawPolyline(p.begin(),p.size());
+         pnt.setPen(QPen());
+         pnt.drawText(p.begin()->x()-5,p.begin()->y()-5,QString::number(this->getId()));
          pnt.end();
     }
     vector<QPoint> &getPoints()
@@ -159,6 +163,8 @@ public:
         pnt.setPen(this->getPen());
         pnt.setBrush(this->getBrush());
         pnt.drawPolygon(p.begin(),p.size());
+        pnt.setPen(QPen());
+        pnt.drawText(p.begin()->x()-5,p.begin()->y()-5,QString::number(this->getId()));
         pnt.end();
     }
 
@@ -175,7 +181,7 @@ public:
     {
 
         double perimeter = 0;
-        for(vector<QPoint>::iterator i=p.begin();i<p.end();++i)
+        for(vector<QPoint>::iterator i=p.begin();i<p.end()-1;++i)
         {
             perimeter += sqrt((pow((i->x()-((i+1)->x())),2)+pow((i->y()-(i+1)->y()),2)));
         }
@@ -207,6 +213,8 @@ public:
         pnt.setPen(this->getPen());
         pnt.setBrush(this->getBrush());
         pnt.drawRect((getUpperLeft()).x(),(getUpperLeft()).y(),getWidth(),getHeight());
+        pnt.setPen(QPen());
+        pnt.drawText(getUpperLeft().x()-5,getUpperLeft().y()-5,QString::number(this->getId()));
         pnt.end();
     }
     void move(Shape* source)
@@ -321,6 +329,8 @@ public:
         pnt.setPen(this->getPen());
         pnt.setBrush(this->getBrush());
         pnt.drawEllipse(getOrigin(),rx,ry);
+        pnt.setPen(QPen());
+        pnt.drawText(getOrigin().x()-rx,getOrigin().y()-ry,QString::number(this->getId()));
         pnt.end();
     }
     void move(Shape* source)
@@ -390,6 +400,8 @@ public:
         pnt.setPen(this->getPen());
         pnt.setBrush(this->getBrush());
         pnt.drawText((getUpperLeft()).x(),getUpperLeft().y(),objText);
+        pnt.setPen(QPen());
+        pnt.drawText(getUpperLeft().x()-7,getUpperLeft().y()-7,QString::number(this->getId()));
         pnt.end();
     }
     void move(Shape* source)
@@ -402,11 +414,14 @@ public:
         return objText;
     }
 
-    void setFont(QFont source)
+    void setFont(QFont &source)
     {
         QPainter &pnt = getPainter();
         pnt.setFont(source);
     }
+
+    double calcArea(){return 0;}
+    double calcPerimeter(){return 0;}
 
     void setText(QString source)
     {

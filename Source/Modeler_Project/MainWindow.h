@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
+#include <QTableWidgetItem>
+#include <QTreeWidget>
 #include "vector.h"
 #include "shape.h"
 using namespace myStd;
@@ -10,6 +13,12 @@ using namespace Shape;
 namespace Ui {
 class MainWindow;
 }
+
+void areaTableGen(QTableWidget* destination, myStd::vector<Shape::Shape*> &source);
+void perimeterTableGen(QTableWidget* destination, myStd::vector<Shape::Shape*> &source);
+void shapeTreeGen(QTreeWidget* destination, myStd::vector<Shape::Shape*> &source);
+void saveFile(myStd::vector<Shape::Shape*> &source);
+
 class MainWindow : public QMainWindow
 {
 
@@ -100,11 +109,21 @@ private slots:
 
     void on_tabMenu_tabBarClicked(int index);
 
+    void on_areaReportRefreshButton_clicked();
+
+    void on_perimeterReportRefreshButton_clicked();
+
+    void on_shapeReportRefreshButton_clicked();
+
+    void on_actionGet_Help_triggered();
+
+    void on_actionSave_and_Exit_triggered();
+
 private:
 
     Ui::MainWindow *ui;
     vector<QPoint> tempShape;
-
+    QTableWidget *areaReport;
 
 };
 

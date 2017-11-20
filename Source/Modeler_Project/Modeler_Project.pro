@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-CONFIG += c++14
+CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,7 +19,11 @@ SOURCES += main.cpp \
     MainWindow.cpp \
     canvas.cpp \
     tabinterface.cpp \
-    modtab.cpp
+    modtab.cpp \
+    areaTableGen.cpp \
+    perimeterTableGen.cpp \
+    shapeTreeGen.cpp \
+    saveFile.cpp
 
 HEADERS  += shape.h \
     vector.h \
@@ -28,8 +32,7 @@ HEADERS  += shape.h \
     tabinterface.h \
     modtab.h
 
-DISTFILES += \
-    ../build-Modeler_Project-Desktop-Debug/shapes.txt
+DISTFILES +=
 
 FORMS += \
     MainWindow.ui

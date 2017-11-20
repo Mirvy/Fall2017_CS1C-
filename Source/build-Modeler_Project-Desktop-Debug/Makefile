@@ -14,7 +14,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -m64 -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -m64 -pipe -g -std=c++1y -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -m64 -pipe -g -std=c++0x -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I../Modeler_Project -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64
 QMAKE         = /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 DEL_FILE      = rm -f
@@ -53,7 +53,11 @@ SOURCES       = ../Modeler_Project/main.cpp \
 		../Modeler_Project/MainWindow.cpp \
 		../Modeler_Project/canvas.cpp \
 		../Modeler_Project/tabinterface.cpp \
-		../Modeler_Project/modtab.cpp moc_MainWindow.cpp \
+		../Modeler_Project/modtab.cpp \
+		../Modeler_Project/areaTableGen.cpp \
+		../Modeler_Project/perimeterTableGen.cpp \
+		../Modeler_Project/shapeTreeGen.cpp \
+		../Modeler_Project/saveFile.cpp moc_MainWindow.cpp \
 		moc_canvas.cpp \
 		moc_tabinterface.cpp \
 		moc_modtab.cpp
@@ -63,12 +67,15 @@ OBJECTS       = main.o \
 		canvas.o \
 		tabinterface.o \
 		modtab.o \
+		areaTableGen.o \
+		perimeterTableGen.o \
+		shapeTreeGen.o \
+		saveFile.o \
 		moc_MainWindow.o \
 		moc_canvas.o \
 		moc_tabinterface.o \
 		moc_modtab.o
-DIST          = shapes.txt \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
+DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/sanitize.conf \
@@ -114,7 +121,6 @@ DIST          = shapes.txt \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -136,7 +142,11 @@ DIST          = shapes.txt \
 		../Modeler_Project/MainWindow.cpp \
 		../Modeler_Project/canvas.cpp \
 		../Modeler_Project/tabinterface.cpp \
-		../Modeler_Project/modtab.cpp
+		../Modeler_Project/modtab.cpp \
+		../Modeler_Project/areaTableGen.cpp \
+		../Modeler_Project/perimeterTableGen.cpp \
+		../Modeler_Project/shapeTreeGen.cpp \
+		../Modeler_Project/saveFile.cpp
 QMAKE_TARGET  = Modeler_Project
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Modeler_Project
@@ -213,7 +223,6 @@ Makefile: ../Modeler_Project/Modeler_Project.pro /usr/lib/x86_64-linux-gnu/qt5/m
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf \
-		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf \
@@ -276,7 +285,6 @@ Makefile: ../Modeler_Project/Modeler_Project.pro /usr/lib/x86_64-linux-gnu/qt5/m
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++11.prf:
-/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/c++14.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resources.prf:
@@ -307,7 +315,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/MainWindow.h ../Modeler_Project/canvas.h ../Modeler_Project/tabinterface.h ../Modeler_Project/modtab.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp ../Modeler_Project/canvas.cpp ../Modeler_Project/tabinterface.cpp ../Modeler_Project/modtab.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp ../Modeler_Project/canvas.cpp ../Modeler_Project/tabinterface.cpp ../Modeler_Project/modtab.cpp ../Modeler_Project/areaTableGen.cpp ../Modeler_Project/perimeterTableGen.cpp ../Modeler_Project/shapeTreeGen.cpp ../Modeler_Project/saveFile.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Modeler_Project/MainWindow.ui $(DISTDIR)/
 
 
@@ -386,7 +394,10 @@ shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
 MainWindow.o: ../Modeler_Project/MainWindow.cpp ../Modeler_Project/MainWindow.h \
 		../Modeler_Project/vector.h \
 		../Modeler_Project/shape.h \
-		ui_MainWindow.h
+		ui_MainWindow.h \
+		../Modeler_Project/canvas.h \
+		../Modeler_Project/modtab.h \
+		../Modeler_Project/tabinterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../Modeler_Project/MainWindow.cpp
 
 canvas.o: ../Modeler_Project/canvas.cpp ../Modeler_Project/canvas.h \
@@ -399,6 +410,23 @@ tabinterface.o: ../Modeler_Project/tabinterface.cpp ../Modeler_Project/tabinterf
 
 modtab.o: ../Modeler_Project/modtab.cpp ../Modeler_Project/modtab.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o modtab.o ../Modeler_Project/modtab.cpp
+
+areaTableGen.o: ../Modeler_Project/areaTableGen.cpp ../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o areaTableGen.o ../Modeler_Project/areaTableGen.cpp
+
+perimeterTableGen.o: ../Modeler_Project/perimeterTableGen.cpp ../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o perimeterTableGen.o ../Modeler_Project/perimeterTableGen.cpp
+
+shapeTreeGen.o: ../Modeler_Project/shapeTreeGen.cpp ../Modeler_Project/shape.h \
+		../Modeler_Project/vector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shapeTreeGen.o ../Modeler_Project/shapeTreeGen.cpp
+
+saveFile.o: ../Modeler_Project/saveFile.cpp ../Modeler_Project/MainWindow.h \
+		../Modeler_Project/vector.h \
+		../Modeler_Project/shape.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o saveFile.o ../Modeler_Project/saveFile.cpp
 
 moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp

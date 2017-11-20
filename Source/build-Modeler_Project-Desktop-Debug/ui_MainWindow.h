@@ -29,6 +29,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -585,13 +586,17 @@ public:
     QWidget *reportTab;
     QTabWidget *tabWidget;
     QWidget *tab_3;
-    QTreeWidget *treeWidget;
+    QTreeWidget *shapeReport;
+    QPushButton *shapeReportRefreshButton;
     QWidget *tab_4;
-    QTableWidget *tableWidget;
+    QTableWidget *perimeterReport;
+    QPushButton *perimeterReportRefreshButton;
     QWidget *tab_5;
-    QTableWidget *tableWidget_2;
+    QTableWidget *areaReport;
+    QPushButton *areaReportRefreshButton;
     canvas *renderCanvas;
     QFrame *frame;
+    QTextBrowser *helpBrowser;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAdmin;
@@ -2887,24 +2892,36 @@ public:
         tabWidget->setGeometry(QRect(0, 0, 301, 501));
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
-        treeWidget = new QTreeWidget(tab_3);
+        shapeReport = new QTreeWidget(tab_3);
         QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
         __qtreewidgetitem->setText(0, QStringLiteral("1"));
-        treeWidget->setHeaderItem(__qtreewidgetitem);
-        treeWidget->setObjectName(QStringLiteral("treeWidget"));
-        treeWidget->setGeometry(QRect(0, 0, 291, 471));
+        shapeReport->setHeaderItem(__qtreewidgetitem);
+        shapeReport->setObjectName(QStringLiteral("shapeReport"));
+        shapeReport->setGeometry(QRect(0, 30, 291, 441));
+        shapeReport->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        shapeReportRefreshButton = new QPushButton(tab_3);
+        shapeReportRefreshButton->setObjectName(QStringLiteral("shapeReportRefreshButton"));
+        shapeReportRefreshButton->setGeometry(QRect(180, 0, 99, 27));
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
-        tableWidget = new QTableWidget(tab_4);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(0, 0, 291, 471));
+        perimeterReport = new QTableWidget(tab_4);
+        perimeterReport->setObjectName(QStringLiteral("perimeterReport"));
+        perimeterReport->setGeometry(QRect(0, 30, 291, 441));
+        perimeterReport->setSortingEnabled(true);
+        perimeterReportRefreshButton = new QPushButton(tab_4);
+        perimeterReportRefreshButton->setObjectName(QStringLiteral("perimeterReportRefreshButton"));
+        perimeterReportRefreshButton->setGeometry(QRect(180, 0, 99, 27));
         tabWidget->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
-        tableWidget_2 = new QTableWidget(tab_5);
-        tableWidget_2->setObjectName(QStringLiteral("tableWidget_2"));
-        tableWidget_2->setGeometry(QRect(0, 0, 291, 471));
+        areaReport = new QTableWidget(tab_5);
+        areaReport->setObjectName(QStringLiteral("areaReport"));
+        areaReport->setGeometry(QRect(0, 30, 291, 441));
+        areaReport->setSortingEnabled(true);
+        areaReportRefreshButton = new QPushButton(tab_5);
+        areaReportRefreshButton->setObjectName(QStringLiteral("areaReportRefreshButton"));
+        areaReportRefreshButton->setGeometry(QRect(180, 0, 99, 27));
         tabWidget->addTab(tab_5, QString());
         tabMenu->addTab(reportTab, QString());
 
@@ -3026,6 +3043,13 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         frame->setLineWidth(2);
         frame->setMidLineWidth(2);
+        helpBrowser = new QTextBrowser(frame);
+        helpBrowser->setObjectName(QStringLiteral("helpBrowser"));
+        helpBrowser->setEnabled(true);
+        helpBrowser->setGeometry(QRect(15, 11, 971, 481));
+        helpBrowser->setAutoFormatting(QTextEdit::AutoAll);
+        helpBrowser->setLineWrapColumnOrWidth(0);
+        helpBrowser->setSource(QUrl(QStringLiteral("file:///home/mike/cs1c/Project/Fall2017_CS1C-/Source/build-Modeler_Project-Desktop-Debug/Help Text File.txt")));
 
         horizontalLayout->addWidget(renderCanvas);
 
@@ -3069,13 +3093,22 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "2D Modeler", 0));
         actionGet_Help->setText(QApplication::translate("MainWindow", "Get Help!", 0));
         actionProvide_Feedback->setText(QApplication::translate("MainWindow", "Provide Feedback", 0));
         actionAdmin_Login->setText(QApplication::translate("MainWindow", "Admin Login", 0));
         actionSave_and_Exit->setText(QApplication::translate("MainWindow", "Save and Exit", 0));
+#ifndef QT_NO_TOOLTIP
+        tabMenu->setToolTip(QString());
+#endif // QT_NO_TOOLTIP
         shapeIdModLabel->setText(QApplication::translate("MainWindow", "Shape ID:", 0));
+#ifndef QT_NO_TOOLTIP
+        shapeIdModSpinBox->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Select Shape ID# to Display</p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
         shapeTypeModLabel->setText(QApplication::translate("MainWindow", "Shape Type:", 0));
+#ifndef QT_NO_TOOLTIP
+        shapeModType->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Currently Selected Shape's Type</p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
         shapeModType->setText(QApplication::translate("MainWindow", "<TYPE>", 0));
         ellipseModMenu_dimensions_heighttLabel->setText(QApplication::translate("MainWindow", "RY Size    :", 0));
         ellipseModMenu_dimensions_upperLefttXLabel->setText(QApplication::translate("MainWindow", "X", 0));
@@ -3719,6 +3752,7 @@ public:
         ModMenu_deleteScreenLabel->setText(QApplication::translate("MainWindow", "SHAPE HAS BEEN DELETED", 0));
         ModMenu_emptyScreenLabel->setText(QApplication::translate("MainWindow", "    THERE ARE NO SHAPES", 0));
         tabMenu->setTabText(tabMenu->indexOf(modTab), QApplication::translate("MainWindow", "Modify", 0));
+        tabMenu->setTabToolTip(tabMenu->indexOf(modTab), QApplication::translate("MainWindow", "Modify Existing Shapes", 0));
         shapeTypeAddCombo->clear();
         shapeTypeAddCombo->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Line", 0)
@@ -4363,10 +4397,15 @@ public:
         textAddMenu_textSettings_fontWeightLabel->setText(QApplication::translate("MainWindow", "FontWeight :", 0));
         textAddMenu_textSettings_textEditLabel->setText(QApplication::translate("MainWindow", "Visible Text :", 0));
         tabMenu->setTabText(tabMenu->indexOf(addShapeTab), QApplication::translate("MainWindow", "Add Shape", 0));
+        tabMenu->setTabToolTip(tabMenu->indexOf(addShapeTab), QApplication::translate("MainWindow", "Add New Shapes", 0));
+        shapeReportRefreshButton->setText(QApplication::translate("MainWindow", "REFRESH", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Report by ID", 0));
+        perimeterReportRefreshButton->setText(QApplication::translate("MainWindow", "REFRESH", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", "by Perimeter", 0));
+        areaReportRefreshButton->setText(QApplication::translate("MainWindow", "REFRESH", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "by Area", 0));
         tabMenu->setTabText(tabMenu->indexOf(reportTab), QApplication::translate("MainWindow", "Shape Tables", 0));
+        tabMenu->setTabToolTip(tabMenu->indexOf(reportTab), QApplication::translate("MainWindow", "Review Shape Reports", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuAdmin->setTitle(QApplication::translate("MainWindow", "Admin", 0));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0));
