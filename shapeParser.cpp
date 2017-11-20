@@ -25,6 +25,9 @@ Qt::PenJoinStyle getPenJoinStyle(string &);
 
 Qt::BrushStyle  getBrushStyle(string &);
 Qt::GlobalColor getBrushColor(string &);
+
+//Qt::GlobalColor
+//QFont::Style getFont(string &);
 /*
     ShapeId: 1
     ShapeType: Line
@@ -52,8 +55,15 @@ Qt::GlobalColor getBrushColor(string &);
  int BRUSH_COLOR    = 8;
  int BRUSH_STYLE    = 9;
 
+ //for text parser
+ int TEXT_STRING    = 3;
+ int TEXT_COLOR     = 4;
+ int TEXT_ALIGNMENT = 5;
+ int TEXT_FONT_SIZE = 6;
+ int TEXT_FONT_FAM  = 7;
  int FONT_STYLE     = 8;
  int FONT_WEIGHT    = 9;
+
 
 myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
 {
@@ -405,7 +415,27 @@ Shape::Shape* rectangleParse( myStd::vector<string> &source,QPaintDevice* device
     BrushStyle: VerPattern
 */
 
+/*
+        while(tempString[i] != ',')  //Parses through the third string to build the x coordinate of the starting point.
+        {
+            ++i;
+        }
+        x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+        tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
 
+        i = 0;
+
+        while(tempString[i] != ',' && i < tempString.size()-1)
+        {
+            ++i;
+            cout << "i: " << i << endl;
+        }
+        //repeats the same steps for the y coordinate.
+        y = stoi(tempString.substr(0,i));
+        tempString = tempString.substr(i+1,tempString.length());
+
+        vecOfPoints.push_back(QPoint(x,y));
+*/
     int tempId = stoi(source[SHAPE_ID].substr(0,source[SHAPE_ID].length())); //Creates a temp int to hold the shape id#.
     string tempString = source[SHAPE_DIMS];                             //Uses stoi() function to convert its contents
     int i = 0, x=0, y=0;                                       //   into an integer.
@@ -414,14 +444,18 @@ Shape::Shape* rectangleParse( myStd::vector<string> &source,QPaintDevice* device
         ++i;
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+    cout << "rectangle x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
-    tempString = tempString.substr(i=1,tempString.length());
+    cout << "rectangle y:" << y << endl;
+
+    tempString = tempString.substr(i+1,tempString.length());
     QPoint nUL = QPoint(x,y); //Creates the start point as type Qpoint.
 
     i = 0;      //resets i
@@ -429,19 +463,22 @@ Shape::Shape* rectangleParse( myStd::vector<string> &source,QPaintDevice* device
     int nw = 0;  //declares height and width vars
     int nh = 0;
 
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     nw = stoi(tempString.substr(0,i));
+    cout << "rectangle nw:" << nw << endl;
     tempString = tempString.substr(i+1,tempString.length());
 
     i = 0; //resets i
-    while(tempString[i] != '\n')
+    while(tempString[i] != ',' && i < tempString.size()-1) //20, 200, 170, 100
     {
         ++i;
     }
+
     nh = stoi(tempString.substr(0,i));
+    cout << "rectangle nh:" << nh << endl;
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
@@ -496,6 +533,9 @@ Shape::Shape* squareParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+
+    cout << "Square x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
     while(tempString[i] != ',')
@@ -503,7 +543,10 @@ Shape::Shape* squareParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
-    tempString = tempString.substr(i=1,tempString.length());
+
+    cout << "Square y:" << y << endl;
+
+    tempString = tempString.substr(i+1,tempString.length());
 
     QPoint nUL = QPoint(x,y); //Creates the start point as type Qpoint.
 
@@ -511,11 +554,14 @@ Shape::Shape* squareParse( myStd::vector<string> &source,QPaintDevice* device)
 
     int side = 0;  //declares height and width vars
 
-    while(tempString[i] != ',')
+    while(tempString[i] != ',' && i < tempString.size()-1)
     {
         ++i;
     }
     side = stoi(tempString.substr(0,i));
+
+    cout << "Square side:" << side << endl;
+
     tempString = tempString.substr(i+1,tempString.length());
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
@@ -566,6 +612,8 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+    cout << "Square x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
     while(tempString[i] != ',')
@@ -573,7 +621,10 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
-    tempString = tempString.substr(i=1,tempString.length());
+
+    cout << "Square y:" << y << endl;
+
+    tempString = tempString.substr(i+1,tempString.length());
     QPoint nUL = QPoint(x,y); //Creates the start point as type Qpoint.
 
     i = 0;      //resets i
@@ -586,6 +637,9 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     nrx = stoi(tempString.substr(0,i));
+
+    cout << "Square nrx:" << nrx << endl;
+
     tempString = tempString.substr(i+1,tempString.length());
 
     i = 0; //resets i
@@ -594,6 +648,7 @@ Shape::Shape* ellipseParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     nry = stoi(tempString.substr(0,i));
+    cout << "Square nry:" << nry << endl;
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
@@ -645,6 +700,9 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     x = stoi(tempString.substr(0,i)); //Assigns the value by converting the substring found with stoi().
+
+    cout << "Square x:" << x << endl;
+
     tempString = tempString.substr(i+1,tempString.length()); //truncates the previously parsed portion of the string and continues.
     i = 0;
     while(tempString[i] != ',')
@@ -652,7 +710,10 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     y = stoi(tempString.substr(0,i));  //repeats the same steps for the y coordinate.
-    tempString = tempString.substr(i=1,tempString.length());
+
+    cout << "Square y:" << y << endl;
+
+    tempString = tempString.substr(i+1,tempString.length());
 
     QPoint nUL = QPoint(x,y); //Creates the start point as type Qpoint.
 
@@ -664,7 +725,10 @@ Shape::Shape* circleParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     nr = stoi(tempString.substr(0,i));
-    tempString = tempString.substr(i+1,tempString.length());
+
+    cout << "Square nr:" << nr << endl;
+
+    //tempString = tempString.substr(i+1,tempString.length());
 
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
 
@@ -744,10 +808,49 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
         ++i;
     }
     nh = stoi(tempString.substr(0,i));
+    cout << "nw" << nw << endl;
+    cout << "nh" << nh << endl;
 
     //QPoint end = QPoint(x,y);  //Creates the end point as type QPoint.
     qreal width = stoi(source[PEN_WIDTH].substr(0,source[PEN_WIDTH].length()));  //Creats a qreal object, which is Qt special double, used for QPen object.
     //after width
+
+    /*
+ int SHAPE_ID       = 0;
+ int SHAPE_TYPE     = 1;
+ int SHAPE_DIMS     = 2;
+ int PEN_COLOR      = 3;
+ int PEN_WIDTH      = 4;
+ int PEN_STYLE      = 5;
+ int PEN_CAP_STYLE  = 6;
+ int PEN_JOIN_STYLE = 7;
+
+ int BRUSH_COLOR    = 8;
+ int BRUSH_STYLE    = 9;
+
+ //for text parser
+ int TEXT_STRING    = 3;
+ int TEXT_COLOR     = 4;
+ int TEXT_ALIGNMENT = 5;
+ int TEXT_FONT_SIZE = 6;
+ int TEXT_FONT_FAM  = 7;
+ int FONT_STYLE     = 8;
+ int FONT_WEIGHT    = 9;
+
+*/
+
+    /*
+        ShapeId: 8
+        ShapeType: Text
+        ShapeDimensions: 250, 425, 500, 50
+        TextString: Class Project 2 - 2D Graphics Modeler
+        TextColor: blue
+        TextAlignment: AlignCenter
+        TextPointSize: 10
+        TextFontFamily: Comic Sans MS
+        TextFontStyle: FlatCap
+        TextFontWeight: Normal
+    */
     source[PEN_COLOR].erase(source[PEN_COLOR].end()-1, source[PEN_COLOR].end());
     source[PEN_STYLE].erase(source[PEN_STYLE].end()-1, source[PEN_STYLE].end());
     source[PEN_CAP_STYLE].erase(source[PEN_CAP_STYLE].end()-1, source[PEN_CAP_STYLE].end());
@@ -755,7 +858,14 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
     source[BRUSH_COLOR].erase(source[BRUSH_COLOR].end()-1, source[BRUSH_COLOR].end());
     source[BRUSH_STYLE].erase(source[BRUSH_STYLE].end()-1, source[BRUSH_STYLE].end());
 
+    source[TEXT_STRING].erase(source[TEXT_STRING].end()-1, source[TEXT_STRING].end());
+
+    cout << source[TEXT_STRING] << endl;
+
     tempString = source[3];
+
+    //QFont (family size, int font size, int weight, false);
+
 
     Qt::BrushStyle newBrush = getBrushStyle(source[BRUSH_STYLE]);
     Qt::GlobalColor newBrushColor = getBrushColor(source[BRUSH_COLOR]);
@@ -768,7 +878,7 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
     QPen npen(*tempPenBrush,width,getPenStyle(source[PEN_STYLE]),getPenCapStyle(source[PEN_CAP_STYLE]),getPenJoinStyle(source[PEN_JOIN_STYLE])); //Create the Qpen object using helper functions which determine its setting from the remaining strings.
     //copy
 
-    Text* nText = new Text(device,tempId, npen, *tempBrush, nUL, nw, nh, QString(""));
+    Text* nText = new Text(device,tempId, npen, *tempBrush, nUL, nw, nh, QString::fromStdString(source[TEXT_STRING])); //insert the string
 
     //Text* nText = new Text(device,tempId, npen, Qt::NoBrush, nUL, nw, nh, QString(""));  //Instantiates the new line object.
 
@@ -1023,3 +1133,77 @@ Qt::GlobalColor getBrushColor(string &source)
         return Qt::GlobalColor::lightGray;
     }
 }
+
+
+/*QFont::Style getFont(string &)
+{
+    if(source == " SANS_SERIF") //white
+    {
+        return QFont::Style::SansSerif;
+    }
+    else if(source == "  SANS_SERIF")
+    {
+        return QFont::Style::
+                ;
+    }
+    else if(source == " cyan")
+    {
+        return Qt::GlobalColor::cyan;
+    }
+    else if(source == " darkCyan")
+    {
+        return Qt::GlobalColor::darkCyan;
+    }
+    else if(source == " red")
+    {
+        return Qt::GlobalColor::red;
+    }
+    else if(source == " darkRed")
+    {
+        return Qt::GlobalColor::darkRed;
+    }
+    else if(source == " magenta")
+    {
+        return Qt::GlobalColor::magenta;
+    }
+    else if(source == " darkMagenta")
+    {
+        return Qt::GlobalColor::darkMagenta;
+    }
+    else if(source == " green")
+    {
+        return Qt::GlobalColor::green;
+    }
+    else if(source == " darkGreen")
+    {
+        return Qt::GlobalColor::darkGreen;
+    }
+    else if(source == " yellow")
+    {
+        return Qt::GlobalColor::yellow;
+    }
+    else if(source == " darkYellow")
+    {
+        return Qt::GlobalColor::darkYellow;
+    }
+    else if(source == " blue")
+    {
+        return Qt::GlobalColor::blue;
+    }
+    else if(source == " darkBlue")
+    {
+        return Qt::GlobalColor::darkBlue;
+    }
+    else if(source == " gray")
+    {
+        return Qt::GlobalColor::gray;
+    }
+    else if(source == " darkGray")
+    {
+        return Qt::GlobalColor::darkGray;
+    }
+    else if(source == " lightGray")
+    {
+        return Qt::GlobalColor::lightGray;
+    }
+}*/
