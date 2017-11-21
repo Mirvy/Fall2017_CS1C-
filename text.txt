@@ -1,9 +1,6 @@
 
-User name: john kath
-User feedback: trololol
+User name: 
+User feedback: 
 
-User name: yul
-User feedback: olol
-
-User name: mik
-User feedback: trololololoooooo
+User name: 
+User feedback: 
