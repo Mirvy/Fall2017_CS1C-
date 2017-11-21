@@ -20,7 +20,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
         switch(source[i]->getShape())
         {
         case 0:
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Line");
@@ -110,12 +110,12 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         case 1:
         {
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: PolyLine");
@@ -209,13 +209,13 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         }
         case 2:
         {
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Polygon");
@@ -307,15 +307,82 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             case 64:itemList[8].append("BevelJoin");break;
             case 128:itemList[8].append("RoundJoin");break;
             }
-
+            itemList.push_back("BrushColor: ");
+            switch(source[i]->getBrush().color().hue())
+            {
+            case -1: switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("white");break;
+                        case 0:itemList[9].append("black");break;
+                        case 128:itemList[9].append("darkGray");break;
+                        case 192:itemList[9].append("lightGray");break;
+                    }
+                    break;
+            case 0: switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("red");break;
+                        case 128:itemList[9].append("darkRed");break;
+                    }
+                    break;
+            case 120:switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("green");break;
+                        case 128:itemList[9].append("darkGreen");break;
+                    }
+                    break;
+            case 240:switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("blue");break;
+                        case 164:itemList[9].append("gray");break;
+                        case 128:itemList[9].append("darkBlue");break;
+                    }
+                    break;
+            case 180:switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("cyan");break;
+                        case 128:itemList[9].append("darkCyan");break;
+                    }
+                    break;
+            case 300:switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("magenta");break;
+                        case 128:itemList[9].append("darkMagenta");break;
+                    }
+                    break;
+            case 60:switch(source[i]->getPen().color().value())
+                    {
+                        case 255:itemList[9].append("yellow");break;
+                        case 128:itemList[9].append("darkYellow");break;
+                    }
+                    break;
+            }
+            itemList.push_back("BrushStyle: ");
+            switch(source[i]->getBrush().style())
+            {
+            case 0:itemList[10].append("NoBrush");break;
+            case 1:itemList[10].append("SolidPattern");break;
+            case 2:itemList[10].append("Dense1Pattern");break;
+            case 3:itemList[10].append("Dense2Pattern");break;
+            case 4:itemList[10].append("Dense3Pattern");break;
+            case 5:itemList[10].append("Dense4Pattern");break;
+            case 6:itemList[10].append("Dense5Pattern");break;
+            case 7:itemList[10].append("Dense6Pattern");break;
+            case 8:itemList[10].append("Dense7Pattern");break;
+            case 9:itemList[10].append("HorPattern");break;
+            case 10:itemList[10].append("VerPattern");break;
+            case 11:itemList[10].append("CrossPattern");break;
+            case 12:itemList[10].append("BDiagPattern");break;
+            case 13:itemList[10].append("FDiagPattern");break;
+            case 14:itemList[10].append("DiagCrossPattern");;break;
+            }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         }
         case 3:
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ItemId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Rectangle");
@@ -473,11 +540,11 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         case 4:
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Square");
@@ -633,11 +700,11 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         case 5:
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Ellipse");
@@ -795,11 +862,11 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         case 6:
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Circle");
@@ -955,11 +1022,11 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         case 7:
-            itemList.push_back(" ");
+            itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Text");
@@ -1024,13 +1091,13 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
                     break;
             }
             itemList.push_back("TextAlignment: ");
-            itemList.push_back("TextPointSize: ");
+            itemList.push_back("TextPointSize: 0");
             itemList.push_back("TextFontFamily: ");
             itemList.push_back("TextFontStyle: ");
             itemList.push_back("TextFontWeight: ");
             for(int i = 0;i < itemList.size();++i)
             {
-                outFile << itemList[i].toStdString() << endl;
+                outFile << itemList[i].toStdString() << " \n";
             }
             break;
         }

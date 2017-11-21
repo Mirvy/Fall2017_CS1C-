@@ -394,10 +394,7 @@ shapeParser.o: ../Modeler_Project/shapeParser.cpp ../Modeler_Project/shape.h \
 MainWindow.o: ../Modeler_Project/MainWindow.cpp ../Modeler_Project/MainWindow.h \
 		../Modeler_Project/vector.h \
 		../Modeler_Project/shape.h \
-		ui_MainWindow.h \
-		../Modeler_Project/canvas.h \
-		../Modeler_Project/modtab.h \
-		../Modeler_Project/tabinterface.h
+		ui_MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MainWindow.o ../Modeler_Project/MainWindow.cpp
 
 canvas.o: ../Modeler_Project/canvas.cpp ../Modeler_Project/canvas.h \
