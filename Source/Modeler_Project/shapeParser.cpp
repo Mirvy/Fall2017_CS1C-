@@ -876,7 +876,7 @@ Shape::Shape* textParse( myStd::vector<string> &source,QPaintDevice* device)
     source[BRUSH_COLOR].erase(source[BRUSH_COLOR].end()-1, source[BRUSH_COLOR].end());
     source[BRUSH_STYLE].erase(source[BRUSH_STYLE].end()-1, source[BRUSH_STYLE].end());
 
-    source[TEXT_STRING].erase(source[TEXT_STRING].end()-1, source[TEXT_STRING].end());
+    //source[TEXT_STRING].erase(source[TEXT_STRING].end()-1, source[TEXT_STRING].end());
 
     cout << source[TEXT_STRING] << endl;
 

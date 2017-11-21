@@ -119,12 +119,25 @@ private slots:
 
     void on_actionSave_and_Exit_triggered();
 
+    void on_helpDoneButton_clicked();
+
+    void on_actionAdmin_Login_triggered();
+
+    void on_userLogin_logoutButton_clicked();
+
+    void on_loginUserButton_clicked();
+
+    void on_loginCancelButton_clicked();
+
 private:
+
 
     Ui::MainWindow *ui;
     vector<QPoint> tempShape;
     QTableWidget *areaReport;
-
+    const QString adminUser = "admin";
+    const QString adminPassword = "password";
+    bool adminPrivledge = false;
 };
 
 #endif // MAINWINDOW_H

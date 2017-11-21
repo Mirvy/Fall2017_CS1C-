@@ -11,6 +11,9 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->helpBrowser->hide();
+    ui->helpDoneButton->hide();
+    ui->loginMenu->hide();
+    ui->userLogin_logoutButton->hide();
 }
 
 void MainWindow::setShape(myStd::vector<Shape::Shape*> source)
@@ -31,17 +34,32 @@ MainWindow::~MainWindow()
 void MainWindow::refreshIds()
 {
 
-    if(ui->renderCanvas->getShapeCount() != 0)
+    if(ui->renderCanvas->getShapeCount() != 0 && adminPrivledge == true)
     {
         ui->shapeIdModSpinBox->setMinimum(1);
         ui->shapeIdModSpinBox->setMaximum(ui->renderCanvas->getShapeCount());
         ui->ModMenu_emptyScreen->hide();
     }
-    else
+    else if(adminPrivledge == true)
     {
         ui->shapeIdModSpinBox->setRange(0,0);
         ui->ModMenu_deleteScreen->hide();
         ui->ModMenu_emptyScreen->show();
+    }
+    else
+    {
+        ui->addMenu_adminBlind->show();
+        ui->modMenu_adminBlind->show();
+        /*ui->lineModMenu->hide();
+        ui->polylineModMenu->hide();
+        ui->polygonModMenu->hide();
+        ui->rectangleModMenu->hide();
+        ui->squareModMenu->hide();
+        ui->ellipseModMenu->hide();
+        ui->circleModMenu->hide();
+        ui->textModMenu->hide();
+        ui->ModMenu_deleteScreen->hide();
+        ui->ModMenu_emptyScreen->hide();*/
     }
 }
 
@@ -2201,10 +2219,67 @@ void MainWindow::on_shapeReportRefreshButton_clicked()
 void MainWindow::on_actionGet_Help_triggered()
 {
     ui->helpBrowser->show();
+    ui->helpDoneButton->show();
 }
 
 void MainWindow::on_actionSave_and_Exit_triggered()
 {
     saveFile(ui->renderCanvas->getShapes());
     QApplication::quit();
+}
+
+void MainWindow::on_helpDoneButton_clicked()
+{
+    ui->helpBrowser->hide();
+    ui->helpDoneButton->hide();
+}
+
+void MainWindow::on_actionAdmin_Login_triggered()
+{
+    ui->loginMenu->show();
+    ui->loginMenu_invalidInputLabel->hide();
+}
+
+void MainWindow::on_userLogin_logoutButton_clicked()
+{
+    adminPrivledge = false;
+    ui->modMenu_adminBlind->show();
+    ui->addMenu_adminBlind->show();
+    ui->loginUserLineEdit->show();
+    ui->loginPasswordLineEdit->show();
+    ui->loginUserLabel->show();
+    ui->loginPasswordLabel->show();
+    ui->loginUserButton->show();
+    ui->userLogin_logoutButton->hide();
+    refreshIds();
+}
+
+void MainWindow::on_loginUserButton_clicked()
+{
+    QString user = ui->loginUserLineEdit->text();
+    QString password = ui->loginPasswordLineEdit->text();
+    ui->loginUserLineEdit->clear();
+    ui->loginPasswordLineEdit->clear();
+    if(user == adminUser && password == adminPassword)
+    {
+        adminPrivledge = true;
+        ui->modMenu_adminBlind->hide();
+        ui->addMenu_adminBlind->hide();
+        ui->loginUserLineEdit->hide();
+        ui->loginPasswordLineEdit->hide();
+        ui->loginUserLabel->hide();
+        ui->loginPasswordLabel->hide();
+        ui->loginUserButton->hide();
+        ui->userLogin_logoutButton->show();
+        refreshIds();
+    }
+    else
+    {
+        ui->loginMenu_invalidInputLabel->show();
+    }
+}
+
+void MainWindow::on_loginCancelButton_clicked()
+{
+    ui->loginMenu->hide();
 }
