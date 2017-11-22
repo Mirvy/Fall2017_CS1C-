@@ -1,98 +1,63 @@
-temp.length()1
-1st empty line
-temp.length()11
-temp.length()16
-temp.length()33
-temp.length()15
-temp.length()12
-temp.length()22
-temp.length()21
-temp.length()27
-temp.length()1
- Line
-HEY IM HERE INSIDE LINE PARSE
-start x:20
-start y:90
-end x:100
-end y:20
-temp.length()11
-temp.length()19
-temp.length()52
-temp.length()15
-temp.length()12
-temp.length()25
-temp.length()21
-temp.length()27
-temp.length()19
-temp.length()25
-temp.length()1
- Polygon
-i: 1
-i: 2
-i: 3
-i: 1
-i: 2
-i: 3
-i: 1
-i: 2
-i: 3
-i: 1
-i: 2
-i: 3
-source[BRUSH_COLOR]: yellow
-source[BRUSH_STYLE]: SolidPattern
-getBrushColor
-source: yellow
-source.size():7
-temp.length()10
-temp.length()21
-temp.length()35
-temp.length()15
-temp.length()12
-temp.length()19
-temp.length()22
-temp.length()27
-temp.length()16
-temp.length()23
-temp.length()1
- Rectangle
-rectangle x:20
-rectangle y:200
-rectangle nw:170
-rectangle nh:100
-getBrushColor
-source: red
-source.size():4
-temp.length()11
-temp.length()18
-temp.length()31
-temp.length()14
-temp.length()12
-temp.length()20
-temp.length()22
-temp.length()27
-temp.length()17
-temp.length()23
-temp.length()1
- Square
-Square x:250
-Square y:150
-Square side:200
-getBrushColor
-source: blue
-source.size():5
-temp.length()11
-temp.length()19
-temp.length()36
-temp.length()16
-temp.length()13
-temp.length()20
-temp.length()21
-temp.length()27
-temp.length()18
-temp.length()20
-temp.length()1
- Ellipse
-Square x:520
-Square y:200
-Square nrx:170
+==21517== Memcheck, a memory error detector
+==21517== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==21517== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==21517== Command: ./Modeler_Project
+==21517== Parent PID: 21489
+==21517== 
+==21517== Conditional jump or move depends on uninitialised value(s)
+==21517==    at 0x11DC713D: ??? (in /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.30)
+==21517==    by 0x6D841D3: ??? (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==21517==    by 0x6D9E9A5: g_signal_emit_valist (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==21517==    by 0x6D9F554: g_signal_emit_by_name (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==21517==    by 0x6D8B8F7: g_object_set_valist (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==21517==    by 0x6D8BFCB: g_object_set (in /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.4800.2)
+==21517==    by 0x507A975: ??? (in /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1)
+==21517==    by 0x4FFE4DC: QStyleFactory::create(QString const&) (in /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1)
+==21517==    by 0x4F97754: QApplication::style() (in /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1)
+==21517==    by 0x4F97B1C: QApplicationPrivate::initialize() (in /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1)
+==21517==    by 0x4F97B6E: QApplicationPrivate::construct() (in /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1)
+==21517==    by 0x4092DF: main (main.cpp:14)
+==21517== 
+==21517== Invalid read of size 1
+==21517==    at 0x40E53E: ellipseParse(myStd::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, QPaintDevice*) (shapeParser.cpp:655)
+==21517==    by 0x409D55: shapeParser(QPaintDevice*) (shapeParser.cpp:147)
+==21517==    by 0x40931F: main (main.cpp:19)
+==21517==  Address 0x20b4f455 is 0 bytes after a block of size 21 alloc'd
+==21517==    at 0x4C2E0EF: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==21517==    by 0x6229844: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==21517==    by 0x622989E: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.24)
+==21517==    by 0x40E158: ellipseParse(myStd::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, QPaintDevice*) (shapeParser.cpp:617)
+==21517==    by 0x409D55: shapeParser(QPaintDevice*) (shapeParser.cpp:147)
+==21517==    by 0x40931F: main (main.cpp:19)
+==21517== 
+==21517== 
+==21517== Process terminating with default action of signal 11 (SIGSEGV)
+==21517==  Access not within mapped region at address 0x20EA8000
+==21517==    at 0x40E53E: ellipseParse(myStd::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, QPaintDevice*) (shapeParser.cpp:655)
+==21517==    by 0x409D55: shapeParser(QPaintDevice*) (shapeParser.cpp:147)
+==21517==    by 0x40931F: main (main.cpp:19)
+==21517==  If you believe this happened as a result of a stack
+==21517==  overflow in your program's main thread (unlikely but
+==21517==  possible), you can try to increase the size of the
+==21517==  main thread stack using the --main-stacksize= flag.
+==21517==  The main thread stack size used in this run was 8388608.
+==21517== 
+==21517== HEAP SUMMARY:
+==21517==     in use at exit: 4,639,249 bytes in 43,990 blocks
+==21517==   total heap usage: 141,059 allocs, 97,069 frees, 20,795,381 bytes allocated
+==21517== 
+==21517== LEAK SUMMARY:
+==21517==    definitely lost: 4,480 bytes in 32 blocks
+==21517==    indirectly lost: 13,263 bytes in 554 blocks
+==21517==      possibly lost: 17,036 bytes in 208 blocks
+==21517==    still reachable: 4,286,606 bytes in 41,713 blocks
+==21517==                       of which reachable via heuristic:
+==21517==                         length64           : 8,160 bytes in 123 blocks
+==21517==                         newarray           : 2,664 bytes in 55 blocks
+==21517==                         multipleinheritance: 336 bytes in 2 blocks
+==21517==         suppressed: 0 bytes in 0 blocks
+==21517== Rerun with --leak-check=full to see details of leaked memory
+==21517== 
+==21517== For counts of detected and suppressed errors, rerun with: -v
+==21517== Use --track-origins=yes to see where uninitialised values come from
+==21517== ERROR SUMMARY: 3509165 errors from 2 contexts (suppressed: 0 from 0)
