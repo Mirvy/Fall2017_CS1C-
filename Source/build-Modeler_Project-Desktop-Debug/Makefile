@@ -57,7 +57,8 @@ SOURCES       = ../Modeler_Project/main.cpp \
 		../Modeler_Project/areaTableGen.cpp \
 		../Modeler_Project/perimeterTableGen.cpp \
 		../Modeler_Project/shapeTreeGen.cpp \
-		../Modeler_Project/saveFile.cpp moc_MainWindow.cpp \
+		../Modeler_Project/saveFile.cpp \
+		../Modeler_Project/feedback.cpp moc_MainWindow.cpp \
 		moc_canvas.cpp \
 		moc_tabinterface.cpp \
 		moc_modtab.cpp
@@ -71,6 +72,7 @@ OBJECTS       = main.o \
 		perimeterTableGen.o \
 		shapeTreeGen.o \
 		saveFile.o \
+		feedback.o \
 		moc_MainWindow.o \
 		moc_canvas.o \
 		moc_tabinterface.o \
@@ -146,7 +148,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Modeler_Project/areaTableGen.cpp \
 		../Modeler_Project/perimeterTableGen.cpp \
 		../Modeler_Project/shapeTreeGen.cpp \
-		../Modeler_Project/saveFile.cpp
+		../Modeler_Project/saveFile.cpp \
+		../Modeler_Project/feedback.cpp
 QMAKE_TARGET  = Modeler_Project
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Modeler_Project
@@ -315,7 +318,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Modeler_Project/shape.h ../Modeler_Project/vector.h ../Modeler_Project/MainWindow.h ../Modeler_Project/canvas.h ../Modeler_Project/tabinterface.h ../Modeler_Project/modtab.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp ../Modeler_Project/canvas.cpp ../Modeler_Project/tabinterface.cpp ../Modeler_Project/modtab.cpp ../Modeler_Project/areaTableGen.cpp ../Modeler_Project/perimeterTableGen.cpp ../Modeler_Project/shapeTreeGen.cpp ../Modeler_Project/saveFile.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Modeler_Project/main.cpp ../Modeler_Project/shapeParser.cpp ../Modeler_Project/MainWindow.cpp ../Modeler_Project/canvas.cpp ../Modeler_Project/tabinterface.cpp ../Modeler_Project/modtab.cpp ../Modeler_Project/areaTableGen.cpp ../Modeler_Project/perimeterTableGen.cpp ../Modeler_Project/shapeTreeGen.cpp ../Modeler_Project/saveFile.cpp ../Modeler_Project/feedback.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Modeler_Project/MainWindow.ui $(DISTDIR)/
 
 
@@ -424,6 +427,11 @@ saveFile.o: ../Modeler_Project/saveFile.cpp ../Modeler_Project/MainWindow.h \
 		../Modeler_Project/vector.h \
 		../Modeler_Project/shape.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o saveFile.o ../Modeler_Project/saveFile.cpp
+
+feedback.o: ../Modeler_Project/feedback.cpp ../Modeler_Project/MainWindow.h \
+		../Modeler_Project/vector.h \
+		../Modeler_Project/shape.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o feedback.o ../Modeler_Project/feedback.cpp
 
 moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_MainWindow.o moc_MainWindow.cpp

@@ -23,7 +23,8 @@ SOURCES += main.cpp \
     areaTableGen.cpp \
     perimeterTableGen.cpp \
     shapeTreeGen.cpp \
-    saveFile.cpp
+    saveFile.cpp \
+    feedback.cpp
 
 HEADERS  += shape.h \
     vector.h \

@@ -6,14 +6,33 @@
 #include "vector.h"
 using namespace std;
 
+/*************************
+ * shapeTreeGen
+ *
+ * Creates a tree hierarchy
+ * report for the QTreeWidget
+ * passed to it.
+ *
+ * Uses a vector of Shape*
+ * passed to it to generate
+ * the report.
+ * ************************/
+
 void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
 {
+    //Sets up the initial format for the tree hierarchy
     destination->setColumnCount(1);
+
+
     QTreeWidgetItem *tempItem1, *tempItem2, *tempItem3, *tempItem4, *tempItem5, *tempItem6, *tempItem7, *tempItem8, *tempItem9, *tempItem10;
     myStd::vector<QString> itemList;
     myStd::vector<QString> pointList;
+
+    //Creates a set of strings containing the pertinent shape attributes for each shape in the received vector
     for(int i = 0; i < source.size();++i)
     {
+
+        //Cleans out the string vectors for each iteration
         int itemSize= itemList.size();
         int pointSize = pointList.size();
         for(int i = 0; i < itemSize; ++i)
@@ -24,14 +43,28 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
         {
             pointList.erase(pointList.begin());
         }
+
+        //The process for creating the tree hierarchy report is the same
+        //for all shapes, with some exceptions. Line will be documented
+        //to show the process' flow.
+        //
+        //Polygon and polyline have a unique point system which is also
+        //documented;see below.
+
+
+        //Determines which type of shape is being used for the report
         switch(source[i]->getShape())
         {
         case 0:
+
+            //Creates a string for each attribute of the current type of shape.
             itemList.push_back("Id#");
             itemList[0].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Line");
             itemList.push_back("ShapeDimensions: ");
             pointList.push_back("start(");
+
+            //Appends the dimensional information to the ShapeDimension string
             pointList[0].append(QString::number(source[i]->getStart().x()));
             pointList[0].append(",");
             pointList[0].append(QString::number(source[i]->getStart().y()));
@@ -42,6 +75,18 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
             pointList[1].append(QString::number(source[i]->getEnd().y()));
             pointList[1].append(")");
             itemList.push_back("PenColor: ");
+
+            //To determine the pen color, a nested switch statement is used:
+            //
+            //First the hue is checked to determine which groups of colors
+            //the color might be and subsequently uses its value to differentiate
+            //between the colors in each subgroup.
+            //
+            //This was necessary since Qt::globalColor is not recoverable
+            //from a QColor object
+            //
+            //This same switch statment structure is used for other shapes with
+            //fill color, as well as text shape's pen color.
             switch(source[i]->getPen().color().hue())
             {
             case -1: switch(source[i]->getPen().color().value())
@@ -94,6 +139,10 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
             itemList.push_back("PenWidth: ");
             itemList[4].append(QString::number(source[i]->getPen().width()));
             itemList.push_back("PenStyle: ");
+
+            //For Pen style, capstyle, and canpJoinStyle, a simple switch
+            //statement is used to check its relevant enum and deterimine
+            //which type applies.
             switch(source[i]->getPen().style())
             {
             case 0:itemList[5].append("NoPen");break;
@@ -117,16 +166,23 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
             case 64:itemList[7].append("BevelJoin");break;
             case 128:itemList[7].append("RoundJoin");break;
             }
+
+            //Creates a entry representing the id of each shape, assigned to the report QTreeWidget destination
+            //and subsequently assigns each attribute string to the id QTreeWidgetItem.
             tempItem1 = new QTreeWidgetItem(destination);
             tempItem1->setText(0,itemList[0]);
             tempItem2 = new QTreeWidgetItem(tempItem1);
             tempItem2->setText(0,itemList[1]);
             tempItem3 = new QTreeWidgetItem(tempItem1);
             tempItem3->setText(0,itemList[2]);
+
+            //Dimensions are assigned to the dimensions QTreeWidgetItem
             tempItem9 = new QTreeWidgetItem(tempItem3);
             tempItem9->setText(0,pointList[0]);
             tempItem10 = new QTreeWidgetItem(tempItem3);
             tempItem10->setText(0,pointList[1]);
+
+            //The rest of the objects are assigned to the main ID# item
             tempItem4 = new QTreeWidgetItem(tempItem1);
             tempItem4->setText(0,itemList[3]);
             tempItem5 = new QTreeWidgetItem(tempItem1);
@@ -137,6 +193,8 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
             tempItem7->setText(0,itemList[6]);
             tempItem8 = new QTreeWidgetItem(tempItem1);
             tempItem8->setText(0,itemList[7]);
+
+            //Reassign all pointers to nullptr
             tempItem1 = nullptr;
             tempItem2 = nullptr;
             tempItem3 = nullptr;
@@ -148,12 +206,17 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
             tempItem9 = nullptr;
             tempItem10 = nullptr;
             break;
+
+        //Polyline and polygon have a unique dimensional system;see below
         case 1:
         {
             itemList.push_back("Id#");
             itemList[0].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: PolyLine");
             itemList.push_back("ShapeDimensions: ");
+
+            //Same process as for all other shapes, but have to loop and acquire j number of points
+            //Later they are all assigned to the dimensions QTreeWidgetItem; see below
             int j = 0;
             for(myStd::vector<QPoint>::iterator p = source[i]->getPoints().begin();p < source[i]->getPoints().end();++p)
             {
@@ -248,6 +311,8 @@ void shapeTreeGen(QTreeWidget* destination,myStd::vector<Shape::Shape*> &source)
             tempItem2->setText(0,itemList[1]);
             tempItem3 = new QTreeWidgetItem(tempItem1);
             tempItem3->setText(0,itemList[2]);
+
+            //All of the points are assigned to the dimensions QTreeWidgetItem
             for(myStd::vector<QString>::iterator p = pointList.begin();p < pointList.end();++p)
             {
                 tempItem9 = new QTreeWidgetItem(tempItem3);

@@ -5,31 +5,39 @@
 #include <QString>
 #include <QFont>
 
+using namespace ourList;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ReadFrom(feedbackList);
     ui->helpBrowser->hide();
     ui->helpDoneButton->hide();
     ui->loginMenu->hide();
     ui->userLogin_logoutButton->hide();
+    ui->feedBackMenu->hide();
 }
+//Constructor
 
 void MainWindow::setShape(myStd::vector<Shape::Shape*> source)
 {
     ui->renderCanvas->setShape(source);
 }
+//Mutator:: Sets the canvas' shape vector
 
 void MainWindow::paintEvent(QPaintEvent *e)
 {
     ui->renderCanvas->paintEvent(e);
 }
+//Overloaded paintEvent() to draw shapes to canvas
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+//Destructor
 
 void MainWindow::refreshIds()
 {
@@ -62,7 +70,27 @@ void MainWindow::refreshIds()
         ui->ModMenu_emptyScreen->hide();*/
     }
 }
+//Refreshes menus
 
+/*****************************************************
+ *
+ * MODIFICATION  MENU SIGNALS
+ *
+ * **************************************************/
+/* The following signals allow the user to modify the
+ * existing shapes or delete existing shapes.
+ *
+ * Each menu is unique to each shape but the functionality
+ * is the same, barring for polygon and polyline, where
+ * a multiple input of points is possible.
+ *
+ * Each shape has a linked update and delete button on
+ * their respective menus which facilitate tese functions
+ * by calling their individual functions.
+ * ***************************************************/
+
+//on_shapeIdModSpinBox_valueChanged(): updates the visible menus
+//depending on the currently indexed shape's type via enum
 void MainWindow::on_shapeIdModSpinBox_valueChanged(int arg1)
 {
     if(tempShape.size() != 0)
@@ -1228,6 +1256,24 @@ void MainWindow::on_textModMenu_deleteButton_clicked()
     {refreshIds();}
 }
 
+/*****************************************************
+ *
+ * ADDITION  MENU SIGNALS
+ *
+ * **************************************************/
+/* The following signals allow the user to add new
+ * shapes to the modeler
+ *
+ * Each menu is unique to each shape but the functionality
+ * is the same, barring for polygon and polyline, where
+ * a multiple input of points is possible.
+ *
+ * Each shape has a create button which creates the new
+ * shape depending on the currently selected attributes.
+ * ***************************************************/
+
+//on_shapeTypeAddCombo_currentIndexChanged: displays the correct add menu depending
+//on the currently index shape's type via enum
 void MainWindow::on_shapeTypeAddCombo_currentIndexChanged(int index)
 {
     if(tempShape.size() != 0)
@@ -2196,6 +2242,19 @@ void MainWindow::on_tabMenu_tabBarClicked(int index)
     ui->textAddMenu->hide();
 }
 
+/*******************************************
+ *
+ * REPORT MENU - SIGNALS AND SLOTS
+ *
+ * *****************************************
+ * The following signals and slots facilitate
+ * the functionality of their associated menu.
+ *
+ * Each menu has a refresh button which will
+ * create a report depending on the currently
+ * selected report tab.
+ * *******************************************/
+
 void MainWindow::on_areaReportRefreshButton_clicked()
 {
     ui->areaReport->clearContents();
@@ -2216,30 +2275,46 @@ void MainWindow::on_shapeReportRefreshButton_clicked()
     shapeTreeGen(ui->shapeReport,ui->renderCanvas->getShapes());
 }
 
+
+/************************************************
+ *
+ * REPORT - Slots
+ *
+ * *********************************************
+ * The following slots receive from menu bars
+ * signals
+ ***********************************************/
+
+//Opens the help readme
 void MainWindow::on_actionGet_Help_triggered()
 {
     ui->helpBrowser->show();
     ui->helpDoneButton->show();
 }
 
+//Saves the shape and feedback information to file and exits program
 void MainWindow::on_actionSave_and_Exit_triggered()
 {
     saveFile(ui->renderCanvas->getShapes());
+    WriteTo(feedbackList);
     QApplication::quit();
 }
 
+//Closes the help readme
 void MainWindow::on_helpDoneButton_clicked()
 {
     ui->helpBrowser->hide();
     ui->helpDoneButton->hide();
 }
 
+//Opens the user login menu
 void MainWindow::on_actionAdmin_Login_triggered()
 {
     ui->loginMenu->show();
     ui->loginMenu_invalidInputLabel->hide();
 }
 
+//Resets the programs admin status
 void MainWindow::on_userLogin_logoutButton_clicked()
 {
     adminPrivledge = false;
@@ -2251,13 +2326,17 @@ void MainWindow::on_userLogin_logoutButton_clicked()
     ui->loginPasswordLabel->show();
     ui->loginUserButton->show();
     ui->userLogin_logoutButton->hide();
+    ui->statusbar->clearMessage();
     refreshIds();
 }
 
+//Sets the programs admin status to active
 void MainWindow::on_loginUserButton_clicked()
 {
     QString user = ui->loginUserLineEdit->text();
     QString password = ui->loginPasswordLineEdit->text();
+    QString statusMessage = "Logged in as ";
+    statusMessage.append(user);
     ui->loginUserLineEdit->clear();
     ui->loginPasswordLineEdit->clear();
     if(user == adminUser && password == adminPassword)
@@ -2271,6 +2350,7 @@ void MainWindow::on_loginUserButton_clicked()
         ui->loginPasswordLabel->hide();
         ui->loginUserButton->hide();
         ui->userLogin_logoutButton->show();
+        ui->statusbar->showMessage(statusMessage);
         refreshIds();
     }
     else
@@ -2279,7 +2359,54 @@ void MainWindow::on_loginUserButton_clicked()
     }
 }
 
+//Closes the login window
 void MainWindow::on_loginCancelButton_clicked()
 {
     ui->loginMenu->hide();
+}
+
+//Opens the feedback window
+void MainWindow::on_actionProvide_Feedback_triggered()
+{
+    ui->feedBackMenu->show();
+    QString feed = "";
+    for(int i = 0; i < feedbackList.size(); ++i)
+    {
+        feed.append(QString::fromStdString(getFeedback()[i].name));
+        feed.append(QString::fromStdString(getFeedback()[i].feedback));
+        if(i != feedbackList.size()-1)
+        {
+            feed.append(" \n");
+        }
+    }
+    ui->feedBackMenu_textBrowser->setText(feed);
+}
+
+//Closes the feedback window
+void MainWindow::on_feedBackMenu_cancelButton_clicked()
+{
+    ui->feedBackMenu->hide();
+}
+
+//Adds the current feedback user and comment to the feedbackList vector
+void MainWindow::on_feedBackMenu_submitButton_clicked()
+{
+    ourList::list *tempList;
+    if(ui->feedBackMenu_userLineEdit->text() != "" && ui->feedBackMenu_feedBacktextEdit->toPlainText() != "")
+    {
+        tempList = new ourList::list;
+        tempList->name = ui->feedBackMenu_userLineEdit->text().toStdString();
+        tempList->name.append("\n");
+        tempList->feedback = ui->feedBackMenu_feedBacktextEdit->toPlainText().toStdString();
+        //tempList->feedback.append("\n");
+        feedbackList.push_back(*tempList);
+    }
+    QString feed;
+    for(int i = 0; i < feedbackList.size(); ++i)
+    {
+        feed.append(QString::fromStdString(getFeedback()[i].name));
+        feed.append(QString::fromStdString(getFeedback()[i].feedback));
+        feed.append(" \n");
+    }
+    ui->feedBackMenu_textBrowser->setText(feed);
 }

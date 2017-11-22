@@ -4,32 +4,54 @@
 
 using namespace std;
 
+//saveFile(): saves the current shapes to a savefile for future retrieval
 void saveFile(myStd::vector<Shape::Shape*> &source)
 {
+    //Creates a vector of strings; one for each attribut of the shape
     myStd::vector<QString> itemList;
     QString pointList;
     ofstream outFile;
     outFile.open("shapes.txt");
+
+    //Runs for every i number of shapes
     for(int i = 0; i < source.size();++i)
     {
-        std::cout << "\n\n";
-        std::cout << source[i]->getBrush().color().hue() << endl;
-        std::cout << source[i]->getBrush().color().value() << endl;
-        std::cout << "\n\n";
+        //Cleans the strings for each new shape
         int itemSize= itemList.size();
         for(int i = 0; i < itemSize; ++i)
         {
             itemList.erase(itemList.begin());
         }
         pointList.clear();
+
+        //Determines which shape is being saved to file
         switch(source[i]->getShape())
         {
+
+        //The save operation is the same for each shape barring minor
+        //alterations such as the shape type string and dimensions.
+        //Steps will be outlines for line as a reference to how the
+        //operations are performed.
+
+        //In addition, polyline and polygons handling of multiple
+        //points are unique therefor their process will be defined
+        //as well.
+
+        //Line
         case 0:
+
+            //Creates a string for each attribute which will be written to file
             itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
             itemList.push_back("ShapeType: Line");
             itemList.push_back("ShapeDimensions: ");
+
+            //For most shapes, except polygon and polyline, the following
+            //represents how points are stored:
+            //
+            //Each value or point is appended to a string which is appened
+            //to the dimension string
             pointList = QString::number(source[i]->getStart().x());
             pointList.append(", ");
             pointList.append(QString::number(source[i]->getStart().y()));
@@ -39,6 +61,18 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             pointList.append(QString::number(source[i]->getEnd().y()));
             itemList[3].append(pointList);
             itemList.push_back("PenColor: ");
+
+            //To determine the pen color, a nested switch statement is used:
+            //
+            //First the hue is checked to determine which groups of colors
+            //the color might be and subsequently uses its value to differentiate
+            //between the colors in each subgroup.
+            //
+            //This was necessary since Qt::globalColor is not recoverable
+            //from a QColor object
+            //
+            //This same switch statment structure is used for other shapes with
+            //fill color, as well as text shape's pen color.
             switch(source[i]->getPen().color().hue())
             {
             case -1: switch(source[i]->getPen().color().value())
@@ -90,6 +124,10 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("PenWidth: ");
             itemList[5].append(QString::number(source[i]->getPen().width()));
             itemList.push_back("PenStyle: ");
+
+            //For Pen style, capstyle, and canpJoinStyle, a simple switch
+            //statement is used to check its relevant enum and deterimine
+            //which type applies.
             switch(source[i]->getPen().style())
             {
             case 0:itemList[6].append("NoPen");break;
@@ -113,18 +151,27 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             case 64:itemList[8].append("BevelJoin");break;
             case 128:itemList[8].append("RoundJoin");break;
             }
+
+            //The accumalated string vector is cycled through, and
+            //written to the output file.
             for(int i = 0;i < itemList.size();++i)
             {
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
+
+        //Polygon and polyline have a unique point system which requires
+        //additional documenting, see below.
         case 1:
         {
             itemList.push_back("");
             itemList.push_back("ShapeId: ");
             itemList[1].append(QString::number(source[i]->getId()));
-            itemList.push_back("ShapeType: PolyLine");
+            itemList.push_back("ShapeType: Polyline");
             itemList.push_back("ShapeDimensions: ");
+
+            //For polyline and polygon, for each point in its point vector a substring
+            //is appended to the dimension string.
             for(myStd::vector<QPoint>::iterator p = source[i]->getPoints().begin();p < source[i]->getPoints().end();++p)
             {
                 pointList = (QString::number(p->x()));
@@ -214,6 +261,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
@@ -315,7 +363,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("BrushColor: ");
             switch(source[i]->getBrush().color().hue())
             {
-            case -1: switch(source[i]->getPen().color().value())
+            case -1: switch(source[i]->getBrush().color().value())
                     {
                         case 0:itemList[9].append("black");break;
                         case 128:itemList[9].append("darkGray");break;
@@ -323,38 +371,38 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
                         case 255:itemList[9].append("white");break;
                     }
                     break;
-            case 0: switch(source[i]->getPen().color().value())
+            case 0: switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkRed");break;
                         case 255:itemList[9].append("red");break;
                     }
                     break;
-            case 120:switch(source[i]->getPen().color().value())
+            case 120:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkGreen");break;
                         case 255:itemList[9].append("green");break;
                     }
                     break;
-            case 240:switch(source[i]->getPen().color().value())
+            case 240:switch(source[i]->getBrush().color().value())
                     {
                         case 164:itemList[9].append("gray");break;
                         case 128:itemList[9].append("darkBlue");break;
                         case 255:itemList[9].append("blue");break;
                     }
                     break;
-            case 180:switch(source[i]->getPen().color().value())
+            case 180:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkCyan");break;
                         case 255:itemList[9].append("cyan");break;
                     }
                     break;
-            case 300:switch(source[i]->getPen().color().value())
+            case 300:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkMagenta");break;
                         case 255:itemList[9].append("magenta");break;
                     }
                     break;
-            case 60:switch(source[i]->getPen().color().value())
+            case 60:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkYellow");break;
                         case 255:itemList[9].append("yellow");break;
@@ -382,6 +430,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
@@ -478,7 +527,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("BrushColor: ");
             switch(source[i]->getBrush().color().hue())
             {
-            case -1: switch(source[i]->getPen().color().value())
+            case -1: switch(source[i]->getBrush().color().value())
                     {
                         case 0:itemList[9].append("black");break;
                         case 128:itemList[9].append("darkGray");break;
@@ -486,38 +535,38 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
                         case 255:itemList[9].append("white");break;
                     }
                     break;
-            case 0: switch(source[i]->getPen().color().value())
+            case 0: switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkRed");break;
                         case 255:itemList[9].append("red");break;
                     }
                     break;
-            case 120:switch(source[i]->getPen().color().value())
+            case 120:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkGreen");break;
                         case 255:itemList[9].append("green");break;
                     }
                     break;
-            case 240:switch(source[i]->getPen().color().value())
+            case 240:switch(source[i]->getBrush().color().value())
                     {
                         case 164:itemList[9].append("gray");break;
                         case 128:itemList[9].append("darkBlue");break;
                         case 255:itemList[9].append("blue");break;
                     }
                     break;
-            case 180:switch(source[i]->getPen().color().value())
+            case 180:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkCyan");break;
                         case 255:itemList[9].append("cyan");break;
                     }
                     break;
-            case 300:switch(source[i]->getPen().color().value())
+            case 300:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkMagenta");break;
                         case 255:itemList[9].append("magenta");break;
                     }
                     break;
-            case 60:switch(source[i]->getPen().color().value())
+            case 60:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkYellow");break;
                         case 255:itemList[9].append("yellow");break;
@@ -545,6 +594,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
@@ -638,7 +688,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("BrushColor: ");
             switch(source[i]->getBrush().color().hue())
             {
-            case -1: switch(source[i]->getPen().color().value())
+            case -1: switch(source[i]->getBrush().color().value())
                     {
                         case 0:itemList[9].append("black");break;
                         case 128:itemList[9].append("darkGray");break;
@@ -646,38 +696,38 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
                         case 255:itemList[9].append("white");break;
                     }
                     break;
-            case 0: switch(source[i]->getPen().color().value())
+            case 0: switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkRed");break;
                         case 255:itemList[9].append("red");break;
                     }
                     break;
-            case 120:switch(source[i]->getPen().color().value())
+            case 120:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkGreen");break;
                         case 255:itemList[9].append("green");break;
                     }
                     break;
-            case 240:switch(source[i]->getPen().color().value())
+            case 240:switch(source[i]->getBrush().color().value())
                     {
                         case 164:itemList[9].append("gray");break;
                         case 128:itemList[9].append("darkBlue");break;
                         case 255:itemList[9].append("blue");break;
                     }
                     break;
-            case 180:switch(source[i]->getPen().color().value())
+            case 180:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkCyan");break;
                         case 255:itemList[9].append("cyan");break;
                     }
                     break;
-            case 300:switch(source[i]->getPen().color().value())
+            case 300:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkMagenta");break;
                         case 255:itemList[9].append("magenta");break;
                     }
                     break;
-            case 60:switch(source[i]->getPen().color().value())
+            case 60:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkYellow");break;
                         case 255:itemList[9].append("yellow");break;
@@ -705,6 +755,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
@@ -800,7 +851,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("BrushColor: ");
             switch(source[i]->getBrush().color().hue())
             {
-            case -1: switch(source[i]->getPen().color().value())
+            case -1: switch(source[i]->getBrush().color().value())
                     {
                         case 0:itemList[9].append("black");break;
                         case 128:itemList[9].append("darkGray");break;
@@ -808,38 +859,38 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
                         case 255:itemList[9].append("white");break;
                     }
                     break;
-            case 0: switch(source[i]->getPen().color().value())
+            case 0: switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkRed");break;
                         case 255:itemList[9].append("red");break;
                     }
                     break;
-            case 120:switch(source[i]->getPen().color().value())
+            case 120:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkGreen");break;
                         case 255:itemList[9].append("green");break;
                     }
                     break;
-            case 240:switch(source[i]->getPen().color().value())
+            case 240:switch(source[i]->getBrush().color().value())
                     {
                         case 164:itemList[9].append("gray");break;
                         case 128:itemList[9].append("darkBlue");break;
                         case 255:itemList[9].append("blue");break;
                     }
                     break;
-            case 180:switch(source[i]->getPen().color().value())
+            case 180:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkCyan");break;
                         case 255:itemList[9].append("cyan");break;
                     }
                     break;
-            case 300:switch(source[i]->getPen().color().value())
+            case 300:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkMagenta");break;
                         case 255:itemList[9].append("magenta");break;
                     }
                     break;
-            case 60:switch(source[i]->getPen().color().value())
+            case 60:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkYellow");break;
                         case 255:itemList[9].append("yellow");break;
@@ -867,6 +918,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
@@ -960,7 +1012,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("BrushColor: ");
             switch(source[i]->getBrush().color().hue())
             {
-            case -1: switch(source[i]->getPen().color().value())
+            case -1: switch(source[i]->getBrush().color().value())
                     {
                         case 0:itemList[9].append("black");break;
                         case 128:itemList[9].append("darkGray");break;
@@ -968,38 +1020,38 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
                         case 255:itemList[9].append("white");break;
                     }
                     break;
-            case 0: switch(source[i]->getPen().color().value())
+            case 0: switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkRed");break;
                         case 255:itemList[9].append("red");break;
                     }
                     break;
-            case 120:switch(source[i]->getPen().color().value())
+            case 120:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkGreen");break;
                         case 255:itemList[9].append("green");break;
                     }
                     break;
-            case 240:switch(source[i]->getPen().color().value())
+            case 240:switch(source[i]->getBrush().color().value())
                     {
                         case 164:itemList[9].append("gray");break;
                         case 128:itemList[9].append("darkBlue");break;
                         case 255:itemList[9].append("blue");break;
                     }
                     break;
-            case 180:switch(source[i]->getPen().color().value())
+            case 180:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkCyan");break;
                         case 255:itemList[9].append("cyan");break;
                     }
                     break;
-            case 300:switch(source[i]->getPen().color().value())
+            case 300:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkMagenta");break;
                         case 255:itemList[9].append("magenta");break;
                     }
                     break;
-            case 60:switch(source[i]->getPen().color().value())
+            case 60:switch(source[i]->getBrush().color().value())
                     {
                         case 128:itemList[9].append("darkYellow");break;
                         case 255:itemList[9].append("yellow");break;
@@ -1027,6 +1079,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             }
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;
@@ -1102,6 +1155,7 @@ void saveFile(myStd::vector<Shape::Shape*> &source)
             itemList.push_back("TextFontWeight: ");
             for(int i = 0;i < itemList.size();++i)
             {
+                std::cout << itemList[i].toStdString() << " \n";
                 outFile << itemList[i].toStdString() << " \n";
             }
             break;

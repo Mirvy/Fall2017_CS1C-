@@ -30,6 +30,7 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -613,6 +614,16 @@ public:
     QFrame *frame_2;
     QLabel *loginMenu_invalidInputLabel;
     QPushButton *userLogin_logoutButton;
+    QWidget *feedBackMenu;
+    QLabel *feedBackMenu_titleLabel;
+    QLineEdit *feedBackMenu_userLineEdit;
+    QLabel *feedBackMenu_userLabel;
+    QLabel *feedBackMenu_feedBackLabel;
+    QFrame *feedBackMenu_frame;
+    QPushButton *feedBackMenu_cancelButton;
+    QPushButton *feedBackMenu_submitButton;
+    QTextEdit *feedBackMenu_feedBacktextEdit;
+    QTextBrowser *feedBackMenu_textBrowser;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuAdmin;
@@ -3231,6 +3242,141 @@ public:
         loginUserButton->raise();
         loginCancelButton->raise();
         userLogin_logoutButton->raise();
+        feedBackMenu = new QWidget(frame);
+        feedBackMenu->setObjectName(QStringLiteral("feedBackMenu"));
+        feedBackMenu->setGeometry(QRect(30, 200, 571, 261));
+        QPalette palette6;
+        palette6.setBrush(QPalette::Active, QPalette::WindowText, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette6.setBrush(QPalette::Active, QPalette::Light, brush);
+        palette6.setBrush(QPalette::Active, QPalette::Midlight, brush);
+        palette6.setBrush(QPalette::Active, QPalette::Dark, brush8);
+        palette6.setBrush(QPalette::Active, QPalette::Mid, brush9);
+        palette6.setBrush(QPalette::Active, QPalette::Text, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::BrightText, brush);
+        palette6.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette6.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette6.setBrush(QPalette::Active, QPalette::Shadow, brush6);
+        palette6.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
+        palette6.setBrush(QPalette::Active, QPalette::ToolTipBase, brush7);
+        palette6.setBrush(QPalette::Active, QPalette::ToolTipText, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::Light, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::Midlight, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::Dark, brush8);
+        palette6.setBrush(QPalette::Inactive, QPalette::Mid, brush9);
+        palette6.setBrush(QPalette::Inactive, QPalette::Text, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::Shadow, brush6);
+        palette6.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
+        palette6.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush7);
+        palette6.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush6);
+        palette6.setBrush(QPalette::Disabled, QPalette::WindowText, brush8);
+        palette6.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::Light, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::Midlight, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::Dark, brush8);
+        palette6.setBrush(QPalette::Disabled, QPalette::Mid, brush9);
+        palette6.setBrush(QPalette::Disabled, QPalette::Text, brush8);
+        palette6.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::ButtonText, brush8);
+        palette6.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::Shadow, brush6);
+        palette6.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
+        palette6.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush7);
+        palette6.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
+        feedBackMenu->setPalette(palette6);
+        feedBackMenu->setAutoFillBackground(true);
+        feedBackMenu_titleLabel = new QLabel(feedBackMenu);
+        feedBackMenu_titleLabel->setObjectName(QStringLiteral("feedBackMenu_titleLabel"));
+        feedBackMenu_titleLabel->setGeometry(QRect(10, 10, 181, 17));
+        feedBackMenu_userLineEdit = new QLineEdit(feedBackMenu);
+        feedBackMenu_userLineEdit->setObjectName(QStringLiteral("feedBackMenu_userLineEdit"));
+        feedBackMenu_userLineEdit->setGeometry(QRect(100, 40, 131, 27));
+        feedBackMenu_userLabel = new QLabel(feedBackMenu);
+        feedBackMenu_userLabel->setObjectName(QStringLiteral("feedBackMenu_userLabel"));
+        feedBackMenu_userLabel->setGeometry(QRect(50, 40, 41, 21));
+        feedBackMenu_feedBackLabel = new QLabel(feedBackMenu);
+        feedBackMenu_feedBackLabel->setObjectName(QStringLiteral("feedBackMenu_feedBackLabel"));
+        feedBackMenu_feedBackLabel->setGeometry(QRect(16, 70, 71, 20));
+        feedBackMenu_frame = new QFrame(feedBackMenu);
+        feedBackMenu_frame->setObjectName(QStringLiteral("feedBackMenu_frame"));
+        feedBackMenu_frame->setGeometry(QRect(0, 0, 571, 261));
+        QPalette palette7;
+        palette7.setBrush(QPalette::Active, QPalette::WindowText, brush6);
+        palette7.setBrush(QPalette::Active, QPalette::Button, brush10);
+        palette7.setBrush(QPalette::Active, QPalette::Light, brush11);
+        palette7.setBrush(QPalette::Active, QPalette::Midlight, brush12);
+        palette7.setBrush(QPalette::Active, QPalette::Dark, brush13);
+        palette7.setBrush(QPalette::Active, QPalette::Mid, brush14);
+        palette7.setBrush(QPalette::Active, QPalette::Text, brush6);
+        palette7.setBrush(QPalette::Active, QPalette::BrightText, brush);
+        palette7.setBrush(QPalette::Active, QPalette::ButtonText, brush6);
+        palette7.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette7.setBrush(QPalette::Active, QPalette::Window, brush10);
+        palette7.setBrush(QPalette::Active, QPalette::Shadow, brush6);
+        palette7.setBrush(QPalette::Active, QPalette::AlternateBase, brush11);
+        palette7.setBrush(QPalette::Active, QPalette::ToolTipBase, brush7);
+        palette7.setBrush(QPalette::Active, QPalette::ToolTipText, brush6);
+        palette7.setBrush(QPalette::Inactive, QPalette::WindowText, brush6);
+        palette7.setBrush(QPalette::Inactive, QPalette::Button, brush10);
+        palette7.setBrush(QPalette::Inactive, QPalette::Light, brush11);
+        palette7.setBrush(QPalette::Inactive, QPalette::Midlight, brush12);
+        palette7.setBrush(QPalette::Inactive, QPalette::Dark, brush13);
+        palette7.setBrush(QPalette::Inactive, QPalette::Mid, brush14);
+        palette7.setBrush(QPalette::Inactive, QPalette::Text, brush6);
+        palette7.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
+        palette7.setBrush(QPalette::Inactive, QPalette::ButtonText, brush6);
+        palette7.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette7.setBrush(QPalette::Inactive, QPalette::Window, brush10);
+        palette7.setBrush(QPalette::Inactive, QPalette::Shadow, brush6);
+        palette7.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush11);
+        palette7.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush7);
+        palette7.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush6);
+        palette7.setBrush(QPalette::Disabled, QPalette::WindowText, brush13);
+        palette7.setBrush(QPalette::Disabled, QPalette::Button, brush10);
+        palette7.setBrush(QPalette::Disabled, QPalette::Light, brush11);
+        palette7.setBrush(QPalette::Disabled, QPalette::Midlight, brush12);
+        palette7.setBrush(QPalette::Disabled, QPalette::Dark, brush13);
+        palette7.setBrush(QPalette::Disabled, QPalette::Mid, brush14);
+        palette7.setBrush(QPalette::Disabled, QPalette::Text, brush13);
+        palette7.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette7.setBrush(QPalette::Disabled, QPalette::ButtonText, brush13);
+        palette7.setBrush(QPalette::Disabled, QPalette::Base, brush10);
+        palette7.setBrush(QPalette::Disabled, QPalette::Window, brush10);
+        palette7.setBrush(QPalette::Disabled, QPalette::Shadow, brush6);
+        palette7.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush10);
+        palette7.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush7);
+        palette7.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush6);
+        feedBackMenu_frame->setPalette(palette7);
+        feedBackMenu_frame->setAutoFillBackground(false);
+        feedBackMenu_frame->setFrameShape(QFrame::Box);
+        feedBackMenu_frame->setFrameShadow(QFrame::Raised);
+        feedBackMenu_frame->setLineWidth(2);
+        feedBackMenu_frame->setMidLineWidth(2);
+        feedBackMenu_cancelButton = new QPushButton(feedBackMenu_frame);
+        feedBackMenu_cancelButton->setObjectName(QStringLiteral("feedBackMenu_cancelButton"));
+        feedBackMenu_cancelButton->setGeometry(QRect(110, 220, 99, 27));
+        feedBackMenu_submitButton = new QPushButton(feedBackMenu_frame);
+        feedBackMenu_submitButton->setObjectName(QStringLiteral("feedBackMenu_submitButton"));
+        feedBackMenu_submitButton->setGeometry(QRect(110, 180, 99, 27));
+        feedBackMenu_feedBacktextEdit = new QTextEdit(feedBackMenu_frame);
+        feedBackMenu_feedBacktextEdit->setObjectName(QStringLiteral("feedBackMenu_feedBacktextEdit"));
+        feedBackMenu_feedBacktextEdit->setGeometry(QRect(100, 70, 131, 101));
+        feedBackMenu_textBrowser = new QTextBrowser(feedBackMenu_frame);
+        feedBackMenu_textBrowser->setObjectName(QStringLiteral("feedBackMenu_textBrowser"));
+        feedBackMenu_textBrowser->setGeometry(QRect(240, 40, 311, 201));
+        feedBackMenu_frame->raise();
+        feedBackMenu_titleLabel->raise();
+        feedBackMenu_userLineEdit->raise();
+        feedBackMenu_userLabel->raise();
+        feedBackMenu_feedBackLabel->raise();
 
         horizontalLayout->addWidget(renderCanvas);
 
@@ -4593,101 +4739,8 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:18pt; font-weight:600;\">2D Modeler - Help File</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:18pt; font-weight:600;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[ADMIN ONLY]</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decor"
-                        "ation: underline;\">1. Modify: Allows the user to modify or remove existing shapes.</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A)Select the shape by either entering its ID# or scrolling through the</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    &quot;Shape ID&quot; spinbox.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i) Enter and the select the attributes you wish to change.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       1)Line Color - the color which the pen will be drawn with.</p>\n"
-"<p style=\"-qt-"
-                        "paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       2)Line Width - the width of the pen to be drawn with.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       3)Pen Style - the style of the pen IE: solidline, dash line, etc.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       4)Cap Style - the style of the cap fo"
-                        "r the pen IE: square, round, etc.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       5)Join Style - the style of the join for the pen IE: bevel, miter, etc.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       6)Fill Color - the color which will be used to fill the shape.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-i"
-                        "ndent:0; text-indent:0px;\">       7)Brush Style - the pattern for the fill color IE: dense, diagonal, etc.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    ii) Use &quot;UPDATE!&quot; to finalize changes to the selected shape.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    iii)Use Delete to remove the shape from the modeler.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-b"
-                        "ottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    iV)PolyLine and polygon shapes can have unlimited points.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">         - Points can be added using the &quot;Add Point&quot; button after</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">           entering coordinates.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">         - Points can be modified by first selecting a point in the list,</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">            enteri"
-                        "ng coordinates, and using the &quot;Move Point&quot; button.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">          - Points can be removed by first selecting a point in the list,</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">             and using the &quot;Delete Point&quot; button.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[ADMIN ONLY]</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0"
-                        "; text-indent:0px;\"><span style=\" text-decoration: underline;\">2)Add Shape: Allows the user to add new shapes to the modeler.</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A)Line</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)A simple line with one start point and one end point.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">B)PolyLine</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; ma"
-                        "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)A complex line with multiple points.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">C)Polygon</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)A complex shape with multiple points.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">D)Rectangle</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)A simples shape c"
-                        "omposed of one upper left coordinate, width, and</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       height.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">E)Square</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)Same as a rectangle with one upper left coordinate and side length.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">F)Ellipse</p>\n"
-"<p style=\" margin-top"
-                        ":0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)A simple shape composed of one origin point and two radial offsets</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">       RX and RY.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">G)Circle</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">     i)Same as an ellipse with origin coordinate and radius length.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom"
-                        ":0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">H)Text</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">     i)A string of text set with one upper left coordinate and text.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[GUEST ACCESS]</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">3)Shape Tables: Allows the users to review the shapes in the modeler.</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;\"><br /></p>\n"
-"<p style=\" margi"
-                        "n-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">To view a report use the &quot;REFRESH&quot; button at the top of its menu.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A)Report by ID</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)Displays a report of shapes sorted by ID# with all properties.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    ii)Represented in a tree hierarchy.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-inden"
-                        "t:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">B)by Perimeter</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)Displays a report of shape's calculated perimeters.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    ii)Represented in a table format.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">C)by Area</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    i)Displays a report of shape's calculated areas.</p>\n"
-"<p style=\" margin-to"
-                        "p:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">    ii)Represented in a table format.</p></body></html>", 0));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1. Modify a. General Instructions: i. The \342\200\234Shape ID\342\200\235 window allows the user to chose the shape type. The choice will be reflected on the right side of the \342\200\234Shape Type: \342\200\234 line. ii. By clicking \342\200\234UPDATE\342\200\235 the admin can update the dimensions of the object b. Line i. Enter the X and Y coordinate of the start point and the end point to draw a line from the 1st to the 2nd point. ii. Pen Settings: 1. Adjust line color, line width, pen style, cap style and join style. c. Polyline i. Add Point: the admin can a"
+                        "dd a point to the polyline with custom coordinates ii. Move Point: updated the coordinates of a selected point. iii. Delete point - deletes the selected point from the polyline iv. Pen Settings: 1. Adjust line color, line width, pen style, cap style and join style. d. Polygon i. Add Point: the admin can add a point to the polygon thus altering its shape by entering another point with custom coordinates, or removing an existing point ii. Move Point: updated the coordinates of a selected point. iii. Delete point - deletes the selected point from the polygon iv. Pen Settings: 1. Adjust line color, line width, pen style, cap style, join style, brush color and brush style. e. i. 2. Move Shapes 3. Add/Remove Shapes </p></body></html>", 0));
         helpDoneButton->setText(QApplication::translate("MainWindow", "GOT IT. THANKS!", 0));
         loginTitleLabel->setText(QApplication::translate("MainWindow", "ADMIN LOGIN:2D Modeler", 0));
         loginUserLabel->setText(QApplication::translate("MainWindow", "User:", 0));
@@ -4696,6 +4749,11 @@ public:
         loginCancelButton->setText(QApplication::translate("MainWindow", "CANCEL", 0));
         loginMenu_invalidInputLabel->setText(QApplication::translate("MainWindow", "Input Invalid - Login Failed", 0));
         userLogin_logoutButton->setText(QApplication::translate("MainWindow", "LOGOUT", 0));
+        feedBackMenu_titleLabel->setText(QApplication::translate("MainWindow", "Testimonial: 2D Modeler", 0));
+        feedBackMenu_userLabel->setText(QApplication::translate("MainWindow", "User:", 0));
+        feedBackMenu_feedBackLabel->setText(QApplication::translate("MainWindow", "Feedback:", 0));
+        feedBackMenu_cancelButton->setText(QApplication::translate("MainWindow", "CANCEL", 0));
+        feedBackMenu_submitButton->setText(QApplication::translate("MainWindow", "SUBMIT", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuAdmin->setTitle(QApplication::translate("MainWindow", "Admin", 0));
         menuHelp->setTitle(QApplication::translate("MainWindow", "Help", 0));

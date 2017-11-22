@@ -9,6 +9,7 @@ using namespace std;
 using namespace Shape;
 using namespace myStd;
 
+//Forward declaration of helper parsers;one for each type of shape
 Shape::Shape* lineParse(myStd::vector<string>&,QPaintDevice*);
 Shape::Shape* polyLineParse(myStd::vector<string>&,QPaintDevice*);
 Shape::Shape* polygonParse(myStd::vector<string>&,QPaintDevice*);
@@ -18,31 +19,15 @@ Shape::Shape* ellipseParse(myStd::vector<string>&,QPaintDevice*);
 Shape::Shape* circleParse(myStd::vector<string>&,QPaintDevice*);
 Shape::Shape* textParse(myStd::vector<string>&,QPaintDevice*);
 
+//Forward declaration of helper functions; return Qt enums
 Qt::GlobalColor getColor(string &);
 Qt::PenStyle    getPenStyle(string &);
 Qt::PenCapStyle getPenCapStyle(string &);
 Qt::PenJoinStyle getPenJoinStyle(string &);
-
 Qt::BrushStyle  getBrushStyle(string &);
 Qt::GlobalColor getBrushColor(string &);
 
-//Qt::GlobalColor
-//QFont::Style getFont(string &);
-/*
-    ShapeId: 1
-    ShapeType: Line
-    ShapeDimensions: 20, 90, 100, 20
-    PenColor: blue
-    PenWidth: 2
-    PenStyle: DashDotLine
-    PenCapStyle: FlatCap
-    PenJoinStyle: MiterJoin
-    BrushColor: white
-    BrushStyle: NoBrush
-    TextFontStyle: FlatCap
-    TextFontWeight: Normal
-*/
-
+//PRESETS to identify specific rows-attributes
  int SHAPE_ID       = 0;
  int SHAPE_TYPE     = 1;
  int SHAPE_DIMS     = 2;
@@ -65,6 +50,8 @@ Qt::GlobalColor getBrushColor(string &);
  int FONT_WEIGHT    = 9;
 
 
+ //shapeParser(): parses the input textfile and retuns a Shape* vector containing the shapes it finds.
+ //               Specific funtionality is commented throughout; see below.
 myStd::vector<Shape::Shape*> shapeParser(QPaintDevice* device)
 {
     myStd::vector<Shape::Shape*> shapes;  //Create the primary vector to hold the shape object pointers.
