@@ -1,0 +1,98 @@
+temp.length()1
+1st empty line
+temp.length()11
+temp.length()16
+temp.length()33
+temp.length()15
+temp.length()12
+temp.length()22
+temp.length()21
+temp.length()27
+temp.length()1
+ Line
+HEY IM HERE INSIDE LINE PARSE
+start x:20
+start y:90
+end x:100
+end y:20
+temp.length()11
+temp.length()19
+temp.length()52
+temp.length()15
+temp.length()12
+temp.length()25
+temp.length()21
+temp.length()27
+temp.length()19
+temp.length()25
+temp.length()1
+ Polygon
+i: 1
+i: 2
+i: 3
+i: 1
+i: 2
+i: 3
+i: 1
+i: 2
+i: 3
+i: 1
+i: 2
+i: 3
+source[BRUSH_COLOR]: yellow
+source[BRUSH_STYLE]: SolidPattern
+getBrushColor
+source: yellow
+source.size():7
+temp.length()10
+temp.length()21
+temp.length()35
+temp.length()15
+temp.length()12
+temp.length()19
+temp.length()22
+temp.length()27
+temp.length()16
+temp.length()23
+temp.length()1
+ Rectangle
+rectangle x:20
+rectangle y:200
+rectangle nw:170
+rectangle nh:100
+getBrushColor
+source: red
+source.size():4
+temp.length()11
+temp.length()18
+temp.length()31
+temp.length()14
+temp.length()12
+temp.length()20
+temp.length()22
+temp.length()27
+temp.length()17
+temp.length()23
+temp.length()1
+ Square
+Square x:250
+Square y:150
+Square side:200
+getBrushColor
+source: blue
+source.size():5
+temp.length()11
+temp.length()19
+temp.length()36
+temp.length()16
+temp.length()13
+temp.length()20
+temp.length()21
+temp.length()27
+temp.length()18
+temp.length()20
+temp.length()1
+ Ellipse
+Square x:520
+Square y:200
+Square nrx:170
