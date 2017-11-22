@@ -1,0 +1,89 @@
+\section{my\+Std\+:\+:vector$<$ T $>$ Class Template Reference}
+\label{classmy_std_1_1vector}\index{my\+Std\+::vector$<$ T $>$@{my\+Std\+::vector$<$ T $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classmy_std_1_1vector_ab04fd4dde7dab6739116b77e1ca41518}} 
+using {\bfseries iterator} = T $\ast$
+\item 
+\mbox{\label{classmy_std_1_1vector_a6709caa152469f3215dbad750808b234}} 
+using {\bfseries const\+\_\+iterator} = const T $\ast$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classmy_std_1_1vector_a40e5c01ceb5d0c2bc64b23005c21ba04}} 
+\textbf{ vector} ()
+\begin{DoxyCompactList}\small\item\em number of elements plus number of free slots \end{DoxyCompactList}\item 
+\textbf{ vector} (int s)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_ae425fb0a79cfa7870cf3603c8abe3369}} 
+{\bfseries vector} (const \textbf{ vector} \&src)
+\item 
+\mbox{\label{classmy_std_1_1vector_a5cbbf45fd8ead8b9cbf4b0c7acf5010f}} 
+\textbf{ vector} \& \textbf{ operator=} (const \textbf{ vector} \&src)
+\begin{DoxyCompactList}\small\item\em copy assignment \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_a4950397cd3da431867998cd4bf1110cf}} 
+\textbf{ vector} (\textbf{ vector} \&\&source)
+\begin{DoxyCompactList}\small\item\em move constructor \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_a8f9a7e6e736863e702e8c939d73e42ea}} 
+\textbf{ vector} \& \textbf{ operator=} (\textbf{ vector} \&\&rhs)
+\begin{DoxyCompactList}\small\item\em move assignment \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_a7840f76cb8fdb56e3a70506c7e0fbf5a}} 
+T \& \textbf{ operator[$\,$]} (int n)
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_a74f73fa926d09d684715feec8956a138}} 
+const T \& {\bfseries operator[$\,$]} (int n) const
+\item 
+\mbox{\label{classmy_std_1_1vector_a72c4cf7716f3fb1db42b8cdc2347ef49}} 
+int {\bfseries size} () const
+\item 
+\mbox{\label{classmy_std_1_1vector_a3a84d877c0808556734d2e012f8bbdaf}} 
+int {\bfseries capacity} () const
+\item 
+\mbox{\label{classmy_std_1_1vector_aa54bd9c3d8d3b6191d7eb7f85490eadb}} 
+void \textbf{ resize} (int newsize)
+\begin{DoxyCompactList}\small\item\em growth \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_a16a7791abc12b34fee94f4ef48a5e157}} 
+void \textbf{ push\+\_\+back} (T d)
+\begin{DoxyCompactList}\small\item\em increase vector size by one; initialize the new element with d \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_a50e786a02a59e689999365037ae26b3a}} 
+void {\bfseries reserve} (int newalloc)
+\item 
+\mbox{\label{classmy_std_1_1vector_adaa284b6b387f70d3244b4d6e64869c3}} 
+iterator \textbf{ begin} ()
+\begin{DoxyCompactList}\small\item\em points to first element \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_ad22f43aad2b965682d953dec7dd6edfb}} 
+const\+\_\+iterator {\bfseries begin} () const
+\item 
+\mbox{\label{classmy_std_1_1vector_a8fc7ec068c194f5ecb5a08e17a9c9ac4}} 
+iterator \textbf{ end} ()
+\begin{DoxyCompactList}\small\item\em points to one beyond the last element \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_afc5b4c0fa098396326835e4e8f008177}} 
+const\+\_\+iterator {\bfseries end} () const
+\item 
+\mbox{\label{classmy_std_1_1vector_a2dfafafc64febfbb0869be81f6bd4de7}} 
+iterator \textbf{ insert} (iterator p, const T \&val)
+\begin{DoxyCompactList}\small\item\em insert a new element val before p \end{DoxyCompactList}\item 
+\mbox{\label{classmy_std_1_1vector_aa4ecb71647140e3c5226299f84828984}} 
+iterator \textbf{ erase} (iterator p)
+\begin{DoxyCompactList}\small\item\em remove element pointed to by p \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classmy_std_1_1vector_a3f942029ffea510e3c6e67310c18abb7}} 
+\index{my\+Std\+::vector@{my\+Std\+::vector}!vector@{vector}}
+\index{vector@{vector}!my\+Std\+::vector@{my\+Std\+::vector}}
+\subsubsection{vector()}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\textbf{ my\+Std\+::vector}$<$ T $>$\+::\textbf{ vector} (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+default constructor 
+
+alternate constructor 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/vector.\+h\end{DoxyCompactItemize}

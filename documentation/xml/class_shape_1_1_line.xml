@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_shape_1_1_line" kind="class" language="C++" prot="public">
+    <compoundname>Shape::Line</compoundname>
+    <basecompoundref refid="class_shape_1_1_shape" prot="public" virt="non-virtual">Shape::Shape</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_shape_1_1_line_1a88043ac48bd9b77c3ad31f0dacfc3df7" prot="private" static="no" mutable="no">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Line::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+<para>Returns line&apos;s area; always zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="222" column="1" bodyfile="source/shape.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_line_1a2819a3b7c4b8dfae457af801fecdf180" prot="private" static="no" mutable="no">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Line::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="222" column="1" bodyfile="source/shape.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_shape_1_1_line_1a625a425d6c09a59985773ff24af61ce3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Shape::Line::Line</definition>
+        <argsstring>(QPaintDevice *device=nullptr, int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint s=QPoint(0, 0), QPoint e=QPoint(0, 0))</argsstring>
+        <name>Line</name>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>QPen</type>
+          <declname>npen</declname>
+          <defval>Qt::NoPen</defval>
+        </param>
+        <param>
+          <type>QBrush</type>
+          <declname>nbrush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <param>
+          <type>QPoint</type>
+          <declname>s</declname>
+          <defval>QPoint(0, 0)</defval>
+        </param>
+        <param>
+          <type>QPoint</type>
+          <declname>e</declname>
+          <defval>QPoint(0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="177" column="1" bodyfile="source/shape.h" bodystart="177" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_line_1abbf9869aecd5a1228d00ef3ad1da810e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Line::draw</definition>
+        <argsstring>(QPaintDevice *device)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd">draw</reimplements>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_line" kindref="compound">Line</ref> Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="181" column="1" bodyfile="source/shape.h" bodystart="181" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_line_1a3b30d0d61f7619b1d9e98b654ba1b7b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Line::move</definition>
+        <argsstring>(Shape *source)</argsstring>
+        <name>move</name>
+        <reimplements refid="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5">move</reimplements>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Overridden <ref refid="class_shape_1_1_line_1abbf9869aecd5a1228d00ef3ad1da810e" kindref="member">draw()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="193" column="1" bodyfile="source/shape.h" bodystart="193" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_line_1a24dfc7d2257ec701264b2598ec42fa3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Line::getStart</definition>
+        <argsstring>()</argsstring>
+        <name>getStart</name>
+        <reimplements refid="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534">getStart</reimplements>
+        <briefdescription>
+<para>Overridden <ref refid="class_shape_1_1_line_1a3b30d0d61f7619b1d9e98b654ba1b7b7" kindref="member">move()</ref> from base shape;. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="203" column="1" bodyfile="source/shape.h" bodystart="203" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_line_1a5df1dc274994d2c17ca794e8a152c39a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Line::getEnd</definition>
+        <argsstring>()</argsstring>
+        <name>getEnd</name>
+        <reimplements refid="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af">getEnd</reimplements>
+        <briefdescription>
+<para>Accessor: returns line&apos;s start cooridnate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="209" column="1" bodyfile="source/shape.h" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_line_1ad5c91958c6fe871ee526f7e0e93f7722" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Line::calcPerimeter</definition>
+        <argsstring>()</argsstring>
+        <name>calcPerimeter</name>
+        <reimplements refid="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f">calcPerimeter</reimplements>
+        <briefdescription>
+<para>Accessor: returns line&apos;s end coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="215" column="1" bodyfile="source/shape.h" bodystart="215" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_line_1abd4e89629adad96e6dc0d0ba984888d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Line::calcArea</definition>
+        <argsstring>()</argsstring>
+        <name>calcArea</name>
+        <reimplements refid="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f">calcArea</reimplements>
+        <briefdescription>
+<para>Returns line&apos;s perimeter; always zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="218" column="1" bodyfile="source/shape.h" bodystart="218" bodyend="218"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="16">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+      <node id="15">
+        <label>Shape::Line</label>
+        <link refid="class_shape_1_1_line"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="18">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+      <node id="17">
+        <label>Shape::Line</label>
+        <link refid="class_shape_1_1_line"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/shape.h" line="175" column="1" bodyfile="source/shape.h" bodystart="174" bodyend="224"/>
+    <listofallmembers>
+      <member refid="class_shape_1_1_line_1abd4e89629adad96e6dc0d0ba984888d2" prot="public" virt="virtual"><scope>Shape::Line</scope><name>calcArea</name></member>
+      <member refid="class_shape_1_1_line_1ad5c91958c6fe871ee526f7e0e93f7722" prot="public" virt="virtual"><scope>Shape::Line</scope><name>calcPerimeter</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Circle</name></member>
+      <member refid="class_shape_1_1_line_1abbf9869aecd5a1228d00ef3ad1da810e" prot="public" virt="virtual"><scope>Shape::Line</scope><name>draw</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_line_1a2819a3b7c4b8dfae457af801fecdf180" prot="private" virt="non-virtual"><scope>Shape::Line</scope><name>end</name></member>
+      <member refid="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>getBrush</name></member>
+      <member refid="class_shape_1_1_line_1a5df1dc274994d2c17ca794e8a152c39a" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getEnd</name></member>
+      <member refid="class_shape_1_1_shape_1af81cbd191ad9e1b9907af437d4b33753" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>getId</name></member>
+      <member refid="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" virt="non-virtual"><scope>Shape::Line</scope><name>getPainter</name></member>
+      <member refid="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>getPen</name></member>
+      <member refid="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getPoints</name></member>
+      <member refid="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getRx</name></member>
+      <member refid="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getRy</name></member>
+      <member refid="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>getShape</name></member>
+      <member refid="class_shape_1_1_line_1a24dfc7d2257ec701264b2598ec42fa3d" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getStart</name></member>
+      <member refid="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getText</name></member>
+      <member refid="class_shape_1_1_shape_1a099d79c4f171de4d67a15aea179882e6" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getUpperLeft</name></member>
+      <member refid="class_shape_1_1_shape_1acf86809c4039cfafdb5cae0b073ec578" prot="public" virt="virtual"><scope>Shape::Line</scope><name>getWidth</name></member>
+      <member refid="class_shape_1_1_line_1a625a425d6c09a59985773ff24af61ce3" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public" virt="non-virtual" ambiguityscope="Shape::Shape::"><scope>Shape::Line</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_line_1a3b30d0d61f7619b1d9e98b654ba1b7b7" prot="public" virt="virtual"><scope>Shape::Line</scope><name>move</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Polygon</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>setBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" virt="virtual"><scope>Shape::Line</scope><name>setFont</name></member>
+      <member refid="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>setId</name></member>
+      <member refid="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>setPen</name></member>
+      <member refid="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>setShape</name></member>
+      <member refid="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" virt="virtual"><scope>Shape::Line</scope><name>setText</name></member>
+      <member refid="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Shape</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>shape</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_line_1a88043ac48bd9b77c3ad31f0dacfc3df7" prot="private" virt="non-virtual"><scope>Shape::Line</scope><name>start</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public" virt="non-virtual"><scope>Shape::Line</scope><name>Text</name></member>
+      <member refid="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" virt="virtual"><scope>Shape::Line</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_shape_1_1_ellipse" kind="class" language="C++" prot="public">
+    <compoundname>Shape::Ellipse</compoundname>
+    <basecompoundref refid="class_shape_1_1_shape" prot="public" virt="non-virtual">Shape::Shape</basecompoundref>
+    <derivedcompoundref refid="class_shape_1_1_circle" prot="public" virt="non-virtual">Shape::Circle</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_shape_1_1_ellipse_1ac78028007544f5118dcc815f5d16e4c8" prot="private" static="no" mutable="no">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Ellipse::origin</definition>
+        <argsstring></argsstring>
+        <name>origin</name>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_ellipse_1aba1149b31fb189d4b922a144a03d811d" kindref="member">calcArea()</ref> from base shape; returns calculated area. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="515" column="1" bodyfile="source/shape.h" bodystart="515" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_ellipse_1a0668fd5be844c6fb63fc1b9e78deaa54" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Shape::Ellipse::rx</definition>
+        <argsstring></argsstring>
+        <name>rx</name>
+        <briefdescription>
+<para>Holds the ellipse&apos;s origin coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="518" column="1" bodyfile="source/shape.h" bodystart="518" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_ellipse_1a8e8bb56a4f64bbbd33dd37c4f2646edf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Shape::Ellipse::ry</definition>
+        <argsstring></argsstring>
+        <name>ry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="518" column="1" bodyfile="source/shape.h" bodystart="518" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a8aa3309f826de3fc6caaf90cceeffbc5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Shape::Ellipse::Ellipse</definition>
+        <argsstring>(QPaintDevice *device, int nid=-1, Shape::shape s=shape::Ellipse, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint norigin=QPoint(0, 0), int nrx=0, int nry=0)</argsstring>
+        <name>Ellipse</name>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>Shape::shape</type>
+          <declname>s</declname>
+          <defval>shape::Ellipse</defval>
+        </param>
+        <param>
+          <type>QPen</type>
+          <declname>npen</declname>
+          <defval>Qt::NoPen</defval>
+        </param>
+        <param>
+          <type>QBrush</type>
+          <declname>nbrush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <param>
+          <type>QPoint</type>
+          <declname>norigin</declname>
+          <defval>QPoint(0, 0)</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nrx</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nry</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="433" column="1" bodyfile="source/shape.h" bodystart="433" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a4c3b7a52ff0583e1f8c185f0c2b63b8a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int Shape::Ellipse::getRx</definition>
+        <argsstring>()</argsstring>
+        <name>getRx</name>
+        <reimplements refid="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad">getRx</reimplements>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref> Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="437" column="1" bodyfile="source/shape.h" bodystart="437" bodyend="440"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a4770bc04b549515edffd92933d63d4bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int Shape::Ellipse::getRy</definition>
+        <argsstring>()</argsstring>
+        <name>getRy</name>
+        <reimplements refid="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b">getRy</reimplements>
+        <briefdescription>
+<para>Accessor: returns <ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref>&apos;s xradius value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="443" column="1" bodyfile="source/shape.h" bodystart="443" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a8448e7c3b9fb232f85dee9fe51a8832c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Ellipse::getOrigin</definition>
+        <argsstring>()</argsstring>
+        <name>getOrigin</name>
+        <reimplements refid="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6">getOrigin</reimplements>
+        <briefdescription>
+<para>Accessor: returns <ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref>&apos;s yradius value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="449" column="1" bodyfile="source/shape.h" bodystart="449" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a4d3b48d67f3d2dfb7a7bc2411a3a3c05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Ellipse::setOrigin</definition>
+        <argsstring>(QPoint norigin)</argsstring>
+        <name>setOrigin</name>
+        <param>
+          <type>QPoint</type>
+          <declname>norigin</declname>
+        </param>
+        <briefdescription>
+<para>Accessor: returns <ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref>&apos;s origin coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="455" column="1" bodyfile="source/shape.h" bodystart="455" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a43507f9fef37e23504a7cb37c19056f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Ellipse::setRx</definition>
+        <argsstring>(int nrx)</argsstring>
+        <name>setRx</name>
+        <param>
+          <type>int</type>
+          <declname>nrx</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets ellipse&apos;s origin coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="461" column="1" bodyfile="source/shape.h" bodystart="461" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1ab29b5d66f6bc6a9f0e834051d8910829" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Ellipse::setRy</definition>
+        <argsstring>(int nry)</argsstring>
+        <name>setRy</name>
+        <param>
+          <type>int</type>
+          <declname>nry</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets ellipse&apos;s xradius value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="467" column="1" bodyfile="source/shape.h" bodystart="467" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a41f2d68efd3031e84590813f08e2e1de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Ellipse::draw</definition>
+        <argsstring>(QPaintDevice *device)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd">draw</reimplements>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets ellips&apos;s yradius value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="473" column="1" bodyfile="source/shape.h" bodystart="473" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a2ccd8f0124fdb683070d621da4079aac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Ellipse::move</definition>
+        <argsstring>(Shape *source)</argsstring>
+        <name>move</name>
+        <reimplements refid="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5">move</reimplements>
+        <reimplementedby refid="class_shape_1_1_circle_1a5726d9909ee52dbe62df757dbbb70691">move</reimplementedby>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_ellipse_1a41f2d68efd3031e84590813f08e2e1de" kindref="member">draw()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="486" column="1" bodyfile="source/shape.h" bodystart="486" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1a80aae019327cc58ae7656d897ee9f379" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Ellipse::calcPerimeter</definition>
+        <argsstring>()</argsstring>
+        <name>calcPerimeter</name>
+        <reimplements refid="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f">calcPerimeter</reimplements>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_ellipse_1a2ccd8f0124fdb683070d621da4079aac" kindref="member">move()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="494" column="1" bodyfile="source/shape.h" bodystart="494" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_ellipse_1aba1149b31fb189d4b922a144a03d811d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Ellipse::calcArea</definition>
+        <argsstring>()</argsstring>
+        <name>calcArea</name>
+        <reimplements refid="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f">calcArea</reimplements>
+        <briefdescription>
+<para>Overloaded calcPerimeter from base shape; returns calculated perimeter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="505" column="1" bodyfile="source/shape.h" bodystart="505" bodyend="511"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>Shape::Ellipse</label>
+        <link refid="class_shape_1_1_ellipse"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+      <node id="12">
+        <label>Shape::Circle</label>
+        <link refid="class_shape_1_1_circle"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>Shape::Ellipse</label>
+        <link refid="class_shape_1_1_ellipse"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/shape.h" line="431" column="1" bodyfile="source/shape.h" bodystart="430" bodyend="520"/>
+    <listofallmembers>
+      <member refid="class_shape_1_1_ellipse_1aba1149b31fb189d4b922a144a03d811d" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>calcArea</name></member>
+      <member refid="class_shape_1_1_ellipse_1a80aae019327cc58ae7656d897ee9f379" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>calcPerimeter</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Circle</name></member>
+      <member refid="class_shape_1_1_ellipse_1a41f2d68efd3031e84590813f08e2e1de" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>draw</name></member>
+      <member refid="class_shape_1_1_ellipse_1a8aa3309f826de3fc6caaf90cceeffbc5" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public" virt="non-virtual" ambiguityscope="Shape::Shape::"><scope>Shape::Ellipse</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>getBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getEnd</name></member>
+      <member refid="class_shape_1_1_shape_1af81cbd191ad9e1b9907af437d4b33753" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>getId</name></member>
+      <member refid="class_shape_1_1_ellipse_1a8448e7c3b9fb232f85dee9fe51a8832c" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" virt="non-virtual"><scope>Shape::Ellipse</scope><name>getPainter</name></member>
+      <member refid="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>getPen</name></member>
+      <member refid="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getPoints</name></member>
+      <member refid="class_shape_1_1_ellipse_1a4c3b7a52ff0583e1f8c185f0c2b63b8a" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getRx</name></member>
+      <member refid="class_shape_1_1_ellipse_1a4770bc04b549515edffd92933d63d4bc" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getRy</name></member>
+      <member refid="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>getShape</name></member>
+      <member refid="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getStart</name></member>
+      <member refid="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getText</name></member>
+      <member refid="class_shape_1_1_shape_1a099d79c4f171de4d67a15aea179882e6" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getUpperLeft</name></member>
+      <member refid="class_shape_1_1_shape_1acf86809c4039cfafdb5cae0b073ec578" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>getWidth</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_ellipse_1a2ccd8f0124fdb683070d621da4079aac" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>move</name></member>
+      <member refid="class_shape_1_1_ellipse_1ac78028007544f5118dcc815f5d16e4c8" prot="private" virt="non-virtual"><scope>Shape::Ellipse</scope><name>origin</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Polygon</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_ellipse_1a0668fd5be844c6fb63fc1b9e78deaa54" prot="private" virt="non-virtual"><scope>Shape::Ellipse</scope><name>rx</name></member>
+      <member refid="class_shape_1_1_ellipse_1a8e8bb56a4f64bbbd33dd37c4f2646edf" prot="private" virt="non-virtual"><scope>Shape::Ellipse</scope><name>ry</name></member>
+      <member refid="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>setFont</name></member>
+      <member refid="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setId</name></member>
+      <member refid="class_shape_1_1_ellipse_1a4d3b48d67f3d2dfb7a7bc2411a3a3c05" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setPen</name></member>
+      <member refid="class_shape_1_1_ellipse_1a43507f9fef37e23504a7cb37c19056f0" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setRx</name></member>
+      <member refid="class_shape_1_1_ellipse_1ab29b5d66f6bc6a9f0e834051d8910829" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setRy</name></member>
+      <member refid="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>setShape</name></member>
+      <member refid="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>setText</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>shape</name></member>
+      <member refid="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Shape</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public" virt="non-virtual"><scope>Shape::Ellipse</scope><name>Text</name></member>
+      <member refid="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" virt="virtual"><scope>Shape::Ellipse</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

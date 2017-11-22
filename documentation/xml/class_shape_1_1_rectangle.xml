@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_shape_1_1_rectangle" kind="class" language="C++" prot="public">
+    <compoundname>Shape::Rectangle</compoundname>
+    <basecompoundref refid="class_shape_1_1_shape" prot="public" virt="non-virtual">Shape::Shape</basecompoundref>
+    <derivedcompoundref refid="class_shape_1_1_square" prot="public" virt="non-virtual">Shape::Square</derivedcompoundref>
+    <derivedcompoundref refid="class_shape_1_1_text" prot="public" virt="non-virtual">Shape::Text</derivedcompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_shape_1_1_rectangle_1a11b76c440c0c7b07b702f5b45b6cb29c" prot="private" static="no" mutable="no">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Rectangle::upperLeft</definition>
+        <argsstring></argsstring>
+        <name>upperLeft</name>
+        <briefdescription>
+<para>Accessor: returns the rectangl&apos;s height. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="409" column="1" bodyfile="source/shape.h" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_rectangle_1ab672958aec26e4faae225ab7dfa5053a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Shape::Rectangle::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <briefdescription>
+<para>Holds the rectangle&apos;s upper left coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="412" column="1" bodyfile="source/shape.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_rectangle_1ab20d612d813c43c1588ae0f9bb62c1ef" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Shape::Rectangle::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="412" column="1" bodyfile="source/shape.h" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a2961ed1333db43de6570326218b5f9a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Shape::Rectangle::Rectangle</definition>
+        <argsstring>(QPaintDevice *device, int nid=-1, shape s=shape::Rectangle, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint nUL=QPoint(0, 0), int nw=0, int nh=0)</argsstring>
+        <name>Rectangle</name>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>shape</type>
+          <declname>s</declname>
+          <defval>shape::Rectangle</defval>
+        </param>
+        <param>
+          <type>QPen</type>
+          <declname>npen</declname>
+          <defval>Qt::NoPen</defval>
+        </param>
+        <param>
+          <type>QBrush</type>
+          <declname>nbrush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <param>
+          <type>QPoint</type>
+          <declname>nUL</declname>
+          <defval>QPoint(0, 0)</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nw</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nh</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="335" column="1" bodyfile="source/shape.h" bodystart="335" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a43661855e83a023329e976983ea49cc8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Rectangle::draw</definition>
+        <argsstring>(QPaintDevice *device)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd">draw</reimplements>
+        <reimplementedby refid="class_shape_1_1_text_1a9b6105d68cf5229235e0a8b08e0bb348">draw</reimplementedby>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_polygon" kindref="compound">Polygon</ref> Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="339" column="1" bodyfile="source/shape.h" bodystart="339" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a1c6baeae59f85a6a8aad1dfde7bd2008" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Rectangle::move</definition>
+        <argsstring>(Shape *source)</argsstring>
+        <name>move</name>
+        <reimplements refid="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5">move</reimplements>
+        <reimplementedby refid="class_shape_1_1_square_1a005281ece9d7f9dfc47aa7072e5fbea1">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_text_1a682aa2fa9989cf4ca8a6502af258ddb8">move</reimplementedby>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_rectangle_1a43661855e83a023329e976983ea49cc8" kindref="member">draw()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="352" column="1" bodyfile="source/shape.h" bodystart="352" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a4a88c504ae13b96d76b2cdd33802207a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Rectangle::calcPerimeter</definition>
+        <argsstring>()</argsstring>
+        <name>calcPerimeter</name>
+        <reimplements refid="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f">calcPerimeter</reimplements>
+        <reimplementedby refid="class_shape_1_1_text_1a22ac3020e4050a30ccbb620407a5cf0d">calcPerimeter</reimplementedby>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_rectangle_1a1c6baeae59f85a6a8aad1dfde7bd2008" kindref="member">move()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="360" column="1" bodyfile="source/shape.h" bodystart="360" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1add8a858486c9b0f8dba7a9e3af45b864" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Rectangle::calcArea</definition>
+        <argsstring>()</argsstring>
+        <name>calcArea</name>
+        <reimplements refid="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f">calcArea</reimplements>
+        <reimplementedby refid="class_shape_1_1_text_1ab5dd302d4472a8f4f753177c7361b60a">calcArea</reimplementedby>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_rectangle_1a4a88c504ae13b96d76b2cdd33802207a" kindref="member">calcPerimeter()</ref>; returns calculated perimeter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="366" column="1" bodyfile="source/shape.h" bodystart="366" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a27843e80d9b646e72d1e46b2dce38faf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Rectangle::setUpperLeft</definition>
+        <argsstring>(QPoint nUL)</argsstring>
+        <name>setUpperLeft</name>
+        <param>
+          <type>QPoint</type>
+          <declname>nUL</declname>
+        </param>
+        <briefdescription>
+<para>Overloaded calcArea from base shape; returns calculated area. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="372" column="1" bodyfile="source/shape.h" bodystart="372" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a74f4aa3d0b11bb1afba74fc4b5f94acb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Rectangle::setWidth</definition>
+        <argsstring>(int nw)</argsstring>
+        <name>setWidth</name>
+        <param>
+          <type>int</type>
+          <declname>nw</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets the upperleft coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="378" column="1" bodyfile="source/shape.h" bodystart="378" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1aedc754887ca6db3a0ff035f66f919a38" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Rectangle::setHeight</definition>
+        <argsstring>(int nh)</argsstring>
+        <name>setHeight</name>
+        <param>
+          <type>int</type>
+          <declname>nh</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets the width of the rectangle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="384" column="1" bodyfile="source/shape.h" bodystart="384" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1a352918f51df3d414d953c11cf78b17f6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>QPoint Shape::Rectangle::getUpperLeft</definition>
+        <argsstring>()</argsstring>
+        <name>getUpperLeft</name>
+        <reimplements refid="class_shape_1_1_shape_1a099d79c4f171de4d67a15aea179882e6">getUpperLeft</reimplements>
+        <briefdescription>
+<para>Mutator: sets the height of the rectangle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="390" column="1" bodyfile="source/shape.h" bodystart="390" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1af4a4c348b8869870828ba44b2d812d00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int Shape::Rectangle::getWidth</definition>
+        <argsstring>()</argsstring>
+        <name>getWidth</name>
+        <reimplements refid="class_shape_1_1_shape_1acf86809c4039cfafdb5cae0b073ec578">getWidth</reimplements>
+        <briefdescription>
+<para>Accessor: reutrns the upper left coordinate. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="396" column="1" bodyfile="source/shape.h" bodystart="396" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_rectangle_1ad528f24c05efb1ec7e5d810e39eb6a64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int Shape::Rectangle::getHeight</definition>
+        <argsstring>()</argsstring>
+        <name>getHeight</name>
+        <reimplements refid="class_shape_1_1_shape_1af81cbd191ad9e1b9907af437d4b33753">getHeight</reimplements>
+        <briefdescription>
+<para>Accessor: returns the rectangle&apos;s width. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="402" column="1" bodyfile="source/shape.h" bodystart="402" bodyend="405"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="35">
+        <label>Shape::Square</label>
+        <link refid="class_shape_1_1_square"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>Shape::Text</label>
+        <link refid="class_shape_1_1_text"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>Shape::Rectangle</label>
+        <link refid="class_shape_1_1_rectangle"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="37">
+        <label>Shape::Rectangle</label>
+        <link refid="class_shape_1_1_rectangle"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/shape.h" line="333" column="1" bodyfile="source/shape.h" bodystart="332" bodyend="414"/>
+    <listofallmembers>
+      <member refid="class_shape_1_1_rectangle_1add8a858486c9b0f8dba7a9e3af45b864" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>calcArea</name></member>
+      <member refid="class_shape_1_1_rectangle_1a4a88c504ae13b96d76b2cdd33802207a" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>calcPerimeter</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Circle</name></member>
+      <member refid="class_shape_1_1_rectangle_1a43661855e83a023329e976983ea49cc8" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>draw</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>getBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getEnd</name></member>
+      <member refid="class_shape_1_1_rectangle_1ad528f24c05efb1ec7e5d810e39eb6a64" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>getId</name></member>
+      <member refid="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" virt="non-virtual"><scope>Shape::Rectangle</scope><name>getPainter</name></member>
+      <member refid="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>getPen</name></member>
+      <member refid="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getPoints</name></member>
+      <member refid="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getRx</name></member>
+      <member refid="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getRy</name></member>
+      <member refid="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>getShape</name></member>
+      <member refid="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getStart</name></member>
+      <member refid="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getText</name></member>
+      <member refid="class_shape_1_1_rectangle_1a352918f51df3d414d953c11cf78b17f6" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getUpperLeft</name></member>
+      <member refid="class_shape_1_1_rectangle_1af4a4c348b8869870828ba44b2d812d00" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>getWidth</name></member>
+      <member refid="class_shape_1_1_rectangle_1ab20d612d813c43c1588ae0f9bb62c1ef" prot="private" virt="non-virtual"><scope>Shape::Rectangle</scope><name>height</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_rectangle_1a1c6baeae59f85a6a8aad1dfde7bd2008" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>move</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Polygon</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_rectangle_1a2961ed1333db43de6570326218b5f9a2" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public" virt="non-virtual" ambiguityscope="Shape::Shape::"><scope>Shape::Rectangle</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>setFont</name></member>
+      <member refid="class_shape_1_1_rectangle_1aedc754887ca6db3a0ff035f66f919a38" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setId</name></member>
+      <member refid="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setPen</name></member>
+      <member refid="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setShape</name></member>
+      <member refid="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>setText</name></member>
+      <member refid="class_shape_1_1_rectangle_1a27843e80d9b646e72d1e46b2dce38faf" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setUpperLeft</name></member>
+      <member refid="class_shape_1_1_rectangle_1a74f4aa3d0b11bb1afba74fc4b5f94acb" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>setWidth</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>shape</name></member>
+      <member refid="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Shape</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public" virt="non-virtual"><scope>Shape::Rectangle</scope><name>Text</name></member>
+      <member refid="class_shape_1_1_rectangle_1a11b76c440c0c7b07b702f5b45b6cb29c" prot="private" virt="non-virtual"><scope>Shape::Rectangle</scope><name>upperLeft</name></member>
+      <member refid="class_shape_1_1_rectangle_1ab672958aec26e4faae225ab7dfa5053a" prot="private" virt="non-virtual"><scope>Shape::Rectangle</scope><name>width</name></member>
+      <member refid="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" virt="virtual"><scope>Shape::Rectangle</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

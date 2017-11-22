@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcanvas" kind="class" language="C++" prot="public">
+    <compoundname>canvas</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWidget</basecompoundref>
+    <includes refid="canvas_8h" local="no">canvas.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcanvas_1a0b514a8cf15c75a8c681616c18dfc516" prot="private" static="no" mutable="no">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">myStd::vector</ref>&lt; <ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> * &gt;</type>
+        <definition>myStd::vector&lt;Shape::Shape*&gt; canvas::shapes</definition>
+        <argsstring></argsstring>
+        <name>shapes</name>
+        <briefdescription>
+<para>paintEven(QPaintEvent *e):Overloaded QWidget paintEvent, implemented to handle the drawing of shapes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="39" column="1" bodyfile="source/canvas.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcanvas_1a0ffa6e4840ebcc14a82fb883bd33e0bd" prot="private" static="no" mutable="no">
+        <type><ref refid="classcanvas" kindref="compound">canvas</ref> *</type>
+        <definition>canvas* canvas::canvasArea</definition>
+        <argsstring></argsstring>
+        <name>canvasArea</name>
+        <briefdescription>
+<para>vector&lt;Shape::Shape*&gt; shapes: holds the shapes that the modeler will draw and modify </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="41" column="1" bodyfile="source/canvas.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcanvas_1ac180732366df4ff96934a74ee244df9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>canvas::canvas</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>canvas</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Default Constructor: Takes a QWidget* to establish parent. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="20" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classcanvas_1a38495ed4a02b31154445c112d2f76572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void canvas::setShape</definition>
+        <argsstring>(myStd::vector&lt; Shape::Shape *&gt; source)</argsstring>
+        <name>setShape</name>
+        <param>
+          <type><ref refid="classmy_std_1_1vector" kindref="compound">myStd::vector</ref>&lt; <ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> *&gt;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classcanvas_1a38495ed4a02b31154445c112d2f76572" kindref="member">setShape()</ref>: Takes vector&lt;Shape*&gt; and sets it to shapes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classcanvas_1a6c2aa06102d0333fff9ae569ca92bd18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int canvas::getShapeCount</definition>
+        <argsstring>()</argsstring>
+        <name>getShapeCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classcanvas_1ae79656b2c80fdc7c76ba2907348b7975" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> *</type>
+        <definition>Shape::Shape* canvas::getShape</definition>
+        <argsstring>(int)</argsstring>
+        <name>getShape</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>getShapeCount(): retuns the count of shapes currently in the canvas&apos; shapes vector </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classcanvas_1a53d9c6f0b6cd0e5e5bbe931b9fb401ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">myStd::vector</ref>&lt; <ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> * &gt; &amp;</type>
+        <definition>myStd::vector&lt;Shape::Shape*&gt;&amp; canvas::getShapes</definition>
+        <argsstring>()</argsstring>
+        <name>getShapes</name>
+        <briefdescription>
+<para><ref refid="classcanvas_1ae79656b2c80fdc7c76ba2907348b7975" kindref="member">getShape()</ref>: returns a specific shape from the canvas&apos; shape vector, based on index passed in </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classcanvas_1af615523ca362a77454df1e3c2f702b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void canvas::paintEvent</definition>
+        <argsstring>(QPaintEvent *e)</argsstring>
+        <name>paintEvent</name>
+        <param>
+          <type>QPaintEvent *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="classcanvas_1a53d9c6f0b6cd0e5e5bbe931b9fb401ae" kindref="member">getShapes()</ref>: returns the entire canvas&apos; shape vector </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/canvas.h" line="35" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>canvas Widget where all shapes will be rendered. Also stores the shapes which will be drawn and modified. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>canvas</label>
+        <link refid="classcanvas"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>QWidget</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>canvas</label>
+        <link refid="classcanvas"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QWidget</label>
+      </node>
+    </collaborationgraph>
+    <location file="source/canvas.h" line="15" column="1" bodyfile="source/canvas.h" bodystart="14" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classcanvas_1ac180732366df4ff96934a74ee244df9c" prot="public" virt="non-virtual"><scope>canvas</scope><name>canvas</name></member>
+      <member refid="classcanvas_1a0ffa6e4840ebcc14a82fb883bd33e0bd" prot="private" virt="non-virtual"><scope>canvas</scope><name>canvasArea</name></member>
+      <member refid="classcanvas_1ae79656b2c80fdc7c76ba2907348b7975" prot="public" virt="non-virtual"><scope>canvas</scope><name>getShape</name></member>
+      <member refid="classcanvas_1a6c2aa06102d0333fff9ae569ca92bd18" prot="public" virt="non-virtual"><scope>canvas</scope><name>getShapeCount</name></member>
+      <member refid="classcanvas_1a53d9c6f0b6cd0e5e5bbe931b9fb401ae" prot="public" virt="non-virtual"><scope>canvas</scope><name>getShapes</name></member>
+      <member refid="classcanvas_1af615523ca362a77454df1e3c2f702b1f" prot="public" virt="non-virtual"><scope>canvas</scope><name>paintEvent</name></member>
+      <member refid="classcanvas_1a38495ed4a02b31154445c112d2f76572" prot="public" virt="non-virtual"><scope>canvas</scope><name>setShape</name></member>
+      <member refid="classcanvas_1a0b514a8cf15c75a8c681616c18dfc516" prot="private" virt="non-virtual"><scope>canvas</scope><name>shapes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,428 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classmy_std_1_1vector" kind="class" language="C++" prot="public">
+    <compoundname>myStd::vector</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classmy_std_1_1vector_1ab04fd4dde7dab6739116b77e1ca41518" prot="public" static="no">
+        <type>T *</type>
+        <definition>using myStd::vector&lt; T &gt;::iterator =  T*</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="94" column="1" bodyfile="source/vector.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmy_std_1_1vector_1a6709caa152469f3215dbad750808b234" prot="public" static="no">
+        <type>const T *</type>
+        <definition>using myStd::vector&lt; T &gt;::const_iterator =  const T*</definition>
+        <argsstring></argsstring>
+        <name>const_iterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="95" column="1" bodyfile="source/vector.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmy_std_1_1vector_1ab048ebed58cf7ccf28e859c9de98c215" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int myStd::vector&lt; T &gt;::size_v</definition>
+        <argsstring></argsstring>
+        <name>size_v</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vector vector of doubles much like stl vector container NOTE: elem[n] is vector component n for all n &gt;= 0 AND n &lt; size_v size_v = the number of items stored in the vector space = the available storage capacity of the vector where size_v &lt;= space if size_v &lt; space there is space for (space � size_v) doubles after elem[size_v�1] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="28" column="1" bodyfile="source/vector.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmy_std_1_1vector_1a7ba7d45fc724759168f0c1a146e8ac92" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* myStd::vector&lt; T &gt;::elem</definition>
+        <argsstring></argsstring>
+        <name>elem</name>
+        <briefdescription>
+<para>the size </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="29" column="1" bodyfile="source/vector.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmy_std_1_1vector_1a3e096193774c2c2afddcd7ce0cf45b5e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int myStd::vector&lt; T &gt;::space</definition>
+        <argsstring></argsstring>
+        <name>space</name>
+        <briefdescription>
+<para>pointer to the elements (or 0) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="30" column="1" bodyfile="source/vector.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmy_std_1_1vector_1a40e5c01ceb5d0c2bc64b23005c21ba04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>myStd::vector&lt; T &gt;::vector</definition>
+        <argsstring>()</argsstring>
+        <name>vector</name>
+        <briefdescription>
+<para>number of elements plus number of free slots </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="34" column="1" bodyfile="source/vector.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a3f942029ffea510e3c6e67310c18abb7" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>myStd::vector&lt; T &gt;::vector</definition>
+        <argsstring>(int s)</argsstring>
+        <name>vector</name>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>default constructor </para>        </briefdescription>
+        <detaileddescription>
+<para>alternate constructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="35" column="1" bodyfile="source/vector.h" bodystart="35" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1ae425fb0a79cfa7870cf3603c8abe3369" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>myStd::vector&lt; T &gt;::vector</definition>
+        <argsstring>(const vector &amp;src)</argsstring>
+        <name>vector</name>
+        <param>
+          <type>const <ref refid="classmy_std_1_1vector" kindref="compound">vector</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="40" column="1" bodyfile="source/vector.h" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a5cbbf45fd8ead8b9cbf4b0c7acf5010f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref> &amp;</type>
+        <definition>vector&amp; myStd::vector&lt; T &gt;::operator=</definition>
+        <argsstring>(const vector &amp;src)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classmy_std_1_1vector" kindref="compound">vector</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+<para>copy assignment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="44" column="1" bodyfile="source/vector.h" bodystart="44" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a4950397cd3da431867998cd4bf1110cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>myStd::vector&lt; T &gt;::vector</definition>
+        <argsstring>(vector &amp;&amp;source)</argsstring>
+        <name>vector</name>
+        <param>
+          <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref> &amp;&amp;</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>move constructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="53" column="1" bodyfile="source/vector.h" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a8f9a7e6e736863e702e8c939d73e42ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref> &amp;</type>
+        <definition>vector&amp; myStd::vector&lt; T &gt;::operator=</definition>
+        <argsstring>(vector &amp;&amp;rhs)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref> &amp;&amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>move assignment </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="59" column="1" bodyfile="source/vector.h" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1aaf4331a544887b4358befcfbce2deab4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>myStd::vector&lt; T &gt;::~vector</definition>
+        <argsstring>()</argsstring>
+        <name>~vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="67" column="1" bodyfile="source/vector.h" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a7840f76cb8fdb56e3a70506c7e0fbf5a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T &amp;</type>
+        <definition>T&amp; myStd::vector&lt; T &gt;::operator[]</definition>
+        <argsstring>(int n)</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>destructor </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="68" column="1" bodyfile="source/vector.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a74f73fa926d09d684715feec8956a138" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const T &amp;</type>
+        <definition>const T&amp; myStd::vector&lt; T &gt;::operator[]</definition>
+        <argsstring>(int n) const</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="69" column="1" bodyfile="source/vector.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a72c4cf7716f3fb1db42b8cdc2347ef49" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int myStd::vector&lt; T &gt;::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="70" column="1" bodyfile="source/vector.h" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a3a84d877c0808556734d2e012f8bbdaf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int myStd::vector&lt; T &gt;::capacity</definition>
+        <argsstring>() const</argsstring>
+        <name>capacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="71" column="1" bodyfile="source/vector.h" bodystart="71" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1aa54bd9c3d8d3b6191d7eb7f85490eadb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void myStd::vector&lt; T &gt;::resize</definition>
+        <argsstring>(int newsize)</argsstring>
+        <name>resize</name>
+        <param>
+          <type>int</type>
+          <declname>newsize</declname>
+        </param>
+        <briefdescription>
+<para>growth </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="72" column="1" bodyfile="source/vector.h" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a16a7791abc12b34fee94f4ef48a5e157" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void myStd::vector&lt; T &gt;::push_back</definition>
+        <argsstring>(T d)</argsstring>
+        <name>push_back</name>
+        <param>
+          <type>T</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>increase vector size by one; initialize the new element with d </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="78" column="1" bodyfile="source/vector.h" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a50e786a02a59e689999365037ae26b3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void myStd::vector&lt; T &gt;::reserve</definition>
+        <argsstring>(int newalloc)</argsstring>
+        <name>reserve</name>
+        <param>
+          <type>int</type>
+          <declname>newalloc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="85" column="1" bodyfile="source/vector.h" bodystart="85" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>iterator</type>
+        <definition>iterator myStd::vector&lt; T &gt;::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>points to first element </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="96" column="1" bodyfile="source/vector.h" bodystart="96" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1ad22f43aad2b965682d953dec7dd6edfb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const_iterator</type>
+        <definition>const_iterator myStd::vector&lt; T &gt;::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="103" column="1" bodyfile="source/vector.h" bodystart="103" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>iterator</type>
+        <definition>iterator myStd::vector&lt; T &gt;::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>points to one beyond the last element </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="110" column="1" bodyfile="source/vector.h" bodystart="110" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1afc5b4c0fa098396326835e4e8f008177" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const_iterator</type>
+        <definition>const_iterator myStd::vector&lt; T &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="117" column="1" bodyfile="source/vector.h" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1a2dfafafc64febfbb0869be81f6bd4de7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>iterator</type>
+        <definition>iterator myStd::vector&lt; T &gt;::insert</definition>
+        <argsstring>(iterator p, const T &amp;val)</argsstring>
+        <name>insert</name>
+        <param>
+          <type>iterator</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>insert a new element val before p </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="124" column="1" bodyfile="source/vector.h" bodystart="124" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classmy_std_1_1vector_1aa4ecb71647140e3c5226299f84828984" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>iterator</type>
+        <definition>iterator myStd::vector&lt; T &gt;::erase</definition>
+        <argsstring>(iterator p)</argsstring>
+        <name>erase</name>
+        <param>
+          <type>iterator</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>remove element pointed to by p </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/vector.h" line="137" column="1" bodyfile="source/vector.h" bodystart="137" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/vector.h" line="20" column="1" bodyfile="source/vector.h" bodystart="19" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>begin</name></member>
+      <member refid="classmy_std_1_1vector_1ad22f43aad2b965682d953dec7dd6edfb" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>begin</name></member>
+      <member refid="classmy_std_1_1vector_1a3a84d877c0808556734d2e012f8bbdaf" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>capacity</name></member>
+      <member refid="classmy_std_1_1vector_1a6709caa152469f3215dbad750808b234" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>const_iterator</name></member>
+      <member refid="classmy_std_1_1vector_1a7ba7d45fc724759168f0c1a146e8ac92" prot="private" virt="non-virtual"><scope>myStd::vector</scope><name>elem</name></member>
+      <member refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>end</name></member>
+      <member refid="classmy_std_1_1vector_1afc5b4c0fa098396326835e4e8f008177" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>end</name></member>
+      <member refid="classmy_std_1_1vector_1aa4ecb71647140e3c5226299f84828984" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>erase</name></member>
+      <member refid="classmy_std_1_1vector_1a2dfafafc64febfbb0869be81f6bd4de7" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>insert</name></member>
+      <member refid="classmy_std_1_1vector_1ab04fd4dde7dab6739116b77e1ca41518" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>iterator</name></member>
+      <member refid="classmy_std_1_1vector_1a5cbbf45fd8ead8b9cbf4b0c7acf5010f" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>operator=</name></member>
+      <member refid="classmy_std_1_1vector_1a8f9a7e6e736863e702e8c939d73e42ea" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>operator=</name></member>
+      <member refid="classmy_std_1_1vector_1a7840f76cb8fdb56e3a70506c7e0fbf5a" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>operator[]</name></member>
+      <member refid="classmy_std_1_1vector_1a74f73fa926d09d684715feec8956a138" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>operator[]</name></member>
+      <member refid="classmy_std_1_1vector_1a16a7791abc12b34fee94f4ef48a5e157" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>push_back</name></member>
+      <member refid="classmy_std_1_1vector_1a50e786a02a59e689999365037ae26b3a" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>reserve</name></member>
+      <member refid="classmy_std_1_1vector_1aa54bd9c3d8d3b6191d7eb7f85490eadb" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>resize</name></member>
+      <member refid="classmy_std_1_1vector_1a72c4cf7716f3fb1db42b8cdc2347ef49" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>size</name></member>
+      <member refid="classmy_std_1_1vector_1ab048ebed58cf7ccf28e859c9de98c215" prot="private" virt="non-virtual"><scope>myStd::vector</scope><name>size_v</name></member>
+      <member refid="classmy_std_1_1vector_1a3e096193774c2c2afddcd7ce0cf45b5e" prot="private" virt="non-virtual"><scope>myStd::vector</scope><name>space</name></member>
+      <member refid="classmy_std_1_1vector_1a40e5c01ceb5d0c2bc64b23005c21ba04" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>vector</name></member>
+      <member refid="classmy_std_1_1vector_1a3f942029ffea510e3c6e67310c18abb7" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>vector</name></member>
+      <member refid="classmy_std_1_1vector_1ae425fb0a79cfa7870cf3603c8abe3369" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>vector</name></member>
+      <member refid="classmy_std_1_1vector_1a4950397cd3da431867998cd4bf1110cf" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>vector</name></member>
+      <member refid="classmy_std_1_1vector_1aaf4331a544887b4358befcfbce2deab4" prot="public" virt="non-virtual"><scope>myStd::vector</scope><name>~vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

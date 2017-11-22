@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceour_list" kind="namespace" language="C++">
+    <compoundname>ourList</compoundname>
+    <innerclass refid="structour_list_1_1list" prot="public">ourList::list</innerclass>
+    <briefdescription>
+<para><ref refid="namespaceour_list" kindref="compound">ourList</ref> Namspace used to differentiate our list struct from std&apos;s list. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/MainWindow.h" line="19" column="1"/>
+  </compounddef>
+</doxygen>

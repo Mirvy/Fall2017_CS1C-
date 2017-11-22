@@ -1,0 +1,698 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_shape_1_1_shape" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Shape::Shape</compoundname>
+    <derivedcompoundref refid="class_shape_1_1_ellipse" prot="public" virt="non-virtual">Shape::Ellipse</derivedcompoundref>
+    <derivedcompoundref refid="class_shape_1_1_line" prot="public" virt="non-virtual">Shape::Line</derivedcompoundref>
+    <derivedcompoundref refid="class_shape_1_1_polygon" prot="public" virt="non-virtual">Shape::Polygon</derivedcompoundref>
+    <derivedcompoundref refid="class_shape_1_1_polyline" prot="public" virt="non-virtual">Shape::Polyline</derivedcompoundref>
+    <derivedcompoundref refid="class_shape_1_1_rectangle" prot="public" virt="non-virtual">Shape::Rectangle</derivedcompoundref>
+    <includes refid="shape_8h" local="no">shape.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" static="no">
+        <name>shape</name>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public">
+          <name>Line</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public">
+          <name>Polyline</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public">
+          <name>Polygon</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public">
+          <name>Rectangle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public">
+          <name>Square</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public">
+          <name>Ellipse</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public">
+          <name>Circle</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public">
+          <name>Text</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="51" column="1" bodyfile="source/shape.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_shape_1_1_shape_1a3f3df5d2d516ea4b66d1980b19848618" prot="private" static="no" mutable="no">
+        <type>QPainter</type>
+        <definition>QPainter Shape::Shape::painter</definition>
+        <argsstring></argsstring>
+        <name>painter</name>
+        <briefdescription>
+<para>Returns the shape&apos;s painter object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="156" column="1" bodyfile="source/shape.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_shape_1a1974298a57b824525a645a59a2afa1f0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Shape::Shape::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+<para>QPainter object used to draw shape to canvas. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="159" column="1" bodyfile="source/shape.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_shape_1aa500d913402c6fc580573f52d5e72f05" prot="private" static="no" mutable="no">
+        <type>shape</type>
+        <definition>shape Shape::Shape::objShape</definition>
+        <argsstring></argsstring>
+        <name>objShape</name>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> id#. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="162" column="1" bodyfile="source/shape.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_shape_1aeb35ad91639a5de16ce274e307fa9dc4" prot="private" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen Shape::Shape::pen</definition>
+        <argsstring></argsstring>
+        <name>pen</name>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref>&apos;s type via enum. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="165" column="1" bodyfile="source/shape.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_shape_1_1_shape_1aea46414e86e7cd36201f335bf774be0b" prot="private" static="no" mutable="no">
+        <type>QBrush</type>
+        <definition>QBrush Shape::Shape::brush</definition>
+        <argsstring></argsstring>
+        <name>brush</name>
+        <briefdescription>
+<para>Shapes current pen object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="168" column="1" bodyfile="source/shape.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Shape::Shape::Shape</definition>
+        <argsstring>(QPaintDevice *device=nullptr, int nid=-1, shape s=Shape::shape::Line, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush)</argsstring>
+        <name>Shape</name>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>shape</type>
+          <declname>s</declname>
+          <defval>Shape::shape::Line</defval>
+        </param>
+        <param>
+          <type>QPen</type>
+          <declname>npen</declname>
+          <defval>Qt::NoPen</defval>
+        </param>
+        <param>
+          <type>QBrush</type>
+          <declname>nbrush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <briefdescription>
+<para>enum that determines shapes </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="54" column="1" bodyfile="source/shape.h" bodystart="54" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Shape::setId</definition>
+        <argsstring>(int nid)</argsstring>
+        <name>setId</name>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+        </param>
+        <briefdescription>
+<para>Base class constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="58" column="1" bodyfile="source/shape.h" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Shape::setShape</definition>
+        <argsstring>(shape nshape)</argsstring>
+        <name>setShape</name>
+        <param>
+          <type>shape</type>
+          <declname>nshape</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets shape ID#. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="64" column="1" bodyfile="source/shape.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Shape::setPen</definition>
+        <argsstring>(const QPen &amp;npen)</argsstring>
+        <name>setPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>npen</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets shape type via enum. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="70" column="1" bodyfile="source/shape.h" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Shape::Shape::setBrush</definition>
+        <argsstring>(const QBrush &amp;nbrush)</argsstring>
+        <name>setBrush</name>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>nbrush</declname>
+        </param>
+        <briefdescription>
+<para>Mutator: sets shape pen. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="76" column="1" bodyfile="source/shape.h" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Shape::Shape::getId</definition>
+        <argsstring>() const</argsstring>
+        <name>getId</name>
+        <briefdescription>
+<para>Mutator: set shape brush. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="82" column="1" bodyfile="source/shape.h" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>shape</type>
+        <definition>shape Shape::Shape::getShape</definition>
+        <argsstring>() const</argsstring>
+        <name>getShape</name>
+        <briefdescription>
+<para>Accessor: gets shape&apos;s ID#. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="88" column="1" bodyfile="source/shape.h" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen &amp;</type>
+        <definition>QPen&amp; Shape::Shape::getPen</definition>
+        <argsstring>()</argsstring>
+        <name>getPen</name>
+        <briefdescription>
+<para>Accessor: gets shape&apos;s type via enum. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="94" column="1" bodyfile="source/shape.h" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QBrush &amp;</type>
+        <definition>QBrush&amp; Shape::Shape::getBrush</definition>
+        <argsstring>()</argsstring>
+        <name>getBrush</name>
+        <briefdescription>
+<para>Accessor: gets shape&apos;s pen. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="100" column="1" bodyfile="source/shape.h" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>virtual QPoint Shape::Shape::getStart</definition>
+        <argsstring>()</argsstring>
+        <name>getStart</name>
+        <reimplementedby refid="class_shape_1_1_line_1a24dfc7d2257ec701264b2598ec42fa3d">getStart</reimplementedby>
+        <briefdescription>
+<para>Accessor: gets shape&apos;s brush. </para>        </briefdescription>
+        <detaileddescription>
+<para>Virtual functions to facilitate polymorphism </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="107" column="1" bodyfile="source/shape.h" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>virtual QPoint Shape::Shape::getEnd</definition>
+        <argsstring>()</argsstring>
+        <name>getEnd</name>
+        <reimplementedby refid="class_shape_1_1_line_1a5df1dc274994d2c17ca794e8a152c39a">getEnd</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_line" kindref="compound">Line</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="109" column="1" bodyfile="source/shape.h" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&lt; QPoint &gt; &amp;</type>
+        <definition>virtual vector&lt;QPoint&gt;&amp; Shape::Shape::getPoints</definition>
+        <argsstring>()</argsstring>
+        <name>getPoints</name>
+        <reimplementedby refid="class_shape_1_1_polyline_1a3645eb7bea0452e45df24798e125afaf">getPoints</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polygon_1a5e3168e8971e51723354c892e349207d">getPoints</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_line" kindref="compound">Line</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="111" column="1" bodyfile="source/shape.h" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a099d79c4f171de4d67a15aea179882e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>virtual QPoint Shape::Shape::getUpperLeft</definition>
+        <argsstring>()</argsstring>
+        <name>getUpperLeft</name>
+        <reimplementedby refid="class_shape_1_1_rectangle_1a352918f51df3d414d953c11cf78b17f6">getUpperLeft</reimplementedby>
+        <briefdescription>
+<para>From Polyling and <ref refid="class_shape_1_1_polygon" kindref="compound">Polygon</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="113" column="1" bodyfile="source/shape.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1acf86809c4039cfafdb5cae0b073ec578" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Shape::Shape::getWidth</definition>
+        <argsstring>()</argsstring>
+        <name>getWidth</name>
+        <reimplementedby refid="class_shape_1_1_rectangle_1af4a4c348b8869870828ba44b2d812d00">getWidth</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_rectangle" kindref="compound">Rectangle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="115" column="1" bodyfile="source/shape.h" bodystart="115" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1af81cbd191ad9e1b9907af437d4b33753" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Shape::Shape::getHeight</definition>
+        <argsstring>()</argsstring>
+        <name>getHeight</name>
+        <reimplementedby refid="class_shape_1_1_rectangle_1ad528f24c05efb1ec7e5d810e39eb6a64">getHeight</reimplementedby>
+        <briefdescription>
+<para>From Rectacgle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="117" column="1" bodyfile="source/shape.h" bodystart="117" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QPoint</type>
+        <definition>virtual QPoint Shape::Shape::getOrigin</definition>
+        <argsstring>()</argsstring>
+        <name>getOrigin</name>
+        <reimplementedby refid="class_shape_1_1_ellipse_1a8448e7c3b9fb232f85dee9fe51a8832c">getOrigin</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_rectangle" kindref="compound">Rectangle</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="119" column="1" bodyfile="source/shape.h" bodystart="119" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Shape::Shape::getRx</definition>
+        <argsstring>()</argsstring>
+        <name>getRx</name>
+        <reimplementedby refid="class_shape_1_1_ellipse_1a4c3b7a52ff0583e1f8c185f0c2b63b8a">getRx</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="121" column="1" bodyfile="source/shape.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Shape::Shape::getRy</definition>
+        <argsstring>()</argsstring>
+        <name>getRy</name>
+        <reimplementedby refid="class_shape_1_1_ellipse_1a4770bc04b549515edffd92933d63d4bc">getRy</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="123" column="1" bodyfile="source/shape.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>QString</type>
+        <definition>virtual QString Shape::Shape::getText</definition>
+        <argsstring>()</argsstring>
+        <name>getText</name>
+        <reimplementedby refid="class_shape_1_1_text_1aa6dc07a18c3a454f8e2560f14817e392">getText</reimplementedby>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_ellipse" kindref="compound">Ellipse</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="125" column="1" bodyfile="source/shape.h" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Shape::Shape::setFont</definition>
+        <argsstring>(QFont &amp;)</argsstring>
+        <name>setFont</name>
+        <reimplementedby refid="class_shape_1_1_text_1ab9e53ca842be0b46549c9d1ca8973e41">setFont</reimplementedby>
+        <param>
+          <type>QFont &amp;</type>
+        </param>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_text" kindref="compound">Text</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="127" column="1" bodyfile="source/shape.h" bodystart="127" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Shape::Shape::setText</definition>
+        <argsstring>(QString)</argsstring>
+        <name>setText</name>
+        <reimplementedby refid="class_shape_1_1_text_1aefe57ef173b66bea72d42febe671722e">setText</reimplementedby>
+        <param>
+          <type>QString</type>
+        </param>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_text" kindref="compound">Text</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="129" column="1" bodyfile="source/shape.h" bodystart="129" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Shape::Shape::draw</definition>
+        <argsstring>(QPaintDevice *device)=0</argsstring>
+        <name>draw</name>
+        <reimplementedby refid="class_shape_1_1_line_1abbf9869aecd5a1228d00ef3ad1da810e">draw</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polyline_1aa819ef035a1ac51ad2f59e0d1f04a612">draw</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polygon_1ac76857911dd0be58d68be763ec152a60">draw</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_rectangle_1a43661855e83a023329e976983ea49cc8">draw</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_ellipse_1a41f2d68efd3031e84590813f08e2e1de">draw</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_text_1a9b6105d68cf5229235e0a8b08e0bb348">draw</reimplementedby>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para>From <ref refid="class_shape_1_1_text" kindref="compound">Text</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Common Interface </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Shape::Shape::move</definition>
+        <argsstring>(Shape *source)</argsstring>
+        <name>move</name>
+        <reimplementedby refid="class_shape_1_1_line_1a3b30d0d61f7619b1d9e98b654ba1b7b7">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polyline_1a24f6bf9c21bfcd42a2d1daf46f801943">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polygon_1ac63ca115b8818baf1a01dfebcb8cd3d4">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_rectangle_1a1c6baeae59f85a6a8aad1dfde7bd2008">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_square_1a005281ece9d7f9dfc47aa7072e5fbea1">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_ellipse_1a2ccd8f0124fdb683070d621da4079aac">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_circle_1a5726d9909ee52dbe62df757dbbb70691">move</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_text_1a682aa2fa9989cf4ca8a6502af258ddb8">move</reimplementedby>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Draws each shape based on its type; called by paintevent in canvas. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="136" column="1" bodyfile="source/shape.h" bodystart="136" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Shape::Shape::calcPerimeter</definition>
+        <argsstring>()=0</argsstring>
+        <name>calcPerimeter</name>
+        <reimplementedby refid="class_shape_1_1_line_1ad5c91958c6fe871ee526f7e0e93f7722">calcPerimeter</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polyline_1a1c67f762fb63c775d76925fbba529ac4">calcPerimeter</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polygon_1a2499e8fc7beb569ca177f2877d06c77f">calcPerimeter</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_rectangle_1a4a88c504ae13b96d76b2cdd33802207a">calcPerimeter</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_ellipse_1a80aae019327cc58ae7656d897ee9f379">calcPerimeter</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_text_1a22ac3020e4050a30ccbb620407a5cf0d">calcPerimeter</reimplementedby>
+        <briefdescription>
+<para>Updates shape&apos;s attributes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double Shape::Shape::calcArea</definition>
+        <argsstring>()=0</argsstring>
+        <name>calcArea</name>
+        <reimplementedby refid="class_shape_1_1_line_1abd4e89629adad96e6dc0d0ba984888d2">calcArea</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polyline_1a8f7dadd1529468002e9ada768e074b67">calcArea</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_polygon_1ad9acf60e8481100bd4d39cba2d17506a">calcArea</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_rectangle_1add8a858486c9b0f8dba7a9e3af45b864">calcArea</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_ellipse_1aba1149b31fb189d4b922a144a03d811d">calcArea</reimplementedby>
+        <reimplementedby refid="class_shape_1_1_text_1ab5dd302d4472a8f4f753177c7361b60a">calcArea</reimplementedby>
+        <briefdescription>
+<para>Returns shape&apos;s calculated perimeter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="142" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Shape::Shape::~Shape</definition>
+        <argsstring>()</argsstring>
+        <name>~Shape</name>
+        <briefdescription>
+<para>Returns shape&apos; calculated area. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="145" column="1" bodyfile="source/shape.h" bodystart="145" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPainter &amp;</type>
+        <definition>QPainter&amp; Shape::Shape::getPainter</definition>
+        <argsstring>()</argsstring>
+        <name>getPainter</name>
+        <briefdescription>
+<para>Default Destructor - Virtual to facilitate polymorphism. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="149" column="1" bodyfile="source/shape.h" bodystart="149" bodyend="152"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> A class hierarchy used to create 2d shapes which are drawn to a canvas.</para><para><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> A base abstract class is used to provide a common interface for all inherited shapes.</para><para>Uses enum shape to differentiate between different derived shape classes.</para><para>Common interface is: <ref refid="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd" kindref="member">draw()</ref> <ref refid="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5" kindref="member">move()</ref> <ref refid="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f" kindref="member">calcArea()</ref> <ref refid="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f" kindref="member">calcPerimeter()</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="44">
+        <label>Shape::Polyline</label>
+        <link refid="class_shape_1_1_polyline"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>Shape::Square</label>
+        <link refid="class_shape_1_1_square"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>Shape::Ellipse</label>
+        <link refid="class_shape_1_1_ellipse"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>Shape::Text</label>
+        <link refid="class_shape_1_1_text"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>Shape::Rectangle</label>
+        <link refid="class_shape_1_1_rectangle"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+      <node id="42">
+        <label>Shape::Line</label>
+        <link refid="class_shape_1_1_line"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>Shape::Circle</label>
+        <link refid="class_shape_1_1_circle"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Shape::Polygon</label>
+        <link refid="class_shape_1_1_polygon"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="source/shape.h" line="49" column="1" bodyfile="source/shape.h" bodystart="48" bodyend="170"/>
+    <listofallmembers>
+      <member refid="class_shape_1_1_shape_1aea46414e86e7cd36201f335bf774be0b" prot="private" virt="non-virtual"><scope>Shape::Shape</scope><name>brush</name></member>
+      <member refid="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f" prot="public" virt="pure-virtual"><scope>Shape::Shape</scope><name>calcArea</name></member>
+      <member refid="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f" prot="public" virt="pure-virtual"><scope>Shape::Shape</scope><name>calcPerimeter</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Circle</name></member>
+      <member refid="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd" prot="public" virt="pure-virtual"><scope>Shape::Shape</scope><name>draw</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>getBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getEnd</name></member>
+      <member refid="class_shape_1_1_shape_1af81cbd191ad9e1b9907af437d4b33753" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>getId</name></member>
+      <member refid="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" virt="non-virtual"><scope>Shape::Shape</scope><name>getPainter</name></member>
+      <member refid="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>getPen</name></member>
+      <member refid="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getPoints</name></member>
+      <member refid="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getRx</name></member>
+      <member refid="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getRy</name></member>
+      <member refid="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>getShape</name></member>
+      <member refid="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getStart</name></member>
+      <member refid="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getText</name></member>
+      <member refid="class_shape_1_1_shape_1a099d79c4f171de4d67a15aea179882e6" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getUpperLeft</name></member>
+      <member refid="class_shape_1_1_shape_1acf86809c4039cfafdb5cae0b073ec578" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>getWidth</name></member>
+      <member refid="class_shape_1_1_shape_1a1974298a57b824525a645a59a2afa1f0" prot="private" virt="non-virtual"><scope>Shape::Shape</scope><name>id</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>move</name></member>
+      <member refid="class_shape_1_1_shape_1aa500d913402c6fc580573f52d5e72f05" prot="private" virt="non-virtual"><scope>Shape::Shape</scope><name>objShape</name></member>
+      <member refid="class_shape_1_1_shape_1a3f3df5d2d516ea4b66d1980b19848618" prot="private" virt="non-virtual"><scope>Shape::Shape</scope><name>painter</name></member>
+      <member refid="class_shape_1_1_shape_1aeb35ad91639a5de16ce274e307fa9dc4" prot="private" virt="non-virtual"><scope>Shape::Shape</scope><name>pen</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Polygon</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>setBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>setFont</name></member>
+      <member refid="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>setId</name></member>
+      <member refid="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>setPen</name></member>
+      <member refid="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>setShape</name></member>
+      <member refid="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>setText</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>shape</name></member>
+      <member refid="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Shape</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public" virt="non-virtual"><scope>Shape::Shape</scope><name>Text</name></member>
+      <member refid="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" virt="virtual"><scope>Shape::Shape</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

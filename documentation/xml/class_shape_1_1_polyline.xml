@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_shape_1_1_polyline" kind="class" language="C++" prot="public">
+    <compoundname>Shape::Polyline</compoundname>
+    <basecompoundref refid="class_shape_1_1_shape" prot="public" virt="non-virtual">Shape::Shape</basecompoundref>
+    <includes refid="shape_8h" local="no">shape.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_shape_1_1_polyline_1a649592419dc96001e15be060e3dd65af" prot="private" static="no" mutable="no">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&lt; QPoint &gt;</type>
+        <definition>vector&lt;QPoint&gt; Shape::Polyline::p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_polyline_1a8f7dadd1529468002e9ada768e074b67" kindref="member">calcArea()</ref>: always returns zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="266" column="1" bodyfile="source/shape.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_shape_1_1_polyline_1ad18f9318c7b85e8ecc40b13ccb57962d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Shape::Polyline::Polyline</definition>
+        <argsstring>(QPaintDevice *device=nullptr, int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, const vector&lt; QPoint &gt; &amp;source=vector&lt; QPoint &gt;())</argsstring>
+        <name>Polyline</name>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>QPen</type>
+          <declname>npen</declname>
+          <defval>Qt::NoPen</defval>
+        </param>
+        <param>
+          <type>QBrush</type>
+          <declname>nbrush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&lt; QPoint &gt; &amp;</type>
+          <declname>source</declname>
+          <defval><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&lt; QPoint &gt;()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="231" column="1" bodyfile="source/shape.h" bodystart="231" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_polyline_1aa819ef035a1ac51ad2f59e0d1f04a612" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Polyline::draw</definition>
+        <argsstring>(QPaintDevice *device)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_shape_1_1_shape_1a62cd17b0a7f2496e9ed0a0adc92f38dd">draw</reimplements>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_polyline" kindref="compound">Polyline</ref> constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="235" column="1" bodyfile="source/shape.h" bodystart="235" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_polyline_1a3645eb7bea0452e45df24798e125afaf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&lt; QPoint &gt; &amp;</type>
+        <definition>vector&lt;QPoint&gt;&amp; Shape::Polyline::getPoints</definition>
+        <argsstring>()</argsstring>
+        <name>getPoints</name>
+        <reimplements refid="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546">getPoints</reimplements>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_polyline_1aa819ef035a1ac51ad2f59e0d1f04a612" kindref="member">draw()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="247" column="1" bodyfile="source/shape.h" bodystart="247" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_polyline_1a24f6bf9c21bfcd42a2d1daf46f801943" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Polyline::move</definition>
+        <argsstring>(Shape *source)</argsstring>
+        <name>move</name>
+        <reimplements refid="class_shape_1_1_shape_1a86467fa9928db8634f7c2a93317d7af5">move</reimplements>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Accessor: returns the polyline&apos;s points stored in a vector. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="253" column="1" bodyfile="source/shape.h" bodystart="253" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_polyline_1a1c67f762fb63c775d76925fbba529ac4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Polyline::calcPerimeter</definition>
+        <argsstring>()</argsstring>
+        <name>calcPerimeter</name>
+        <reimplements refid="class_shape_1_1_shape_1ae85f7d07d4bb1d32910d9d3429392b9f">calcPerimeter</reimplements>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_polyline_1a24f6bf9c21bfcd42a2d1daf46f801943" kindref="member">move()</ref> from base shape. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="259" column="1" bodyfile="source/shape.h" bodystart="259" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_polyline_1a8f7dadd1529468002e9ada768e074b67" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Shape::Polyline::calcArea</definition>
+        <argsstring>()</argsstring>
+        <name>calcArea</name>
+        <reimplements refid="class_shape_1_1_shape_1a91add05ed8b98aa3cd7b74579514ab2f">calcArea</reimplements>
+        <briefdescription>
+<para>Overloaded <ref refid="class_shape_1_1_polyline_1a1c67f762fb63c775d76925fbba529ac4" kindref="member">calcPerimeter()</ref>; always returns zero. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="262" column="1" bodyfile="source/shape.h" bodystart="262" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_shape_1_1_polyline" kindref="compound">Polyline</ref> - line with n number of points. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="29">
+        <label>Shape::Polyline</label>
+        <link refid="class_shape_1_1_polyline"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="31">
+        <label>Shape::Polyline</label>
+        <link refid="class_shape_1_1_polyline"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/shape.h" line="229" column="1" bodyfile="source/shape.h" bodystart="228" bodyend="268"/>
+    <listofallmembers>
+      <member refid="class_shape_1_1_polyline_1a8f7dadd1529468002e9ada768e074b67" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>calcArea</name></member>
+      <member refid="class_shape_1_1_polyline_1a1c67f762fb63c775d76925fbba529ac4" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>calcPerimeter</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Circle</name></member>
+      <member refid="class_shape_1_1_polyline_1aa819ef035a1ac51ad2f59e0d1f04a612" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>draw</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>getBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getEnd</name></member>
+      <member refid="class_shape_1_1_shape_1af81cbd191ad9e1b9907af437d4b33753" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>getId</name></member>
+      <member refid="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" virt="non-virtual"><scope>Shape::Polyline</scope><name>getPainter</name></member>
+      <member refid="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>getPen</name></member>
+      <member refid="class_shape_1_1_polyline_1a3645eb7bea0452e45df24798e125afaf" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getPoints</name></member>
+      <member refid="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getRx</name></member>
+      <member refid="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getRy</name></member>
+      <member refid="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>getShape</name></member>
+      <member refid="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getStart</name></member>
+      <member refid="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getText</name></member>
+      <member refid="class_shape_1_1_shape_1a099d79c4f171de4d67a15aea179882e6" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getUpperLeft</name></member>
+      <member refid="class_shape_1_1_shape_1acf86809c4039cfafdb5cae0b073ec578" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>getWidth</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_polyline_1a24f6bf9c21bfcd42a2d1daf46f801943" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>move</name></member>
+      <member refid="class_shape_1_1_polyline_1a649592419dc96001e15be060e3dd65af" prot="private" virt="non-virtual"><scope>Shape::Polyline</scope><name>p</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Polygon</name></member>
+      <member refid="class_shape_1_1_polyline_1ad18f9318c7b85e8ecc40b13ccb57962d" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public" virt="non-virtual" ambiguityscope="Shape::Shape::"><scope>Shape::Polyline</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>setBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>setFont</name></member>
+      <member refid="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>setId</name></member>
+      <member refid="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>setPen</name></member>
+      <member refid="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>setShape</name></member>
+      <member refid="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>setText</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>shape</name></member>
+      <member refid="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Shape</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public" virt="non-virtual"><scope>Shape::Polyline</scope><name>Text</name></member>
+      <member refid="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" virt="virtual"><scope>Shape::Polyline</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_shape" kind="namespace" language="C++">
+    <compoundname>Shape</compoundname>
+    <innerclass refid="class_shape_1_1_circle" prot="public">Shape::Circle</innerclass>
+    <innerclass refid="class_shape_1_1_ellipse" prot="public">Shape::Ellipse</innerclass>
+    <innerclass refid="class_shape_1_1_line" prot="public">Shape::Line</innerclass>
+    <innerclass refid="class_shape_1_1_polygon" prot="public">Shape::Polygon</innerclass>
+    <innerclass refid="class_shape_1_1_polyline" prot="public">Shape::Polyline</innerclass>
+    <innerclass refid="class_shape_1_1_rectangle" prot="public">Shape::Rectangle</innerclass>
+    <innerclass refid="class_shape_1_1_shape" prot="public">Shape::Shape</innerclass>
+    <innerclass refid="class_shape_1_1_square" prot="public">Shape::Square</innerclass>
+    <innerclass refid="class_shape_1_1_text" prot="public">Shape::Text</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="shape_8h_1a34ddbf15bc3999c068d651513fe9884c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Shape::operator&gt;</definition>
+        <argsstring>(const Shape::Shape &amp;obj1, const Shape::Shape &amp;obj2)</argsstring>
+        <name>operator&gt;</name>
+        <param>
+          <type>const <ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> &amp;</type>
+          <declname>obj1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> &amp;</type>
+          <declname>obj2</declname>
+        </param>
+        <briefdescription>
+<para>overloaded &quot;greater than&quot; operator </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="594" column="1" bodyfile="source/shape.h" bodystart="594" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="function" id="shape_8h_1a584ec115e694c79780865414b222450c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Shape::operator&lt;</definition>
+        <argsstring>(Shape::Shape *&amp;obj1, Shape::Shape *&amp;obj2)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> *&amp;</type>
+          <declname>obj1</declname>
+        </param>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> *&amp;</type>
+          <declname>obj2</declname>
+        </param>
+        <briefdescription>
+<para>overloaded &quot;less than&quot; operator </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="600" column="1" bodyfile="source/shape.h" bodystart="600" bodyend="603"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/shape.h" line="19" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="vector_8h" kind="file" language="C++">
+    <compoundname>vector.h</compoundname>
+    <includes local="no">algorithm</includes>
+    <includedby refid="canvas_8h" local="yes">source/canvas.h</includedby>
+    <includedby refid="shape_8h" local="yes">source/shape.h</includedby>
+    <includedby refid="_main_window_8h" local="yes">source/MainWindow.h</includedby>
+    <incdepgraph>
+      <node id="40">
+        <label>source/vector.h</label>
+        <link refid="vector_8h"/>
+        <childnode refid="41" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="45">
+        <label>source/MainWindow.h</label>
+        <link refid="_main_window_8h_source"/>
+      </node>
+      <node id="42">
+        <label>source/vector.h</label>
+        <link refid="vector_8h"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>source/canvas.h</label>
+        <link refid="canvas_8h_source"/>
+      </node>
+      <node id="44">
+        <label>source/shape.h</label>
+        <link refid="shape_8h_source"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classmy_std_1_1vector" prot="public">myStd::vector</innerclass>
+    <innernamespace refid="namespacemy_std">myStd</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*vector.h</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Dec<sp/>1,<sp/>2016</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>jkath</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Modified<sp/>on:<sp/>Oct<sp/>19,<sp/>2017</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>Mike<sp/>Yelverton</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>VECTOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VECTOR_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::copy;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemy_std" kindref="compound">myStd</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="19" refid="classmy_std_1_1vector" refkind="compound"><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size_v;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/>T*<sp/>elem;<sp/><sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>space;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classmy_std_1_1vector_1a40e5c01ceb5d0c2bc64b23005c21ba04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="classmy_std_1_1vector_1a40e5c01ceb5d0c2bc64b23005c21ba04" kindref="member">vector</ref>()<sp/>:<sp/>size_v{0},<sp/>elem{</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">},<sp/>space{0}<sp/>{<sp/>}<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="classmy_std_1_1vector_1a3f942029ffea510e3c6e67310c18abb7" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classmy_std_1_1vector_1a3f942029ffea510e3c6e67310c18abb7" kindref="member">vector</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>s)<sp/>:<sp/>size_v{0},<sp/>elem{</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T[s]},<sp/>space{s}<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;size_v;<sp/>++i)<sp/>elem[i]<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>elements<sp/>are<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><ref refid="classmy_std_1_1vector_1a40e5c01ceb5d0c2bc64b23005c21ba04" kindref="member">vector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&amp;<sp/>src)<sp/>:<sp/>size_v{src.size_v},<sp/>elem{</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T[src.size_v]},<sp/>space{src.space}<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>copy(src.elem,<sp/>src.elem<sp/>+<sp/>size_v,<sp/>elem);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>elements<sp/>-<sp/>std::copy()<sp/>algorithm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44" refid="classmy_std_1_1vector_1a5cbbf45fd8ead8b9cbf4b0c7acf5010f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&amp;<sp/><ref refid="classmy_std_1_1vector_1a5cbbf45fd8ead8b9cbf4b0c7acf5010f" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&amp;<sp/>src)<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>T*<sp/>p<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T[src.size_v];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allocate<sp/>new<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>copy(src.elem,<sp/>src.elem<sp/>+<sp/>src.size_v,<sp/>p);<sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>elements<sp/>-<sp/>std::copy()<sp/>algorithm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>elem;<sp/><sp/></highlight><highlight class="comment">//<sp/>deallocate<sp/>old<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>elem<sp/>=<sp/>p;<sp/><sp/></highlight><highlight class="comment">//<sp/>now<sp/>we<sp/>can<sp/>reset<sp/>elem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>size_v<sp/>=<sp/>src.size_v;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>return<sp/>a<sp/>self-reference</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53" refid="classmy_std_1_1vector_1a4950397cd3da431867998cd4bf1110cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="classmy_std_1_1vector_1a4950397cd3da431867998cd4bf1110cf" kindref="member">vector</ref>(<ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&amp;&amp;<sp/>source)<sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>size_v<sp/>=<sp/>source.size_v;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>elem<sp/>=<sp/>source.elem;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>source.elem<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59" refid="classmy_std_1_1vector_1a8f9a7e6e736863e702e8c939d73e42ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&amp;<sp/><ref refid="classmy_std_1_1vector_1a8f9a7e6e736863e702e8c939d73e42ea" kindref="member">operator=</ref>(<ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&amp;&amp;<sp/>rhs)<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>[]<sp/>elem;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>size_v<sp/>=<sp/>rhs.size_v;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>elem<sp/>=<sp/>rhs.elem;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>rhs.elem<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/>~<ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>()<sp/>{<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>elem;<sp/>}<sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="classmy_std_1_1vector_1a7840f76cb8fdb56e3a70506c7e0fbf5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/>T&amp;<sp/><ref refid="classmy_std_1_1vector_1a7840f76cb8fdb56e3a70506c7e0fbf5a" kindref="member">operator[]</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>elem[n];<sp/>}<sp/></highlight><highlight class="comment">//<sp/>access:<sp/>return<sp/>reference</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/><ref refid="classmy_std_1_1vector_1a7840f76cb8fdb56e3a70506c7e0fbf5a" kindref="member">operator[]</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>elem[n];<sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>size_v;<sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>capacity()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>space;<sp/>}</highlight></codeline>
+<codeline lineno="72" refid="classmy_std_1_1vector_1aa54bd9c3d8d3b6191d7eb7f85490eadb" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmy_std_1_1vector_1aa54bd9c3d8d3b6191d7eb7f85490eadb" kindref="member">resize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newsize)<sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>reserve(newsize);<sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>the<sp/>vector<sp/>have<sp/>newsize<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=size_v;<sp/>i&lt;newsize;<sp/>++i)<sp/>elem[i]<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>new<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>size_v<sp/>=<sp/>newsize;<sp/><sp/></highlight><highlight class="comment">//<sp/>initialize<sp/>each<sp/>new<sp/>element<sp/>with<sp/>the<sp/>default<sp/>value<sp/>0.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78" refid="classmy_std_1_1vector_1a16a7791abc12b34fee94f4ef48a5e157" refkind="member"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmy_std_1_1vector_1a16a7791abc12b34fee94f4ef48a5e157" kindref="member">push_back</ref>(T<sp/>d)<sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(space<sp/>==<sp/>0)<sp/>reserve(8);<sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>with<sp/>space<sp/>for<sp/>8<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(size_v<sp/>==<sp/>space)<sp/>reserve(2*space);<sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>more<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>elem[size_v]<sp/>=<sp/>d;<sp/><sp/></highlight><highlight class="comment">//<sp/>add<sp/>d<sp/>at<sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>++size_v;<sp/><sp/></highlight><highlight class="comment">//<sp/>increase<sp/>the<sp/>size<sp/>(size_v<sp/>is<sp/>the<sp/>number<sp/>of<sp/>elements)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>reserve(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newalloc)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newalloc<sp/>&lt;=<sp/>space)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>never<sp/>decrease<sp/>allocation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>T*<sp/>p<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>T[newalloc];<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>allocate<sp/>new<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;size_v;<sp/>++i)<sp/>p[i]<sp/>=<sp/>elem[i];<sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>old<sp/>elements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>elem;<sp/><sp/></highlight><highlight class="comment">//<sp/>deallocate<sp/>old<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>elem<sp/>=<sp/>p;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>space<sp/>=<sp/>newalloc;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>iterator<sp/>=<sp/>T*;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>const_iterator<sp/>=<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T*;</highlight></codeline>
+<codeline lineno="96" refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/>iterator<sp/><ref refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" kindref="member">begin</ref>()<sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(size_v<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;elem[0];</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/>const_iterator<sp/><ref refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" kindref="member">begin</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="104"><highlight class="keyword"><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(size_v<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;elem[0];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110" refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" refkind="member"><highlight class="normal"><sp/><sp/><sp/>iterator<sp/><ref refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" kindref="member">end</ref>()<sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(size_v<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;elem[size_v];</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/>const_iterator<sp/><ref refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" kindref="member">end</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="118"><highlight class="keyword"><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(size_v<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;elem[size_v];</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="classmy_std_1_1vector_1a2dfafafc64febfbb0869be81f6bd4de7" refkind="member"><highlight class="normal"><sp/><sp/><sp/>iterator<sp/><ref refid="classmy_std_1_1vector_1a2dfafafc64febfbb0869be81f6bd4de7" kindref="member">insert</ref>(iterator<sp/>p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>val)<sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>p<sp/>-<sp/><ref refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(size()<sp/>==<sp/>capacity())</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>reserve(size()==0<sp/>?<sp/>8<sp/>:<sp/>2*size());<sp/><sp/></highlight><highlight class="comment">//<sp/>make<sp/>sure<sp/>we<sp/>have<sp/>space</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>++size_v;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>iterator<sp/>pp<sp/>=<sp/><ref refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" kindref="member">begin</ref>()<sp/>+<sp/>index;<sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>place<sp/>to<sp/>put<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(iterator<sp/>pos=<ref refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" kindref="member">end</ref>()-1;<sp/>pos!=pp;<sp/>--pos)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*pos<sp/>=<sp/>*(pos-1);<sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>element<sp/>one<sp/>position<sp/>to<sp/>the<sp/>right</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*(<ref refid="classmy_std_1_1vector_1adaa284b6b387f70d3244b4d6e64869c3" kindref="member">begin</ref>()<sp/>+<sp/>index)<sp/>=<sp/>val;<sp/></highlight><highlight class="comment">//<sp/>insert<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pp;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="classmy_std_1_1vector_1aa4ecb71647140e3c5226299f84828984" refkind="member"><highlight class="normal"><sp/><sp/><sp/>iterator<sp/><ref refid="classmy_std_1_1vector_1aa4ecb71647140e3c5226299f84828984" kindref="member">erase</ref>(iterator<sp/>p)<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p<sp/>==<sp/><ref refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" kindref="member">end</ref>())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(iterator<sp/>pos=p+1;<sp/>pos!=<ref refid="classmy_std_1_1vector_1a8fc7ec068c194f5ecb5a08e17a9c9ac4" kindref="member">end</ref>();<sp/>++pos)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>*(pos-1)<sp/>=<sp/>*pos;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>copy<sp/>element<sp/>one<sp/>position<sp/>to<sp/>the<sp/>left</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>--size_v;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>VECTOR_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="source/vector.h"/>
+  </compounddef>
+</doxygen>

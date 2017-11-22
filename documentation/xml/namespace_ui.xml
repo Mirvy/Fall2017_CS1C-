@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_ui" kind="namespace" language="C++">
+    <compoundname>Ui</compoundname>
+    <briefdescription>
+<para><ref refid="namespace_ui" kindref="compound">Ui</ref> - Namespace used to isolate all of the <ref refid="class_main_window" kindref="compound">MainWindow</ref> objects and functions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="source/MainWindow.h" line="40" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,156 @@
+\section{Shape\+:\+:Shape Class Reference}
+\label{class_shape_1_1_shape}\index{Shape\+::\+Shape@{Shape\+::\+Shape}}
+
+
+{\ttfamily \#include $<$shape.\+h$>$}
+
+
+
+Inherited by \textbf{ Shape\+::\+Ellipse}, \textbf{ Shape\+::\+Line}, \textbf{ Shape\+::\+Polygon}, \textbf{ Shape\+::\+Polyline}, and \textbf{ Shape\+::\+Rectangle}.
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_shape_1_1_shape_a849abe39945794d7d26155d5c6059286}} 
+enum {\bfseries shape} \{ \newline
+{\bfseries Line}, 
+{\bfseries Polyline}, 
+{\bfseries Polygon}, 
+{\bfseries Rectangle}, 
+\newline
+{\bfseries Square}, 
+{\bfseries Ellipse}, 
+{\bfseries Circle}, 
+{\bfseries Text}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_shape_1_1_shape_ae8f09de0a08acfedbbfd4642d884e2fc}} 
+\textbf{ Shape} (Q\+Paint\+Device $\ast$device=nullptr, int nid=-\/1, shape s=Shape\+::shape\+::\+Line, Q\+Pen npen=Qt\+::\+No\+Pen, Q\+Brush nbrush=Qt\+::\+No\+Brush)
+\begin{DoxyCompactList}\small\item\em enum that determines shapes \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a8ee5c12db1ac20ab5e5cb91a1e840cfb}} 
+void \textbf{ set\+Id} (int nid)
+\begin{DoxyCompactList}\small\item\em Base class constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a919592de4ad6981f2b2bfa2afb81c815}} 
+void \textbf{ set\+Shape} (shape nshape)
+\begin{DoxyCompactList}\small\item\em Mutator\+: sets shape ID\#. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_af6fa70957983a4b4af6e67c5f3d3b438}} 
+void \textbf{ set\+Pen} (const Q\+Pen \&npen)
+\begin{DoxyCompactList}\small\item\em Mutator\+: sets shape type via enum. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_aa7984be5f5683269a542c6066aba1693}} 
+void \textbf{ set\+Brush} (const Q\+Brush \&nbrush)
+\begin{DoxyCompactList}\small\item\em Mutator\+: sets shape pen. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a34d217e52fe9f4ffdbaa060454378f67}} 
+int \textbf{ get\+Id} () const
+\begin{DoxyCompactList}\small\item\em Mutator\+: set shape brush. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_ad162d4a27cbb85f2ec9788b7a51eb372}} 
+shape \textbf{ get\+Shape} () const
+\begin{DoxyCompactList}\small\item\em Accessor\+: gets shape\textquotesingle{}s ID\#. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_afe8854e42f2f626e3b336e2693e570e4}} 
+Q\+Pen \& \textbf{ get\+Pen} ()
+\begin{DoxyCompactList}\small\item\em Accessor\+: gets shape\textquotesingle{}s type via enum. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_ab3eb86d6b73e2cee452cefb376c3347f}} 
+Q\+Brush \& \textbf{ get\+Brush} ()
+\begin{DoxyCompactList}\small\item\em Accessor\+: gets shape\textquotesingle{}s pen. \end{DoxyCompactList}\item 
+virtual Q\+Point \textbf{ get\+Start} ()
+\begin{DoxyCompactList}\small\item\em Accessor\+: gets shape\textquotesingle{}s brush. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a9b824140259767e4ad4b73c955be78af}} 
+virtual Q\+Point \textbf{ get\+End} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Line}{p.}{class_shape_1_1_line}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_ab4f33e3d860c4f25a6936eabc0a93546}} 
+virtual \textbf{ vector}$<$ Q\+Point $>$ \& \textbf{ get\+Points} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Line}{p.}{class_shape_1_1_line}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a099d79c4f171de4d67a15aea179882e6}} 
+virtual Q\+Point \textbf{ get\+Upper\+Left} ()
+\begin{DoxyCompactList}\small\item\em From Polyling and \doxyref{Polygon}{p.}{class_shape_1_1_polygon}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_acf86809c4039cfafdb5cae0b073ec578}} 
+virtual int \textbf{ get\+Width} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Rectangle}{p.}{class_shape_1_1_rectangle}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_af81cbd191ad9e1b9907af437d4b33753}} 
+virtual int \textbf{ get\+Height} ()
+\begin{DoxyCompactList}\small\item\em From Rectacgle. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a1cd7258a4774a6bbf170b3758b6f9ab6}} 
+virtual Q\+Point \textbf{ get\+Origin} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Rectangle}{p.}{class_shape_1_1_rectangle}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a5b0e9a796241d0958698abf56d089cad}} 
+virtual int \textbf{ get\+Rx} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Ellipse}{p.}{class_shape_1_1_ellipse}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_ac1894f990cfd2018b627066fb977b02b}} 
+virtual int \textbf{ get\+Ry} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Ellipse}{p.}{class_shape_1_1_ellipse}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_ac4933aea4107774697d7e4412077d864}} 
+virtual Q\+String \textbf{ get\+Text} ()
+\begin{DoxyCompactList}\small\item\em From \doxyref{Ellipse}{p.}{class_shape_1_1_ellipse}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a0bcae2b172faacd92e58dc1004a29754}} 
+virtual void \textbf{ set\+Font} (Q\+Font \&)
+\begin{DoxyCompactList}\small\item\em From \doxyref{Text}{p.}{class_shape_1_1_text}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_aaeb53221cf0546e8968b5ec4314ca549}} 
+virtual void \textbf{ set\+Text} (Q\+String)
+\begin{DoxyCompactList}\small\item\em From \doxyref{Text}{p.}{class_shape_1_1_text}. \end{DoxyCompactList}\item 
+virtual void \textbf{ draw} (Q\+Paint\+Device $\ast$device)=0
+\begin{DoxyCompactList}\small\item\em From \doxyref{Text}{p.}{class_shape_1_1_text}. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a86467fa9928db8634f7c2a93317d7af5}} 
+virtual void \textbf{ move} (\textbf{ Shape} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Draws each shape based on its type; called by paintevent in canvas. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_ae85f7d07d4bb1d32910d9d3429392b9f}} 
+virtual double \textbf{ calc\+Perimeter} ()=0
+\begin{DoxyCompactList}\small\item\em Updates shape\textquotesingle{}s attributes. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a91add05ed8b98aa3cd7b74579514ab2f}} 
+virtual double \textbf{ calc\+Area} ()=0
+\begin{DoxyCompactList}\small\item\em Returns shape\textquotesingle{}s calculated perimeter. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_shape_a3de6cd4970f5a4d374209301b23a1630}} 
+virtual \textbf{ $\sim$\+Shape} ()
+\begin{DoxyCompactList}\small\item\em Returns shape\textquotesingle{} calculated area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_shape_1_1_shape_abe1993324df0d4bdd37d05a65c7292c8}} 
+Q\+Painter \& \textbf{ get\+Painter} ()
+\begin{DoxyCompactList}\small\item\em Default Destructor -\/ Virtual to facilitate polymorphism. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Shape}{p.}{class_shape_1_1_shape} A class hierarchy used to create 2d shapes which are drawn to a canvas.
+
+\doxyref{Shape}{p.}{class_shape_1_1_shape} A base abstract class is used to provide a common interface for all inherited shapes.
+
+Uses enum shape to differentiate between different derived shape classes.
+
+Common interface is\+: \doxyref{draw()}{p.}{class_shape_1_1_shape_a62cd17b0a7f2496e9ed0a0adc92f38dd} \doxyref{move()}{p.}{class_shape_1_1_shape_a86467fa9928db8634f7c2a93317d7af5} \doxyref{calc\+Area()}{p.}{class_shape_1_1_shape_a91add05ed8b98aa3cd7b74579514ab2f} \doxyref{calc\+Perimeter()}{p.}{class_shape_1_1_shape_ae85f7d07d4bb1d32910d9d3429392b9f} 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_shape_1_1_shape_a62cd17b0a7f2496e9ed0a0adc92f38dd}} 
+\index{Shape\+::\+Shape@{Shape\+::\+Shape}!draw@{draw}}
+\index{draw@{draw}!Shape\+::\+Shape@{Shape\+::\+Shape}}
+\subsubsection{draw()}
+{\footnotesize\ttfamily virtual void Shape\+::\+Shape\+::draw (\begin{DoxyParamCaption}\item[{Q\+Paint\+Device $\ast$}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+From \doxyref{Text}{p.}{class_shape_1_1_text}. 
+
+Common Interface 
+
+Implemented in \textbf{ Shape\+::\+Text} \doxyref{}{p.}{class_shape_1_1_text_a9b6105d68cf5229235e0a8b08e0bb348}, \textbf{ Shape\+::\+Ellipse} \doxyref{}{p.}{class_shape_1_1_ellipse_a41f2d68efd3031e84590813f08e2e1de}, \textbf{ Shape\+::\+Rectangle} \doxyref{}{p.}{class_shape_1_1_rectangle_a43661855e83a023329e976983ea49cc8}, \textbf{ Shape\+::\+Polygon} \doxyref{}{p.}{class_shape_1_1_polygon_ac76857911dd0be58d68be763ec152a60}, \textbf{ Shape\+::\+Polyline} \doxyref{}{p.}{class_shape_1_1_polyline_aa819ef035a1ac51ad2f59e0d1f04a612}, and \textbf{ Shape\+::\+Line} \doxyref{}{p.}{class_shape_1_1_line_abbf9869aecd5a1228d00ef3ad1da810e}.
+
+\mbox{\label{class_shape_1_1_shape_ae3f5ec278f89c89362d17ed22047d534}} 
+\index{Shape\+::\+Shape@{Shape\+::\+Shape}!get\+Start@{get\+Start}}
+\index{get\+Start@{get\+Start}!Shape\+::\+Shape@{Shape\+::\+Shape}}
+\subsubsection{get\+Start()}
+{\footnotesize\ttfamily virtual Q\+Point Shape\+::\+Shape\+::get\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Accessor\+: gets shape\textquotesingle{}s brush. 
+
+Virtual functions to facilitate polymorphism 
+
+Reimplemented in \textbf{ Shape\+::\+Line} \doxyref{}{p.}{class_shape_1_1_line_a24dfc7d2257ec701264b2598ec42fa3d}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/shape.\+h\end{DoxyCompactItemize}

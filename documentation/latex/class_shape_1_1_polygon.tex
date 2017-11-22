@@ -1,0 +1,45 @@
+\section{Shape\+:\+:Polygon Class Reference}
+\label{class_shape_1_1_polygon}\index{Shape\+::\+Polygon@{Shape\+::\+Polygon}}
+
+
+\doxyref{Polygon}{p.}{class_shape_1_1_polygon} -\/ Similar to polyline but is a closed shape with a fill.  
+
+
+
+
+{\ttfamily \#include $<$shape.\+h$>$}
+
+
+
+Inherits \textbf{ Shape\+::\+Shape}.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_shape_1_1_polygon_af1eaffd5d33467e9847d6b90ac56fa70}} 
+{\bfseries Polygon} (Q\+Paint\+Device $\ast$device, int nid=-\/1, Q\+Pen npen=Qt\+::\+No\+Pen, Q\+Brush nbrush=Qt\+::\+No\+Brush, const \textbf{ vector}$<$ Q\+Point $>$ \&source=\textbf{ vector}$<$ Q\+Point $>$())
+\item 
+\mbox{\label{class_shape_1_1_polygon_ac76857911dd0be58d68be763ec152a60}} 
+void \textbf{ draw} (Q\+Paint\+Device $\ast$device)
+\begin{DoxyCompactList}\small\item\em \doxyref{Polygon}{p.}{class_shape_1_1_polygon} constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_polygon_a5e3168e8971e51723354c892e349207d}} 
+\textbf{ vector}$<$ Q\+Point $>$ \& \textbf{ get\+Points} ()
+\begin{DoxyCompactList}\small\item\em Overloaded \doxyref{draw()}{p.}{class_shape_1_1_polygon_ac76857911dd0be58d68be763ec152a60} from base shape. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_polygon_ac63ca115b8818baf1a01dfebcb8cd3d4}} 
+void \textbf{ move} (\textbf{ Shape} $\ast$source)
+\begin{DoxyCompactList}\small\item\em Accessor\+: returns polygon\textquotesingle{}s points stored in a vector. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_polygon_a2499e8fc7beb569ca177f2877d06c77f}} 
+double \textbf{ calc\+Perimeter} ()
+\begin{DoxyCompactList}\small\item\em Overloaded \doxyref{move()}{p.}{class_shape_1_1_polygon_ac63ca115b8818baf1a01dfebcb8cd3d4} from base shape. \end{DoxyCompactList}\item 
+\mbox{\label{class_shape_1_1_polygon_ad9acf60e8481100bd4d39cba2d17506a}} 
+double \textbf{ calc\+Area} ()
+\begin{DoxyCompactList}\small\item\em Overloaded \doxyref{calc\+Perimeter()}{p.}{class_shape_1_1_polygon_a2499e8fc7beb569ca177f2877d06c77f}; calculates the distance from point to point and returns the sum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{Polygon}{p.}{class_shape_1_1_polygon} -\/ Similar to polyline but is a closed shape with a fill. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/shape.\+h\end{DoxyCompactItemize}

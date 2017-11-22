@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_shape_1_1_square" kind="class" language="C++" prot="public">
+    <compoundname>Shape::Square</compoundname>
+    <basecompoundref refid="class_shape_1_1_rectangle" prot="public" virt="non-virtual">Shape::Rectangle</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_shape_1_1_square_1a8e178796fabb5915362ef2692c0d46d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Shape::Square::Square</definition>
+        <argsstring>(QPaintDevice *device, int nid=-1, QPen npen=Qt::NoPen, QBrush nbrush=Qt::NoBrush, QPoint nUL=QPoint(0, 0), int side=0)</argsstring>
+        <name>Square</name>
+        <param>
+          <type>QPaintDevice *</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>QPen</type>
+          <declname>npen</declname>
+          <defval>Qt::NoPen</defval>
+        </param>
+        <param>
+          <type>QBrush</type>
+          <declname>nbrush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <param>
+          <type>QPoint</type>
+          <declname>nUL</declname>
+          <defval>QPoint(0, 0)</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>side</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="419" column="1" bodyfile="source/shape.h" bodystart="419" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="class_shape_1_1_square_1a005281ece9d7f9dfc47aa7072e5fbea1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Shape::Square::move</definition>
+        <argsstring>(Shape *source)</argsstring>
+        <name>move</name>
+        <reimplements refid="class_shape_1_1_rectangle_1a1c6baeae59f85a6a8aad1dfde7bd2008">move</reimplements>
+        <param>
+          <type><ref refid="class_shape_1_1_shape" kindref="compound">Shape</ref> *</type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_shape_1_1_square" kindref="compound">Square</ref> Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/shape.h" line="423" column="1" bodyfile="source/shape.h" bodystart="423" bodyend="426"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="49">
+        <label>Shape::Square</label>
+        <link refid="class_shape_1_1_square"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>Shape::Rectangle</label>
+        <link refid="class_shape_1_1_rectangle"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="52">
+        <label>Shape::Square</label>
+        <link refid="class_shape_1_1_square"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>Shape::Rectangle</label>
+        <link refid="class_shape_1_1_rectangle"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>Shape::Shape</label>
+        <link refid="class_shape_1_1_shape"/>
+      </node>
+    </collaborationgraph>
+    <location file="source/shape.h" line="417" column="1" bodyfile="source/shape.h" bodystart="416" bodyend="428"/>
+    <listofallmembers>
+      <member refid="class_shape_1_1_rectangle_1add8a858486c9b0f8dba7a9e3af45b864" prot="public" virt="virtual"><scope>Shape::Square</scope><name>calcArea</name></member>
+      <member refid="class_shape_1_1_rectangle_1a4a88c504ae13b96d76b2cdd33802207a" prot="public" virt="virtual"><scope>Shape::Square</scope><name>calcPerimeter</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a20d46db46aa50dc0c7b02d63f0157974" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Circle</name></member>
+      <member refid="class_shape_1_1_rectangle_1a43661855e83a023329e976983ea49cc8" prot="public" virt="virtual"><scope>Shape::Square</scope><name>draw</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a566844d0ecc5da0b065e205e765ddb68" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Ellipse</name></member>
+      <member refid="class_shape_1_1_shape_1ab3eb86d6b73e2cee452cefb376c3347f" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>getBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a9b824140259767e4ad4b73c955be78af" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getEnd</name></member>
+      <member refid="class_shape_1_1_rectangle_1ad528f24c05efb1ec7e5d810e39eb6a64" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a34d217e52fe9f4ffdbaa060454378f67" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>getId</name></member>
+      <member refid="class_shape_1_1_shape_1a1cd7258a4774a6bbf170b3758b6f9ab6" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getOrigin</name></member>
+      <member refid="class_shape_1_1_shape_1abe1993324df0d4bdd37d05a65c7292c8" prot="protected" virt="non-virtual"><scope>Shape::Square</scope><name>getPainter</name></member>
+      <member refid="class_shape_1_1_shape_1afe8854e42f2f626e3b336e2693e570e4" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>getPen</name></member>
+      <member refid="class_shape_1_1_shape_1ab4f33e3d860c4f25a6936eabc0a93546" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getPoints</name></member>
+      <member refid="class_shape_1_1_shape_1a5b0e9a796241d0958698abf56d089cad" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getRx</name></member>
+      <member refid="class_shape_1_1_shape_1ac1894f990cfd2018b627066fb977b02b" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getRy</name></member>
+      <member refid="class_shape_1_1_shape_1ad162d4a27cbb85f2ec9788b7a51eb372" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>getShape</name></member>
+      <member refid="class_shape_1_1_shape_1ae3f5ec278f89c89362d17ed22047d534" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getStart</name></member>
+      <member refid="class_shape_1_1_shape_1ac4933aea4107774697d7e4412077d864" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getText</name></member>
+      <member refid="class_shape_1_1_rectangle_1a352918f51df3d414d953c11cf78b17f6" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getUpperLeft</name></member>
+      <member refid="class_shape_1_1_rectangle_1af4a4c348b8869870828ba44b2d812d00" prot="public" virt="virtual"><scope>Shape::Square</scope><name>getWidth</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ab5017af42584c248b543441848230cfd" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Line</name></member>
+      <member refid="class_shape_1_1_square_1a005281ece9d7f9dfc47aa7072e5fbea1" prot="public" virt="virtual"><scope>Shape::Square</scope><name>move</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a50b0b3510cbce80ba80fc3d64a11e595" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Polygon</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ac2f2cf98e138e8c895c85f7c39d81f1b" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Polyline</name></member>
+      <member refid="class_shape_1_1_rectangle_1a2961ed1333db43de6570326218b5f9a2" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286ae22b3f176d804fd5b87e0fdf718fac25" prot="public" virt="non-virtual" ambiguityscope="Shape::Shape::"><scope>Shape::Square</scope><name>Rectangle</name></member>
+      <member refid="class_shape_1_1_shape_1aa7984be5f5683269a542c6066aba1693" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setBrush</name></member>
+      <member refid="class_shape_1_1_shape_1a0bcae2b172faacd92e58dc1004a29754" prot="public" virt="virtual"><scope>Shape::Square</scope><name>setFont</name></member>
+      <member refid="class_shape_1_1_rectangle_1aedc754887ca6db3a0ff035f66f919a38" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setHeight</name></member>
+      <member refid="class_shape_1_1_shape_1a8ee5c12db1ac20ab5e5cb91a1e840cfb" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setId</name></member>
+      <member refid="class_shape_1_1_shape_1af6fa70957983a4b4af6e67c5f3d3b438" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setPen</name></member>
+      <member refid="class_shape_1_1_shape_1a919592de4ad6981f2b2bfa2afb81c815" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setShape</name></member>
+      <member refid="class_shape_1_1_shape_1aaeb53221cf0546e8968b5ec4314ca549" prot="public" virt="virtual"><scope>Shape::Square</scope><name>setText</name></member>
+      <member refid="class_shape_1_1_rectangle_1a27843e80d9b646e72d1e46b2dce38faf" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setUpperLeft</name></member>
+      <member refid="class_shape_1_1_rectangle_1a74f4aa3d0b11bb1afba74fc4b5f94acb" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>setWidth</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>shape</name></member>
+      <member refid="class_shape_1_1_shape_1ae8f09de0a08acfedbbfd4642d884e2fc" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Shape</name></member>
+      <member refid="class_shape_1_1_square_1a8e178796fabb5915362ef2692c0d46d4" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286aeee36445b5b34f1d1fe2ec605064e2d9" prot="public" virt="non-virtual" ambiguityscope="Shape::Rectangle::"><scope>Shape::Square</scope><name>Square</name></member>
+      <member refid="class_shape_1_1_shape_1a849abe39945794d7d26155d5c6059286a7e0d56fc6c49f35d26bef9c910789ded" prot="public" virt="non-virtual"><scope>Shape::Square</scope><name>Text</name></member>
+      <member refid="class_shape_1_1_shape_1a3de6cd4970f5a4d374209301b23a1630" prot="public" virt="virtual"><scope>Shape::Square</scope><name>~Shape</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

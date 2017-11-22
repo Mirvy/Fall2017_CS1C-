@@ -1,0 +1,979 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_main_window" kind="class" language="C++" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="private" static="no" mutable="no">
+        <type>Ui::MainWindow *</type>
+        <definition>Ui::MainWindow* MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="251" column="1" bodyfile="source/MainWindow.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a090be471877403462df187e814a5f826" prot="private" static="no" mutable="no">
+        <type><ref refid="classmy_std_1_1vector" kindref="compound">vector</ref>&lt; QPoint &gt;</type>
+        <definition>vector&lt;QPoint&gt; MainWindow::tempShape</definition>
+        <argsstring></argsstring>
+        <name>tempShape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="254" column="1" bodyfile="source/MainWindow.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a95a8ae1c310b3969f452136f29390656" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structour_list_1_1list" kindref="compound">ourList::list</ref> &gt;</type>
+        <definition>std::vector&lt;ourList::list&gt; MainWindow::feedbackList</definition>
+        <argsstring></argsstring>
+        <name>feedbackList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="257" column="1" bodyfile="source/MainWindow.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a4b8e067b9d45e3403a90cc406a6f0ccf" prot="private" static="no" mutable="no">
+        <type>QTableWidget *</type>
+        <definition>QTableWidget* MainWindow::areaReport</definition>
+        <argsstring></argsstring>
+        <name>areaReport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="260" column="1" bodyfile="source/MainWindow.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a32a2b0f493e58f5ebb592613a09a83c8" prot="private" static="no" mutable="no">
+        <type>const QString</type>
+        <definition>const QString MainWindow::adminUser</definition>
+        <argsstring></argsstring>
+        <name>adminUser</name>
+        <initializer>= &quot;admin&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="263" column="1" bodyfile="source/MainWindow.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a771c092fe2dda7c0ebc8c2764eae7840" prot="private" static="no" mutable="no">
+        <type>const QString</type>
+        <definition>const QString MainWindow::adminPassword</definition>
+        <argsstring></argsstring>
+        <name>adminPassword</name>
+        <initializer>= &quot;password&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="266" column="1" bodyfile="source/MainWindow.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ae0959894cd2b5e185f3da2c9fa0f5a85" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::adminPrivledge</definition>
+        <argsstring></argsstring>
+        <name>adminPrivledge</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="269" column="1" bodyfile="source/MainWindow.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MainWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="78" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a3dd6613826e5646e276522158365407b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::setShape</definition>
+        <argsstring>(myStd::vector&lt; Shape::Shape *&gt;)</argsstring>
+        <name>setShape</name>
+        <param>
+          <type><ref refid="classmy_std_1_1vector" kindref="compound">myStd::vector</ref>&lt; <ref refid="class_shape_1_1_shape" kindref="compound">Shape::Shape</ref> *&gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a7d17315ad42e624c7960b0c93fe4f0b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::paintEvent</definition>
+        <argsstring>(QPaintEvent *e)</argsstring>
+        <name>paintEvent</name>
+        <param>
+          <type>QPaintEvent *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ab267c37da70d73ef8f3969b465548901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::refreshIds</definition>
+        <argsstring>()</argsstring>
+        <name>refreshIds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a11644a8bdb381550bf59e854ec17caba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="structour_list_1_1list" kindref="compound">ourList::list</ref> &gt; &amp;</type>
+        <definition>std::vector&lt;ourList::list&gt;&amp; MainWindow::getFeedback</definition>
+        <argsstring>()</argsstring>
+        <name>getFeedback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="90" column="1" bodyfile="source/MainWindow.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="93" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_main_window_1a7a5305af08b80dcf4be3d6d9968588d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_shapeIdModSpinBox_valueChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_shapeIdModSpinBox_valueChanged</name>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a2f13d1abd53d930141aac07047c21203" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_lineModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_lineModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a4514ee3b4f5f063ea41cd464b4336a20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineModMenu_dimensions_addPointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineModMenu_dimensions_addPointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="105" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a0fcb689a076499fc21ff56fffcbde497" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineModMenu_dimensions_movePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineModMenu_dimensions_movePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="107" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aaf9989a8c1314b57167d2e782fb0c8a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineModMenu_dimensions_deletePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineModMenu_dimensions_deletePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="109" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a9d48e82ff999782117f9679d31e36c74" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a6bae922d93f07a080f64efd3801515e9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonModMenu_dimensions_addPointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonModMenu_dimensions_addPointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="115" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a46af0ac2411b679b9b745d26267434ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonModMenu_dimensions_movePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonModMenu_dimensions_movePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a73b78389d973924fb035c8c055d0ec82" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonModMenu_dimensions_deletePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonModMenu_dimensions_deletePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="119" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a59e1e631c05c2d585acb8d977bc985c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a408d3d9fe1b44547a40273af44dcc76e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_rectangleModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_rectangleModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a1d74116db5c50c03f4007f32e92004d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_squareModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_squareModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="129" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a559eea4b88230951b36c6a5d767deb26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_ellipseModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_ellipseModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1abd0ec6f341be3b9025d26128dd07aab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_circleModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_circleModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aa958741d0b6ca6b9713362aee8d9845f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_textModMenu_updateButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_textModMenu_updateButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="141" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a915021110170dc0e675dd6cd56fc8305" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_lineModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_lineModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="145" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ab51b8d04af457f4fdadcd6e21a0d9d60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_circleModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_circleModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="148" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a1b1d5f630c6a79be35100e45068b6019" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_ellipseModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_ellipseModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5bf9ff450a97d166271ec5b6cec7e352" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="154" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1add466b9fe9022d500d9a5f8f8ec22c66" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="157" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aedc25b5064b5d2ae7c73a48895a66217" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_rectangleModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_rectangleModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5af69100171f9d60fe7f1f85f53e4fb1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_squareModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_squareModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="163" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a11f9e48abc6ab3345498b17921d71389" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_textModMenu_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_textModMenu_deleteButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="166" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1afe8caa0ae420d718644974e5bdf840c7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_shapeTypeAddCombo_currentIndexChanged</definition>
+        <argsstring>(int index)</argsstring>
+        <name>on_shapeTypeAddCombo_currentIndexChanged</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="169" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a79ca99ffa8a9f98801d21ca0a1eb94e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_lineAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_lineAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="172" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a888657aef316d7e50e19ece188be22f9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="175" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ae3d3224edf5a0a6ebe9e3fb35c5fbe15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineAddMenu_dimensions_addPointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineAddMenu_dimensions_addPointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a2b470df24447f1f0ea220be003de1d62" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineAddMenu_dimensions_movePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineAddMenu_dimensions_movePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1abc46d38f0a72610e14dbd2802a63d1b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polyLineAddMenu_dimensions_deletePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polyLineAddMenu_dimensions_deletePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a29e3fbb36703f63c2b49fe9a41f8eb00" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="184" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ad8df12cd8ef5a5e75e547fa863e3ade8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonAddMenu_dimensions_addPointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonAddMenu_dimensions_addPointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="187" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a7142b0a7c19a6cb4a6d6035cd20a188e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonAddMenu_dimensions_movePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonAddMenu_dimensions_movePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aa2bbcbefcb11c6fcf9807b5ad315c921" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_polygonAddMenu_dimensions_deletePointButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_polygonAddMenu_dimensions_deletePointButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="191" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ac1b5bff235afbd93c31222fd0c4e4af8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_rectangleAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_rectangleAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="193" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a14516d345ef8aa440b16573708b14538" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_squareModMenu_updateButton_2_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_squareModMenu_updateButton_2_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="196" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a7abe4c21067de46799f847828c7b677d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_ellipseAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_ellipseAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1acaf599eb80d93e0407f84d13406dfb80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_circleAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_circleAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="202" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ab8b1562bb81a7643765602e3b5961e4a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_textAddMenu_createButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_textAddMenu_createButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="205" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5a67b317c041566db875b5263bcd660c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_tabMenu_tabBarClicked</definition>
+        <argsstring>(int index)</argsstring>
+        <name>on_tabMenu_tabBarClicked</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="208" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a3ec2e4647f337b44bc6313a22bfdfa33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_areaReportRefreshButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_areaReportRefreshButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="211" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1af0c47a3d72df58a02c5a0baec3c6303c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_perimeterReportRefreshButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_perimeterReportRefreshButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="214" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aef07529bb512171788e6ffdd293fd41e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_shapeReportRefreshButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_shapeReportRefreshButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="217" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aad8b3565829ef596ac57aa46253b306b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_actionGet_Help_triggered</definition>
+        <argsstring>()</argsstring>
+        <name>on_actionGet_Help_triggered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="220" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a4ff9733b8d313521bc51d8df05d3a50b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_actionSave_and_Exit_triggered</definition>
+        <argsstring>()</argsstring>
+        <name>on_actionSave_and_Exit_triggered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="223" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a16d030db89fe696f6decc745976c8fd5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_helpDoneButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_helpDoneButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ab73db899fd49f8c7bff2ab29d70b20bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_actionAdmin_Login_triggered</definition>
+        <argsstring>()</argsstring>
+        <name>on_actionAdmin_Login_triggered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="229" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1acc2bba11cb9b1502028b713f3c9341b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_userLogin_logoutButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_userLogin_logoutButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="232" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a7d9b86fc1d3c53c142f804383c710c3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_loginUserButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_loginUserButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="235" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a805a54738d51e74e31d0c4181b0848ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_loginCancelButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_loginCancelButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="238" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aae60f1f5cfadea27a71e77878cffb705" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_actionProvide_Feedback_triggered</definition>
+        <argsstring>()</argsstring>
+        <name>on_actionProvide_Feedback_triggered</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="241" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a30e1761cd94a67e6c8c32770d98acff3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_feedBackMenu_cancelButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_feedBackMenu_cancelButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a3d4d5a351fbad40101bdd57c4b9c4629" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_feedBackMenu_submitButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_feedBackMenu_submitButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="source/MainWindow.h" line="247" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="22">
+        <label>QMainWindow</label>
+      </node>
+      <node id="21">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="24">
+        <label>QMainWindow</label>
+      </node>
+      <node id="23">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="source/MainWindow.h" line="72" column="1" bodyfile="source/MainWindow.h" bodystart="71" bodyend="271"/>
+    <listofallmembers>
+      <member refid="class_main_window_1a771c092fe2dda7c0ebc8c2764eae7840" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>adminPassword</name></member>
+      <member refid="class_main_window_1ae0959894cd2b5e185f3da2c9fa0f5a85" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>adminPrivledge</name></member>
+      <member refid="class_main_window_1a32a2b0f493e58f5ebb592613a09a83c8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>adminUser</name></member>
+      <member refid="class_main_window_1a4b8e067b9d45e3403a90cc406a6f0ccf" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>areaReport</name></member>
+      <member refid="class_main_window_1a95a8ae1c310b3969f452136f29390656" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>feedbackList</name></member>
+      <member refid="class_main_window_1a11644a8bdb381550bf59e854ec17caba" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>getFeedback</name></member>
+      <member refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_main_window_1ab73db899fd49f8c7bff2ab29d70b20bd" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_actionAdmin_Login_triggered</name></member>
+      <member refid="class_main_window_1aad8b3565829ef596ac57aa46253b306b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_actionGet_Help_triggered</name></member>
+      <member refid="class_main_window_1aae60f1f5cfadea27a71e77878cffb705" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_actionProvide_Feedback_triggered</name></member>
+      <member refid="class_main_window_1a4ff9733b8d313521bc51d8df05d3a50b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_actionSave_and_Exit_triggered</name></member>
+      <member refid="class_main_window_1a3ec2e4647f337b44bc6313a22bfdfa33" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_areaReportRefreshButton_clicked</name></member>
+      <member refid="class_main_window_1acaf599eb80d93e0407f84d13406dfb80" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_circleAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1ab51b8d04af457f4fdadcd6e21a0d9d60" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_circleModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1abd0ec6f341be3b9025d26128dd07aab0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_circleModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1a7abe4c21067de46799f847828c7b677d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_ellipseAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1a1b1d5f630c6a79be35100e45068b6019" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_ellipseModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1a559eea4b88230951b36c6a5d767deb26" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_ellipseModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1a30e1761cd94a67e6c8c32770d98acff3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_feedBackMenu_cancelButton_clicked</name></member>
+      <member refid="class_main_window_1a3d4d5a351fbad40101bdd57c4b9c4629" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_feedBackMenu_submitButton_clicked</name></member>
+      <member refid="class_main_window_1a16d030db89fe696f6decc745976c8fd5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_helpDoneButton_clicked</name></member>
+      <member refid="class_main_window_1a79ca99ffa8a9f98801d21ca0a1eb94e5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_lineAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1a915021110170dc0e675dd6cd56fc8305" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_lineModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1a2f13d1abd53d930141aac07047c21203" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_lineModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1a805a54738d51e74e31d0c4181b0848ad" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_loginCancelButton_clicked</name></member>
+      <member refid="class_main_window_1a7d9b86fc1d3c53c142f804383c710c3b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_loginUserButton_clicked</name></member>
+      <member refid="class_main_window_1af0c47a3d72df58a02c5a0baec3c6303c" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_perimeterReportRefreshButton_clicked</name></member>
+      <member refid="class_main_window_1a29e3fbb36703f63c2b49fe9a41f8eb00" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1ad8df12cd8ef5a5e75e547fa863e3ade8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonAddMenu_dimensions_addPointButton_clicked</name></member>
+      <member refid="class_main_window_1aa2bbcbefcb11c6fcf9807b5ad315c921" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonAddMenu_dimensions_deletePointButton_clicked</name></member>
+      <member refid="class_main_window_1a7142b0a7c19a6cb4a6d6035cd20a188e" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonAddMenu_dimensions_movePointButton_clicked</name></member>
+      <member refid="class_main_window_1a5bf9ff450a97d166271ec5b6cec7e352" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1a6bae922d93f07a080f64efd3801515e9" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonModMenu_dimensions_addPointButton_clicked</name></member>
+      <member refid="class_main_window_1a73b78389d973924fb035c8c055d0ec82" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonModMenu_dimensions_deletePointButton_clicked</name></member>
+      <member refid="class_main_window_1a46af0ac2411b679b9b745d26267434ff" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonModMenu_dimensions_movePointButton_clicked</name></member>
+      <member refid="class_main_window_1a59e1e631c05c2d585acb8d977bc985c1" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polygonModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1a888657aef316d7e50e19ece188be22f9" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1ae3d3224edf5a0a6ebe9e3fb35c5fbe15" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineAddMenu_dimensions_addPointButton_clicked</name></member>
+      <member refid="class_main_window_1abc46d38f0a72610e14dbd2802a63d1b0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineAddMenu_dimensions_deletePointButton_clicked</name></member>
+      <member refid="class_main_window_1a2b470df24447f1f0ea220be003de1d62" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineAddMenu_dimensions_movePointButton_clicked</name></member>
+      <member refid="class_main_window_1add466b9fe9022d500d9a5f8f8ec22c66" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1a4514ee3b4f5f063ea41cd464b4336a20" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineModMenu_dimensions_addPointButton_clicked</name></member>
+      <member refid="class_main_window_1aaf9989a8c1314b57167d2e782fb0c8a9" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineModMenu_dimensions_deletePointButton_clicked</name></member>
+      <member refid="class_main_window_1a0fcb689a076499fc21ff56fffcbde497" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineModMenu_dimensions_movePointButton_clicked</name></member>
+      <member refid="class_main_window_1a9d48e82ff999782117f9679d31e36c74" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_polyLineModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1ac1b5bff235afbd93c31222fd0c4e4af8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_rectangleAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1aedc25b5064b5d2ae7c73a48895a66217" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_rectangleModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1a408d3d9fe1b44547a40273af44dcc76e" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_rectangleModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1a7a5305af08b80dcf4be3d6d9968588d8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_shapeIdModSpinBox_valueChanged</name></member>
+      <member refid="class_main_window_1aef07529bb512171788e6ffdd293fd41e" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_shapeReportRefreshButton_clicked</name></member>
+      <member refid="class_main_window_1afe8caa0ae420d718644974e5bdf840c7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_shapeTypeAddCombo_currentIndexChanged</name></member>
+      <member refid="class_main_window_1a5af69100171f9d60fe7f1f85f53e4fb1" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_squareModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1a14516d345ef8aa440b16573708b14538" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_squareModMenu_updateButton_2_clicked</name></member>
+      <member refid="class_main_window_1a1d74116db5c50c03f4007f32e92004d2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_squareModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1a5a67b317c041566db875b5263bcd660c" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_tabMenu_tabBarClicked</name></member>
+      <member refid="class_main_window_1ab8b1562bb81a7643765602e3b5961e4a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_textAddMenu_createButton_clicked</name></member>
+      <member refid="class_main_window_1a11f9e48abc6ab3345498b17921d71389" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_textModMenu_deleteButton_clicked</name></member>
+      <member refid="class_main_window_1aa958741d0b6ca6b9713362aee8d9845f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_textModMenu_updateButton_clicked</name></member>
+      <member refid="class_main_window_1acc2bba11cb9b1502028b713f3c9341b6" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_userLogin_logoutButton_clicked</name></member>
+      <member refid="class_main_window_1a7d17315ad42e624c7960b0c93fe4f0b9" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>paintEvent</name></member>
+      <member refid="class_main_window_1ab267c37da70d73ef8f3969b465548901" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>refreshIds</name></member>
+      <member refid="class_main_window_1a3dd6613826e5646e276522158365407b" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>setShape</name></member>
+      <member refid="class_main_window_1a090be471877403462df187e814a5f826" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>tempShape</name></member>
+      <member refid="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

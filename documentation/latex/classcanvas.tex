@@ -1,0 +1,44 @@
+\section{canvas Class Reference}
+\label{classcanvas}\index{canvas@{canvas}}
+
+
+canvas Widget where all shapes will be rendered. Also stores the shapes which will be drawn and modified.  
+
+
+
+
+{\ttfamily \#include $<$canvas.\+h$>$}
+
+
+
+Inherits Q\+Widget.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classcanvas_ac180732366df4ff96934a74ee244df9c}} 
+\textbf{ canvas} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Default Constructor\+: Takes a Q\+Widget$\ast$ to establish parent. \end{DoxyCompactList}\item 
+\mbox{\label{classcanvas_a38495ed4a02b31154445c112d2f76572}} 
+void \textbf{ set\+Shape} (\textbf{ my\+Std\+::vector}$<$ \textbf{ Shape\+::\+Shape} $\ast$$>$ source)
+\begin{DoxyCompactList}\small\item\em \doxyref{set\+Shape()}{p.}{classcanvas_a38495ed4a02b31154445c112d2f76572}\+: Takes vector$<$\+Shape$\ast$$>$ and sets it to shapes \end{DoxyCompactList}\item 
+\mbox{\label{classcanvas_a6c2aa06102d0333fff9ae569ca92bd18}} 
+int {\bfseries get\+Shape\+Count} ()
+\item 
+\mbox{\label{classcanvas_ae79656b2c80fdc7c76ba2907348b7975}} 
+\textbf{ Shape\+::\+Shape} $\ast$ \textbf{ get\+Shape} (int)
+\begin{DoxyCompactList}\small\item\em get\+Shape\+Count()\+: retuns the count of shapes currently in the canvas\textquotesingle{} shapes vector \end{DoxyCompactList}\item 
+\mbox{\label{classcanvas_a53d9c6f0b6cd0e5e5bbe931b9fb401ae}} 
+\textbf{ my\+Std\+::vector}$<$ \textbf{ Shape\+::\+Shape} $\ast$ $>$ \& \textbf{ get\+Shapes} ()
+\begin{DoxyCompactList}\small\item\em \doxyref{get\+Shape()}{p.}{classcanvas_ae79656b2c80fdc7c76ba2907348b7975}\+: returns a specific shape from the canvas\textquotesingle{} shape vector, based on index passed in \end{DoxyCompactList}\item 
+\mbox{\label{classcanvas_af615523ca362a77454df1e3c2f702b1f}} 
+void \textbf{ paint\+Event} (Q\+Paint\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em \doxyref{get\+Shapes()}{p.}{classcanvas_a53d9c6f0b6cd0e5e5bbe931b9fb401ae}\+: returns the entire canvas\textquotesingle{} shape vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+canvas Widget where all shapes will be rendered. Also stores the shapes which will be drawn and modified. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/canvas.\+h\end{DoxyCompactItemize}
